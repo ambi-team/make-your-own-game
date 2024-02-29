@@ -9,7 +9,10 @@ public sealed class CameraMovement : Component
 	[Property] public float Distance { get; set; } = 0f;
 
 	public bool IsFirstPerson => Distance == 0f;
-	public Vector3 CurrentOffset = Vector3.Zero; 
+	public Vector3 CurrentOffset = Vector3.Zero;
+
+	public SceneTraceResult traceResult;
+	private float distanceTraceResult = 255f;
 
 	private CameraComponent Camera;
 	private ModelRenderer BodyRenderer;
@@ -58,7 +61,6 @@ public sealed class CameraMovement : Component
 				{
 					camPos = camTrace.EndPosition;
 				}
-
 			}
 			else
 			{
@@ -67,6 +69,11 @@ public sealed class CameraMovement : Component
 
 			Camera.Transform.Position = camPos;
 			Camera.Transform.Rotation = eyeAngles.ToRotation();
+
+			// by titanovsky
+			traceResult = Scene.Trace.Ray(camPos, camPos + (Camera.Transform.Rotation.Forward * distanceTraceResult))
+				.HitTriggers()
+			.Run();
 		}
 	}
 
