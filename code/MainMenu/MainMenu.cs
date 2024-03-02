@@ -34,7 +34,5 @@ public sealed class MainMenu : Component
 			MainMenuPanel = GameObject.Components.Get<ScreenPanel>();
 
 		MainMenuPanel.Enabled = false; //! always to false on start
-
-		SaveData.Save("achiv.json", new TestForJson(10, false, 5.24f, "Titanovsky"));
 	}
 }
