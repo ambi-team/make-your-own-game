@@ -71,6 +71,11 @@
       "Name": "Game",
       "Position": "183.8709,140.9425,99.10318",
       "Enabled": true,
+      "Components": [
+        {
+          "__type": "AchievementComponent"
+        }
+      ],
       "Children": [
         {
           "Id": "fb326758-8ba5-4163-ab02-f8ffb05b352f",
@@ -87,11 +92,7 @@
             },
             {
               "__type": "MainMenu",
-              "pnl": {
-                "_type": "component",
-                "go": "fb326758-8ba5-4163-ab02-f8ffb05b352f",
-                "component_type": "ScreenPanel"
-              }
+              "MainMenuPanel": null
             },
             {
               "__type": "MainMenuPanel",
@@ -125,6 +126,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-02T17:45:30.6573331\u002B05:00",
+  "LastSaved": "2024-03-03T02:21:42.6751291\u002B05:00",
   "__references": []
 }
