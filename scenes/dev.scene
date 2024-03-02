@@ -43,74 +43,6 @@
       ]
     },
     {
-      "Id": "5b483a09-bbf2-4949-98c7-a73b789d0ee7",
-      "Name": "PlayerObj",
-      "Position": "70.665,4.517091,22.08608",
-      "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
-      "Scale": "0.5632889,0.5632889,0.5632889",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": null,
-          "MaterialOverride": "materials/default.vmat",
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false,
-          "Surface": null
-        },
-        {
-          "__type": "Rigidbody",
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {},
-          "MassOverride": 0,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
-        },
-        {
-          "__type": "HighlightOutline",
-          "Color": "1,0,0,1",
-          "InsideColor": "1,0,0,0",
-          "InsideObscuredColor": "0.87907,0.07769,0.07769,0",
-          "Material": null,
-          "ObscuredColor": "0.92093,0.0257,0.0257,0",
-          "Width": 0.50000006
-        },
-        {
-          "__type": "Player",
-          "achiv_kill": null,
-          "ho": {
-            "_type": "component",
-            "go": "5b483a09-bbf2-4949-98c7-a73b789d0ee7",
-            "component_type": "HighlightOutline"
-          },
-          "ply": null,
-          "OnKill": null
-        }
-      ]
-    },
-    {
-      "Id": "05458925-39b4-46f5-82d6-ac86637b7aca",
-      "Name": "UI",
-      "Position": "80.15776,17.91953,-7.147385",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "UI"
-        }
-      ]
-    },
-    {
       "Id": "dccc1113-9032-4082-a5d0-b3e76cc42376",
       "Name": "Map",
       "Position": "-16.00771,61.8781,2112.087",
@@ -133,6 +65,41 @@
       "Tags": "player,trigger",
       "Enabled": true,
       "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "Id": "cf7c6201-3164-4664-ad2c-281b3e45081d",
+      "Name": "Game",
+      "Position": "183.8709,140.9425,99.10318",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "fb326758-8ba5-4163-ab02-f8ffb05b352f",
+          "Name": "MainMenu",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ScreenPanel",
+              "AutoScreenScale": true,
+              "Opacity": 1,
+              "Scale": 1,
+              "ZIndex": 100
+            },
+            {
+              "__type": "MainMenu",
+              "pnl": {
+                "_type": "component",
+                "go": "fb326758-8ba5-4163-ab02-f8ffb05b352f",
+                "component_type": "ScreenPanel"
+              }
+            },
+            {
+              "__type": "MainMenuPanel",
+              "MyStringValue": "Main Menu:\n\nStart\nSettings\nExit"
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -158,6 +125,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-02T15:28:24.2551654\u002B05:00",
+  "LastSaved": "2024-03-02T17:45:30.6573331\u002B05:00",
   "__references": []
 }
