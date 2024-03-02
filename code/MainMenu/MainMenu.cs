@@ -3,23 +3,23 @@ using System;
 
 public sealed class MainMenu : Component
 {
-	[Property] public ScreenPanel pnl;
+	[Property] public ScreenPanel MainMenuPanel { get; set; }
 
 	public void Show()
 	{
-		if (pnl.Enabled)
+		if (MainMenuPanel.Enabled)
 		{
 			Remove(); 
 
 			return;
 		}
 
-		pnl.Enabled = true;
+		MainMenuPanel.Enabled = true;
 	}
 
 	public void Remove()
 	{
-		pnl.Enabled = false;
+		MainMenuPanel.Enabled = false;
 	}
 
 	protected override void OnUpdate()
@@ -30,6 +30,11 @@ public sealed class MainMenu : Component
 
 	protected override void OnStart()
 	{
-		pnl.Enabled = false; //! always to false on start
+		if (MainMenuPanel is null)
+			MainMenuPanel = GameObject.Components.Get<ScreenPanel>();
+
+		MainMenuPanel.Enabled = false; //! always to false on start
+
+		SaveData.Save("achiv.json", new TestForJson(10, false, 5.24f, "Titanovsky"));
 	}
 }
