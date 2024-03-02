@@ -8,4 +8,6 @@
 	{
 		PropInt = a; PropBool = b; PropStr = c;
 	}
+
+	public TestJson() { }
 }
