@@ -31,10 +31,12 @@ public sealed class Player : Component, Component.ICollisionListener
 	protected override void OnUpdate()
 	{
 		SceneTraceResult trResult = camera.traceResult;
+		if (!trResult.Hit) return;
+
 		GameObject obj = trResult.GameObject;
 
 		Log.Info($"{obj} {GameObject}");
-		if (obj == GameObject)
+		if (ho.Width < 0.6f && obj == GameObject)
 		{
 			ho.Width = 0.6f;
 		} else
