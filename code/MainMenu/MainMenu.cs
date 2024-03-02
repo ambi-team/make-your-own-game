@@ -5,24 +5,20 @@ public sealed class MainMenu : Component
 {
 	[Property] public ScreenPanel pnl;
 
-	private bool isShow = false;
-
 	public void Show()
 	{
-		if (isShow)
+		if (pnl.Enabled)
 		{
 			Remove(); 
 
 			return;
 		}
 
-		isShow = true;
 		pnl.Enabled = true;
 	}
 
 	public void Remove()
 	{
-		isShow = false;
 		pnl.Enabled = false;
 	}
 
@@ -34,6 +30,6 @@ public sealed class MainMenu : Component
 
 	protected override void OnStart()
 	{
-		pnl.Enabled = false;
+		pnl.Enabled = false; //! always to false on start
 	}
 }
