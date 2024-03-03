@@ -3,14 +3,14 @@ using System.Text.Json.Serialization;
 
 public class Achievement : ISaveData
 {
-	[JsonIgnore] private static Dictionary<string, Achievement> achievements = new();
+	private static Dictionary<string, Achievement> achievements = new();
 
-	public string ID { get; private set; }
-	public string Name { get; private set; }
-	public string Description { get; private set; }
-	public bool IsLock { get; private set; } = true;
-	public int MaxCount { get; private set; } = 1;
-	public int Count { get; private set; } = 0;
+	public string ID { get; set; }
+	[JsonIgnore] public string Name { get; set; }
+	[JsonIgnore] public string Description { get; set; }
+	public bool IsLock { get; set; } = true;
+	[JsonIgnore] public int MaxCount { get; set; } = 1;
+	public int Count { get; set; } = 0;
 
 	// hooks
 	public static event Action<Achievement> OnUnlocked;
@@ -28,27 +28,56 @@ public class Achievement : ISaveData
 		Count = count;
 	}
 
-	public Achievement Create(string id, string name, string desc = "", int maxCount = 1)
-	{
-		if (maxCount <= 0) return null;
-		if (achievements.ContainsKey(id)) return null;
+	public Achievement() { }
 
-		var achievement = new Achievement(id, name, desc, true, maxCount, 0);
+	public static Achievement CreateOrGet(string id = "", string name = "Unknow", string desc = "Description", int maxCount = 1)
+	{
+		Achievement achievement;
+		if (achievements.TryGetValue(id, out achievement))
+		{
+			if (achievement.CanLoad()) achievement.Load();
+
+			return achievement;
+		}
+
+		if (maxCount <= 0) 
+		{
+			Log.Error("maxCount should be more than 0");
+			return null; 
+		}
+
+		achievement = new Achievement(id, name, desc, true, maxCount, 0);
 		achievements.Add(id, achievement);
+
+		Log.Info($"[Achievement] Created {achievement}");
+
+		if (achievement.CanLoad())
+			achievement.Load();
+		else
+			achievement.Save();
 
 		return achievement;
 	}
 
 	public void SetCount(int count)
 	{
+		if (!IsLock) return;
+
+		int oldCount = Count;
 		Count = count;
 
 		OnSetCount?.Invoke(this, count);
+		Log.Info($"[Achievement] Set count from {oldCount} to {Count} for {this}");
 
 		Save();
 
-		if (Count >= MaxCount && IsLock)
+		if (Count >= MaxCount)
 			Unlock();
+	}
+
+	public void AddCount(int add = 1)
+	{
+		SetCount(Count + add);
 	}
 
 	public void Unlock()
@@ -56,6 +85,7 @@ public class Achievement : ISaveData
 		IsLock = false;
 
 		OnUnlocked?.Invoke(this);
+		Log.Info($"[Achievement] Unlocked {this}");
 
 		Save();
 	}
@@ -80,22 +110,36 @@ public class Achievement : ISaveData
 	public void Save()
 	{
 		SaveData.Save(filename + ".json", achievements);
-		
-		Log.Info($"[Achievement] saved to SaveData");
+		Log.Info($"save {achievements[ID].Count}");
+
+
+		Log.Info($"[Achievement] saved all to SaveData");
+	}
+
+	private bool CanLoad()
+	{
+		if (!FileSystem.Data.FileExists(filename + ".json")) return false;
+
+		var achievements = (Dictionary<string, Achievement>)SaveData.Load<Dictionary<string, Achievement>>(filename + ".json");
+
+		Log.Info($"CanLoad: {achievements.ContainsKey(ID)}");
+
+		return achievements.ContainsKey(ID);
 	}
 
 	public void Load()
 	{
 		var achievements = (Dictionary<string, Achievement>) SaveData.Load<Dictionary<string, Achievement>>(filename + ".json");
-		var achDataFromSave = achievements[ID];
-
-		IsLock = achDataFromSave.IsLock;
-		Count = achDataFromSave.Count;
+        foreach (var item in achievements)
+        {
+			Log.Info($"Loaded: {item.Key} {item.Value.Count}");
+        }
+        var achDataFromSave = achievements[ID];
 
 		Log.Info($"[Achievement] loaded {this} from SaveData");
 
-		if (Count >= MaxCount && IsLock)
-			Unlock();
+		IsLock = achDataFromSave.IsLock;
+		SetCount(achDataFromSave.Count);
 	}
 
 	public static void LoadAll()

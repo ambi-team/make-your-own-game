@@ -5,6 +5,8 @@ public sealed class MainMenu : Component
 {
 	[Property] public ScreenPanel MainMenuPanel { get; set; }
 
+	private Achievement achi_press_esc = Achievement.CreateOrGet("press_esc", "The holy button", "Don't press Escape", 1);
+	
 	public void Show()
 	{
 		if (MainMenuPanel.Enabled)
@@ -14,7 +16,10 @@ public sealed class MainMenu : Component
 			return;
 		}
 
-		MainMenuPanel.Enabled = true;
+        //Log.Info(achi_press_esc.Count);
+        //achi_press_esc.Load();
+
+        MainMenuPanel.Enabled = true;
 	}
 
 	public void Remove()
