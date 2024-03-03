@@ -67,34 +67,41 @@
       "__Prefab": "prefabs/player.prefab"
     },
     {
+      "Id": "d0254a7c-0b6d-4bf4-a448-d6871ab61082",
+      "Name": "\uD83D\uDCAB DATA \uD83D\uDCAB",
+      "Position": "278.0361,331.6518,76.7455",
+      "Enabled": true
+    },
+    {
       "Id": "cf7c6201-3164-4664-ad2c-281b3e45081d",
       "Name": "Game",
       "Position": "183.8709,140.9425,99.10318",
+      "Enabled": true
+    },
+    {
+      "Id": "649059c1-1edc-4780-b80f-3c23e2919e86",
+      "Name": "UI: MainMenu",
+      "Position": "278.0361,331.6518,76.7455",
       "Enabled": true,
-      "Children": [
+      "Components": [
         {
-          "Id": "fb326758-8ba5-4163-ab02-f8ffb05b352f",
-          "Name": "MainMenu",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ScreenPanel",
-              "AutoScreenScale": true,
-              "Opacity": 1,
-              "Scale": 1,
-              "ZIndex": 100
-            },
-            {
-              "__type": "MainMenu",
-              "ach": "achivements/sad.achiv",
-              "MainMenuPanel": null
-            },
-            {
-              "__type": "MainMenuPanel",
-              "MyStringValue": "Main Menu:\n\nStart\nSettings\nExit"
-            }
-          ]
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MainMenu",
+          "MainMenuPanel": {
+            "_type": "component",
+            "go": "649059c1-1edc-4780-b80f-3c23e2919e86",
+            "component_type": "ScreenPanel"
+          }
+        },
+        {
+          "__type": "MainMenuPanel",
+          "MyStringValue": "Hello World!"
         }
       ]
     }
@@ -122,6 +129,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-03T07:32:44.0229175\u002B05:00",
+  "LastSaved": "2024-03-03T16:57:35.954524\u002B05:00",
   "__references": []
 }

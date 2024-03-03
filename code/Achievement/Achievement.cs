@@ -1,68 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-[GameResource("Achievement", "achiv", "Description.", Icon = "Drag Indicator")]
-public partial class Achievement : GameResource, ISaveData
+public class Achievement : ISaveData
 {
-	[JsonIgnore] private static Dictionary<int, Achievement> achievements = new();
-	[JsonIgnore, Hide] public AchievementData data;
+	[JsonIgnore] private static Dictionary<string, Achievement> achievements = new();
 
+	public string ID { get; private set; }
 	public string Name { get; private set; }
 	public string Description { get; private set; }
+	public bool IsLock { get; private set; } = true;
 	public int MaxCount { get; private set; } = 1;
-	[Hide] public int ID { get; private set; }
-	[Hide] public bool IsLock { get; private set; } = true;
-	[Hide] public int Count { get; private set; } = 0;
+	public int Count { get; private set; } = 0;
 
 	// hooks
 	public static event Action<Achievement> OnUnlocked;
-	public static event Action<Achievement, int> OnAddedCount;
-	public static event Action<Achievement> OnPostLoaded;
-	public static event Action<Achievement> OnReloaded;
+	public static event Action<Achievement, int> OnSetCount;
 
 	private static string filename = "achievements"; // without postfix
 
-
-	protected override void PostLoad()
+	private Achievement(string id, string name, string description, bool isLock, int maxCount, int count)
 	{
-		base.PostLoad();
-
-		ID = ResourceId;
-
-		if (string.IsNullOrEmpty(Name)) 
-			Name = ResourceName;
-
-		Log.Info($"[Achievement] the first loaded {this}");
-
-		achievements.Add(ID, this);
-		data = new AchievementData() { ID = ID, Count = Count, IsLock = IsLock };
-
-		Save();
-
-		OnPostLoaded?.Invoke(this);
+		ID = id;
+		Name = name;
+		Description = description;
+		IsLock = isLock;
+		MaxCount = maxCount;
+		Count = count;
 	}
 
-	protected override void PostReload()
+	public Achievement Create(string id, string name, string desc = "", int maxCount = 1)
 	{
-		base.PostReload();
+		if (maxCount <= 0) return null;
+		if (achievements.ContainsKey(id)) return null;
 
-		Log.Info($"[Achievement] reloaded {this}");
+		var achievement = new Achievement(id, name, desc, true, maxCount, 0);
+		achievements.Add(id, achievement);
 
-		if (data is null)
-			data = new AchievementData() { ID = ID, Count = Count, IsLock = IsLock };
-
-		Load();
-
-		OnReloaded?.Invoke(this);
+		return achievement;
 	}
 
-	public void AddCount(int count)
+	public void SetCount(int count)
 	{
-		Count += count;
-		data.Count = Count;
+		Count = count;
 
-		OnAddedCount?.Invoke(this, count);
+		OnSetCount?.Invoke(this, count);
 
 		Save();
 
@@ -73,7 +54,6 @@ public partial class Achievement : GameResource, ISaveData
 	public void Unlock()
 	{
 		IsLock = false;
-		data.IsLock = IsLock;
 
 		OnUnlocked?.Invoke(this);
 
@@ -83,12 +63,11 @@ public partial class Achievement : GameResource, ISaveData
 	public void Lock()
 	{
 		IsLock = true;
-		data.IsLock = IsLock;
 
 		Save();
 	}
 
-	public static IReadOnlyDictionary<int, Achievement> GetAll()
+	public static IReadOnlyDictionary<string, Achievement> GetAll()
 	{
 		return achievements;
 	}
@@ -100,21 +79,15 @@ public partial class Achievement : GameResource, ISaveData
 
 	public void Save()
 	{
-		Dictionary<int, AchievementData> objs = new();
-		foreach (var item in achievements)
-		{
-			objs[item.Key] = item.Value.data;
-		}
-
-		SaveData.Save(filename + ".json", objs);
+		SaveData.Save(filename + ".json", achievements);
 		
 		Log.Info($"[Achievement] saved to SaveData");
 	}
 
 	public void Load()
 	{
-		var achies = (Dictionary<int, AchievementData>) SaveData.Load<Dictionary<int, AchievementData>>(filename + ".json");
-		var achDataFromSave = achies[ID];
+		var achievements = (Dictionary<string, Achievement>) SaveData.Load<Dictionary<string, Achievement>>(filename + ".json");
+		var achDataFromSave = achievements[ID];
 
 		IsLock = achDataFromSave.IsLock;
 		Count = achDataFromSave.Count;

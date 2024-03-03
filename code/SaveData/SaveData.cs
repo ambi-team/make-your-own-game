@@ -1,14 +1,14 @@
 ﻿public static class SaveData
 {
-	private static BaseFileSystem data = FileSystem.Data;
+	private static BaseFileSystem d = FileSystem.Data;
 
 	public static void Save(string filename, object value)
 	{
-		data.WriteJson(filename, value);
+		d.WriteJson(filename, value);
 	}
 
 	public static object Load<T>(string header)
 	{	
-		return data.ReadJson<T>(header);
+		return d.ReadJson<T>(header);
 	}
 }
