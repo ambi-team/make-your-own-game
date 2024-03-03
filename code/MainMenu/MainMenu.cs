@@ -4,6 +4,7 @@ using System;
 public sealed class MainMenu : Component
 {
 	[Property] public ScreenPanel MainMenuPanel { get; set; }
+	[Property] public Achievement ach;
 
 	public void Show()
 	{
@@ -34,5 +35,8 @@ public sealed class MainMenu : Component
 			MainMenuPanel = GameObject.Components.Get<ScreenPanel>();
 
 		MainMenuPanel.Enabled = false; //! always to false on start
+
+		Achievement.LoadAll();
+		Log.Info(ach.Count);
 	}
 }

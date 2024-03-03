@@ -71,11 +71,6 @@
       "Name": "Game",
       "Position": "183.8709,140.9425,99.10318",
       "Enabled": true,
-      "Components": [
-        {
-          "__type": "AchievementComponent"
-        }
-      ],
       "Children": [
         {
           "Id": "fb326758-8ba5-4163-ab02-f8ffb05b352f",
@@ -92,6 +87,7 @@
             },
             {
               "__type": "MainMenu",
+              "ach": "achivements/sad.achiv",
               "MainMenuPanel": null
             },
             {
@@ -126,6 +122,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-03T02:21:42.6751291\u002B05:00",
+  "LastSaved": "2024-03-03T07:32:44.0229175\u002B05:00",
   "__references": []
 }
