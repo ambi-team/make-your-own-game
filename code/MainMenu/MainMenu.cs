@@ -1,11 +1,10 @@
 ﻿using Sandbox.UI;
-using System;
 
 public sealed class MainMenu : Component
 {
 	[Property] public ScreenPanel MainMenuPanel { get; set; }
 
-	private Achievement achi_press_esc = Achievement.CreateOrGet("press_esc", "The holy button", "Don't press Escape", 1);
+	private Achievement achi_press_esc = Achievement.CreateOrGet("press_esc_4_times", "The holy button", "Don't press Escape on four times", 4);
 	
 	public void Show()
 	{
@@ -16,10 +15,7 @@ public sealed class MainMenu : Component
 			return;
 		}
 
-        //Log.Info(achi_press_esc.Count);
-        //achi_press_esc.Load();
-
-        MainMenuPanel.Enabled = true;
+		MainMenuPanel.Enabled = true;
 	}
 
 	public void Remove()
@@ -39,8 +35,5 @@ public sealed class MainMenu : Component
 			MainMenuPanel = GameObject.Components.Get<ScreenPanel>();
 
 		MainMenuPanel.Enabled = false; //! always to false on start
-
-		//Achievement.LoadAll();
-		//Log.Info(ach.Count);
 	}
 }

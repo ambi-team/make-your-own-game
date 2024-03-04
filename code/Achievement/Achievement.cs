@@ -5,7 +5,7 @@ public class Achievement : ISaveData
 {
 	private static Dictionary<string, Achievement> achievements = new();
 
-	public string ID { get; set; }
+	[JsonIgnore] public string ID { get; set; }
 	[JsonIgnore] public string Name { get; set; }
 	[JsonIgnore] public string Description { get; set; }
 	public bool IsLock { get; set; } = true;
@@ -110,8 +110,6 @@ public class Achievement : ISaveData
 	public void Save()
 	{
 		SaveData.Save(filename + ".json", achievements);
-		Log.Info($"save {achievements[ID].Count}");
-
 
 		Log.Info($"[Achievement] saved all to SaveData");
 	}
@@ -129,17 +127,16 @@ public class Achievement : ISaveData
 
 	public void Load()
 	{
-		var achievements = (Dictionary<string, Achievement>) SaveData.Load<Dictionary<string, Achievement>>(filename + ".json");
-        foreach (var item in achievements)
-        {
-			Log.Info($"Loaded: {item.Key} {item.Value.Count}");
-        }
-        var achDataFromSave = achievements[ID];
+		var achievementsFromSave = (Dictionary<string, Achievement>) SaveData.Load<Dictionary<string, Achievement>>(filename + ".json");
+        var achDataFromSave = achievementsFromSave[ID];
 
-		Log.Info($"[Achievement] loaded {this} from SaveData");
+		var count = achDataFromSave.Count;
+		var isLock = achDataFromSave.IsLock;
 
-		IsLock = achDataFromSave.IsLock;
-		SetCount(achDataFromSave.Count);
+		Log.Info($"[Achievement] loaded {this} [Count: {count}, IsLock: {isLock}] from SaveData");
+
+		IsLock = isLock;
+		SetCount(count);
 	}
 
 	public static void LoadAll()
