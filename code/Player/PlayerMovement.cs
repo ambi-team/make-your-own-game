@@ -1,10 +1,9 @@
-using Sandbox;
 using Sandbox.Citizen;
-using System.Diagnostics;
+using System.Text;
 
 public sealed class PlayerMovement : Component
 {
-
+	#region Props/Vars
 	[Property] public float GroundControl { get; set; } = 4.0f;
 	[Property] public float AirControl { get; set; } = 0.1f;
 	[Property] public float MaxForce { get; set; } = 50.0f;
@@ -27,52 +26,60 @@ public sealed class PlayerMovement : Component
 
 	private CharacterController _characterController;
 	private CitizenAnimationHelper _animationHelper;
+	#endregion
 
-	protected override void OnAwake()
+	#region Logic
+	public void MoveForward()
 	{
-		_characterController = Components.Get<CharacterController>();
-		_animationHelper = Components.Get<CitizenAnimationHelper>();
-	}
-
-	protected override void OnUpdate()
-	{
-		if ( CanSprinting ) IsSprinting = Input.Down( "Run" );
-		if ( CanDuck ) UpdateDuck();
-		if ( Input.Pressed( "Jump" ) && CanJump ) Jump();
-
-		RotateBody();
-		UpdateAnimation();
-	}
-
-	protected override void OnFixedUpdate()
-	{
-		BuildWishVelocity();
-		Move();
-	}
-
-	void BuildWishVelocity()
-	{
-		WishVelocity = 0;
-
 		Rotation rot = Head.Transform.Rotation;
+		WishVelocity += rot.Forward;
+	}
 
-		if ( Input.Down( "Forward" ) ) WishVelocity += rot.Forward;
-		if ( Input.Down( "Backward" ) ) WishVelocity += rot.Backward;
-		if ( Input.Down( "Left" ) ) WishVelocity += rot.Left;
-		if ( Input.Down( "Right" ) ) WishVelocity += rot.Right;
+	public void MoveBackward()
+	{
+		Rotation rot = Head.Transform.Rotation;
+		WishVelocity += rot.Backward;
+	}
+
+	public void MoveLeft()
+	{
+		Rotation rot = Head.Transform.Rotation;
+		WishVelocity += rot.Left;
+	}
+
+	public void MoveRight()
+	{
+		Rotation rot = Head.Transform.Rotation;
+		WishVelocity += rot.Right;
 
 		WishVelocity = WishVelocity.WithZ(0);
 
 		if (!WishVelocity.IsNearZeroLength) { WishVelocity = WishVelocity.Normal; }
 
+		WishVelocity *= Speed;
+	}
+
+	public void BuildWishVelocity()
+	{
+		WishVelocity = 0;
+
+		Rotation rot = Head.Transform.Rotation;
+
+		if (Input.Down("Forward")) MoveForward();
+		if (Input.Down("Backward")) MoveBackward();
+		if (Input.Down("Left")) MoveLeft();
+		if (Input.Down("Right")) MoveRight();
+
+		WishVelocity = WishVelocity.WithZ(0);
+
+		if (!WishVelocity.IsNearZeroLength) { WishVelocity = WishVelocity.Normal; }
 
 		if ( IsCrouching ) WishVelocity *= CrouchSpeed; 
 		else if ( IsSprinting ) WishVelocity *= RunSpeed; 
 		else WishVelocity *= Speed;
-
 	}
 
-	void Move()
+	public void Move()
 	{
 		var gravity = Scene.PhysicsWorld.Gravity;
 
@@ -91,30 +98,25 @@ public sealed class PlayerMovement : Component
 
 		_characterController.Move();
 
-		if ( !_characterController.IsOnGround )
-		{
-			_characterController.Velocity += gravity * Time.Delta * 0.5f;
-		}
+		//? idk what is it
+		if (_characterController.IsOnGround)
+			_characterController.Velocity = _characterController.Velocity.WithZ(0);
 		else
-		{
-			_characterController.Velocity = _characterController.Velocity.WithZ( 0 );
-		}
+			_characterController.Velocity += gravity * Time.Delta * 0.5f;
 	}
 
-	void RotateBody()
+	public void RotateBody()
 	{
-		if ( Body is null ) return;
+		if (Body is null) return;
 
 		var targerAngle = new Angles(0, Head.Transform.Rotation.Yaw(), 0);
-		float rotationDifference = Body.Transform.Rotation.Distance( targerAngle );
+		float rotationDifference = Body.Transform.Rotation.Distance(targerAngle);
 
-		if( rotationDifference > 50.0f || _characterController.Velocity.Length > 10f )
-		{
-			Body.Transform.Rotation = Rotation.Lerp( Body.Transform.Rotation, targerAngle, Time.Delta * 2.0f );
-		}
+		if (rotationDifference > 50.0f || _characterController.Velocity.Length > 10f)
+			Body.Transform.Rotation = Rotation.Lerp(Body.Transform.Rotation, targerAngle, Time.Delta * 2.0f);
 	}
 
-	void UpdateAnimation()
+	public void UpdateAnimation()
 	{
 		if ( _animationHelper is null ) return;
 
@@ -127,7 +129,7 @@ public sealed class PlayerMovement : Component
 		_animationHelper.DuckLevel = IsCrouching ? 1f : 0f;
 	}
 
-	void Jump()
+	public void Jump()
 	{
 		if ( !_characterController.IsOnGround) return;
 
@@ -135,7 +137,7 @@ public sealed class PlayerMovement : Component
 		_animationHelper?.TriggerJump();
 	}
 
-	void UpdateDuck()
+	public void UpdateDuck()
 	{
 		if ( _characterController is null ) return;
 
@@ -150,12 +152,9 @@ public sealed class PlayerMovement : Component
 			IsCrouching = false;
 			_characterController.Height *= 2.0f;
 		}
-
-
-
 	}
 
-	bool ChekOverPlayer()
+	public bool ChekOverPlayer()
 	{
 		var camStack = Scene.Trace.Ray( Head.Transform.Position, Head.Transform.Position + new Vector3( 0, 0, 30 ) )
 			.WithoutTags( "player", "trigger" )
@@ -164,5 +163,30 @@ public sealed class PlayerMovement : Component
 
 		return camStack.Hit;
 	}
+	#endregion
 
+	#region Components
+	protected override void OnAwake()
+	{
+		_characterController = Components.Get<CharacterController>();
+		_animationHelper = Components.Get<CitizenAnimationHelper>();
+	}
+
+	protected override void OnUpdate()
+	{
+		if (CanSprinting) IsSprinting = Input.Down("Run");
+		if (CanDuck) UpdateDuck();
+		if (Input.Pressed("Jump") && CanJump) Jump();
+
+		RotateBody();
+		UpdateAnimation();
+	}
+
+	protected override void OnFixedUpdate()
+	{
+		BuildWishVelocity();
+		//MoveRight();
+		Move();
+	}
+	#endregion
 }
