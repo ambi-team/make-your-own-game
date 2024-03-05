@@ -7,13 +7,18 @@ public sealed class Player : Component, Component.ICollisionListener
     protected override void OnStart()
 	{
 		if (Character is null)
-			Character = GameObject.Components.GetInChildren<CharacterController>();
+			Character = GameObject.Components.GetInChildrenOrSelf<CharacterController>();
 
 		if (Movement is null)
-			Movement = GameObject.Components.GetInChildren<PlayerMovement>();
+			Movement = GameObject.Components.GetInChildrenOrSelf<PlayerMovement>();
 
 		if (Camera is null)
-			Camera = GameObject.Components.GetInChildren<CameraMovement>();
+			Camera = GameObject.Components.GetInChildrenOrSelf<CameraMovement>();
+	}
+
+	protected override void OnFixedUpdate()
+	{
+		//Movement.Run();
 	}
 
 	public void OnCollisionStart(Collision other)

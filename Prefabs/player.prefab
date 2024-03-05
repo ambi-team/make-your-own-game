@@ -1,7 +1,7 @@
 {
   "RootObject": {
     "Id": "95102735-fe3d-4714-b7ae-b92cfee92d30",
-    "Name": "Player",
+    "Name": "player",
     "Tags": "player,trigger",
     "Enabled": true,
     "Components": [
@@ -55,8 +55,11 @@
         },
         "JumpForce": 400,
         "MaxForce": 50,
-        "RunSpeed": 290,
+        "RunSpeed": 356.10007,
         "Speed": 160
+      },
+      {
+        "__type": "Player"
       }
     ],
     "Children": [

@@ -78,7 +78,11 @@
       "Components": [
         {
           "__type": "ReverseTime",
-          "ply": null
+          "ply": {
+            "_type": "component",
+            "go": "c0f9c7ca-5a35-4ee1-af27-9db307d883e6",
+            "component_type": "Player"
+          }
         },
         {
           "__type": "SoundPointComponent",
@@ -130,7 +134,7 @@
     },
     {
       "Id": "c0f9c7ca-5a35-4ee1-af27-9db307d883e6",
-      "Name": "Player",
+      "Name": "PlayerObj",
       "Position": "154.5629,195.4093,47.99999",
       "Tags": "player,trigger",
       "Enabled": true,
@@ -160,8 +164,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-05T16:55:26.2817317\u002B05:00",
-  "__references": [
-    "igrotronika.coin1"
-  ]
+  "LastSaved": "2024-03-05T18:42:18.1446933\u002B05:00",
+  "__references": []
 }

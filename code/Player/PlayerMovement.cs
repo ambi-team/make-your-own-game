@@ -21,42 +21,39 @@ public sealed class PlayerMovement : Component
 
 	public bool IsCrouching = false;
 	public bool IsSprinting = false;
+	private bool isForceSpriting = false;
+	private bool isForceDuck = false;
 
 	public Vector3 WishVelocity = Vector3.Zero;
 
 	private CharacterController _characterController;
 	private CitizenAnimationHelper _animationHelper;
+
+	private bool moveForward = false;
+	private bool moveBackward = false;
+	private bool moveLeft = false;
+	private bool moveRight = false;
 	#endregion
 
 	#region Logic
 	public void MoveForward()
 	{
-		Rotation rot = Head.Transform.Rotation;
-		WishVelocity += rot.Forward;
+		moveForward = true;
 	}
 
 	public void MoveBackward()
 	{
-		Rotation rot = Head.Transform.Rotation;
-		WishVelocity += rot.Backward;
+		moveBackward = true;
 	}
 
 	public void MoveLeft()
 	{
-		Rotation rot = Head.Transform.Rotation;
-		WishVelocity += rot.Left;
+		moveLeft = true;
 	}
 
 	public void MoveRight()
 	{
-		Rotation rot = Head.Transform.Rotation;
-		WishVelocity += rot.Right;
-
-		WishVelocity = WishVelocity.WithZ(0);
-
-		if (!WishVelocity.IsNearZeroLength) { WishVelocity = WishVelocity.Normal; }
-
-		WishVelocity *= Speed;
+		moveRight = true;
 	}
 
 	public void BuildWishVelocity()
@@ -65,17 +62,37 @@ public sealed class PlayerMovement : Component
 
 		Rotation rot = Head.Transform.Rotation;
 
-		if (Input.Down("Forward")) MoveForward();
-		if (Input.Down("Backward")) MoveBackward();
-		if (Input.Down("Left")) MoveLeft();
-		if (Input.Down("Right")) MoveRight();
+		if (Input.Down("Forward") || moveForward)
+		{
+			WishVelocity += rot.Forward;
+			moveForward = false;
+		}
+		if (Input.Down("Backward") || moveBackward)
+		{
+			WishVelocity += rot.Backward;
+			moveBackward = false;
+		}
+		if (Input.Down("Left") || moveLeft)
+		{
+			WishVelocity += rot.Left;
+			moveLeft = false;
+		}
+		if (Input.Down("Right") || moveRight)
+		{
+			WishVelocity += rot.Right;
+			moveRight = false;
+		}
 
 		WishVelocity = WishVelocity.WithZ(0);
 
 		if (!WishVelocity.IsNearZeroLength) { WishVelocity = WishVelocity.Normal; }
 
 		if ( IsCrouching ) WishVelocity *= CrouchSpeed; 
-		else if ( IsSprinting ) WishVelocity *= RunSpeed; 
+		else if (IsSprinting || isForceSpriting)
+		{
+			WishVelocity *= RunSpeed;
+			if (isForceSpriting) isForceSpriting = false;
+		}
 		else WishVelocity *= Speed;
 	}
 
@@ -137,20 +154,38 @@ public sealed class PlayerMovement : Component
 		_animationHelper?.TriggerJump();
 	}
 
+	public void Run()
+	{
+		isForceSpriting = true;
+	}
+
+	public void Duck(bool state)
+	{
+		isForceDuck = state;
+	}
+
 	public void UpdateDuck()
 	{
 		if ( _characterController is null ) return;
 
-		if ( Input.Down( "Duck") && !IsCrouching)
+		if (!isForceDuck)
+		{
+			if (Input.Down("Duck") && !IsCrouching)
+			{
+				IsCrouching = true;
+				_characterController.Height /= 2.0f;
+			}
+
+			if (IsCrouching && !Input.Down("Duck") && !ChekOverPlayer())
+			{
+				IsCrouching = false;
+				_characterController.Height *= 2.0f;
+			}
+		} 
+		else
 		{
 			IsCrouching = true;
 			_characterController.Height /= 2.0f;
-		}
-
-		if ( IsCrouching && !Input.Down( "Duck" ) && !ChekOverPlayer() )
-		{
-			IsCrouching = false;
-			_characterController.Height *= 2.0f;
 		}
 	}
 
@@ -185,7 +220,6 @@ public sealed class PlayerMovement : Component
 	protected override void OnFixedUpdate()
 	{
 		BuildWishVelocity();
-		//MoveRight();
 		Move();
 	}
 	#endregion

@@ -1,21 +1,25 @@
 ﻿using System;
+using System.Threading;
 
 public sealed class ReverseTime : Component
 {
-	[Property] public GameObject ply;
+	[Property] public Player ply;
 
 	public bool onRecording;
 	public bool onPlaying;
 
 	private int index = 0;
+	private int indexPlay = 0;
 
 	private Vector3 startPos;
-	//todo startEyeAngles
-	private float defaultTimeRecoding = 5f;
+	private Rotation startEyeRotation;
+	private float defaultTimeRecoding = 6f;
 	private TimeUntil TimeRecording { get; set; }
 
 	public Dictionary<float, string> actions = new();
-	//todo record mouse axis
+	public Dictionary<float, bool> detectRuns = new();
+	public Dictionary<float, bool> detectDucks = new();
+	public Dictionary<float, Rotation> eyeRotations = new();
 
 	//todo 3. Переделать PlayerController
 	//todo 4. Воспроизвести + не забыть про предметы
@@ -26,6 +30,8 @@ public sealed class ReverseTime : Component
 		if (onRecording) return;
 		if (onPlaying) return;
 
+		startPos = ply.GameObject.Transform.Position;
+		startEyeRotation = ply.Camera.Head.Transform.Rotation;
 		if (actions.Count > 0)
 		{
 			for (int i = 0; i < actions.Count; i++)
@@ -50,10 +56,21 @@ public sealed class ReverseTime : Component
 
 		index++;
 
-		var value = GetCurrentAction();
+		var action = GetCurrentAction();
+		if (!actions.TryAdd(index, action)) 
+			actions[index] = action;
 
-		if (!actions.TryAdd(index, value)) 
-			actions[index] = value;
+		var isRun = Input.Down("Run");
+		if (!detectRuns.TryAdd(index, isRun))
+			detectRuns[index] = isRun;
+
+		var isDuck = Input.Down("Duck");
+		if (!detectDucks.TryAdd(index, isDuck))
+			detectDucks[index] = isDuck;
+
+		var eyeRot = ply.Camera.Head.Transform.Rotation;
+		if (!eyeRotations.TryAdd(index, eyeRot))
+			eyeRotations[index] = eyeRot;
 
 		Log.Info($"[ReverseTime] Index {index} | TimeRecording {TimeRecording}");
 	}
@@ -66,8 +83,7 @@ public sealed class ReverseTime : Component
 
 		Log.Info($"[ReverseTime] Stop recording {index}");
 
-		foreach (var key in actions.Keys)
-			Log.Info($"Key {key} | Value {actions[key]}");
+		StartPlay();
 	}
 
 	private string GetCurrentAction()
@@ -87,19 +103,19 @@ public sealed class ReverseTime : Component
 		{
 			value = "attack2";
 		} 
-		else if (Input.Released("Forward"))
+		else if (Input.Down("Forward"))
 		{
 			value = "Forward";
 		} 
-		else if (Input.Released("Backward"))
+		else if (Input.Down("Backward"))
 		{
 			value = "Backward";
 		} 
-		else if (Input.Released("Left"))
+		else if (Input.Down("Left"))
 		{
 			value = "Left";
 		} 
-		else if (Input.Released("Right"))
+		else if (Input.Down("Right"))
 		{
 			value = "Right";
 		} 
@@ -107,18 +123,6 @@ public sealed class ReverseTime : Component
 		{
 			value = "Jump";
 		} 
-		else if (Input.Released("Run"))
-		{
-			value = "Run";
-		} 
-		else if (Input.Released("Walk"))
-		{
-			value = "Walk";
-		} 
-		else if (Input.Released("Duck"))
-		{
-			value = "Duck";
-		}
 
 		return value;
 	}
@@ -129,6 +133,9 @@ public sealed class ReverseTime : Component
 	{
 		if (onPlaying) return;
 
+		ply.GameObject.Transform.Position = startPos;
+		ply.Camera.Head.Transform.Rotation = startEyeRotation;
+		indexPlay = 0;
 		onPlaying = true; // native start
 
 		Log.Info($"[ReverseTime] Start play {index}");
@@ -137,16 +144,59 @@ public sealed class ReverseTime : Component
 	public void Play()
 	{
 		if (!onPlaying) return;
-		if (index <= 0)
+		if (indexPlay >= index)
 		{
 			StopPlay();
 
 			return;
 		}
 
-		index--;
+		indexPlay++;
 
-		//todo
+		PlayerMovement mov = ply.Movement;
+
+		string action = actions[indexPlay];
+		if (action == "use")
+		{
+			//
+		} 
+		else if (action == "attack1")
+		{
+			//
+		} 
+		else if (action == "attack2")
+		{
+			//
+		} 
+		else if (action == "Forward")
+		{
+			mov.MoveForward();
+		} 
+		else if (action == "Backward")
+		{
+			mov.MoveBackward();
+		} 
+		else if (action == "Left")
+		{
+			mov.MoveLeft();
+		} 
+		else if (action == "Right")
+		{
+			mov.MoveRight();
+		} 
+		else if (action == "Jump")
+		{
+			mov.Jump();
+		} 
+
+		bool isDuck = detectDucks[indexPlay];
+		mov.Duck(isDuck);
+
+		bool isRun = detectRuns[indexPlay];
+		if (isRun) mov.Run();
+
+		Rotation eyeRot = eyeRotations[indexPlay];
+		ply.Camera.Head.Transform.Rotation = eyeRot;
 	}
 
 	public void StopPlay()
@@ -162,7 +212,7 @@ public sealed class ReverseTime : Component
 	#region Components
 	protected override void OnStart()
 	{
-		//StartRecord(); //todo remove
+		StartRecord(); //todo remove
 	}
 
 	protected override void OnFixedUpdate()
