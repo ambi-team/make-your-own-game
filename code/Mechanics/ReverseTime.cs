@@ -6,8 +6,10 @@ public sealed class ReverseTime : Component
 
 	private bool onRecording;
 	private int index = 0;
-	private float time = 10f;
+	private float time = 20f;
 	private TimeUntil TimeRecording { get; set; }
+
+	public Dictionary<float, string> actions = new();
 
 	//todo 1. Сделать OnRecordInputsPlayers
 	//todo 2. Записывать действия игрока 20 секунд (ключ = единица времени; значение = инпут) 
@@ -30,6 +32,7 @@ public sealed class ReverseTime : Component
 		if (!onRecording) return;
 
 		onRecording = false;
+
 		Log.Info($"[ReverseTime] Stop {index}");
 	}
 
@@ -49,6 +52,9 @@ public sealed class ReverseTime : Component
 		}
 
 		index++;
-		Log.Info($"[ReverseTime] index {index} | timeRecording {TimeRecording}");
+
+		actions.Add(index, "a");
+
+		Log.Info($"[ReverseTime] Index {index} | TimeRecording {TimeRecording}");
 	}
 }
