@@ -67,7 +67,7 @@ public class Achievement : ISaveData
 		Count = count;
 
 		OnSetCount?.Invoke(this, count);
-		Log.Info($"[Achievement] Set count from {oldCount} to {Count} for {this}");
+		Log.Info($"[Achievement] Set count from {oldCount} >> {Count} for {this}");
 
 		Save();
 
@@ -118,11 +118,9 @@ public class Achievement : ISaveData
 	{
 		if (!FileSystem.Data.FileExists(filename + ".json")) return false;
 
-		var achievements = (Dictionary<string, Achievement>)SaveData.Load<Dictionary<string, Achievement>>(filename + ".json");
+		var achievementsFromSave = (Dictionary<string, Achievement>)SaveData.Load<Dictionary<string, Achievement>>(filename + ".json");
 
-		Log.Info($"CanLoad: {achievements.ContainsKey(ID)}");
-
-		return achievements.ContainsKey(ID);
+		return achievementsFromSave.ContainsKey(ID);
 	}
 
 	public void Load()
