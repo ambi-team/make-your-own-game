@@ -1,59 +1,24 @@
-using System;
-using System.Numerics;
-
 public sealed class Player : Component, Component.ICollisionListener 
 {
-	[Property] public Achievement achiv_kill;
-	[Property] public HighlightOutline ho;
-	[Property] public GameObject ply;
-
-	[Property] public Action OnKill { get; set; }
-
-	private CharacterController character;
-	private CameraMovement camera;
+    public CharacterController Character { get; set; }
+	public PlayerMovement Movement { get; set; }
+	public CameraMovement Camera { get; set; }
 
     protected override void OnStart()
 	{
-		ho.Width = 0f;
+		if (Character is null)
+			Character = GameObject.Components.GetInChildren<CharacterController>();
 
-		if (ply is not null) 
-		{
-			character = ply.Components.GetInChildren<CharacterController>();
-			camera = ply.Components.GetInChildren<CameraMovement>();
-		}
-	}
+		if (Movement is null)
+			Movement = GameObject.Components.GetInChildren<PlayerMovement>();
 
-	public void Kill()
-	{
-		OnKill();
-	}
-
-	protected override void OnUpdate()
-	{
-		SceneTraceResult trResult = camera.traceResult;
-		if (!trResult.Hit) return;
-
-		GameObject obj = trResult.GameObject;
-
-		Log.Info($"{obj} {GameObject}");
-		if (ho.Width < 0.6f && obj == GameObject)
-		{
-			ho.Width = 0.6f;
-		} else
-		{
-			ho.Width = 0f;
-		}
+		if (Camera is null)
+			Camera = GameObject.Components.GetInChildren<CameraMovement>();
 	}
 
 	public void OnCollisionStart(Collision other)
 	{
-		var obj = other.Other.GameObject;
-		if (obj != ply) return;
-
-		character.Velocity = -obj.Transform.Local.Forward * 1000f;
-		character.Move();
-
-		Log.Info("PUSH !");
+		//
 	}
 
 	public void OnCollisionUpdate(Collision other)
