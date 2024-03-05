@@ -35,7 +35,7 @@ public sealed class ReverseTime : Component
 		TimeRecording = defaultTimeRecoding;
 		onRecording = true; // native start
 
-		Log.Info($"[ReverseTime] Start {index}");
+		Log.Info($"[ReverseTime] Start recording {index}");
 	}
 
 	public void Record()
@@ -64,7 +64,7 @@ public sealed class ReverseTime : Component
 
 		onRecording = false;
 
-		Log.Info($"[ReverseTime] Stop {index}");
+		Log.Info($"[ReverseTime] Stop recording {index}");
 
 		foreach (var key in actions.Keys)
 			Log.Info($"Key {key} | Value {actions[key]}");
@@ -127,17 +127,35 @@ public sealed class ReverseTime : Component
 	#region Play logic
 	public void StartPlay()
 	{
+		if (onPlaying) return;
 
+		onPlaying = true; // native start
+
+		Log.Info($"[ReverseTime] Start play {index}");
 	}
 
 	public void Play()
 	{
+		if (!onPlaying) return;
+		if (index <= 0)
+		{
+			StopPlay();
 
+			return;
+		}
+
+		index--;
+
+		//todo
 	}
 
 	public void StopPlay()
 	{
+		if (!onPlaying) return;
 
+		onPlaying = false;
+
+		Log.Info($"[ReverseTime] Stop play {index}");
 	}
 	#endregion
 

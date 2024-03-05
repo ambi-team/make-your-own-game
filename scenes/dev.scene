@@ -79,6 +79,19 @@
         {
           "__type": "ReverseTime",
           "ply": null
+        },
+        {
+          "__type": "SoundPointComponent",
+          "Force2d": false,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "Repeat": false,
+          "SoundEvent": "sound/coin1.sound",
+          "SoundOverride": false,
+          "StopOnNew": false,
+          "Volume": 1
         }
       ]
     },
@@ -147,6 +160,8 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-05T06:15:19.3639864\u002B05:00",
-  "__references": []
+  "LastSaved": "2024-03-05T16:55:26.2817317\u002B05:00",
+  "__references": [
+    "igrotronika.coin1"
+  ]
 }
