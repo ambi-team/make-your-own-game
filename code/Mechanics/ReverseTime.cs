@@ -3,6 +3,7 @@
 	#region Props/Vars
 	[Property] public Player ply;
 	[Property] public PrefabScene pseudoPlyPrefab;
+	[Property] public Color pseudoPlyColor;
 	private Player pseudoPly;
 
 	public bool onRecording;
@@ -180,16 +181,11 @@
 		pseudoPly.Movement.Head.Transform.Rotation = startEyeRotation;
 
 		ModelRenderer renderer = pseudoPly.Movement.Body.Components.Get<ModelRenderer>();
-		renderer.Tint = new Color32(109, 231, 255, 240);
+		renderer.Tint = pseudoPlyColor;
 	}
 	#endregion
 
 	#region Components
-	protected override void OnStart()
-	{
-		StartRecord(); //todo remove
-	}
-
 	protected override void OnFixedUpdate()
 	{
 		if (onRecording)
