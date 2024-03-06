@@ -29,9 +29,6 @@
 	private TimeUntil TimeRecording { get; set; }
 	#endregion
 
-	//todo 3. Переделать PlayerController
-	//todo 4. Воспроизвести + не забыть про предметы
-
 	#region Record logic
 	public void StartRecord()
 	{
