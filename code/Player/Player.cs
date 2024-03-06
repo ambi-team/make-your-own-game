@@ -1,10 +1,14 @@
-public sealed class Player : Component, Component.ICollisionListener 
+public sealed class Player : Component
 {
-    public CharacterController Character { get; set; }
-	public PlayerMovement Movement { get; set; }
-	public CameraMovement Camera { get; set; }
+	#region Props/Vars
+	[Property] public bool IsPseudo { get; set; } = false;
+	[Property] public CharacterController Character { get; set; }
+	[Property] public PlayerMovement Movement { get; set; }
+	[Property] public CameraMovement Camera { get; set; }
+	#endregion
 
-    protected override void OnStart()
+	#region Components
+	protected override void OnStart()
 	{
 		if (Character is null)
 			Character = GameObject.Components.GetInChildrenOrSelf<CharacterController>();
@@ -12,27 +16,8 @@ public sealed class Player : Component, Component.ICollisionListener
 		if (Movement is null)
 			Movement = GameObject.Components.GetInChildrenOrSelf<PlayerMovement>();
 
-		if (Camera is null)
+		if (Camera is null && !IsPseudo)
 			Camera = GameObject.Components.GetInChildrenOrSelf<CameraMovement>();
 	}
-
-	protected override void OnFixedUpdate()
-	{
-		//Movement.Run();
-	}
-
-	public void OnCollisionStart(Collision other)
-	{
-		//
-	}
-
-	public void OnCollisionUpdate(Collision other)
-	{
-		//
-	}
-
-	public void OnCollisionStop(CollisionStop other)
-	{
-		//
-	}
+	#endregion
 }

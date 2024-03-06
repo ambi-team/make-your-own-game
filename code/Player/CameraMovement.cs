@@ -1,8 +1,7 @@
-using Sandbox;
-using System.Numerics;
-
 public sealed class CameraMovement : Component
 {
+	#region Props/Vars
+	[Property] public bool IsPseudo { get; set; } = false;
 	[Property] public PlayerMovement Player { get; set; }
 	[Property] public GameObject Body { get; set; }
 	[Property] public GameObject Head { get; set; }
@@ -16,7 +15,9 @@ public sealed class CameraMovement : Component
 
 	private CameraComponent Camera;
 	private ModelRenderer BodyRenderer;
+	#endregion
 
+	#region Components
 	protected override void OnAwake()
 	{
 		Camera = Components.Get<CameraComponent>();
@@ -76,5 +77,5 @@ public sealed class CameraMovement : Component
 			.Run();
 		}
 	}
-
+	#endregion
 }

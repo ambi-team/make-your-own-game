@@ -80,7 +80,7 @@
           "__type": "ReverseTime",
           "ply": {
             "_type": "component",
-            "go": "c0f9c7ca-5a35-4ee1-af27-9db307d883e6",
+            "go": "4b7f9880-e2a8-4ece-8925-8a72cb0295e4",
             "component_type": "Player"
           }
         },
@@ -133,14 +133,6 @@
       "Enabled": true
     },
     {
-      "Id": "c0f9c7ca-5a35-4ee1-af27-9db307d883e6",
-      "Name": "PlayerObj",
-      "Position": "154.5629,255.4106,0.9995422",
-      "Tags": "trigger,player",
-      "Enabled": true,
-      "__Prefab": "prefabs/player.prefab"
-    },
-    {
       "Id": "2783be33-e57f-43b9-a36a-4565f0ffd550",
       "Name": "World",
       "Position": "301.2039,151.7318,-14.53918",
@@ -150,6 +142,7 @@
           "Id": "af9c89f4-dde9-4ac3-846f-b2fc541efc30",
           "Name": "Cube",
           "Position": "0,100.1693,10.68686",
+          "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
           "Components": [
             {
@@ -166,15 +159,16 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false,
+              "Static": true,
               "Surface": null
             }
           ]
         },
         {
-          "Id": "6bc5c308-9746-40ab-a12a-adebcc371fd9",
+          "Id": "26f7bb0c-5123-4cfe-9932-f9597be16c0a",
           "Name": "Cube",
-          "Position": "89.08652,100.1693,25.11982",
+          "Position": "73.09052,100.1693,35.20406",
+          "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
           "Components": [
             {
@@ -191,15 +185,16 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false,
+              "Static": true,
               "Surface": null
             }
           ]
         },
         {
-          "Id": "b2d77aca-ba22-472c-af9e-2d208ee7c5aa",
+          "Id": "372efa14-fb31-42df-9c54-b1caf1b6b658",
           "Name": "Cube",
-          "Position": "151.7697,104.5913,64.48569",
+          "Position": "143.7265,100.1693,35.20406",
+          "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
           "Components": [
             {
@@ -216,15 +211,16 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false,
+              "Static": true,
               "Surface": null
             }
           ]
         },
         {
-          "Id": "6d950af4-5ee7-4769-918e-bf0813a33e69",
+          "Id": "b55bc38c-ca46-4483-942b-64b96071a86d",
           "Name": "Cube",
-          "Position": "151.7697,104.5913,209.976",
+          "Position": "143.7265,185.8891,45.705",
+          "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
           "Components": [
             {
@@ -241,12 +237,48 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false,
+              "Static": true,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ee3bbc52-955d-4a4d-920d-cce9922d30bf",
+          "Name": "Cube",
+          "Position": "89.38284,185.6289,62.28305",
+          "Rotation": "0,0.1305262,0,0.9914449",
+          "Scale": "0.5289635,0.6224717,0.0442064",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true,
               "Surface": null
             }
           ]
         }
       ]
+    },
+    {
+      "Id": "4b7f9880-e2a8-4ece-8925-8a72cb0295e4",
+      "Name": "PlayerObj",
+      "Position": "141.0785,222.616,48.00001",
+      "Scale": "0.838639,1,1.411668",
+      "Tags": "player,trigger",
+      "Enabled": true,
+      "__Prefab": "prefabs/player.prefab"
     }
   ],
   "SceneProperties": {
@@ -272,6 +304,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-06T18:28:44.7701094\u002B05:00",
+  "LastSaved": "2024-03-06T23:12:04.8597387\u002B05:00",
   "__references": []
 }

@@ -1,9 +1,10 @@
 using Sandbox.Citizen;
-using System.Text;
 
 public sealed class PlayerMovement : Component
 {
 	#region Props/Vars
+	[Property] public bool IsPseudo { get; set; } = false;
+
 	[Property] public float GroundControl { get; set; } = 4.0f;
 	[Property] public float AirControl { get; set; } = 0.1f;
 	[Property] public float MaxForce { get; set; } = 50.0f;
@@ -12,9 +13,9 @@ public sealed class PlayerMovement : Component
 	[Property] public float CrouchSpeed { get; set; } = 1.0f;
 	[Property] public float JumpForce { get; set; } = 400.0f;
 
-	[Property] bool CanDuck { get; set; } = true;
-	[Property] bool CanJump { get; set; } = true;
-	[Property] bool CanSprinting { get; set; } = true;
+	[Property] public bool CanDuck { get; set; } = true;
+	[Property] public bool CanJump { get; set; } = true;
+	[Property] public bool CanSprinting { get; set; } = true;
 
 	[Property] public GameObject Head { get; set; }
 	[Property] public GameObject Body { get; set; }
@@ -23,6 +24,9 @@ public sealed class PlayerMovement : Component
 	public bool IsSprinting = false;
 	private bool isForceSpriting = false;
 	private bool isForceDuck = false;
+
+	private float defaultHeight = 0f;
+	private float defaultHeightHalf = 0f;
 
 	public Vector3 WishVelocity = Vector3.Zero;
 
@@ -67,16 +71,19 @@ public sealed class PlayerMovement : Component
 			WishVelocity += rot.Forward;
 			moveForward = false;
 		}
+
 		if (Input.Down("Backward") || moveBackward)
 		{
 			WishVelocity += rot.Backward;
 			moveBackward = false;
 		}
+
 		if (Input.Down("Left") || moveLeft)
 		{
 			WishVelocity += rot.Left;
 			moveLeft = false;
 		}
+
 		if (Input.Down("Right") || moveRight)
 		{
 			WishVelocity += rot.Right;
@@ -87,13 +94,17 @@ public sealed class PlayerMovement : Component
 
 		if (!WishVelocity.IsNearZeroLength) { WishVelocity = WishVelocity.Normal; }
 
-		if ( IsCrouching ) WishVelocity *= CrouchSpeed; 
-		else if (IsSprinting || isForceSpriting)
+		if (IsCrouching)
+		{
+			WishVelocity *= CrouchSpeed;
+		} else if (IsSprinting || isForceSpriting)
 		{
 			WishVelocity *= RunSpeed;
 			if (isForceSpriting) isForceSpriting = false;
+		} else
+		{
+			WishVelocity *= Speed;
 		}
-		else WishVelocity *= Speed;
 	}
 
 	public void Move()
@@ -173,19 +184,19 @@ public sealed class PlayerMovement : Component
 			if (Input.Down("Duck") && !IsCrouching)
 			{
 				IsCrouching = true;
-				_characterController.Height /= 2.0f;
+				_characterController.Height = defaultHeightHalf;
 			}
 
 			if (IsCrouching && !Input.Down("Duck") && !ChekOverPlayer())
 			{
 				IsCrouching = false;
-				_characterController.Height *= 2.0f;
+				_characterController.Height = defaultHeight;
 			}
 		} 
 		else
 		{
 			IsCrouching = true;
-			_characterController.Height /= 2.0f;
+			_characterController.Height = defaultHeightHalf;
 		}
 	}
 
@@ -207,23 +218,25 @@ public sealed class PlayerMovement : Component
 		_animationHelper = Components.Get<CitizenAnimationHelper>();
 	}
 
-	protected override void OnUpdate()
-	{
-	}
-
 	protected override void OnFixedUpdate()
 	{
-		// from OnUpdate to update
+		// from OnUpdate to here
 		if (CanSprinting) IsSprinting = Input.Down("Run");
 		if (CanDuck) UpdateDuck();
 		if (Input.Pressed("Jump") && CanJump) Jump();
 
 		RotateBody();
 		UpdateAnimation();
-		//
+		// //////////////////////////////////////////////////////////////
 
 		BuildWishVelocity();
 		Move();
+	}
+
+	protected override void OnStart()
+	{
+		defaultHeight = _characterController.Height;
+		defaultHeightHalf = _characterController.Height / 2;
 	}
 	#endregion
 }
