@@ -66,25 +66,25 @@ public sealed class PlayerMovement : Component
 
 		Rotation rot = Head.Transform.Rotation;
 
-		if (Input.Down("Forward") || moveForward)
+		if ((Input.Down("Forward") && !IsPseudo) || moveForward)
 		{
 			WishVelocity += rot.Forward;
 			moveForward = false;
 		}
 
-		if (Input.Down("Backward") || moveBackward)
+		if ((Input.Down("Backward") && !IsPseudo) || moveBackward)
 		{
 			WishVelocity += rot.Backward;
 			moveBackward = false;
 		}
 
-		if (Input.Down("Left") || moveLeft)
+		if ((Input.Down("Left") && !IsPseudo) || moveLeft)
 		{
 			WishVelocity += rot.Left;
 			moveLeft = false;
 		}
 
-		if (Input.Down("Right") || moveRight)
+		if ((Input.Down("Right") && !IsPseudo) || moveRight)
 		{
 			WishVelocity += rot.Right;
 			moveRight = false;
@@ -181,13 +181,19 @@ public sealed class PlayerMovement : Component
 
 		if (!isForceDuck)
 		{
-			if (Input.Down("Duck") && !IsCrouching)
+			if (Input.Down("Duck") && !IsCrouching && !IsPseudo)
 			{
 				IsCrouching = true;
 				_characterController.Height = defaultHeightHalf;
 			}
 
-			if (IsCrouching && !Input.Down("Duck") && !ChekOverPlayer())
+			if (IsCrouching && !Input.Down("Duck") && !ChekOverPlayer() && !IsPseudo)
+			{
+				IsCrouching = false;
+				_characterController.Height = defaultHeight;
+			}
+
+			if (IsCrouching && IsPseudo)
 			{
 				IsCrouching = false;
 				_characterController.Height = defaultHeight;
@@ -221,9 +227,9 @@ public sealed class PlayerMovement : Component
 	protected override void OnFixedUpdate()
 	{
 		// from OnUpdate to here
-		if (CanSprinting) IsSprinting = Input.Down("Run");
+		if (CanSprinting) IsSprinting = (!IsPseudo) ? Input.Down("Run") : false;
 		if (CanDuck) UpdateDuck();
-		if (Input.Pressed("Jump") && CanJump) Jump();
+		if (Input.Pressed("Jump") && CanJump && !IsPseudo) Jump();
 
 		RotateBody();
 		UpdateAnimation();

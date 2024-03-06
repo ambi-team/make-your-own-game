@@ -80,8 +80,12 @@
           "__type": "ReverseTime",
           "ply": {
             "_type": "component",
-            "go": "4b7f9880-e2a8-4ece-8925-8a72cb0295e4",
+            "go": "2e827091-5bfb-492d-954b-a5f8b153395d",
             "component_type": "Player"
+          },
+          "pseudoPlyPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/pseudo_player.prefab"
           }
         },
         {
@@ -272,9 +276,10 @@
       ]
     },
     {
-      "Id": "4b7f9880-e2a8-4ece-8925-8a72cb0295e4",
+      "Id": "2e827091-5bfb-492d-954b-a5f8b153395d",
       "Name": "PlayerObj",
-      "Position": "141.0785,222.616,48.00001",
+      "Position": "370.6349,125.0785,-4.13839",
+      "Rotation": "0,0,0.6087614,0.7933534",
       "Scale": "0.838639,1,1.411668",
       "Tags": "player,trigger",
       "Enabled": true,
@@ -304,6 +309,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-06T23:12:04.8597387\u002B05:00",
+  "LastSaved": "2024-03-07T01:02:13.5646933\u002B05:00",
   "__references": []
 }

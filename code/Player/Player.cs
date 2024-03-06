@@ -18,6 +18,8 @@ public sealed class Player : Component
 
 		if (Camera is null && !IsPseudo)
 			Camera = GameObject.Components.GetInChildrenOrSelf<CameraMovement>();
+
+		Movement.IsPseudo = IsPseudo;
 	}
 	#endregion
 }

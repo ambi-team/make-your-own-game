@@ -2,6 +2,8 @@
 {
 	#region Props/Vars
 	[Property] public Player ply;
+	[Property] public PrefabScene pseudoPlyPrefab;
+	private Player pseudoPly;
 
 	public bool onRecording;
 	private int indexRecord = 0;
@@ -109,9 +111,11 @@
 	{
 		if (onPlaying) return;
 
-		ply.Movement.Duck(false);
-		ply.GameObject.Transform.Position = startPos;
-		ply.Camera.Head.Transform.Rotation = startEyeRotation;
+		SpawnPseudoPlayer();
+
+		pseudoPly.Movement.Duck(false);
+		pseudoPly.GameObject.Transform.Position = startPos;
+		pseudoPly.Movement.Head.Transform.Rotation = startEyeRotation;
 		indexPlay = 0;
 		onPlaying = true; // native start
 
@@ -130,45 +134,10 @@
 
 		indexPlay++;
 
-		PlayerMovement mov = ply.Movement;
-
-		//todo remove
-		//string action = actions[indexPlay];
-		//if (action == "use")
-		//{
-		//	//
-		//} 
-		//else if (action == "attack1")
-		//{
-		//	//
-		//} 
-		//else if (action == "attack2")
-		//{
-		//	//
-		//} 
-		//else if (action == "Forward")
-		//{
-		//	mov.MoveForward();
-		//} 
-		//else if (action == "Backward")
-		//{
-		//	mov.MoveBackward();
-		//} 
-		//else if (action == "Left")
-		//{
-		//	mov.MoveLeft();
-		//} 
-		//else if (action == "Right")
-		//{
-		//	mov.MoveRight();
-		//} 
-		//else if (action == "Jump")
-		//{
-		//	mov.Jump();
-		//}
+		PlayerMovement mov = pseudoPly.Movement;
 
 		Rotation eyeRot = eyeRotations[indexPlay];
-		ply.Camera.Head.Transform.Rotation = eyeRot;
+		pseudoPly.Movement.Head.Transform.Rotation = eyeRot;
 
 		//todo fix
 
@@ -198,10 +167,20 @@
 	{
 		if (!onPlaying) return;
 
-		ply.Movement.Duck(false);
+		pseudoPly.GameObject.Destroy();
 		onPlaying = false;
 
 		Log.Info($"[ReverseTime] Stop play {indexRecord}");
+	}
+
+	private void SpawnPseudoPlayer()
+	{
+		pseudoPly = pseudoPlyPrefab.Clone().Components.Get<Player>();
+		pseudoPly.GameObject.Transform.Position = startPos;
+		pseudoPly.Movement.Head.Transform.Rotation = startEyeRotation;
+
+		ModelRenderer renderer = pseudoPly.Movement.Body.Components.Get<ModelRenderer>();
+		renderer.Tint = new Color32(109, 231, 255, 240);
 	}
 	#endregion
 

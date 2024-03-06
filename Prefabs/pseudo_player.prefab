@@ -63,9 +63,17 @@
       {
         "__type": "Player",
         "Camera": null,
-        "Character": null,
+        "Character": {
+          "_type": "component",
+          "go": "95102735-fe3d-4714-b7ae-b92cfee92d30",
+          "component_type": "CharacterController"
+        },
         "IsPseudo": true,
-        "Movement": null
+        "Movement": {
+          "_type": "component",
+          "go": "95102735-fe3d-4714-b7ae-b92cfee92d30",
+          "component_type": "PlayerMovement"
+        }
       }
     ],
     "Children": [

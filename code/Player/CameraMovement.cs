@@ -1,7 +1,6 @@
 public sealed class CameraMovement : Component
 {
 	#region Props/Vars
-	[Property] public bool IsPseudo { get; set; } = false;
 	[Property] public PlayerMovement Player { get; set; }
 	[Property] public GameObject Body { get; set; }
 	[Property] public GameObject Head { get; set; }
