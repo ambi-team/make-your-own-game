@@ -209,16 +209,19 @@ public sealed class PlayerMovement : Component
 
 	protected override void OnUpdate()
 	{
+	}
+
+	protected override void OnFixedUpdate()
+	{
+		// from OnUpdate to update
 		if (CanSprinting) IsSprinting = Input.Down("Run");
 		if (CanDuck) UpdateDuck();
 		if (Input.Pressed("Jump") && CanJump) Jump();
 
 		RotateBody();
 		UpdateAnimation();
-	}
+		//
 
-	protected override void OnFixedUpdate()
-	{
 		BuildWishVelocity();
 		Move();
 	}

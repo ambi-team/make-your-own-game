@@ -135,10 +135,118 @@
     {
       "Id": "c0f9c7ca-5a35-4ee1-af27-9db307d883e6",
       "Name": "PlayerObj",
-      "Position": "154.5629,195.4093,47.99999",
-      "Tags": "player,trigger",
+      "Position": "154.5629,255.4106,0.9995422",
+      "Tags": "trigger,player",
       "Enabled": true,
       "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "Id": "2783be33-e57f-43b9-a36a-4565f0ffd550",
+      "Name": "World",
+      "Position": "301.2039,151.7318,-14.53918",
+      "Enabled": true,
+      "Children": [
+        {
+          "Id": "af9c89f4-dde9-4ac3-846f-b2fc541efc30",
+          "Name": "Cube",
+          "Position": "0,100.1693,10.68686",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "6bc5c308-9746-40ab-a12a-adebcc371fd9",
+          "Name": "Cube",
+          "Position": "89.08652,100.1693,25.11982",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "b2d77aca-ba22-472c-af9e-2d208ee7c5aa",
+          "Name": "Cube",
+          "Position": "151.7697,104.5913,64.48569",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "6d950af4-5ee7-4769-918e-bf0813a33e69",
+          "Name": "Cube",
+          "Position": "151.7697,104.5913,209.976",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -164,6 +272,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-05T18:42:18.1446933\u002B05:00",
+  "LastSaved": "2024-03-06T18:28:44.7701094\u002B05:00",
   "__references": []
 }
