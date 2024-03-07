@@ -6,9 +6,8 @@ public sealed class TriggerButton : Component, IUsable
 
 	[Property] public Action OnTrigger { get; set; }
 
-	public void OnUsed(Player ply)
+	public void Use(Player ply)
 	{
-		Log.Info("OnUsed 2");
 		OnTrigger?.Invoke();
 	}
 }
