@@ -1,3 +1,4 @@
+using Sandbox;
 using Sandbox.Citizen;
 
 public sealed class PlayerMovement : Component
@@ -31,6 +32,7 @@ public sealed class PlayerMovement : Component
 	public Vector3 WishVelocity = Vector3.Zero;
 
 	private CharacterController _characterController;
+	private CapsuleCollider _collider; 
 	private CitizenAnimationHelper _animationHelper;
 
 	private bool moveForward = false;
@@ -204,13 +206,15 @@ public sealed class PlayerMovement : Component
 			IsCrouching = true;
 			_characterController.Height = defaultHeightHalf;
 		}
+
+		//_collider.End = _collider.End.WithZ(_characterController.Height); //? maybe remove it
 	}
 
 	public bool ChekOverPlayer()
 	{
-		var camStack = Scene.Trace.Ray( Head.Transform.Position, Head.Transform.Position + new Vector3( 0, 0, 30 ) )
+		var camStack = Scene.Trace.Ray( Head.Transform.Position, Head.Transform.Position + new Vector3( 0, 0, 35 ) )
 			.WithoutTags( "player", "trigger" )
-			.Size( 34 )
+			.Size(new Vector3(34, 34,60))
 			.Run();
 
 		return camStack.Hit;
@@ -222,8 +226,9 @@ public sealed class PlayerMovement : Component
 	{
 		_characterController = Components.Get<CharacterController>();
 		_animationHelper = Components.Get<CitizenAnimationHelper>();
+		_collider = Components.Get<CapsuleCollider>();
 	}
-
+	
 	protected override void OnFixedUpdate()
 	{
 		// from OnUpdate to here

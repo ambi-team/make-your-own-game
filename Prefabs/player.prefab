@@ -66,6 +66,15 @@
         "IsPseudo": false,
         "Movement": null,
         "UseDistance": 90
+      },
+      {
+        "__type": "CapsuleCollider",
+        "End": "0,0,70",
+        "IsTrigger": true,
+        "Radius": 16.8,
+        "Start": "0,0,0",
+        "Static": false,
+        "Surface": null
       }
     ],
     "Children": [

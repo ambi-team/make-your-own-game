@@ -83,7 +83,7 @@
             "go": "43169f6e-d108-4963-87f0-001c6684eb98",
             "component_type": "Player"
           },
-          "pseudoPlyColor": "0.43647,0.57807,0.96744,1",
+          "pseudoPlyColor": "0.5123,0.62251,0.92558,0.79",
           "pseudoPlyPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/pseudo_player.prefab"
@@ -146,7 +146,7 @@
         {
           "Id": "af9c89f4-dde9-4ac3-846f-b2fc541efc30",
           "Name": "Cube",
-          "Position": "0,100.1693,10.68686",
+          "Position": "-7.461029,12.36,10.68686",
           "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
           "Components": [
@@ -164,8 +164,14 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true,
+              "Static": false,
               "Surface": null
+            },
+            {
+              "__type": "TriggerObject",
+              "Game": null,
+              "OnTriggerEntered": null,
+              "OnTriggerExited": null
             }
           ]
         },
@@ -355,8 +361,8 @@
                         "Id": 4,
                         "Type": "property.get",
                         "Properties": {
-                          "_name": "Game",
-                          "_type": "package.ambi.myog/TriggerButton"
+                          "_type": "package.ambi.myog/TriggerButton",
+                          "_name": "Game"
                         },
                         "UserData": {
                           "Position": "-208,160"
@@ -366,10 +372,10 @@
                         "Id": 5,
                         "Type": "call",
                         "Properties": {
-                          "_name": "Get",
-                          "T": "package.ambi.myog/ReverseTime",
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
                           "_isStatic": false,
-                          "_type": "Sandbox.Game/Sandbox.IComponentLister"
+                          "_name": "Get",
+                          "T": "package.ambi.myog/ReverseTime"
                         },
                         "UserData": {
                           "Position": "16,160"
@@ -379,9 +385,9 @@
                         "Id": 7,
                         "Type": "call",
                         "Properties": {
-                          "_name": "StartRecord",
+                          "_type": "package.ambi.myog/ReverseTime",
                           "_isStatic": false,
-                          "_type": "package.ambi.myog/ReverseTime"
+                          "_name": "StartRecord"
                         },
                         "UserData": {
                           "Position": "352,176"
@@ -401,8 +407,8 @@
                         "Id": 11,
                         "Type": "property.set",
                         "Properties": {
-                          "_name": "Tint",
-                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                          "_name": "Tint"
                         },
                         "UserData": {
                           "Position": "368,32"
@@ -419,8 +425,8 @@
                         "Id": 13,
                         "Type": "property.set",
                         "Properties": {
-                          "_name": "Tint",
-                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                          "_name": "Tint"
                         },
                         "UserData": {
                           "Position": "784,16"
@@ -523,6 +529,155 @@
               ]
             }
           ]
+        },
+        {
+          "Id": "874fc070-707f-4ccc-bb44-55b83e9f24b9",
+          "Name": "Cube",
+          "Position": "-92.59567,0,27.69293",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.13333,1,0,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            },
+            {
+              "__type": "TriggerObject",
+              "Game": null,
+              "OnTriggerEntered": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Trigger Entered",
+                  "id": "6162eb17-266c-4a56-8311-149c5380ca3f"
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                    },
+                    "UserData": {
+                      "Position": "-48,144"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                      "_name": "Tint"
+                    },
+                    "UserData": {
+                      "Position": "256,144"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 1,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": "1,0,0,1",
+                    "DstId": 2,
+                    "DstName": "_value"
+                  }
+                ]
+              },
+              "OnTriggerExited": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Trigger Exited",
+                  "id": "c95b0a2c-7fb7-4032-9bec-52160aa29015"
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                      "_name": "Tint"
+                    },
+                    "UserData": {
+                      "Position": "272,192"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                    },
+                    "UserData": {
+                      "Position": "-64,192"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 3,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "_result",
+                    "DstId": 3,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": "0.13333,1,0,1",
+                    "DstId": 3,
+                    "DstName": "_value"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 4,
+                    "DstName": "_this"
+                  }
+                ]
+              }
+            }
+          ]
         }
       ]
     },
@@ -558,6 +713,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-07T14:57:04.1726724\u002B05:00",
+  "LastSaved": "2024-03-07T21:36:33.7340425\u002B05:00",
   "__references": []
 }
