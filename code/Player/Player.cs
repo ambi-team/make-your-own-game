@@ -2,9 +2,32 @@ public sealed class Player : Component
 {
 	#region Props/Vars
 	[Property] public bool IsPseudo { get; set; } = false;
+	[Property] public float UseDistance { get; set; } = 70f;
 	[Property] public CharacterController Character { get; set; }
 	[Property] public PlayerMovement Movement { get; set; }
 	[Property] public CameraMovement Camera { get; set; }
+	#endregion
+
+	#region Player Logic
+	public void Use()
+	{
+		var pos = Movement.Head.Transform.Position;
+		var forward = Movement.Head.Transform.Rotation.Forward;
+
+		var traceResult = Scene.Trace.Ray(pos, pos + (forward * UseDistance))
+			.WithoutTags("player", "trigger")
+			.Size(4)
+			.Run();
+
+		var hitObj = traceResult.GameObject;
+		if (hitObj is not null)
+		{
+			var comp = hitObj.Components.Get<IUsable>();
+			if (comp is null) return;
+
+			comp.OnUsed(this);
+		}
+	}
 	#endregion
 
 	#region Components
@@ -20,6 +43,12 @@ public sealed class Player : Component
 			Camera = GameObject.Components.GetInChildrenOrSelf<CameraMovement>();
 
 		Movement.IsPseudo = IsPseudo;
+	}
+
+	protected override void OnUpdate()
+	{
+		if (Input.Pressed("use") && !IsPseudo)
+			Use();
 	}
 	#endregion
 }

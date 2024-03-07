@@ -278,7 +278,7 @@
           "Id": "406a2bc5-dd9c-415c-a895-ea255376241b",
           "Name": "PlaceForButton",
           "Position": "147.5785,-11.2951,22.6338",
-          "Scale": "0.2116552,0.0604898,1.040392",
+          "Scale": "0.2116552,0.0604898,1.719332",
           "Enabled": true,
           "Components": [
             {
@@ -289,14 +289,22 @@
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,0.75814,0.80651,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
             }
           ],
           "Children": [
             {
               "Id": "7a6952f6-f502-4489-b72f-c036992607c5",
               "Name": "Button",
-              "Position": "-1.143101,-38.16451,18.60534",
-              "Scale": "0.6534992,0.894671,0.128883",
+              "Position": "-1.143101,-38.16451,18.03082",
+              "Scale": "0.6534992,0.894671,0.07965566",
               "Enabled": true,
               "Components": [
                 {
@@ -306,7 +314,7 @@
                   "MaterialOverride": null,
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.9814,0.10042,0.10042,1"
+                  "Tint": "0.48218,0.9814,0.10042,1"
                 },
                 {
                   "__type": "TriggerButton",
@@ -320,7 +328,8 @@
                       "Title": "On Trigger",
                       "id": "fa2d600c-d120-44ed-b0ba-ce81b9fb5859",
                       "ReferencedComponentTypes": [
-                        "package.ambi.myog/TriggerButton"
+                        "package.ambi.myog/TriggerButton",
+                        "Sandbox.Game/Sandbox.ModelRenderer"
                       ]
                     },
                     "Variables": [],
@@ -375,7 +384,46 @@
                           "_type": "package.ambi.myog/ReverseTime"
                         },
                         "UserData": {
-                          "Position": "288,160"
+                          "Position": "352,176"
+                        }
+                      },
+                      {
+                        "Id": 10,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                        },
+                        "UserData": {
+                          "Position": "112,-48"
+                        }
+                      },
+                      {
+                        "Id": 11,
+                        "Type": "property.set",
+                        "Properties": {
+                          "_name": "Tint",
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                        },
+                        "UserData": {
+                          "Position": "368,32"
+                        }
+                      },
+                      {
+                        "Id": 12,
+                        "Type": "time.delay",
+                        "UserData": {
+                          "Position": "560,128"
+                        }
+                      },
+                      {
+                        "Id": 13,
+                        "Type": "property.set",
+                        "Properties": {
+                          "_name": "Tint",
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                        },
+                        "UserData": {
+                          "Position": "784,16"
                         }
                       }
                     ],
@@ -409,9 +457,68 @@
                         "SrcName": "_result",
                         "DstId": 7,
                         "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 10,
+                        "DstName": "_this"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 11,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 10,
+                        "SrcName": "_result",
+                        "DstId": 11,
+                        "DstName": "_target"
+                      },
+                      {
+                        "Value": "0.98605,0.12842,0.12842,1",
+                        "DstId": 11,
+                        "DstName": "_value"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 12,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "Value": 2,
+                        "DstId": 12,
+                        "DstName": "seconds"
+                      },
+                      {
+                        "SrcId": 12,
+                        "SrcName": "_signal",
+                        "DstId": 13,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 10,
+                        "SrcName": "_result",
+                        "DstId": 13,
+                        "DstName": "_target"
+                      },
+                      {
+                        "Value": "0.48084,0.93953,0.35396,1",
+                        "DstId": 13,
+                        "DstName": "_value"
                       }
                     ]
                   }
+                },
+                {
+                  "__type": "BoxCollider",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false,
+                  "Surface": null
                 }
               ]
             }
@@ -453,6 +560,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-07T09:26:54.8030392\u002B05:00",
+  "LastSaved": "2024-03-07T10:53:45.1876607\u002B05:00",
   "__references": []
 }
