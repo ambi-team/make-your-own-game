@@ -32,7 +32,7 @@ public sealed class PlayerMovement : Component
 	public Vector3 WishVelocity = Vector3.Zero;
 
 	private CharacterController _characterController;
-	private CapsuleCollider _collider; 
+	private BoxCollider _collider; 
 	private CitizenAnimationHelper _animationHelper;
 
 	private bool moveForward = false;
@@ -226,7 +226,7 @@ public sealed class PlayerMovement : Component
 	{
 		_characterController = Components.Get<CharacterController>();
 		_animationHelper = Components.Get<CitizenAnimationHelper>();
-		_collider = Components.Get<CapsuleCollider>();
+		_collider = Components.Get<BoxCollider>();
 	}
 	
 	protected override void OnFixedUpdate()

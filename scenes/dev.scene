@@ -532,7 +532,7 @@
         },
         {
           "Id": "874fc070-707f-4ccc-bb44-55b83e9f24b9",
-          "Name": "Cube",
+          "Name": "TriggerObj",
           "Position": "-92.59567,0,27.69293",
           "Enabled": true,
           "Components": [
@@ -678,6 +678,162 @@
               }
             }
           ]
+        },
+        {
+          "Id": "b6b95076-1495-48de-9a7d-ea163c4cce77",
+          "Name": "TriggerCollision",
+          "Position": "-92.59567,-97.82063,27.69293",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.13333,1,0,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            },
+            {
+              "__type": "TriggerCollision",
+              "Game": null,
+              "OnCollisionStarted": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Collision Started",
+                  "id": "53474bfd-4ad6-474d-a704-b77275356384",
+                  "ReferencedComponentTypes": [
+                    "Sandbox.Game/Sandbox.ModelRenderer"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                    },
+                    "UserData": {
+                      "Position": "-80,96"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                      "_name": "Tint"
+                    },
+                    "UserData": {
+                      "Position": "224,112"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 1,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": "1,0,0,1",
+                    "DstId": 2,
+                    "DstName": "_value"
+                  }
+                ]
+              },
+              "OnCollisionStoped": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Collision Stoped",
+                  "id": "71255137-ec15-4d15-80ce-f9d621c731ad",
+                  "ReferencedComponentTypes": [
+                    "Sandbox.Game/Sandbox.ModelRenderer"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                    },
+                    "UserData": {
+                      "Position": "-32,128"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                      "_name": "Tint"
+                    },
+                    "UserData": {
+                      "Position": "256,144"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 2,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 3,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 3,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": "0.13333,1,0,1",
+                    "DstId": 3,
+                    "DstName": "_value"
+                  }
+                ]
+              },
+              "OnCollisionUpdated": null
+            }
+          ]
         }
       ]
     },
@@ -713,6 +869,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-07T21:36:33.7340425\u002B05:00",
+  "LastSaved": "2024-03-07T22:11:58.5600413\u002B05:00",
   "__references": []
 }

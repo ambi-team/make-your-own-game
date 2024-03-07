@@ -68,11 +68,10 @@
         "UseDistance": 90
       },
       {
-        "__type": "CapsuleCollider",
-        "End": "0,0,70",
-        "IsTrigger": true,
-        "Radius": 16.8,
-        "Start": "0,0,0",
+        "__type": "BoxCollider",
+        "Center": "0,0,35",
+        "IsTrigger": false,
+        "Scale": "33.60001,33.60001,70",
         "Static": false,
         "Surface": null
       }
