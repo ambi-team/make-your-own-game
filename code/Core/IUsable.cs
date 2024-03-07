@@ -1,4 +1,4 @@
 ﻿public interface IUsable
 {
-    public void OnUsed(Player ply) { }
+    public void Use(Player ply) { }
 }

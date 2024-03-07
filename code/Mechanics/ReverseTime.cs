@@ -19,8 +19,9 @@
 	public Dictionary<float, bool> actionsLeft = new();
 	public Dictionary<float, bool> actionsRight = new();
 	public Dictionary<float, bool> actionsJump = new();
-	public Dictionary<float, bool> detectRuns = new();
-	public Dictionary<float, bool> detectDucks = new();
+	public Dictionary<float, bool> actionsRuns = new();
+	public Dictionary<float, bool> actionsDucks = new();
+	public Dictionary<float, bool> actionsUse = new();
 	public Dictionary<float, Rotation> eyeRotations = new();
 
 	private float defaultTimeRecoding = 20f;
@@ -78,18 +79,20 @@
 			actionsRight[indexRecord] = downRight;
 
 		var isRun = Input.Down("Run");
-		if (!detectRuns.TryAdd(indexRecord, isRun))
-			detectRuns[indexRecord] = isRun;
+		if (!actionsRuns.TryAdd(indexRecord, isRun))
+			actionsRuns[indexRecord] = isRun;
 
 		var isDuck = Input.Down("Duck");
-		if (!detectDucks.TryAdd(indexRecord, isDuck))
-			detectDucks[indexRecord] = isDuck;
+		if (!actionsDucks.TryAdd(indexRecord, isDuck))
+			actionsDucks[indexRecord] = isDuck;
 
 		var isJump = Input.Pressed("Jump");
 		if (!actionsJump.TryAdd(indexRecord, isJump))
 			actionsJump[indexRecord] = isJump;
 
-		Log.Info($"[ReverseTime] Index {indexRecord} | TimeRecording {TimeRecording}");
+		var isUse = Input.Pressed("use");
+		if (!actionsUse.TryAdd(indexRecord, isUse))
+			actionsUse[indexRecord] = isUse;
 	}
 
 	public void StopRecord()
@@ -139,14 +142,17 @@
 
 		//todo fix
 
-		bool isRun = detectRuns[indexPlay];
+		bool isRun = actionsRuns[indexPlay];
 		if (isRun) mov.Run();
 
-		bool isDuck = detectDucks[indexPlay];
+		bool isDuck = actionsDucks[indexPlay];
 		mov.Duck(isDuck);
 
 		bool isJump = actionsJump[indexPlay];
 		if (isJump) mov.Jump();
+
+		bool isUse = actionsUse[indexPlay];
+		if (isUse) pseudoPly.Use();
 
 		bool downForward = actionsForward[indexPlay];
 		if (downForward) mov.MoveForward();

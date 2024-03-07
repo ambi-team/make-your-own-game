@@ -11,8 +11,8 @@ public sealed class Player : Component
 	#region Player Logic
 	public void Use()
 	{
-		var pos = Movement.Head.Transform.Position;
-		var forward = Movement.Head.Transform.Rotation.Forward;
+		var pos = Movement.Head.Transform.Position; // Head from Movement, cuz IsPseudo haven't Camera
+		var forward = Movement.Head.Transform.Rotation.Forward; 
 
 		var traceResult = Scene.Trace.Ray(pos, pos + (forward * UseDistance))
 			.WithoutTags("player", "trigger")
@@ -25,7 +25,7 @@ public sealed class Player : Component
 			var comp = hitObj.Components.Get<IUsable>();
 			if (comp is null) return;
 
-			comp.OnUsed(this);
+			comp.Use(this);
 		}
 	}
 	#endregion
