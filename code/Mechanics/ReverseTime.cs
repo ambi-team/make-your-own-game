@@ -140,8 +140,6 @@
 		Rotation eyeRot = eyeRotations[indexPlay];
 		pseudoPly.Movement.Head.Transform.Rotation = eyeRot;
 
-		//todo fix
-
 		bool isRun = actionsRuns[indexPlay];
 		if (isRun) mov.Run();
 

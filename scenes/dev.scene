@@ -80,7 +80,7 @@
           "__type": "ReverseTime",
           "ply": {
             "_type": "component",
-            "go": "2e827091-5bfb-492d-954b-a5f8b153395d",
+            "go": "43169f6e-d108-4963-87f0-001c6684eb98",
             "component_type": "Player"
           },
           "pseudoPlyColor": "0.43647,0.57807,0.96744,1",
@@ -366,10 +366,10 @@
                         "Id": 5,
                         "Type": "call",
                         "Properties": {
-                          "_isStatic": false,
                           "_name": "Get",
-                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                          "T": "package.ambi.myog/ReverseTime"
+                          "T": "package.ambi.myog/ReverseTime",
+                          "_isStatic": false,
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister"
                         },
                         "UserData": {
                           "Position": "16,160"
@@ -379,8 +379,8 @@
                         "Id": 7,
                         "Type": "call",
                         "Properties": {
-                          "_isStatic": false,
                           "_name": "StartRecord",
+                          "_isStatic": false,
                           "_type": "package.ambi.myog/ReverseTime"
                         },
                         "UserData": {
@@ -527,12 +527,10 @@
       ]
     },
     {
-      "Id": "2e827091-5bfb-492d-954b-a5f8b153395d",
+      "Id": "43169f6e-d108-4963-87f0-001c6684eb98",
       "Name": "PlayerObj",
-      "Position": "355.9484,70.2681,-4.13839",
-      "Rotation": "0,0,0.6087614,0.7933534",
-      "Scale": "0.838639,1,1.411668",
-      "Tags": "player,trigger",
+      "Position": "361.6956,96.61617,-11.06026",
+      "Tags": "trigger,player",
       "Enabled": true,
       "__Prefab": "prefabs/player.prefab"
     }
@@ -560,6 +558,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-07T10:53:45.1876607\u002B05:00",
+  "LastSaved": "2024-03-07T14:57:04.1726724\u002B05:00",
   "__references": []
 }
