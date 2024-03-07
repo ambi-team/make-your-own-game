@@ -83,6 +83,7 @@
             "go": "2e827091-5bfb-492d-954b-a5f8b153395d",
             "component_type": "Player"
           },
+          "pseudoPlyColor": "0.43647,0.57807,0.96744,1",
           "pseudoPlyPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/pseudo_player.prefab"
@@ -272,13 +273,156 @@
               "Surface": null
             }
           ]
+        },
+        {
+          "Id": "406a2bc5-dd9c-415c-a895-ea255376241b",
+          "Name": "PlaceForButton",
+          "Position": "147.5785,-11.2951,22.6338",
+          "Scale": "0.2116552,0.0604898,1.040392",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,0.75814,0.80651,1"
+            }
+          ],
+          "Children": [
+            {
+              "Id": "7a6952f6-f502-4489-b72f-c036992607c5",
+              "Name": "Button",
+              "Position": "-1.143101,-38.16451,18.60534",
+              "Scale": "0.6534992,0.894671,0.128883",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialGroup": null,
+                  "MaterialOverride": null,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "Off",
+                  "Tint": "0.9814,0.10042,0.10042,1"
+                },
+                {
+                  "__type": "TriggerButton",
+                  "Game": {
+                    "_type": "gameobject",
+                    "go": "cf7c6201-3164-4664-ad2c-281b3e45081d"
+                  },
+                  "OnTrigger": {
+                    "Version": 5,
+                    "UserData": {
+                      "Title": "On Trigger",
+                      "id": "fa2d600c-d120-44ed-b0ba-ce81b9fb5859",
+                      "ReferencedComponentTypes": [
+                        "package.ambi.myog/TriggerButton"
+                      ]
+                    },
+                    "Variables": [],
+                    "Nodes": [
+                      {
+                        "Id": 0,
+                        "Type": "input",
+                        "UserData": {
+                          "Position": "128,80"
+                        }
+                      },
+                      {
+                        "Id": 3,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "package.ambi.myog/TriggerButton"
+                        },
+                        "UserData": {
+                          "Position": "-416,160"
+                        }
+                      },
+                      {
+                        "Id": 4,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_name": "Game",
+                          "_type": "package.ambi.myog/TriggerButton"
+                        },
+                        "UserData": {
+                          "Position": "-208,160"
+                        }
+                      },
+                      {
+                        "Id": 5,
+                        "Type": "call",
+                        "Properties": {
+                          "_isStatic": false,
+                          "_name": "Get",
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                          "T": "package.ambi.myog/ReverseTime"
+                        },
+                        "UserData": {
+                          "Position": "16,160"
+                        }
+                      },
+                      {
+                        "Id": 7,
+                        "Type": "call",
+                        "Properties": {
+                          "_isStatic": false,
+                          "_name": "StartRecord",
+                          "_type": "package.ambi.myog/ReverseTime"
+                        },
+                        "UserData": {
+                          "Position": "288,160"
+                        }
+                      }
+                    ],
+                    "Links": [
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 3,
+                        "DstName": "_this"
+                      },
+                      {
+                        "SrcId": 3,
+                        "SrcName": "_result",
+                        "DstId": 4,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 4,
+                        "SrcName": "_result",
+                        "DstId": 5,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 7,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 5,
+                        "SrcName": "_result",
+                        "DstId": 7,
+                        "DstName": "_target"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     },
     {
       "Id": "2e827091-5bfb-492d-954b-a5f8b153395d",
       "Name": "PlayerObj",
-      "Position": "370.6349,125.0785,-4.13839",
+      "Position": "355.9484,70.2681,-4.13839",
       "Rotation": "0,0,0.6087614,0.7933534",
       "Scale": "0.838639,1,1.411668",
       "Tags": "player,trigger",
@@ -309,6 +453,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-07T01:02:13.5646933\u002B05:00",
+  "LastSaved": "2024-03-07T09:26:54.8030392\u002B05:00",
   "__references": []
 }
