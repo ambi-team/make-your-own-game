@@ -39,10 +39,10 @@ public sealed class Player : Component
 		if (Movement is null)
 			Movement = GameObject.Components.GetInChildrenOrSelf<PlayerMovement>();
 
+		Movement.IsPseudo = IsPseudo;
+
 		if (Camera is null && !IsPseudo)
 			Camera = GameObject.Components.GetInChildrenOrSelf<CameraMovement>();
-
-		Movement.IsPseudo = IsPseudo;
 	}
 
 	protected override void OnUpdate()

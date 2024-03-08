@@ -24,7 +24,7 @@
 	public Dictionary<float, bool> actionsUse = new();
 	public Dictionary<float, Rotation> eyeRotations = new();
 
-	private float defaultTimeRecoding = 20f;
+	private float defaultTimeRecoding = 4f;
 	private Vector3 startPos;
 	private Rotation startEyeRotation;
 	private TimeUntil TimeRecording { get; set; }
@@ -43,7 +43,7 @@
 		TimeRecording = defaultTimeRecoding;
 		onRecording = true; // native start
 
-		Log.Info($"[ReverseTime] Start recording {indexRecord}");
+		Log.Info($"[ReverseTime] Start recordin");
 	}
 
 	public void Record()
@@ -178,6 +178,11 @@
 	private void SpawnPseudoPlayer()
 	{
 		pseudoPly = pseudoPlyPrefab.Clone().Components.Get<Player>();
+		pseudoPly.IsPseudo = true;
+
+		if (pseudoPly.Camera is not null)
+			pseudoPly.Camera.GameObject.Destroy();
+
 		pseudoPly.GameObject.Transform.Position = startPos;
 		pseudoPly.Movement.Head.Transform.Rotation = startEyeRotation;
 

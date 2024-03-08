@@ -1,7 +1,7 @@
 public sealed class CameraMovement : Component
 {
 	#region Props/Vars
-	[Property] public PlayerMovement Player { get; set; }
+	[Property] public PlayerMovement Movement { get; set; }
 	[Property] public GameObject Body { get; set; }
 	[Property] public GameObject Head { get; set; }
 	[Property] public float Distance { get; set; } = 0f;
@@ -23,6 +23,15 @@ public sealed class CameraMovement : Component
 		BodyRenderer = Body.Components.Get<ModelRenderer>();
 	}
 
+	protected override void OnStart()
+	{
+		if (Movement.IsPseudo)
+		{
+			Camera.Destroy();
+			Destroy();
+		}
+	}
+
 	protected override void OnUpdate()
 	{
 		var eyeAngles = Head.Transform.Rotation.Angles();
@@ -35,7 +44,7 @@ public sealed class CameraMovement : Component
 		Head.Transform.Rotation = eyeAngles.ToRotation();
 
 		var targetOffset = Vector3.Zero;
-		if ( Player.IsCrouching ) targetOffset += Vector3.Down * 32.0f;
+		if ( Movement.IsCrouching ) targetOffset += Vector3.Down * 32.0f;
 		CurrentOffset = Vector3.Lerp( CurrentOffset, targetOffset, Time.Delta * 10.0f );
 
 		if (Camera is not null )
