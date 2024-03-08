@@ -361,8 +361,8 @@
                         "Id": 4,
                         "Type": "property.get",
                         "Properties": {
-                          "_type": "package.ambi.myog/TriggerButton",
-                          "_name": "Game"
+                          "_name": "Game",
+                          "_type": "package.ambi.myog/TriggerButton"
                         },
                         "UserData": {
                           "Position": "-208,160"
@@ -372,10 +372,10 @@
                         "Id": 5,
                         "Type": "call",
                         "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                          "_isStatic": false,
                           "_name": "Get",
-                          "T": "package.ambi.myog/ReverseTime"
+                          "T": "package.ambi.myog/ReverseTime",
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                          "_isStatic": false
                         },
                         "UserData": {
                           "Position": "16,160"
@@ -385,9 +385,9 @@
                         "Id": 7,
                         "Type": "call",
                         "Properties": {
+                          "_name": "StartRecord",
                           "_type": "package.ambi.myog/ReverseTime",
-                          "_isStatic": false,
-                          "_name": "StartRecord"
+                          "_isStatic": false
                         },
                         "UserData": {
                           "Position": "352,176"
@@ -407,8 +407,8 @@
                         "Id": 11,
                         "Type": "property.set",
                         "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                          "_name": "Tint"
+                          "_name": "Tint",
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                         },
                         "UserData": {
                           "Position": "368,32"
@@ -425,8 +425,8 @@
                         "Id": 13,
                         "Type": "property.set",
                         "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                          "_name": "Tint"
+                          "_name": "Tint",
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                         },
                         "UserData": {
                           "Position": "784,16"
@@ -582,8 +582,8 @@
                     "Id": 2,
                     "Type": "property.set",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                     },
                     "UserData": {
                       "Position": "256,144"
@@ -632,8 +632,8 @@
                     "Id": 3,
                     "Type": "property.set",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                     },
                     "UserData": {
                       "Position": "272,192"
@@ -680,9 +680,47 @@
           ]
         },
         {
+          "Id": "d571de8e-aa8c-41e9-845b-e8e2683a5196",
+          "Name": "TriggerTeleport",
+          "Position": "-92.59567,-97.35979,29.78002",
+          "Scale": "0.1523108,0.5770563,1.183053",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.78476,0.24679,0.85581,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            },
+            {
+              "__type": "TriggerTeleport",
+              "Game": null,
+              "OnTeleportStarted": null,
+              "OnTeleportStoped": null,
+              "Ply": {
+                "_type": "component",
+                "go": "43169f6e-d108-4963-87f0-001c6684eb98",
+                "component_type": "Player"
+              },
+              "PosToSpawn": "573,80,80"
+            }
+          ]
+        },
+        {
           "Id": "b6b95076-1495-48de-9a7d-ea163c4cce77",
           "Name": "TriggerCollision",
-          "Position": "-92.59567,-97.82063,27.69293",
+          "Position": "-92.59567,-189.6065,27.69293",
           "Enabled": true,
           "Components": [
             {
@@ -734,8 +772,8 @@
                     "Id": 2,
                     "Type": "property.set",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                     },
                     "UserData": {
                       "Position": "224,112"
@@ -797,8 +835,8 @@
                     "Id": 3,
                     "Type": "property.set",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                     },
                     "UserData": {
                       "Position": "256,144"
@@ -841,9 +879,15 @@
       "Id": "43169f6e-d108-4963-87f0-001c6684eb98",
       "Name": "PlayerObj",
       "Position": "361.6956,96.61617,-11.06026",
-      "Tags": "trigger,player",
+      "Tags": "player,trigger",
       "Enabled": true,
       "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "Id": "4f098a7f-85fc-4508-b95e-8793df395f7a",
+      "Name": "PosToSpawn #1",
+      "Position": "573.9882,80.40993,80.30177",
+      "Enabled": true
     }
   ],
   "SceneProperties": {
@@ -869,6 +913,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-07T22:11:58.5600413\u002B05:00",
+  "LastSaved": "2024-03-08T22:17:26.4223684\u002B05:00",
   "__references": []
 }

@@ -1,0 +1,29 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "the_forest_fin",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "the_forest_fin",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "MenuResources": "*",
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "ambi.table_lamp#49624",
+        "andiq.tiles092#12695",
+        "caro.sky_001#27739"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/the_forest_fin.vmap"
+      }
+    }
+  }
+}
