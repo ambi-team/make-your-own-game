@@ -1,0 +1,58 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "start",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "start",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "MenuResources": "*",
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "cgbookcase.brickwall29#31609",
+        "creation.shopfrontwindow2#19550",
+        "semxy.bluecloudskybox#24832",
+        "andiq.tiles092#12695",
+        "tiled.brickwall#42137",
+        "chase.white_bread#38744",
+        "ambi.bedside_table#49828",
+        "ambi.closet#49905",
+        "ambi.tardis_red_door#49622",
+        "ambi.speaker#49623",
+        "ambi.deep_plate#49836",
+        "ambi.computer_monitor#49612",
+        "ambi.cup#49617",
+        "ambi.cardboard_box#49833",
+        "ambi.closet_mini#49834",
+        "ambi.power_energetics#49621",
+        "ambi.computer_chair#49546",
+        "ambi.plate#49841",
+        "ambi.computer_mouse#49614",
+        "ambi.hanging_lamp#49849",
+        "ambi.fork#49838",
+        "ambi.plant#49909",
+        "ambi.desk#49613",
+        "ambi.book_2#49678",
+        "ambi.divan#49837",
+        "ambi.keyboard#49619",
+        "ambi.computer#49620",
+        "ambi.refrigerator#49549",
+        "ambi.table_lamp#49624",
+        "ambi.plate_2#49842",
+        "ambi.curtain#49835",
+        "ambi.book_6#49681"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/start.vmap"
+      }
+    }
+  }
+}

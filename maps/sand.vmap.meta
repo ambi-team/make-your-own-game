@@ -1,0 +1,29 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "sand",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "sand",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "MenuResources": "*",
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "ambi.table_lamp#49624",
+        "andiq.tiles092#12695",
+        "fish.roblox_skybox#8534"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/sand.vmap"
+      }
+    }
+  }
+}
