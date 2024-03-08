@@ -86,7 +86,7 @@
           "pseudoPlyColor": "0.5123,0.62251,0.92558,0.79",
           "pseudoPlyPrefab": {
             "_type": "gameobject",
-            "prefab": "prefabs/pseudo_player.prefab"
+            "prefab": "prefabs/player.prefab"
           }
         },
         {
@@ -708,11 +708,6 @@
               "Game": null,
               "OnTeleportStarted": null,
               "OnTeleportStoped": null,
-              "Ply": {
-                "_type": "component",
-                "go": "43169f6e-d108-4963-87f0-001c6684eb98",
-                "component_type": "Player"
-              },
               "PosToSpawn": "573,80,80"
             }
           ]
@@ -879,7 +874,7 @@
       "Id": "43169f6e-d108-4963-87f0-001c6684eb98",
       "Name": "PlayerObj",
       "Position": "361.6956,96.61617,-11.06026",
-      "Tags": "player,trigger",
+      "Tags": "trigger,player",
       "Enabled": true,
       "__Prefab": "prefabs/player.prefab"
     },
@@ -913,6 +908,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-08T22:17:26.4223684\u002B05:00",
+  "LastSaved": "2024-03-08T22:36:57.1706736\u002B05:00",
   "__references": []
 }
