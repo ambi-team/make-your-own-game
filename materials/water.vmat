@@ -1,0 +1,23 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "shaders/water.shader"
+
+	//---- Rendering ----
+	F_DO_NOT_CAST_SHADOWS 1
+
+	//---- Fog ----
+	g_bFogEnabled "1"
+
+	//---- Material ----
+	TextureColor "materials/cable/black_color.tga"
+	TextureTranslucency "materials/default/default_trans.tga"
+
+	//---- Water ----
+	g_fPhase "3.357"
+	g_fScale "2.462"
+	g_fSpeed "3.245"
+	g_fSurfaceRoughness "0.238"
+	g_fWeight "3.253"
+}
