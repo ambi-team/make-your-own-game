@@ -14,7 +14,7 @@ public sealed class PlayerMovement : Component
 	[Property] public float CrouchSpeed { get; set; } = 1.0f;
 	[Property] public float JumpForce { get; set; } = 400.0f;
 
-	[Property] public bool CanDuck { get; set; } = true;
+	[Property] public bool CanDuck { get; set; } = false;
 	[Property] public bool CanJump { get; set; } = true;
 	[Property] public bool CanSprinting { get; set; } = true;
 
