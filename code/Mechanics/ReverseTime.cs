@@ -4,6 +4,7 @@
 	[Property] public Player ply;
 	[Property] public PrefabScene pseudoPlyPrefab;
 	[Property] public Color pseudoPlyColor;
+	[Property] private float defaultTimeRecoding = 20f;
 	private Player pseudoPly;
 
 	public bool onRecording;
@@ -24,7 +25,6 @@
 	public Dictionary<float, bool> actionsUse = new();
 	public Dictionary<float, Rotation> eyeRotations = new();
 
-	private float defaultTimeRecoding = 4f;
 	private Vector3 startPos;
 	private Rotation startEyeRotation;
 	private TimeUntil TimeRecording { get; set; }

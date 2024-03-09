@@ -324,7 +324,10 @@
                 },
                 {
                   "__type": "TriggerButton",
-                  "Game": null,
+                  "Game": {
+                    "_type": "gameobject",
+                    "go": "8afd8364-bb30-4946-97a5-39510f7e1920"
+                  },
                   "OnTrigger": {
                     "Version": 5,
                     "UserData": {
@@ -370,9 +373,9 @@
                         "Type": "call",
                         "Properties": {
                           "_name": "Get",
+                          "_isStatic": false,
                           "T": "package.ambi.myog/ReverseTime",
-                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                          "_isStatic": false
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister"
                         },
                         "UserData": {
                           "Position": "16,160"
@@ -383,8 +386,8 @@
                         "Type": "call",
                         "Properties": {
                           "_name": "StartRecord",
-                          "_type": "package.ambi.myog/ReverseTime",
-                          "_isStatic": false
+                          "_isStatic": false,
+                          "_type": "package.ambi.myog/ReverseTime"
                         },
                         "UserData": {
                           "Position": "352,176"
@@ -530,7 +533,7 @@
         {
           "Id": "87203683-539e-4fd1-9c64-a2d003b54107",
           "Name": "TriggerObj",
-          "Position": "-92.59567,0,27.69293",
+          "Position": "-2065.885,458.29,27.69293",
           "Enabled": true,
           "Components": [
             {
@@ -679,7 +682,7 @@
         {
           "Id": "0e826a31-2dbf-42e6-8494-c557c0137211",
           "Name": "TriggerTeleport",
-          "Position": "-92.59567,-97.35979,29.78002",
+          "Position": "-2118.075,545.4453,29.78003",
           "Scale": "0.1523108,0.5770563,1.183053",
           "Enabled": true,
           "Components": [
@@ -712,7 +715,7 @@
         {
           "Id": "96733614-179e-49c6-aafd-1d6e2010ca51",
           "Name": "TriggerCollision",
-          "Position": "-92.59567,-189.6065,27.69293",
+          "Position": "-2078.014,648.1294,27.69293",
           "Enabled": true,
           "Components": [
             {
@@ -870,16 +873,10 @@
     {
       "Id": "e99edea2-ec4e-459e-9603-f1bd06bb74e1",
       "Name": "PlayerObj",
-      "Position": "-418.6801,-323.1317,-697.6271",
+      "Position": "-2437.869,32.75986,-660.1722",
       "Tags": "trigger,player",
       "Enabled": true,
       "__Prefab": "prefabs/player.prefab"
-    },
-    {
-      "Id": "dab8f3fa-cda6-4974-af03-395a592fb0fb",
-      "Name": "PosToSpawn #1",
-      "Position": "573.9882,80.40993,80.30177",
-      "Enabled": true
     }
   ],
   "SceneProperties": {
@@ -905,6 +902,6 @@
   },
   "Title": "level1",
   "Description": "",
-  "LastSaved": "2024-03-09T16:20:10.4451586\u002B05:00",
+  "LastSaved": "2024-03-09T16:40:29.4452945\u002B05:00",
   "__references": []
 }
