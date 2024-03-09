@@ -1,9 +1,93 @@
 {
-  "Id": "00000000-0000-0000-0000-000000000000",
-  "GameObjects": null,
-  "SceneProperties": null,
-  "Title": null,
-  "Description": null,
-  "LastSaved": "0001-01-01T00:00:00\u002B00:00",
+  "Id": "425f186b-636e-426e-b93d-022291335795",
+  "GameObjects": [
+    {
+      "Id": "ccfa1448-ab9f-4162-b315-a4ac040044fa",
+      "Name": "\uD83C\uDFDE ENV \uD83C\uDFDE",
+      "Position": "235.5777,345.3558,54.46339",
+      "Enabled": true
+    },
+    {
+      "Id": "55d396a6-98e6-47ba-b89a-cf2a54427246",
+      "Name": "Map",
+      "Position": "-16.00771,61.8781,2112.087",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "MapName": "final",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "Id": "98ade22b-8988-4c46-86aa-1b7a68a5a0ff",
+      "Name": "Sun",
+      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "1.96,1.96,1.96,1",
+          "Shadows": true,
+          "SkyColor": "0.2532,0.32006,0.35349,1"
+        }
+      ]
+    },
+    {
+      "Id": "5737fd72-ebad-4af5-8d14-2ce16e3970e7",
+      "Name": "2D Skybox",
+      "Tags": "skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "SkyMaterial": "materials/skybox/light_test_dark.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "level4",
+  "Description": "",
+  "LastSaved": "2024-03-09T19:01:35.5417408\u002B05:00",
   "__references": []
 }
