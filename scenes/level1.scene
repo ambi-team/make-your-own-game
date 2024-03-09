@@ -78,6 +78,7 @@
       "Components": [
         {
           "__type": "ReverseTime",
+          "defaultTimeRecoding": 15,
           "ply": {
             "_type": "component",
             "go": "e99edea2-ec4e-459e-9603-f1bd06bb74e1",
@@ -867,6 +868,92 @@
               "OnCollisionUpdated": null
             }
           ]
+        },
+        {
+          "Id": "4f4652a0-2430-4bfe-9d79-9ad734043999",
+          "Name": "Sphere",
+          "Position": "-1878.557,714.3311,50.06262",
+          "Scale": "1,0.1450526,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/sphere.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "WheelPuzzle"
+            },
+            {
+              "__type": "SphereCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Radius": 34,
+              "Static": false,
+              "Surface": null
+            }
+          ],
+          "Children": [
+            {
+              "Id": "bf11a98d-90cc-41ba-a770-a566b855e3c9",
+              "Name": "Cube",
+              "Position": "1.677246,-8.479127,18.6297",
+              "Scale": "0.0442862,1,0.5199051",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialGroup": null,
+                  "MaterialOverride": null,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.9907,0.02765,0.02765,1"
+                }
+              ]
+            },
+            {
+              "Id": "5e6c28be-8443-4c12-82ef-bc04588f028e",
+              "Name": "Cube (1)",
+              "Position": "1.200684,-27.26451,-12.94666",
+              "Scale": "0.0442862,0.3425601,0.7842059",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialGroup": null,
+                  "MaterialOverride": null,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.02765,0.9907,0.14001,1"
+                }
+              ]
+            },
+            {
+              "Id": "8ccf71d2-9557-4fe1-bf28-ad140cba3f1f",
+              "Name": "Cube (2)",
+              "Position": "-0.498291,0,0",
+              "Rotation": "0,0.7071067,0,0.7071068",
+              "Scale": "0.06937091,1.268515,1.252335",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialGroup": null,
+                  "MaterialOverride": null,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.35146,0.33006,0.97209,1"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -874,7 +961,7 @@
       "Id": "e99edea2-ec4e-459e-9603-f1bd06bb74e1",
       "Name": "PlayerObj",
       "Position": "-2437.869,32.75986,-660.1722",
-      "Tags": "trigger,player",
+      "Tags": "player,trigger",
       "Enabled": true,
       "__Prefab": "prefabs/player.prefab"
     }
@@ -902,6 +989,6 @@
   },
   "Title": "level1",
   "Description": "",
-  "LastSaved": "2024-03-09T16:40:29.4452945\u002B05:00",
+  "LastSaved": "2024-03-09T23:20:53.6625825\u002B05:00",
   "__references": []
 }
