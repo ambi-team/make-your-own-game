@@ -2,7 +2,7 @@
 {
 	#region Prop/Vars
 	public int angle = 1;
-	private int angleMax = 16;
+	private int angleMax = 12;
 	private float pitch = 0; // cuz ToRotation will do normalize
 	private float angleMaxForRotate;
 	private Angles startAng;
