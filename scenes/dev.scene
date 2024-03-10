@@ -35,7 +35,7 @@
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "1.96,1.96,1.96,1",
-          "Shadows": true,
+          "Shadows": false,
           "SkyColor": "0.2532,0.32006,0.35349,1"
         }
       ]
@@ -78,6 +78,7 @@
       "Components": [
         {
           "__type": "ReverseTime",
+          "defaultTimeRecoding": 20,
           "ply": {
             "_type": "component",
             "go": "43169f6e-d108-4963-87f0-001c6684eb98",
@@ -731,7 +732,7 @@
               "__type": "BoxCollider",
               "Center": "0,0,0",
               "IsTrigger": false,
-              "Scale": "50,50,50",
+              "Scale": "54,54,54",
               "Static": false,
               "Surface": null
             },
@@ -908,6 +909,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-08T22:36:57.1706736\u002B05:00",
+  "LastSaved": "2024-03-10T10:19:27.7350576\u002B05:00",
   "__references": []
 }
