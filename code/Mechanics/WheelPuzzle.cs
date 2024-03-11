@@ -1,29 +1,35 @@
 ﻿public sealed class WheelPuzzle : Component, IUsable
 {
 	#region Prop/Vars
-	public int angle = 1;
-	private int angleMax = 12;
-	private float pitch = 0; // cuz ToRotation will do normalize
-	private float angleMaxForRotate;
+	[Property, Description("Сторона для прохождения")] public int sideCorrect = 4;
+	public int side = 1;
+	private int sideMax = 12;
+
+	private float degress = 0;
+	private float degreesMaxForRotate;
 	private Angles startAng;
 	#endregion
 
 	#region Logic
 	public void ToRotate()
 	{
-		angle = (angle >= angleMax) ? 1 : ++angle;
+		side = (side >= sideMax) ? 1 : ++side;
 
-		pitch += angleMaxForRotate;
+		degress += degreesMaxForRotate;
 
-		GameObject.Transform.LocalRotation = Rotation.From(startAng.WithPitch(pitch));
-		Log.Info(angle);
+		GameObject.Transform.LocalRotation = Rotation.From(startAng.WithYaw(degress));
+	}
+
+	public bool IsComplete()
+	{
+		return (side == sideCorrect);
 	}
 	#endregion
 
 	#region Components
 	protected override void OnStart()
 	{
-		angleMaxForRotate = 360 / angleMax;
+		degreesMaxForRotate = 360 / sideMax;
 
 		startAng = GameObject.Transform.Rotation.Angles();
 	}

@@ -15,9 +15,7 @@
       "Components": [
         {
           "__type": "MapInstance",
-          "MapName": "the_forest_fin",
-          "OnMapLoaded": null,
-          "OnMapUnloaded": null,
+          "MapName": "forest_fin_v2",
           "UseMapFromLaunch": false
         }
       ],
@@ -26,7 +24,7 @@
     {
       "Id": "b0a50d4f-72c3-421a-914f-804a513b815d",
       "Name": "Sun",
-      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Rotation": "-0.0314205,-0.7060665,0.03273448,-0.7066904",
       "Tags": "light_directional,light",
       "Enabled": true,
       "Components": [
@@ -35,7 +33,7 @@
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "1.96,1.96,1.96,1",
-          "Shadows": true,
+          "Shadows": false,
           "SkyColor": "0.2532,0.32006,0.35349,1"
         }
       ]
@@ -141,21 +139,19 @@
     {
       "Id": "fdc819f3-a5da-448f-8a86-fae856ab9c6f",
       "Name": "World",
-      "Position": "-459.7955,-484.659,-703.122",
+      "Position": "-459.7955,-484.659,117.7492",
       "Enabled": true,
       "Children": [
         {
           "Id": "75a4882d-7478-4c22-945e-018577e7b433",
           "Name": "Cube",
-          "Position": "-1857.999,553.5502,10.68689",
+          "Position": "-1857.999,553.5502,10.6869",
           "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
@@ -165,29 +161,23 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
+              "Static": false
             },
             {
-              "__type": "TriggerObject",
-              "Game": null,
-              "OnTriggerEntered": null,
-              "OnTriggerExited": null
+              "__type": "TriggerObject"
             }
           ]
         },
         {
           "Id": "f140d8b7-4f6a-4d8e-9e76-6abeb4492a70",
           "Name": "Cube",
-          "Position": "-1777.448,641.3596,35.20404",
+          "Position": "-1777.448,641.3596,35.20405",
           "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
@@ -197,23 +187,20 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true,
-              "Surface": null
+              "Static": true
             }
           ]
         },
         {
           "Id": "1a6a7d65-950b-4ff6-bab0-ad8ac17e9d37",
           "Name": "Cube",
-          "Position": "-1706.812,641.3596,35.20404",
+          "Position": "-1706.812,641.3596,35.20405",
           "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
@@ -223,8 +210,7 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true,
-              "Surface": null
+              "Static": true
             }
           ]
         },
@@ -238,8 +224,6 @@
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
@@ -249,15 +233,14 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true,
-              "Surface": null
+              "Static": true
             }
           ]
         },
         {
           "Id": "6447958e-1605-4bde-b1a8-0573a9d1ea99",
           "Name": "Cube",
-          "Position": "-1761.155,726.8192,62.28302",
+          "Position": "-1761.155,726.8192,62.28303",
           "Rotation": "0,0.1305262,0,0.9914449",
           "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
@@ -265,8 +248,6 @@
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
@@ -276,23 +257,20 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true,
-              "Surface": null
+              "Static": true
             }
           ]
         },
         {
           "Id": "0f86289d-c30b-4bce-ac27-2ca526c8dced",
           "Name": "PlaceForButton",
-          "Position": "-1702.96,529.8952,22.63379",
+          "Position": "-1702.96,529.8952,22.6338",
           "Scale": "0.2116552,0.0604898,1.719332",
           "Enabled": true,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,0.75814,0.80651,1"
@@ -302,8 +280,7 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
+              "Static": false
             }
           ],
           "Children": [
@@ -317,8 +294,6 @@
                 {
                   "__type": "ModelRenderer",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.48218,0.9814,0.10042,1"
@@ -524,8 +499,7 @@
                   "Center": "0,0,0",
                   "IsTrigger": false,
                   "Scale": "50,50,50",
-                  "Static": false,
-                  "Surface": null
+                  "Static": false
                 }
               ]
             }
@@ -540,8 +514,6 @@
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "0.13333,1,0,1"
@@ -551,12 +523,10 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
+              "Static": false
             },
             {
               "__type": "TriggerObject",
-              "Game": null,
               "OnTriggerEntered": {
                 "Version": 5,
                 "UserData": {
@@ -690,8 +660,6 @@
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "0.78476,0.24679,0.85581,1"
@@ -701,14 +669,10 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
+              "Static": false
             },
             {
               "__type": "TriggerTeleport",
-              "Game": null,
-              "OnTeleportStarted": null,
-              "OnTeleportStoped": null,
               "PosToSpawn": "573,80,80"
             }
           ]
@@ -722,8 +686,6 @@
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "0.13333,1,0,1"
@@ -733,12 +695,10 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
+              "Static": false
             },
             {
               "__type": "TriggerCollision",
-              "Game": null,
               "OnCollisionStarted": {
                 "Version": 5,
                 "UserData": {
@@ -864,8 +824,7 @@
                     "DstName": "_value"
                   }
                 ]
-              },
-              "OnCollisionUpdated": null
+              }
             }
           ]
         },
@@ -880,8 +839,6 @@
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/sphere.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
@@ -894,8 +851,7 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Radius": 34,
-              "Static": false,
-              "Surface": null
+              "Static": false
             }
           ],
           "Children": [
@@ -909,8 +865,6 @@
                 {
                   "__type": "ModelRenderer",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "On",
                   "Tint": "0.9907,0.02765,0.02765,1"
@@ -927,8 +881,6 @@
                 {
                   "__type": "ModelRenderer",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "On",
                   "Tint": "0.02765,0.9907,0.14001,1"
@@ -946,8 +898,6 @@
                 {
                   "__type": "ModelRenderer",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "On",
                   "Tint": "0.35146,0.33006,0.97209,1"
@@ -961,7 +911,7 @@
     {
       "Id": "e99edea2-ec4e-459e-9603-f1bd06bb74e1",
       "Name": "PlayerObj",
-      "Position": "-2437.869,32.75986,-660.1722",
+      "Position": "-2437.869,32.75986,160.699",
       "Tags": "player,trigger",
       "Enabled": true,
       "__Prefab": "prefabs/player.prefab"
@@ -990,6 +940,6 @@
   },
   "Title": "level1",
   "Description": "",
-  "LastSaved": "2024-03-09T23:47:02.5889966\u002B05:00",
+  "LastSaved": "2024-03-11T12:54:09.630185\u002B05:00",
   "__references": []
 }

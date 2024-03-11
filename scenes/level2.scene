@@ -1,9 +1,99 @@
 {
-  "Id": "00000000-0000-0000-0000-000000000000",
-  "GameObjects": null,
-  "SceneProperties": null,
-  "Title": null,
-  "Description": null,
-  "LastSaved": "0001-01-01T00:00:00\u002B00:00",
+  "Id": "b9fcea21-2b89-49ac-8016-b257b6e29c9b",
+  "GameObjects": [
+    {
+      "Id": "e92c23fe-09a1-403f-830b-0ec289c88058",
+      "Name": "Map",
+      "Position": "-3514.012,-4323.683,2977.615",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "MapName": "the_forest_fin",
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "Id": "e30bde70-75b3-4dbb-83a0-5b89add30603",
+      "Name": "PlayerObj",
+      "Position": "-2437.869,32.75986,-692.9124",
+      "Tags": "player,trigger",
+      "Enabled": true,
+      "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "Id": "19a4de12-2054-4827-84c0-194536c10358",
+      "Name": "2D Skybox",
+      "Tags": "skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "SkyMaterial": "materials/dev/default_sky.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "85b0498a-6d99-4f9a-b486-38ad29f86f24",
+      "Name": "Sun",
+      "Rotation": "-0.0314205,-0.7060665,0.03273448,-0.7066904",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "1.96,1.96,1.96,1",
+          "Shadows": false,
+          "SkyColor": "0.2532,0.32006,0.35349,1"
+        }
+      ]
+    },
+    {
+      "Id": "77f6d1c7-64d6-425b-9213-4a0fad66f19f",
+      "Name": "\uD83C\uDFDE ENV \uD83C\uDFDE",
+      "Position": "235.5777,345.3558,54.46339",
+      "Enabled": true
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "level2",
+  "Description": "",
+  "LastSaved": "2024-03-11T14:00:45.8367565\u002B05:00",
   "__references": []
 }
