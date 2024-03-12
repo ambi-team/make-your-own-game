@@ -102,6 +102,39 @@
           "SoundOverride": false,
           "StopOnNew": false,
           "Volume": 1
+        },
+        {
+          "__type": "MonologSystem",
+          "_monologUI": {
+            "_type": "component",
+            "go": "846730fd-3358-4884-a6a5-f8d34c0ff616",
+            "component_type": "MonologUI"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "846730fd-3358-4884-a6a5-f8d34c0ff616",
+      "Name": "UI: Monolog",
+      "Position": "310.5639,411.2138,-154.5842",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MonologUI",
+          "_currentOpacity": 0,
+          "_currentSideStyle": "top: 0; border-top-left-radius: 20px; border-top-right-radius: 20px;",
+          "_currentText": "NoText!",
+          "AnimationDurationSeconds": 0.1,
+          "HideOpacity": 0,
+          "ShowOpacity": 1,
+          "Side": "Bottom"
         }
       ]
     },
@@ -259,7 +292,7 @@
           "Name": "Cube",
           "Position": "89.38284,185.6289,62.28305",
           "Rotation": "0,0.1305262,0,0.9914449",
-          "Scale": "0.5289635,0.6224717,0.0442064",
+          "Scale": "0.4901914,0.6224717,0.0442064",
           "Enabled": true,
           "Components": [
             {
@@ -362,8 +395,8 @@
                         "Id": 4,
                         "Type": "property.get",
                         "Properties": {
-                          "_name": "Game",
-                          "_type": "package.ambi.myog/TriggerButton"
+                          "_type": "package.ambi.myog/TriggerButton",
+                          "_name": "Game"
                         },
                         "UserData": {
                           "Position": "-208,160"
@@ -373,10 +406,10 @@
                         "Id": 5,
                         "Type": "call",
                         "Properties": {
-                          "_name": "Get",
-                          "T": "package.ambi.myog/ReverseTime",
+                          "_isStatic": false,
                           "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                          "_isStatic": false
+                          "_name": "Get",
+                          "T": "package.ambi.myog/ReverseTime"
                         },
                         "UserData": {
                           "Position": "16,160"
@@ -386,9 +419,9 @@
                         "Id": 7,
                         "Type": "call",
                         "Properties": {
-                          "_name": "StartRecord",
+                          "_isStatic": false,
                           "_type": "package.ambi.myog/ReverseTime",
-                          "_isStatic": false
+                          "_name": "StartRecord"
                         },
                         "UserData": {
                           "Position": "352,176"
@@ -408,8 +441,8 @@
                         "Id": 11,
                         "Type": "property.set",
                         "Properties": {
-                          "_name": "Tint",
-                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                          "_name": "Tint"
                         },
                         "UserData": {
                           "Position": "368,32"
@@ -426,8 +459,8 @@
                         "Id": 13,
                         "Type": "property.set",
                         "Properties": {
-                          "_name": "Tint",
-                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                          "_name": "Tint"
                         },
                         "UserData": {
                           "Position": "784,16"
@@ -583,8 +616,8 @@
                     "Id": 2,
                     "Type": "property.set",
                     "Properties": {
-                      "_name": "Tint",
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                      "_name": "Tint"
                     },
                     "UserData": {
                       "Position": "256,144"
@@ -633,8 +666,8 @@
                     "Id": 3,
                     "Type": "property.set",
                     "Properties": {
-                      "_name": "Tint",
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                      "_name": "Tint"
                     },
                     "UserData": {
                       "Position": "272,192"
@@ -677,6 +710,256 @@
                   }
                 ]
               }
+            }
+          ]
+        },
+        {
+          "Id": "934d57de-1f40-43f6-99bc-30212cb807f3",
+          "Name": "Monolog Trigger 1",
+          "Position": "-92.59567,588.5242,27.69293",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0,0.88333,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            },
+            {
+              "__type": "MonologTrigger",
+              "Game": {
+                "_type": "gameobject",
+                "go": "cf7c6201-3164-4664-ad2c-281b3e45081d"
+              },
+              "Monologs": [
+                "monologs/test.monolog"
+              ],
+              "OnTriggerEntered": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Trigger Entered",
+                  "id": "6e5488f4-d922-4793-8b98-657b43ade857",
+                  "ReferencedComponentTypes": [
+                    "package.ambi.myog/Monologs.MonologTrigger"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input",
+                    "UserData": {
+                      "Position": "368,64"
+                    }
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "package.ambi.myog/Monologs.MonologTrigger"
+                    },
+                    "UserData": {
+                      "Position": "80,176"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/Monologs.MonologTrigger",
+                      "_name": "Game"
+                    },
+                    "UserData": {
+                      "Position": "320,208"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/Monologs.MonologTrigger",
+                      "_name": "Monologs"
+                    },
+                    "UserData": {
+                      "Position": "320,128"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "foreach",
+                    "UserData": {
+                      "Position": "592,64"
+                    }
+                  },
+                  {
+                    "Id": 5,
+                    "Type": "call",
+                    "Properties": {
+                      "_isStatic": false,
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                      "_name": "Get",
+                      "T": "package.ambi.myog/Monologs.MonologSystem"
+                    },
+                    "UserData": {
+                      "Position": "560,224"
+                    }
+                  },
+                  {
+                    "Id": 6,
+                    "Type": "call",
+                    "Properties": {
+                      "_isStatic": false,
+                      "_type": "package.ambi.myog/Monologs.MonologSystem",
+                      "_name": "AddToQueue"
+                    },
+                    "UserData": {
+                      "Position": "784,96"
+                    }
+                  },
+                  {
+                    "Id": 7,
+                    "Type": "call",
+                    "Properties": {
+                      "_isStatic": false,
+                      "_type": "package.ambi.myog/Monologs.MonologSystem",
+                      "_name": "Play"
+                    },
+                    "UserData": {
+                      "Position": "1088,64"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 1,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 3,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 4,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 3,
+                    "SrcName": "_result",
+                    "DstId": 4,
+                    "DstName": "enumerable"
+                  },
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 5,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "body",
+                    "DstId": 6,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 5,
+                    "SrcName": "_result",
+                    "DstId": 6,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "body.value",
+                    "DstId": 6,
+                    "DstName": "monolog"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "_signal",
+                    "DstId": 7,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 5,
+                    "SrcName": "_result",
+                    "DstId": 7,
+                    "DstName": "_target"
+                  }
+                ]
+              },
+              "OnTriggerExited": null
+            }
+          ]
+        },
+        {
+          "Id": "a30ca840-7f0e-4245-8f23-113843a4fccf",
+          "Name": "Monolog Trigger 1 (1)",
+          "Position": "-99.09628,775.2009,31.25426",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0,0.88333,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "1896ddd3-bffd-4d87-83be-c955879177f7",
+          "Name": "Monolog Trigger 1 (2)",
+          "Position": "-97.61922,684.3221,29.98861",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0,0.88333,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null
             }
           ]
         },
@@ -768,8 +1051,8 @@
                     "Id": 2,
                     "Type": "property.set",
                     "Properties": {
-                      "_name": "Tint",
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                      "_name": "Tint"
                     },
                     "UserData": {
                       "Position": "224,112"
@@ -831,8 +1114,8 @@
                     "Id": 3,
                     "Type": "property.set",
                     "Properties": {
-                      "_name": "Tint",
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                      "_name": "Tint"
                     },
                     "UserData": {
                       "Position": "256,144"

@@ -1,0 +1,49 @@
+@using System
+@using global::Monologs
+@using Sandbox;
+@using Sandbox.UI;
+
+@attribute [StyleSheet]
+@inherits PanelComponent
+
+@namespace Monologs;
+
+<root class="root">
+	<div class="@(Side == SubtitleSide.Up ? "monolog animated-opacity top" : "monolog animated-opacity bottom")" style="transition: all @(AnimationDurationSeconds)s linear; opacity: @_currentOpacity">
+		<text class="text">@_currentText</text>
+	</div>
+</root>
+
+@code
+{
+	[Property] private SubtitleSide Side { get; set; }
+	[Property] private float AnimationDurationSeconds { get; set; } = 0.1f;
+	
+	[Property, MinMax(0.0f, 1.0f)] private float ShowOpacity { get; set; } = 1.0f;
+	[Property, MinMax(0.0f, 1.0f)] private float HideOpacity { get; set; } = 0.0f;
+	
+	[Property, ReadOnly] private string _currentText = "NoText!";
+	[Property, ReadOnly] private float _currentOpacity = 0f;
+	
+	
+	public void Show(string text)
+	{
+		_currentText = text;
+		_currentOpacity = ShowOpacity;
+	}
+
+	public void Hide()
+	{
+		_currentOpacity = HideOpacity;
+	}
+
+
+	protected override int BuildHash() => HashCode.Combine( _currentText, _currentOpacity );
+	
+	
+	private enum SubtitleSide
+	{
+		Up = 0,
+		Bottom = 1,
+	}
+}
