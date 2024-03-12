@@ -384,6 +384,7 @@
         },
         {
           "__type": "BarrierWheelPuzzle",
+          "soundOpen": "sound/monologue/example.sound",
           "sys1": {
             "_type": "component",
             "go": "cd1f547a-ed46-4055-a322-1d1581a779b8",
@@ -640,7 +641,7 @@
   },
   "Title": "level2",
   "Description": "",
-  "LastSaved": "2024-03-12T18:10:46.4324511\u002B05:00",
+  "LastSaved": "2024-03-13T00:18:52.2378907\u002B05:00",
   "__references": [
     "ambi.circle"
   ]
