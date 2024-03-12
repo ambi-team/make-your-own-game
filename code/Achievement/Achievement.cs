@@ -3,8 +3,7 @@ using System.Text.Json.Serialization;
 
 public class Achievement : ISaveData
 {
-	private static Dictionary<string, Achievement> achievements = new();
-
+	#region Props/Vars
 	[JsonIgnore] public string ID { get; set; }
 	[JsonIgnore] public string Name { get; set; }
 	[JsonIgnore] public string Description { get; set; }
@@ -12,12 +11,16 @@ public class Achievement : ISaveData
 	[JsonIgnore] public int MaxCount { get; set; } = 1;
 	public int Count { get; set; } = 0;
 
-	// hooks
+	private static Dictionary<string, Achievement> achievements = new();
+	private static string filename = "achievements"; // without postfix
+	#endregion
+
+	#region Hooks
 	public static event Action<Achievement> OnUnlocked;
 	public static event Action<Achievement, int> OnSetCount;
+	#endregion
 
-	private static string filename = "achievements"; // without postfix
-
+	#region Logic 
 	private Achievement(string id, string name, string description, bool isLock, int maxCount, int count)
 	{
 		ID = id;
@@ -106,7 +109,9 @@ public class Achievement : ISaveData
 	{
 		return $"{Name} ({ID})";
 	}
+	#endregion
 
+	#region ISaveData
 	public void Save()
 	{
 		SaveData.Save(filename + ".json", achievements);
@@ -142,4 +147,5 @@ public class Achievement : ISaveData
 		foreach (Achievement ach in GetAll().Values)
 			ach.Load();
 	}
+	#endregion
 }

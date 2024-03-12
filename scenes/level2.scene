@@ -6,6 +6,7 @@
       "Name": "Map",
       "Position": "-3514.012,-4323.683,2977.615",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "MapInstance",
@@ -19,8 +20,9 @@
       "Id": "e30bde70-75b3-4dbb-83a0-5b89add30603",
       "Name": "PlayerObj",
       "Position": "-2065.248,32.75986,-692.9124",
-      "Tags": "player,trigger",
+      "Tags": "trigger,player",
       "Enabled": true,
+      "NetworkMode": 2,
       "__Prefab": "prefabs/player.prefab"
     },
     {
@@ -28,6 +30,7 @@
       "Name": "2D Skybox",
       "Tags": "skybox",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "SkyBox2D",
@@ -53,6 +56,7 @@
       "Rotation": "-0.0314205,-0.7060665,0.03273448,-0.7066904",
       "Tags": "light_directional,light",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "DirectionalLight",
@@ -68,7 +72,8 @@
       "Id": "77f6d1c7-64d6-425b-9213-4a0fad66f19f",
       "Name": "\uD83C\uDFDE ENV \uD83C\uDFDE",
       "Position": "235.5777,345.3558,54.46339",
-      "Enabled": true
+      "Enabled": true,
+      "NetworkMode": 2
     },
     {
       "Id": "a57a9d1e-9f0c-4c4d-9bb4-600c74c86455",
@@ -77,6 +82,7 @@
       "Rotation": "-0.7071067,0.00000007375699,0.00000007375698,0.7071068",
       "Scale": "4,4,4",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "ModelRenderer",
@@ -105,6 +111,56 @@
           "Rotation": "0.4999999,-0.5,0.5,0.5000001",
           "Scale": "0.2228712,0.0206647,0.01087404",
           "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.80465,0.13411,0,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "b45f1b6b-105b-45fb-aa97-890215b45c96",
+      "Name": "Wheel Big (1)",
+      "Position": "-1987.623,133.3005,-699.6713",
+      "Rotation": "-0.7071067,0.00000007375699,0.00000007375698,0.7071068",
+      "Scale": "4,4,4",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/circle.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "WheelPuzzle",
+          "canRotate": true,
+          "sideCorrect": 2
+        },
+        {
+          "__type": "ModelCollider",
+          "IsTrigger": false,
+          "Model": "models/circle.vmdl",
+          "Static": true
+        }
+      ],
+      "Children": [
+        {
+          "Id": "11a74fd2-f83b-4cdf-9868-f6e7c0422c59",
+          "Name": "Cube",
+          "Position": "-0.07753738,-0.4014142,-5.92865",
+          "Rotation": "0.4999999,-0.5,0.5,0.5000001",
+          "Scale": "0.2228712,0.0206647,0.01087404",
+          "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
@@ -124,6 +180,7 @@
       "Rotation": "-0.7071068,0.00000007375699,0.00000007375699,0.7071068",
       "Scale": "2,2,2",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "ModelRenderer",
@@ -152,6 +209,56 @@
           "Rotation": "0.4999999,-0.5,0.5,0.5000001",
           "Scale": "0.2358595,0.04141484,0.01734537",
           "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0,0.26822,0.80465,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "30b3fddf-e859-4ede-b221-eb152d4ad342",
+      "Name": "Wheel Medium (1)",
+      "Position": "-1988.576,132.9825,-696.0707",
+      "Rotation": "-0.7071068,0.00000007375699,0.00000007375699,0.7071068",
+      "Scale": "2,2,2",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/circle.vmdl",
+          "RenderType": "On",
+          "Tint": "0.55814,0.55814,0.55814,1"
+        },
+        {
+          "__type": "WheelPuzzle",
+          "canRotate": true,
+          "sideCorrect": 11
+        },
+        {
+          "__type": "ModelCollider",
+          "IsTrigger": false,
+          "Model": "models/circle.vmdl",
+          "Static": true
+        }
+      ],
+      "Children": [
+        {
+          "Id": "12fbc9d4-8883-4f4e-a69f-0176b367bdaa",
+          "Name": "Cube",
+          "Position": "0.1036094,-0.7148144,-5.603638",
+          "Rotation": "0.4999999,-0.5,0.5,0.5000001",
+          "Scale": "0.2358595,0.04141484,0.01734537",
+          "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
@@ -170,6 +277,7 @@
       "Position": "-2068.917,-12.30916,-694.3013",
       "Rotation": "-0.7071067,0.00000007375699,0.00000007375698,0.7071068",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "ModelRenderer",
@@ -198,6 +306,7 @@
           "Rotation": "0.4999999,-0.5,0.5,0.5000001",
           "Scale": "0.2235478,0.07615279,0.03860123",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
@@ -211,13 +320,176 @@
       ]
     },
     {
-      "Id": "22a60e6e-a9d5-4a47-beb1-e4a92f2aaf1b",
-      "Name": "Object",
-      "Position": "-2064.965,-25.7785,-704.8428",
+      "Id": "bb3b7de7-8be7-4858-8ec7-054f93fbe0cf",
+      "Name": "Wheel Small (1)",
+      "Position": "-1988.632,132.8047,-694.3013",
+      "Rotation": "-0.7071067,0.00000007375699,0.00000007375698,0.7071068",
       "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/circle.vmdl",
+          "RenderType": "On",
+          "Tint": "0.31163,0.31163,0.31163,1"
+        },
+        {
+          "__type": "WheelPuzzle",
+          "canRotate": true,
+          "sideCorrect": 5
+        },
+        {
+          "__type": "ModelCollider",
+          "IsTrigger": false,
+          "Model": "models/circle.vmdl",
+          "Static": true
+        }
+      ],
+      "Children": [
+        {
+          "Id": "cb33527c-bd5f-4326-ad4c-7866c3a875e3",
+          "Name": "Cube",
+          "Position": "-0.04147442,-0.3767712,-5.767334",
+          "Rotation": "0.4999999,-0.5,0.5,0.5000001",
+          "Scale": "0.2235478,0.07615279,0.03860123",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.80465,0,0.75101,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "832226fe-cf8f-4738-b174-a1a24184b6b1",
+      "Name": "Barrier Wheel Puzzle",
+      "Position": "-1947.17,41.63849,-672.4172",
+      "Scale": "0.03164844,1,1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "Off",
+          "Tint": "0.97209,0.04973,0.95672,0.24"
+        },
+        {
+          "__type": "BarrierWheelPuzzle",
+          "sys1": {
+            "_type": "component",
+            "go": "cd1f547a-ed46-4055-a322-1d1581a779b8",
+            "component_type": "WheelPuzzleSystem"
+          },
+          "sys2": {
+            "_type": "component",
+            "go": "53e68a0f-47ac-47c2-93d7-bb806e235f97",
+            "component_type": "WheelPuzzleSystem"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "cd1f547a-ed46-4055-a322-1d1581a779b8",
+      "Name": "WheelSys1",
+      "Position": "-1846.56,23.98398,-789.1205",
+      "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "WheelPuzzleSystem",
+          "barrier": {
+            "_type": "component",
+            "go": "832226fe-cf8f-4738-b174-a1a24184b6b1",
+            "component_type": "BarrierWheelPuzzle"
+          },
+          "OnCompeleted": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Compeleted",
+              "id": "34a66f16-b213-4fe0-91d8-cbea63704f2a",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/WheelPuzzleSystem"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "256,-0"
+                }
+              },
+              {
+                "Id": 1,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/WheelPuzzleSystem"
+                },
+                "UserData": {
+                  "Position": "-96,80"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "package.ambi.myog/WheelPuzzleSystem",
+                  "_name": "barrier"
+                },
+                "UserData": {
+                  "Position": "160,80"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_type": "package.ambi.myog/BarrierWheelPuzzle",
+                  "_name": "Open"
+                },
+                "UserData": {
+                  "Position": "448,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              }
+            ]
+          },
           "wheelBig": {
             "_type": "component",
             "go": "a57a9d1e-9f0c-4c4d-9bb4-600c74c86455",
@@ -231,6 +503,114 @@
           "wheelSmall": {
             "_type": "component",
             "go": "32112f21-8e1f-450b-bb20-a1505e639b68",
+            "component_type": "WheelPuzzle"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "53e68a0f-47ac-47c2-93d7-bb806e235f97",
+      "Name": "WheelSys2",
+      "Position": "-1846.56,23.98398,-789.1205",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "WheelPuzzleSystem",
+          "barrier": {
+            "_type": "component",
+            "go": "832226fe-cf8f-4738-b174-a1a24184b6b1",
+            "component_type": "BarrierWheelPuzzle"
+          },
+          "OnCompeleted": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Compeleted",
+              "id": "aae23cca-345b-4bac-af66-60181dee2d1f"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "144,0"
+                }
+              },
+              {
+                "Id": 1,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/WheelPuzzleSystem"
+                },
+                "UserData": {
+                  "Position": "-192,64"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "package.ambi.myog/WheelPuzzleSystem",
+                  "_name": "barrier"
+                },
+                "UserData": {
+                  "Position": "48,64"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_type": "package.ambi.myog/BarrierWheelPuzzle",
+                  "_name": "Open"
+                },
+                "UserData": {
+                  "Position": "320,64"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              }
+            ]
+          },
+          "wheelBig": {
+            "_type": "component",
+            "go": "b45f1b6b-105b-45fb-aa97-890215b45c96",
+            "component_type": "WheelPuzzle"
+          },
+          "wheelMedium": {
+            "_type": "component",
+            "go": "30b3fddf-e859-4ede-b221-eb152d4ad342",
+            "component_type": "WheelPuzzle"
+          },
+          "wheelSmall": {
+            "_type": "component",
+            "go": "bb3b7de7-8be7-4858-8ec7-054f93fbe0cf",
             "component_type": "WheelPuzzle"
           }
         }
@@ -260,7 +640,7 @@
   },
   "Title": "level2",
   "Description": "",
-  "LastSaved": "2024-03-12T00:09:34.3759703\u002B05:00",
+  "LastSaved": "2024-03-12T18:10:46.4324511\u002B05:00",
   "__references": [
     "ambi.circle"
   ]

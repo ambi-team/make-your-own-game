@@ -1,22 +1,28 @@
-﻿public sealed class WheelPuzzleSystem : Component
+﻿using System;
+
+public sealed class WheelPuzzleSystem : Component
 {
 	#region Props/Vars
 	[Property] public WheelPuzzle wheelBig;
 	[Property] public WheelPuzzle wheelMedium;
 	[Property] public WheelPuzzle wheelSmall;
-	[Property] public GameObject barrier;
+	[Property] public BarrierWheelPuzzle barrier;
 
 	private bool readyWheelBig = false;
 	private bool readyWheelMedium = false;
 	private bool readyWheelSmall = false;
+
+	public bool isCompleted = false;
+	#endregion
+
+	#region Hooks
+	[Property] public Action OnCompeleted;
 	#endregion
 
 	#region System
 	private void CheckChallenge(WheelPuzzle wheel)
 	{
 		var obj = wheel.GameObject;
-
-		Log.Info($"{readyWheelBig} {readyWheelMedium} {readyWheelSmall}");
 
 		if (wheelBig.GameObject == obj)
 			readyWheelBig = wheel.IsComplete();
@@ -31,8 +37,11 @@
 			wheelMedium.canRotate = false;
 			wheelSmall.canRotate = false;
 
-			//barrier to open
-			Log.Info($"The puzzle is completed"); //todo remove
+			isCompleted = true;
+
+			OnCompeleted?.Invoke();
+
+			Log.Info($"[WheelPuzzleSystem] {this} has completed");
 		}
 	}
 	#endregion
