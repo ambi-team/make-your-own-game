@@ -1,7 +1,10 @@
-﻿public sealed class WheelPuzzle : Component, IUsable
+﻿using System;
+
+public sealed class WheelPuzzle : Component, IUsable
 {
 	#region Prop/Vars
 	[Property, Description("Сторона для прохождения")] public int sideCorrect = 4;
+	[Property] public bool canRotate = true;
 	public int side = 1;
 	private int sideMax = 12;
 
@@ -10,14 +13,24 @@
 	private Angles startAng;
 	#endregion
 
+	#region Hooks
+	public event Action<WheelPuzzle> OnRotated;
+	#endregion
+	
 	#region Logic
 	public void ToRotate()
 	{
+		if (!canRotate) return;
+
 		side = (side >= sideMax) ? 1 : ++side;
 
 		degress += degreesMaxForRotate;
 
 		GameObject.Transform.LocalRotation = Rotation.From(startAng.WithYaw(degress));
+
+		Log.Info($"[WheelPuzzle] Rotate {this} ({side}, {sideCorrect})");
+
+		OnRotated?.Invoke(this);
 	}
 
 	public bool IsComplete()

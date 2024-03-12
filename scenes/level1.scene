@@ -296,7 +296,7 @@
                   "BodyGroups": 18446744073709551615,
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
-                  "Tint": "0.48218,0.9814,0.10042,1"
+                  "Tint": "0.9814,0.10042,0.10042,1"
                 },
                 {
                   "__type": "TriggerButton",
@@ -348,8 +348,8 @@
                         "Id": 5,
                         "Type": "call",
                         "Properties": {
-                          "_name": "Get",
                           "_isStatic": false,
+                          "_name": "Get",
                           "T": "package.ambi.myog/ReverseTime",
                           "_type": "Sandbox.Game/Sandbox.IComponentLister"
                         },
@@ -361,8 +361,8 @@
                         "Id": 7,
                         "Type": "call",
                         "Properties": {
-                          "_name": "StartRecord",
                           "_isStatic": false,
+                          "_name": "StartRecord",
                           "_type": "package.ambi.myog/ReverseTime"
                         },
                         "UserData": {
@@ -831,8 +831,8 @@
         {
           "Id": "4f4652a0-2430-4bfe-9d79-9ad734043999",
           "Name": "Sphere",
-          "Position": "-1878.557,505.0544,50.06262",
-          "Rotation": "0,0,-0.7071068,0.7071068",
+          "Position": "-1878.557,505.0544,50.06261",
+          "Rotation": "-0.5,0.5,-0.5000001,0.5000001",
           "Scale": "1,0.1450526,1",
           "Enabled": true,
           "Components": [
@@ -844,7 +844,8 @@
               "Tint": "1,1,1,1"
             },
             {
-              "__type": "WheelPuzzle"
+              "__type": "WheelPuzzle",
+              "sideCorrect": 4
             },
             {
               "__type": "SphereCollider",
@@ -940,6 +941,6 @@
   },
   "Title": "level1",
   "Description": "",
-  "LastSaved": "2024-03-11T12:54:09.630185\u002B05:00",
+  "LastSaved": "2024-03-11T17:40:40.9950438\u002B05:00",
   "__references": []
 }
