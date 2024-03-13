@@ -103,12 +103,19 @@
           }
         },
         {
-        "__type": "SoundPointComponent",
+          "__type": "SoundPointComponent",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
           "Force2d": false,
           "MaxRepeatTime": 1,
           "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
           "Pitch": 1,
           "PlayOnStart": true,
+          "ReflectionOverride": false,
+          "Reflections": false,
           "Repeat": false,
           "SoundEvent": "sound/coin1.sound",
           "SoundOverride": false,
@@ -1002,6 +1009,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-13T18:45:55.7581004\u002B03:00",
+  "LastSaved": "2024-03-13T19:19:57.813774\u002B03:00",
   "__references": []
 }
