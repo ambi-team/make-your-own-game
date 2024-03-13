@@ -103,20 +103,14 @@
           }
         },
         {
-          "__type": "SoundPointComponent",
-          "DistanceAttenuation": false,
-          "DistanceAttenuationOverride": false,
+        "__type": "SoundPointComponent",
           "Force2d": false,
           "MaxRepeatTime": 1,
           "MinRepeatTime": 1,
-          "Occlusion": false,
-          "OcclusionOverride": false,
-          "OcclusionRadius": 32,
           "Pitch": 1,
-          "PlayOnStart": false,
-          "ReflectionOverride": false,
-          "Reflections": false,
+          "PlayOnStart": true,
           "Repeat": false,
+          "SoundEvent": "sound/coin1.sound",
           "SoundOverride": false,
           "StopOnNew": false,
           "Volume": 1
@@ -294,7 +288,7 @@
           "Name": "Cube",
           "Position": "89.38284,185.6289,62.28305",
           "Rotation": "0,0.1305262,0,0.9914449",
-          "Scale": "0.4901914,0.6224717,0.0442064",
+          "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
           "NetworkMode": 2,
           "Components": [
@@ -403,10 +397,10 @@
                         "Id": 5,
                         "Type": "call",
                         "Properties": {
-                          "_isStatic": false,
-                          "_name": "Get",
                           "T": "package.ambi.myog/ReverseTime",
-                          "_type": "Sandbox.Game/Sandbox.IComponentLister"
+                          "_isStatic": false,
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                          "_name": "Get"
                         },
                         "UserData": {
                           "Position": "16,160"

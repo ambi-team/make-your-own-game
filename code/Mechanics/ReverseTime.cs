@@ -1,4 +1,7 @@
-﻿public sealed class ReverseTime : Component
+﻿using System;
+using Sandbox.UI;
+
+public sealed class ReverseTime : Component
 {
 	#region Props/Vars
 	[Property] public Player ply;
@@ -8,7 +11,7 @@
 	private Player pseudoPly;
 
 	public bool onRecording;
-	private int indexRecord = 0;
+	public int indexRecord = 0;
 
 	public bool onPlaying;
 	private int indexPlay = 0;
@@ -25,9 +28,10 @@
 	public Dictionary<float, bool> actionsUse = new();
 	public Dictionary<float, Rotation> eyeRotations = new();
 
+	public TimeUntil TimeRecording { get; set; }
 	private Vector3 startPos;
 	private Rotation startEyeRotation;
-	private TimeUntil TimeRecording { get; set; }
+	[Property] private ReverseTimeHud HUD { get; set; }
 	#endregion
 
 	#region Record logic
@@ -39,11 +43,13 @@
 		startPos = ply.GameObject.Transform.Position;
 		startEyeRotation = ply.Camera.Head.Transform.Rotation;
 
+		HUD.Enabled = true;
+
 		indexRecord = 0;
 		TimeRecording = defaultTimeRecoding;
 		onRecording = true; // native start
 
-		Log.Info($"[ReverseTime] Start recordin");
+		Log.Info($"[ReverseTime] Start recording");
 	}
 
 	public void Record()
@@ -98,6 +104,8 @@
 	public void StopRecord()
 	{
 		if (!onRecording) return;
+
+		HUD.Enabled = false;
 
 		onRecording = false;
 

@@ -1,0 +1,25 @@
+@using Sandbox;
+@using System;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="title">@MathF.Round(rTime.TimeRecording, 2)</div>
+</root>
+
+@code
+{
+	[Property] public ReverseTime rTime;
+
+	protected override void OnStart()
+	{
+		//todo check rTime is null
+
+		Enabled = false;
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => HashCode.Combine(rTime.indexRecord);
+}

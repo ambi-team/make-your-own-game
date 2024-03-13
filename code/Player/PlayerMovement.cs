@@ -1,10 +1,15 @@
+using System;
 using Sandbox;
 using Sandbox.Citizen;
+using System.Text.Unicode;
 
 public sealed class PlayerMovement : Component
 {
 	#region Props/Vars
 	[Property] public bool IsPseudo { get; set; } = false;
+	[Property] public bool Invert { get; set; } = false;
+	[Property] public bool Fly { get; set; } = false;
+	[Property, Description("Замораживает нахуй")] public bool Freeze { get; set; } = false;
 
 	[Property] public float GroundControl { get; set; } = 4.0f;
 	[Property] public float AirControl { get; set; } = 0.1f;
@@ -65,30 +70,31 @@ public sealed class PlayerMovement : Component
 	public void BuildWishVelocity()
 	{
 		WishVelocity = 0;
+		if (Freeze || Fly) return;
 
 		Rotation rot = Head.Transform.Rotation;
 
 		if ((Input.Down("Forward") && !IsPseudo) || moveForward)
 		{
-			WishVelocity += rot.Forward;
+			WishVelocity += rot.Forward * (Invert ? -1 : 1);
 			moveForward = false;
 		}
 
 		if ((Input.Down("Backward") && !IsPseudo) || moveBackward)
 		{
-			WishVelocity += rot.Backward;
+			WishVelocity += rot.Backward * (Invert ? -1 : 1);
 			moveBackward = false;
 		}
 
 		if ((Input.Down("Left") && !IsPseudo) || moveLeft)
 		{
-			WishVelocity += rot.Left;
+			WishVelocity += rot.Left * (Invert ? -1 : 1);
 			moveLeft = false;
 		}
 
 		if ((Input.Down("Right") && !IsPseudo) || moveRight)
 		{
-			WishVelocity += rot.Right;
+			WishVelocity += rot.Right * (Invert ? -1 : 1);
 			moveRight = false;
 		}
 
@@ -109,8 +115,42 @@ public sealed class PlayerMovement : Component
 		}
 	}
 
+	public void BuildFly()
+	{
+		if (!Fly || Freeze) return;
+
+		Rotation rot = Head.Transform.Rotation;
+		float speed = (IsSprinting) ? RunSpeed : Speed;
+
+		if ((Input.Down("Forward") && !IsPseudo) || moveForward)
+		{
+			GameObject.Transform.Position += rot.Forward * speed;
+			moveForward = false;
+		}
+
+		if ((Input.Down("Backward") && !IsPseudo) || moveBackward)
+		{
+			GameObject.Transform.Position += rot.Backward * speed;
+			moveBackward = false;
+		}
+
+		if ((Input.Down("Left") && !IsPseudo) || moveLeft)
+		{
+			GameObject.Transform.Position += rot.Left * speed;
+			moveLeft = false;
+		}
+
+		if ((Input.Down("Right") && !IsPseudo) || moveRight)
+		{
+			GameObject.Transform.Position += rot.Right * speed;
+			moveRight = false;
+		}
+	}
+
 	public void Move()
 	{
+		if (Fly) return;
+
 		var gravity = Scene.PhysicsWorld.Gravity;
 
 		if (_characterController.IsOnGround) 
@@ -161,7 +201,7 @@ public sealed class PlayerMovement : Component
 
 	public void Jump()
 	{
-		if ( !_characterController.IsOnGround) return;
+		if (!_characterController.IsOnGround || Freeze) return;
 
 		_characterController.Punch( Vector3.Up * JumpForce );
 		_animationHelper?.TriggerJump();
@@ -179,7 +219,7 @@ public sealed class PlayerMovement : Component
 
 	public void UpdateDuck()
 	{
-		if ( _characterController is null ) return;
+		if (_characterController is null || Freeze) return;
 
 		if (!isForceDuck)
 		{
@@ -241,6 +281,7 @@ public sealed class PlayerMovement : Component
 		// //////////////////////////////////////////////////////////////
 
 		BuildWishVelocity();
+		BuildFly();
 		Move();
 	}
 
