@@ -57,7 +57,18 @@
         "ambi.grass_3#50675",
         "ambi.grass_2#50674",
         "ambi.smallrock_3#50275",
-        "ambi.rock_5#50246"
+        "ambi.rock_5#50246",
+        "ambi.wooden_barrel#50798",
+        "ambi.house_5#50792",
+        "ambi.wooden_box#50803",
+        "ambi.pit#50802",
+        "ambi.house_4#50791",
+        "ambi.bucket#50800",
+        "ambi.house_3#50790",
+        "ambi.house_2#50788",
+        "ambi.stone_wall_2#50795",
+        "ambi.stone_wall#50793",
+        "ambi.arch#50796"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/forest_fin_v2.vmap"

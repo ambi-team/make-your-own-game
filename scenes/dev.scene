@@ -5,19 +5,19 @@
       "Id": "ff140a58-6f14-4a53-9628-513e49cadf8e",
       "Name": "\uD83C\uDFDE ENV \uD83C\uDFDE",
       "Position": "235.5777,345.3558,54.46339",
-      "Enabled": true
+      "Enabled": true,
+      "NetworkMode": 2
     },
     {
       "Id": "dccc1113-9032-4082-a5d0-b3e76cc42376",
       "Name": "Map",
       "Position": "-16.00771,61.8781,2112.087",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "MapInstance",
           "MapName": "dev_main",
-          "OnMapLoaded": null,
-          "OnMapUnloaded": null,
           "UseMapFromLaunch": false
         }
       ],
@@ -29,6 +29,7 @@
       "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
       "Tags": "light_directional,light",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "DirectionalLight",
@@ -45,6 +46,7 @@
       "Name": "2D Skybox",
       "Tags": "skybox",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "SkyBox2D",
@@ -68,13 +70,15 @@
       "Id": "d0254a7c-0b6d-4bf4-a448-d6871ab61082",
       "Name": "\uD83D\uDCAB DATA \uD83D\uDCAB",
       "Position": "278.0361,331.6518,76.7455",
-      "Enabled": true
+      "Enabled": true,
+      "NetworkMode": 2
     },
     {
       "Id": "cf7c6201-3164-4664-ad2c-281b3e45081d",
       "Name": "Game",
       "Position": "183.8709,140.9425,99.10318",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "ReverseTime",
@@ -102,39 +106,6 @@
           "SoundOverride": false,
           "StopOnNew": false,
           "Volume": 1
-        },
-        {
-          "__type": "MonologSystem",
-          "_monologUI": {
-            "_type": "component",
-            "go": "846730fd-3358-4884-a6a5-f8d34c0ff616",
-            "component_type": "MonologUI"
-          }
-        }
-      ]
-    },
-    {
-      "Id": "846730fd-3358-4884-a6a5-f8d34c0ff616",
-      "Name": "UI: Monolog",
-      "Position": "310.5639,411.2138,-154.5842",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ScreenPanel",
-          "AutoScreenScale": true,
-          "Opacity": 1,
-          "Scale": 1,
-          "ZIndex": 100
-        },
-        {
-          "__type": "MonologUI",
-          "_currentOpacity": 0,
-          "_currentSideStyle": "top: 0; border-top-left-radius: 20px; border-top-right-radius: 20px;",
-          "_currentText": "NoText!",
-          "AnimationDurationSeconds": 0.1,
-          "HideOpacity": 0,
-          "ShowOpacity": 1,
-          "Side": "Bottom"
         }
       ]
     },
@@ -143,6 +114,7 @@
       "Name": "UI: MainMenu",
       "Position": "278.0361,331.6518,76.7455",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "ScreenPanel",
@@ -169,13 +141,15 @@
       "Id": "72bdae71-b4ad-4c65-87db-ff5a9c045778",
       "Name": "\u2705 LEVEL \u2705",
       "Position": "235.5777,345.3558,54.46339",
-      "Enabled": true
+      "Enabled": true,
+      "NetworkMode": 2
     },
     {
       "Id": "2783be33-e57f-43b9-a36a-4565f0ffd550",
       "Name": "World",
       "Position": "301.2039,151.7318,-14.53918",
       "Enabled": true,
+      "NetworkMode": 2,
       "Children": [
         {
           "Id": "af9c89f4-dde9-4ac3-846f-b2fc541efc30",
@@ -183,12 +157,11 @@
           "Position": "-7.461029,12.36,10.68686",
           "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
@@ -198,14 +171,10 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
+              "Static": false
             },
             {
-              "__type": "TriggerObject",
-              "Game": null,
-              "OnTriggerEntered": null,
-              "OnTriggerExited": null
+              "__type": "TriggerObject"
             }
           ]
         },
@@ -215,12 +184,11 @@
           "Position": "73.09052,100.1693,35.20406",
           "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
@@ -230,8 +198,7 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true,
-              "Surface": null
+              "Static": true
             }
           ]
         },
@@ -241,12 +208,11 @@
           "Position": "143.7265,100.1693,35.20406",
           "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
@@ -256,8 +222,7 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true,
-              "Surface": null
+              "Static": true
             }
           ]
         },
@@ -267,12 +232,11 @@
           "Position": "143.7265,185.8891,45.705",
           "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
@@ -282,8 +246,7 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true,
-              "Surface": null
+              "Static": true
             }
           ]
         },
@@ -292,14 +255,13 @@
           "Name": "Cube",
           "Position": "89.38284,185.6289,62.28305",
           "Rotation": "0,0.1305262,0,0.9914449",
-          "Scale": "0.4901914,0.6224717,0.0442064",
+          "Scale": "0.5289635,0.6224717,0.0442064",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
@@ -309,8 +271,7 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": true,
-              "Surface": null
+              "Static": true
             }
           ]
         },
@@ -320,12 +281,11 @@
           "Position": "147.5785,-11.2951,22.6338",
           "Scale": "0.2116552,0.0604898,1.719332",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "1,0.75814,0.80651,1"
@@ -335,8 +295,7 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
+              "Static": false
             }
           ],
           "Children": [
@@ -346,12 +305,11 @@
               "Position": "-1.143101,-38.16451,18.03082",
               "Scale": "0.6534992,0.894671,0.07965566",
               "Enabled": true,
+              "NetworkMode": 2,
               "Components": [
                 {
                   "__type": "ModelRenderer",
                   "BodyGroups": 18446744073709551615,
-                  "MaterialGroup": null,
-                  "MaterialOverride": null,
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
                   "Tint": "0.48218,0.9814,0.10042,1"
@@ -406,10 +364,10 @@
                         "Id": 5,
                         "Type": "call",
                         "Properties": {
+                          "T": "package.ambi.myog/ReverseTime",
                           "_isStatic": false,
                           "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                          "_name": "Get",
-                          "T": "package.ambi.myog/ReverseTime"
+                          "_name": "Get"
                         },
                         "UserData": {
                           "Position": "16,160"
@@ -557,8 +515,7 @@
                   "Center": "0,0,0",
                   "IsTrigger": false,
                   "Scale": "50,50,50",
-                  "Static": false,
-                  "Surface": null
+                  "Static": false
                 }
               ]
             }
@@ -569,12 +526,11 @@
           "Name": "TriggerObj",
           "Position": "-92.59567,0,27.69293",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "0.13333,1,0,1"
@@ -584,12 +540,10 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
+              "Static": false
             },
             {
               "__type": "TriggerObject",
-              "Game": null,
               "OnTriggerEntered": {
                 "Version": 5,
                 "UserData": {
@@ -714,267 +668,16 @@
           ]
         },
         {
-          "Id": "934d57de-1f40-43f6-99bc-30212cb807f3",
-          "Name": "Monolog Trigger 1",
-          "Position": "-92.59567,588.5242,27.69293",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "0,0.88333,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "Center": "0,0,0",
-              "IsTrigger": true,
-              "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
-            },
-            {
-              "__type": "MonologTrigger",
-              "Game": {
-                "_type": "gameobject",
-                "go": "cf7c6201-3164-4664-ad2c-281b3e45081d"
-              },
-              "Monologs": [
-                "monologs/test.monolog"
-              ],
-              "OnTriggerEntered": {
-                "Version": 5,
-                "UserData": {
-                  "Title": "On Trigger Entered",
-                  "id": "6e5488f4-d922-4793-8b98-657b43ade857",
-                  "ReferencedComponentTypes": [
-                    "package.ambi.myog/Monologs.MonologTrigger"
-                  ]
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input",
-                    "UserData": {
-                      "Position": "368,64"
-                    }
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "package.ambi.myog/Monologs.MonologTrigger"
-                    },
-                    "UserData": {
-                      "Position": "80,176"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "property.get",
-                    "Properties": {
-                      "_type": "package.ambi.myog/Monologs.MonologTrigger",
-                      "_name": "Game"
-                    },
-                    "UserData": {
-                      "Position": "320,208"
-                    }
-                  },
-                  {
-                    "Id": 3,
-                    "Type": "property.get",
-                    "Properties": {
-                      "_type": "package.ambi.myog/Monologs.MonologTrigger",
-                      "_name": "Monologs"
-                    },
-                    "UserData": {
-                      "Position": "320,128"
-                    }
-                  },
-                  {
-                    "Id": 4,
-                    "Type": "foreach",
-                    "UserData": {
-                      "Position": "592,64"
-                    }
-                  },
-                  {
-                    "Id": 5,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "_name": "Get",
-                      "T": "package.ambi.myog/Monologs.MonologSystem"
-                    },
-                    "UserData": {
-                      "Position": "560,224"
-                    }
-                  },
-                  {
-                    "Id": 6,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_type": "package.ambi.myog/Monologs.MonologSystem",
-                      "_name": "AddToQueue"
-                    },
-                    "UserData": {
-                      "Position": "784,96"
-                    }
-                  },
-                  {
-                    "Id": 7,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_type": "package.ambi.myog/Monologs.MonologSystem",
-                      "_name": "Play"
-                    },
-                    "UserData": {
-                      "Position": "1088,64"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 1,
-                    "DstName": "_this"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 3,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 4,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 3,
-                    "SrcName": "_result",
-                    "DstId": 4,
-                    "DstName": "enumerable"
-                  },
-                  {
-                    "SrcId": 2,
-                    "SrcName": "_result",
-                    "DstId": 5,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 4,
-                    "SrcName": "body",
-                    "DstId": 6,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 5,
-                    "SrcName": "_result",
-                    "DstId": 6,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 4,
-                    "SrcName": "body.value",
-                    "DstId": 6,
-                    "DstName": "monolog"
-                  },
-                  {
-                    "SrcId": 4,
-                    "SrcName": "_signal",
-                    "DstId": 7,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 5,
-                    "SrcName": "_result",
-                    "DstId": 7,
-                    "DstName": "_target"
-                  }
-                ]
-              },
-              "OnTriggerExited": null
-            }
-          ]
-        },
-        {
-          "Id": "a30ca840-7f0e-4245-8f23-113843a4fccf",
-          "Name": "Monolog Trigger 1 (1)",
-          "Position": "-99.09628,775.2009,31.25426",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "0,0.88333,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "Center": "0,0,0",
-              "IsTrigger": true,
-              "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
-          "Id": "1896ddd3-bffd-4d87-83be-c955879177f7",
-          "Name": "Monolog Trigger 1 (2)",
-          "Position": "-97.61922,684.3221,29.98861",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "0,0.88333,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "Center": "0,0,0",
-              "IsTrigger": true,
-              "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
-            }
-          ]
-        },
-        {
           "Id": "d571de8e-aa8c-41e9-845b-e8e2683a5196",
           "Name": "TriggerTeleport",
           "Position": "-92.59567,-97.35979,29.78002",
           "Scale": "0.1523108,0.5770563,1.183053",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "0.78476,0.24679,0.85581,1"
@@ -984,14 +687,10 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
-              "Static": false,
-              "Surface": null
+              "Static": false
             },
             {
               "__type": "TriggerTeleport",
-              "Game": null,
-              "OnTeleportStarted": null,
-              "OnTeleportStoped": null,
               "PosToSpawn": "573,80,80"
             }
           ]
@@ -1001,12 +700,11 @@
           "Name": "TriggerCollision",
           "Position": "-92.59567,-189.6065,27.69293",
           "Enabled": true,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
               "BodyGroups": 18446744073709551615,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
               "Tint": "0.13333,1,0,1"
@@ -1016,12 +714,10 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "54,54,54",
-              "Static": false,
-              "Surface": null
+              "Static": false
             },
             {
               "__type": "TriggerCollision",
-              "Game": null,
               "OnCollisionStarted": {
                 "Version": 5,
                 "UserData": {
@@ -1147,8 +843,7 @@
                     "DstName": "_value"
                   }
                 ]
-              },
-              "OnCollisionUpdated": null
+              }
             }
           ]
         }
@@ -1160,13 +855,15 @@
       "Position": "361.6956,96.61617,-11.06026",
       "Tags": "trigger,player",
       "Enabled": true,
+      "NetworkMode": 2,
       "__Prefab": "prefabs/player.prefab"
     },
     {
       "Id": "4f098a7f-85fc-4508-b95e-8793df395f7a",
       "Name": "PosToSpawn #1",
       "Position": "573.9882,80.40993,80.30177",
-      "Enabled": true
+      "Enabled": true,
+      "NetworkMode": 2
     }
   ],
   "SceneProperties": {
@@ -1192,6 +889,6 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-10T10:19:27.7350576\u002B05:00",
+  "LastSaved": "2024-03-13T08:13:21.6768706\u002B05:00",
   "__references": []
 }
