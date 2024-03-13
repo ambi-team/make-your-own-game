@@ -1,0 +1,3064 @@
+{
+  "Id": "9316521c-10b1-4e42-9d07-a63bacff7c6c",
+  "GameObjects": [
+    {
+      "Id": "ff140a58-6f14-4a53-9628-513e49cadf8e",
+      "Name": "\uD83C\uDFDE ENV \uD83C\uDFDE",
+      "Position": "235.5777,345.3558,54.46339",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "Id": "dccc1113-9032-4082-a5d0-b3e76cc42376",
+      "Name": "Map",
+      "Position": "-16.00771,61.8781,2112.087",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "MapName": "dev_main",
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+      "Name": "Sun",
+      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "1.96,1.96,1.96,1",
+          "Shadows": false,
+          "SkyColor": "0.2532,0.32006,0.35349,1"
+        }
+      ]
+    },
+    {
+      "Id": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
+      "Name": "2D Skybox",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "SkyMaterial": "materials/skybox/light_test_dark.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "d0254a7c-0b6d-4bf4-a448-d6871ab61082",
+      "Name": "\uD83D\uDCAB DATA \uD83D\uDCAB",
+      "Position": "278.0361,331.6518,76.7455",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "Id": "cf7c6201-3164-4664-ad2c-281b3e45081d",
+      "Name": "Game",
+      "Position": "183.8709,140.9425,99.10318",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ReverseTime",
+          "defaultTimeRecoding": 20,
+          "ply": {
+            "_type": "component",
+            "go": "43169f6e-d108-4963-87f0-001c6684eb98",
+            "component_type": "Player"
+          },
+          "pseudoPlyColor": "0.5123,0.62251,0.92558,0.79",
+          "pseudoPlyPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player.prefab"
+          }
+        },
+        {
+          "__type": "MonologSystem",
+          "_monologUI": {
+            "_type": "component",
+            "go": "846730fd-3358-4884-a6a5-f8d34c0ff616",
+            "component_type": "MonologUI"
+          }
+        },
+        {
+          "__type": "SoundPointComponent",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
+          "Force2d": false,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": false,
+          "SoundEvent": "sound/coin1.sound",
+          "SoundOverride": false,
+          "StopOnNew": false,
+          "Volume": 1
+        }
+      ]
+    },
+    {
+      "Id": "846730fd-3358-4884-a6a5-f8d34c0ff616",
+      "Name": "UI: Monolog",
+      "Position": "310.5639,411.2138,-154.5842",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MonologUI",
+          "_currentOpacity": 0,
+          "_currentText": "NoText!",
+          "AnimationDurationSeconds": 0.1,
+          "HideOpacity": 0,
+          "ShowOpacity": 1,
+          "Side": "Bottom"
+        }
+      ]
+    },
+    {
+      "Id": "649059c1-1edc-4780-b80f-3c23e2919e86",
+      "Name": "UI: MainMenu",
+      "Position": "278.0361,331.6518,76.7455",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MainMenu",
+          "MainMenuPanel": {
+            "_type": "component",
+            "go": "649059c1-1edc-4780-b80f-3c23e2919e86",
+            "component_type": "ScreenPanel"
+          }
+        },
+        {
+          "__type": "MainMenuPanel",
+          "MyStringValue": "Hello World!"
+        }
+      ]
+    },
+    {
+      "Id": "72bdae71-b4ad-4c65-87db-ff5a9c045778",
+      "Name": "\u2705 LEVEL \u2705",
+      "Position": "235.5777,345.3558,54.46339",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "Id": "2783be33-e57f-43b9-a36a-4565f0ffd550",
+      "Name": "World",
+      "Position": "301.2039,151.7318,-14.53918",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "Id": "af9c89f4-dde9-4ac3-846f-b2fc541efc30",
+          "Name": "Cube",
+          "Position": "-7.461029,12.36,10.68686",
+          "Scale": "0.5289635,0.6224717,0.0442064",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "TriggerObject"
+            }
+          ]
+        },
+        {
+          "Id": "26f7bb0c-5123-4cfe-9932-f9597be16c0a",
+          "Name": "Cube",
+          "Position": "73.09052,100.1693,35.20406",
+          "Scale": "0.5289635,0.6224717,0.0442064",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "Id": "372efa14-fb31-42df-9c54-b1caf1b6b658",
+          "Name": "Cube",
+          "Position": "143.7265,100.1693,35.20406",
+          "Scale": "0.5289635,0.6224717,0.0442064",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "Id": "b55bc38c-ca46-4483-942b-64b96071a86d",
+          "Name": "Cube",
+          "Position": "143.7265,185.8891,45.705",
+          "Scale": "0.5289635,0.6224717,0.0442064",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "Id": "ee3bbc52-955d-4a4d-920d-cce9922d30bf",
+          "Name": "Cube",
+          "Position": "89.38284,185.6289,62.28305",
+          "Rotation": "0,0.1305262,0,0.9914449",
+          "Scale": "0.5289635,0.6224717,0.0442064",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": true
+            }
+          ]
+        },
+        {
+          "Id": "406a2bc5-dd9c-415c-a895-ea255376241b",
+          "Name": "PlaceForButton",
+          "Position": "147.5785,-11.2951,22.6338",
+          "Scale": "0.2116552,0.0604898,1.719332",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,0.75814,0.80651,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ],
+          "Children": [
+            {
+              "Id": "7a6952f6-f502-4489-b72f-c036992607c5",
+              "Name": "Button",
+              "Position": "-1.143101,-38.16451,18.03082",
+              "Scale": "0.6534992,0.894671,0.07965566",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "Off",
+                  "Tint": "0.48218,0.9814,0.10042,1"
+                },
+                {
+                  "__type": "TriggerButton",
+                  "Game": {
+                    "_type": "gameobject",
+                    "go": "cf7c6201-3164-4664-ad2c-281b3e45081d"
+                  },
+                  "OnTrigger": {
+                    "Version": 5,
+                    "UserData": {
+                      "Title": "On Trigger",
+                      "id": "fa2d600c-d120-44ed-b0ba-ce81b9fb5859",
+                      "ReferencedComponentTypes": [
+                        "package.ambi.myog/TriggerButton",
+                        "Sandbox.Game/Sandbox.ModelRenderer"
+                      ]
+                    },
+                    "Variables": [],
+                    "Nodes": [
+                      {
+                        "Id": 0,
+                        "Type": "input",
+                        "UserData": {
+                          "Position": "128,80"
+                        }
+                      },
+                      {
+                        "Id": 3,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "package.ambi.myog/TriggerButton"
+                        },
+                        "UserData": {
+                          "Position": "-416,160"
+                        }
+                      },
+                      {
+                        "Id": 4,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_name": "Game",
+                          "_type": "package.ambi.myog/TriggerButton"
+                        },
+                        "UserData": {
+                          "Position": "-208,160"
+                        }
+                      },
+                      {
+                        "Id": 5,
+                        "Type": "call",
+                        "Properties": {
+                          "T": "package.ambi.myog/ReverseTime",
+                          "_isStatic": false,
+                          "_name": "Get",
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister"
+                        },
+                        "UserData": {
+                          "Position": "16,160"
+                        }
+                      },
+                      {
+                        "Id": 7,
+                        "Type": "call",
+                        "Properties": {
+                          "_isStatic": false,
+                          "_name": "StartRecord",
+                          "_type": "package.ambi.myog/ReverseTime"
+                        },
+                        "UserData": {
+                          "Position": "352,176"
+                        }
+                      },
+                      {
+                        "Id": 10,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                        },
+                        "UserData": {
+                          "Position": "112,-48"
+                        }
+                      },
+                      {
+                        "Id": 11,
+                        "Type": "property.set",
+                        "Properties": {
+                          "_name": "Tint",
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                        },
+                        "UserData": {
+                          "Position": "368,32"
+                        }
+                      },
+                      {
+                        "Id": 12,
+                        "Type": "time.delay",
+                        "UserData": {
+                          "Position": "560,128"
+                        }
+                      },
+                      {
+                        "Id": 13,
+                        "Type": "property.set",
+                        "Properties": {
+                          "_name": "Tint",
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                        },
+                        "UserData": {
+                          "Position": "784,16"
+                        }
+                      }
+                    ],
+                    "Links": [
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 3,
+                        "DstName": "_this"
+                      },
+                      {
+                        "SrcId": 3,
+                        "SrcName": "_result",
+                        "DstId": 4,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 4,
+                        "SrcName": "_result",
+                        "DstId": 5,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 7,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 5,
+                        "SrcName": "_result",
+                        "DstId": 7,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 10,
+                        "DstName": "_this"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 11,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 10,
+                        "SrcName": "_result",
+                        "DstId": 11,
+                        "DstName": "_target"
+                      },
+                      {
+                        "Value": "0.98605,0.12842,0.12842,1",
+                        "DstId": 11,
+                        "DstName": "_value"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 12,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "Value": 2,
+                        "DstId": 12,
+                        "DstName": "seconds"
+                      },
+                      {
+                        "SrcId": 12,
+                        "SrcName": "_signal",
+                        "DstId": 13,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 10,
+                        "SrcName": "_result",
+                        "DstId": 13,
+                        "DstName": "_target"
+                      },
+                      {
+                        "Value": "0.48084,0.93953,0.35396,1",
+                        "DstId": 13,
+                        "DstName": "_value"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "__type": "BoxCollider",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "874fc070-707f-4ccc-bb44-55b83e9f24b9",
+          "Name": "TriggerObj",
+          "Position": "-92.59567,0,27.69293",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.13333,1,0,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "TriggerObject",
+              "OnTriggerEntered": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Trigger Entered",
+                  "id": "6162eb17-266c-4a56-8311-149c5380ca3f"
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                    },
+                    "UserData": {
+                      "Position": "-48,144"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                    },
+                    "UserData": {
+                      "Position": "256,144"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 1,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": "1,0,0,1",
+                    "DstId": 2,
+                    "DstName": "_value"
+                  }
+                ]
+              },
+              "OnTriggerExited": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Trigger Exited",
+                  "id": "c95b0a2c-7fb7-4032-9bec-52160aa29015"
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                    },
+                    "UserData": {
+                      "Position": "272,192"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                    },
+                    "UserData": {
+                      "Position": "-64,192"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 3,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "_result",
+                    "DstId": 3,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": "0.13333,1,0,1",
+                    "DstId": 3,
+                    "DstName": "_value"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 4,
+                    "DstName": "_this"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "Id": "934d57de-1f40-43f6-99bc-30212cb807f3",
+          "Name": "Monolog Trigger 1",
+          "Position": "-92.59567,588.5242,27.69293",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0,0.88333,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "MonologTrigger",
+              "Monologs": [
+                "monologs/test.monolog"
+              ],
+              "MonologSystem": {
+                "_type": "component",
+                "go": "cf7c6201-3164-4664-ad2c-281b3e45081d",
+                "component_type": "MonologSystem"
+              }
+            }
+          ]
+        },
+        {
+          "Id": "a30ca840-7f0e-4245-8f23-113843a4fccf",
+          "Name": "Monolog Trigger 1 (1)",
+          "Position": "-99.09628,775.2009,31.25426",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0,0.88333,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "Id": "1896ddd3-bffd-4d87-83be-c955879177f7",
+          "Name": "Monolog Trigger 1 (2)",
+          "Position": "-97.61922,684.3221,29.98861",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0,0.88333,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "Id": "d571de8e-aa8c-41e9-845b-e8e2683a5196",
+          "Name": "TriggerTeleport",
+          "Position": "-92.59567,-97.35979,29.78002",
+          "Scale": "0.1523108,0.5770563,1.183053",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.78476,0.24679,0.85581,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "TriggerTeleport",
+              "PosToSpawn": "573,80,80"
+            }
+          ]
+        },
+        {
+          "Id": "b6b95076-1495-48de-9a7d-ea163c4cce77",
+          "Name": "TriggerCollision",
+          "Position": "-92.59567,-189.6065,27.69293",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.13333,1,0,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "54,54,54",
+              "Static": false
+            },
+            {
+              "__type": "TriggerCollision",
+              "OnCollisionStarted": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Collision Started",
+                  "id": "53474bfd-4ad6-474d-a704-b77275356384",
+                  "ReferencedComponentTypes": [
+                    "Sandbox.Game/Sandbox.ModelRenderer"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                    },
+                    "UserData": {
+                      "Position": "-80,96"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                    },
+                    "UserData": {
+                      "Position": "224,112"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 1,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": "1,0,0,1",
+                    "DstId": 2,
+                    "DstName": "_value"
+                  }
+                ]
+              },
+              "OnCollisionStoped": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Collision Stoped",
+                  "id": "71255137-ec15-4d15-80ce-f9d621c731ad",
+                  "ReferencedComponentTypes": [
+                    "Sandbox.Game/Sandbox.ModelRenderer"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                    },
+                    "UserData": {
+                      "Position": "-32,128"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                    },
+                    "UserData": {
+                      "Position": "256,144"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 2,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 3,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 3,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": "0.13333,1,0,1",
+                    "DstId": 3,
+                    "DstName": "_value"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "43169f6e-d108-4963-87f0-001c6684eb98",
+      "Name": "PlayerObj",
+      "Position": "361.6956,96.61617,-11.06026",
+      "Tags": "trigger,player",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "Id": "4f098a7f-85fc-4508-b95e-8793df395f7a",
+      "Name": "PosToSpawn #1",
+      "Position": "573.9882,80.40993,80.30177",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "Id": "1e7c80ca-506c-490c-ae4f-2d92e025c803",
+      "Name": "Firefly Pazzle",
+      "Position": "292.3041,577.9126,8.010609",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "Id": "c3c09df9-caf5-4f9f-9c15-e1676a4b6df4",
+          "Name": "Stand",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "FirefliesStand",
+              "Rows": [
+                {
+                  "_type": "component",
+                  "go": "4f06c2e1-bc37-4b16-ba62-377c8e4656ef",
+                  "component_type": "FirefliesRow"
+                },
+                {
+                  "_type": "component",
+                  "go": "7450ad53-8683-4866-8e93-5da6d96eacde",
+                  "component_type": "FirefliesRow"
+                },
+                {
+                  "_type": "component",
+                  "go": "fd88b7af-175f-4f74-b19f-6b6e22d66e6d",
+                  "component_type": "FirefliesRow"
+                }
+              ],
+              "TimeToComplete": 10,
+              "TimeToFirefliesShow": 2
+            }
+          ],
+          "Children": [
+            {
+              "Id": "4f06c2e1-bc37-4b16-ba62-377c8e4656ef",
+              "Name": "Row 1",
+              "Position": "-17.09756,-1.731628,-0.0000009536743",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "FirefliesRow",
+                  "CellChangeCooldown": 2,
+                  "Cells": [
+                    {
+                      "_type": "component",
+                      "go": "bb007a7f-0569-43b4-a4e9-1d220cc447ae",
+                      "component_type": "FirefliesCell"
+                    },
+                    {
+                      "_type": "component",
+                      "go": "2b9f9d8b-8413-4804-ab12-df7759581541",
+                      "component_type": "FirefliesCell"
+                    },
+                    {
+                      "_type": "component",
+                      "go": "7c5283e6-e2b4-46e4-a666-13e9006e4be4",
+                      "component_type": "FirefliesCell"
+                    }
+                  ]
+                }
+              ],
+              "Children": [
+                {
+                  "Id": "bb007a7f-0569-43b4-a4e9-1d220cc447ae",
+                  "Name": "Cell 1",
+                  "Position": "0.3172607,19.354,20.46671",
+                  "Rotation": "0,0.8660254,0,0.5000001",
+                  "Tags": "light_point,light,light_spot,particles",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "FirefliesCell",
+                      "Light": {
+                        "_type": "component",
+                        "go": "bb007a7f-0569-43b4-a4e9-1d220cc447ae",
+                        "component_type": "SpotLight"
+                      },
+                      "Particles": {
+                        "_type": "component",
+                        "go": "bb007a7f-0569-43b4-a4e9-1d220cc447ae",
+                        "component_type": "ParticleSphereEmitter"
+                      }
+                    },
+                    {
+                      "__type": "SpotLight",
+                      "Attenuation": 6.623998,
+                      "ConeInner": 6.8640056,
+                      "ConeOuter": 14.183998,
+                      "FogMode": "Enabled",
+                      "FogStrength": 1,
+                      "LightColor": "0,0.76667,1,1",
+                      "Radius": 486.72006,
+                      "Shadows": true
+                    },
+                    {
+                      "__type": "ParticleEffect",
+                      "Alpha": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "ApplyColor": true,
+                      "ApplyRotation": true,
+                      "ApplyShape": false,
+                      "Bounce": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Brightness": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Bumpiness": {},
+                      "Collision": false,
+                      "CollisionRadius": 1,
+                      "Damping": {},
+                      "DieOnCollisionChance": {},
+                      "Force": false,
+                      "ForceDirection": "0,0,0",
+                      "ForceScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Friction": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Gradient": {
+                        "GradientA": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "GradientB": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "ConstantA": "1,1,1,1",
+                        "ConstantB": "1,1,1,1"
+                      },
+                      "Lifetime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "MaxParticles": 50,
+                      "PerParticleTimeScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "PreWarm": 0,
+                      "PushStrength": {},
+                      "Roll": {},
+                      "Scale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceId": {},
+                      "SequenceSpeed": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceTime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SheetSequence": false,
+                      "Space": "World",
+                      "StartVelocity": {
+                        "Constants": "0.12,0,0,0"
+                      },
+                      "Stretch": {},
+                      "TimeScale": 1,
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "ParticleSpriteRenderer",
+                      "Additive": false,
+                      "BlurAmount": 0.5,
+                      "BlurOpacity": 0.5,
+                      "BlurSpacing": 0.5,
+                      "DepthFeather": 0,
+                      "FaceVelocity": false,
+                      "FogStrength": 1,
+                      "LeadingTrail": true,
+                      "MotionBlur": false,
+                      "Opaque": false,
+                      "RotationOffset": 0,
+                      "Scale": 0.47,
+                      "Shadows": false,
+                      "SortMode": "Unsorted",
+                      "Texture": "dev/vgui/materials/hud/icon_check.vtex"
+                    },
+                    {
+                      "__type": "ParticleSphereEmitter",
+                      "Burst": 100,
+                      "Delay": 0,
+                      "DestroyOnEnd": false,
+                      "Duration": 10,
+                      "Loop": false,
+                      "OnEdge": false,
+                      "Radius": 9.92001,
+                      "Rate": 1000,
+                      "Velocity": 0.47999978
+                    }
+                  ]
+                },
+                {
+                  "Id": "2b9f9d8b-8413-4804-ab12-df7759581541",
+                  "Name": "Cell 2",
+                  "Position": "0.001861572,1.093872,19.92757",
+                  "Rotation": "0,0.8660254,0,0.5000001",
+                  "Tags": "light_point,light,light_spot,particles",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "FirefliesCell",
+                      "Light": {
+                        "_type": "component",
+                        "go": "2b9f9d8b-8413-4804-ab12-df7759581541",
+                        "component_type": "SpotLight"
+                      },
+                      "Particles": {
+                        "_type": "component",
+                        "go": "2b9f9d8b-8413-4804-ab12-df7759581541",
+                        "component_type": "ParticleSphereEmitter"
+                      }
+                    },
+                    {
+                      "__type": "SpotLight",
+                      "Attenuation": 6.623998,
+                      "ConeInner": 6.8640056,
+                      "ConeOuter": 14.183998,
+                      "FogMode": "Enabled",
+                      "FogStrength": 1,
+                      "LightColor": "0,0.76667,1,1",
+                      "Radius": 486.72006,
+                      "Shadows": true
+                    },
+                    {
+                      "__type": "ParticleEffect",
+                      "Alpha": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "ApplyColor": true,
+                      "ApplyRotation": true,
+                      "ApplyShape": false,
+                      "Bounce": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Brightness": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Bumpiness": {},
+                      "Collision": false,
+                      "CollisionRadius": 1,
+                      "Damping": {},
+                      "DieOnCollisionChance": {},
+                      "Force": false,
+                      "ForceDirection": "0,0,0",
+                      "ForceScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Friction": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Gradient": {
+                        "GradientA": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "GradientB": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "ConstantA": "1,1,1,1",
+                        "ConstantB": "1,1,1,1"
+                      },
+                      "Lifetime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "MaxParticles": 50,
+                      "PerParticleTimeScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "PreWarm": 0,
+                      "PushStrength": {},
+                      "Roll": {},
+                      "Scale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceId": {},
+                      "SequenceSpeed": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceTime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SheetSequence": false,
+                      "Space": "World",
+                      "StartVelocity": {
+                        "Constants": "0.12,0,0,0"
+                      },
+                      "Stretch": {},
+                      "TimeScale": 1,
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "ParticleSpriteRenderer",
+                      "Additive": false,
+                      "BlurAmount": 0.5,
+                      "BlurOpacity": 0.5,
+                      "BlurSpacing": 0.5,
+                      "DepthFeather": 0,
+                      "FaceVelocity": false,
+                      "FogStrength": 1,
+                      "LeadingTrail": true,
+                      "MotionBlur": false,
+                      "Opaque": false,
+                      "RotationOffset": 0,
+                      "Scale": 0.47,
+                      "Shadows": false,
+                      "SortMode": "Unsorted",
+                      "Texture": "dev/vgui/materials/hud/icon_check.vtex"
+                    },
+                    {
+                      "__type": "ParticleSphereEmitter",
+                      "Burst": 100,
+                      "Delay": 0,
+                      "DestroyOnEnd": false,
+                      "Duration": 10,
+                      "Loop": false,
+                      "OnEdge": false,
+                      "Radius": 9.92001,
+                      "Rate": 1000,
+                      "Velocity": 0.47999978
+                    }
+                  ]
+                },
+                {
+                  "Id": "7c5283e6-e2b4-46e4-a666-13e9006e4be4",
+                  "Name": "Cell 3",
+                  "Position": "0.6036682,-18.2821,18.27365",
+                  "Rotation": "0,0.8660254,0,0.5000001",
+                  "Tags": "light_point,light,light_spot,particles",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "FirefliesCell",
+                      "Light": {
+                        "_type": "component",
+                        "go": "7c5283e6-e2b4-46e4-a666-13e9006e4be4",
+                        "component_type": "SpotLight"
+                      },
+                      "Particles": {
+                        "_type": "component",
+                        "go": "7c5283e6-e2b4-46e4-a666-13e9006e4be4",
+                        "component_type": "ParticleSphereEmitter"
+                      }
+                    },
+                    {
+                      "__type": "SpotLight",
+                      "Attenuation": 6.623998,
+                      "ConeInner": 6.8640056,
+                      "ConeOuter": 14.183998,
+                      "FogMode": "Enabled",
+                      "FogStrength": 1,
+                      "LightColor": "0,0.76667,1,1",
+                      "Radius": 486.72006,
+                      "Shadows": true
+                    },
+                    {
+                      "__type": "ParticleEffect",
+                      "Alpha": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "ApplyColor": true,
+                      "ApplyRotation": true,
+                      "ApplyShape": false,
+                      "Bounce": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Brightness": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Bumpiness": {},
+                      "Collision": false,
+                      "CollisionRadius": 1,
+                      "Damping": {},
+                      "DieOnCollisionChance": {},
+                      "Force": false,
+                      "ForceDirection": "0,0,0",
+                      "ForceScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Friction": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Gradient": {
+                        "GradientA": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "GradientB": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "ConstantA": "1,1,1,1",
+                        "ConstantB": "1,1,1,1"
+                      },
+                      "Lifetime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "MaxParticles": 50,
+                      "PerParticleTimeScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "PreWarm": 0,
+                      "PushStrength": {},
+                      "Roll": {},
+                      "Scale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceId": {},
+                      "SequenceSpeed": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceTime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SheetSequence": false,
+                      "Space": "World",
+                      "StartVelocity": {
+                        "Constants": "0.12,0,0,0"
+                      },
+                      "Stretch": {},
+                      "TimeScale": 1,
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "ParticleSpriteRenderer",
+                      "Additive": false,
+                      "BlurAmount": 0.5,
+                      "BlurOpacity": 0.5,
+                      "BlurSpacing": 0.5,
+                      "DepthFeather": 0,
+                      "FaceVelocity": false,
+                      "FogStrength": 1,
+                      "LeadingTrail": true,
+                      "MotionBlur": false,
+                      "Opaque": false,
+                      "RotationOffset": 0,
+                      "Scale": 0.47,
+                      "Shadows": false,
+                      "SortMode": "Unsorted",
+                      "Texture": "dev/vgui/materials/hud/icon_check.vtex"
+                    },
+                    {
+                      "__type": "ParticleSphereEmitter",
+                      "Burst": 100,
+                      "Delay": 0,
+                      "DestroyOnEnd": false,
+                      "Duration": 10,
+                      "Loop": false,
+                      "OnEdge": false,
+                      "Radius": 9.92001,
+                      "Rate": 1000,
+                      "Velocity": 0.47999978
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Id": "7450ad53-8683-4866-8e93-5da6d96eacde",
+              "Name": "Row 2",
+              "Position": "-0.07061768,-1.731628,-0.0000009536743",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "FirefliesRow",
+                  "CellChangeCooldown": 2,
+                  "Cells": [
+                    {
+                      "_type": "component",
+                      "go": "f529c97d-7445-4bd9-8160-2e2141ceaf2e",
+                      "component_type": "FirefliesCell"
+                    },
+                    {
+                      "_type": "component",
+                      "go": "e2afb174-35ae-4dc2-87bc-7615f5119686",
+                      "component_type": "FirefliesCell"
+                    },
+                    {
+                      "_type": "component",
+                      "go": "b414de67-2f93-4592-a7ec-936e9236f26d",
+                      "component_type": "FirefliesCell"
+                    }
+                  ]
+                }
+              ],
+              "Children": [
+                {
+                  "Id": "f529c97d-7445-4bd9-8160-2e2141ceaf2e",
+                  "Name": "Cell 1",
+                  "Position": "-0.8973083,18.02399,16.92427",
+                  "Rotation": "0,0.8660254,0,0.5000001",
+                  "Tags": "light_point,light,light_spot,particles",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "FirefliesCell",
+                      "Light": {
+                        "_type": "component",
+                        "go": "f529c97d-7445-4bd9-8160-2e2141ceaf2e",
+                        "component_type": "SpotLight"
+                      },
+                      "Particles": {
+                        "_type": "component",
+                        "go": "f529c97d-7445-4bd9-8160-2e2141ceaf2e",
+                        "component_type": "ParticleSphereEmitter"
+                      }
+                    },
+                    {
+                      "__type": "SpotLight",
+                      "Attenuation": 6.623998,
+                      "ConeInner": 6.8640056,
+                      "ConeOuter": 14.183998,
+                      "FogMode": "Enabled",
+                      "FogStrength": 1,
+                      "LightColor": "0,0.76667,1,1",
+                      "Radius": 486.72006,
+                      "Shadows": true
+                    },
+                    {
+                      "__type": "ParticleEffect",
+                      "Alpha": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "ApplyColor": true,
+                      "ApplyRotation": true,
+                      "ApplyShape": false,
+                      "Bounce": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Brightness": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Bumpiness": {},
+                      "Collision": false,
+                      "CollisionRadius": 1,
+                      "Damping": {},
+                      "DieOnCollisionChance": {},
+                      "Force": false,
+                      "ForceDirection": "0,0,0",
+                      "ForceScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Friction": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Gradient": {
+                        "GradientA": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "GradientB": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "ConstantA": "1,1,1,1",
+                        "ConstantB": "1,1,1,1"
+                      },
+                      "Lifetime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "MaxParticles": 50,
+                      "PerParticleTimeScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "PreWarm": 0,
+                      "PushStrength": {},
+                      "Roll": {},
+                      "Scale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceId": {},
+                      "SequenceSpeed": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceTime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SheetSequence": false,
+                      "Space": "World",
+                      "StartVelocity": {
+                        "Constants": "0.12,0,0,0"
+                      },
+                      "Stretch": {},
+                      "TimeScale": 1,
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "ParticleSpriteRenderer",
+                      "Additive": false,
+                      "BlurAmount": 0.5,
+                      "BlurOpacity": 0.5,
+                      "BlurSpacing": 0.5,
+                      "DepthFeather": 0,
+                      "FaceVelocity": false,
+                      "FogStrength": 1,
+                      "LeadingTrail": true,
+                      "MotionBlur": false,
+                      "Opaque": false,
+                      "RotationOffset": 0,
+                      "Scale": 0.47,
+                      "Shadows": false,
+                      "SortMode": "Unsorted",
+                      "Texture": "dev/vgui/materials/hud/icon_check.vtex"
+                    },
+                    {
+                      "__type": "ParticleSphereEmitter",
+                      "Burst": 100,
+                      "Delay": 0,
+                      "DestroyOnEnd": false,
+                      "Duration": 10,
+                      "Loop": false,
+                      "OnEdge": false,
+                      "Radius": 9.92001,
+                      "Rate": 1000,
+                      "Velocity": 0.47999978
+                    }
+                  ]
+                },
+                {
+                  "Id": "e2afb174-35ae-4dc2-87bc-7615f5119686",
+                  "Name": "Cell 2",
+                  "Position": "-1.212708,-0.236145,16.38513",
+                  "Rotation": "0,0.8660254,0,0.5000001",
+                  "Tags": "light_point,light,light_spot,particles",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "FirefliesCell",
+                      "Light": {
+                        "_type": "component",
+                        "go": "e2afb174-35ae-4dc2-87bc-7615f5119686",
+                        "component_type": "SpotLight"
+                      },
+                      "Particles": {
+                        "_type": "component",
+                        "go": "e2afb174-35ae-4dc2-87bc-7615f5119686",
+                        "component_type": "ParticleSphereEmitter"
+                      }
+                    },
+                    {
+                      "__type": "SpotLight",
+                      "Attenuation": 6.623998,
+                      "ConeInner": 6.8640056,
+                      "ConeOuter": 14.183998,
+                      "FogMode": "Enabled",
+                      "FogStrength": 1,
+                      "LightColor": "0,0.76667,1,1",
+                      "Radius": 486.72006,
+                      "Shadows": true
+                    },
+                    {
+                      "__type": "ParticleEffect",
+                      "Alpha": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "ApplyColor": true,
+                      "ApplyRotation": true,
+                      "ApplyShape": false,
+                      "Bounce": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Brightness": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Bumpiness": {},
+                      "Collision": false,
+                      "CollisionRadius": 1,
+                      "Damping": {},
+                      "DieOnCollisionChance": {},
+                      "Force": false,
+                      "ForceDirection": "0,0,0",
+                      "ForceScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Friction": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Gradient": {
+                        "GradientA": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "GradientB": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "ConstantA": "1,1,1,1",
+                        "ConstantB": "1,1,1,1"
+                      },
+                      "Lifetime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "MaxParticles": 50,
+                      "PerParticleTimeScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "PreWarm": 0,
+                      "PushStrength": {},
+                      "Roll": {},
+                      "Scale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceId": {},
+                      "SequenceSpeed": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceTime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SheetSequence": false,
+                      "Space": "World",
+                      "StartVelocity": {
+                        "Constants": "0.12,0,0,0"
+                      },
+                      "Stretch": {},
+                      "TimeScale": 1,
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "ParticleSpriteRenderer",
+                      "Additive": false,
+                      "BlurAmount": 0.5,
+                      "BlurOpacity": 0.5,
+                      "BlurSpacing": 0.5,
+                      "DepthFeather": 0,
+                      "FaceVelocity": false,
+                      "FogStrength": 1,
+                      "LeadingTrail": true,
+                      "MotionBlur": false,
+                      "Opaque": false,
+                      "RotationOffset": 0,
+                      "Scale": 0.47,
+                      "Shadows": false,
+                      "SortMode": "Unsorted",
+                      "Texture": "dev/vgui/materials/hud/icon_check.vtex"
+                    },
+                    {
+                      "__type": "ParticleSphereEmitter",
+                      "Burst": 100,
+                      "Delay": 0,
+                      "DestroyOnEnd": false,
+                      "Duration": 10,
+                      "Loop": false,
+                      "OnEdge": false,
+                      "Radius": 9.92001,
+                      "Rate": 1000,
+                      "Velocity": 0.47999978
+                    }
+                  ]
+                },
+                {
+                  "Id": "b414de67-2f93-4592-a7ec-936e9236f26d",
+                  "Name": "Cell 3",
+                  "Position": "-0.6109009,-19.61212,16.13649",
+                  "Rotation": "0,0.8660254,0,0.5000001",
+                  "Tags": "light_point,light,light_spot,particles",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "FirefliesCell",
+                      "Light": {
+                        "_type": "component",
+                        "go": "b414de67-2f93-4592-a7ec-936e9236f26d",
+                        "component_type": "SpotLight"
+                      },
+                      "Particles": {
+                        "_type": "component",
+                        "go": "b414de67-2f93-4592-a7ec-936e9236f26d",
+                        "component_type": "ParticleSphereEmitter"
+                      }
+                    },
+                    {
+                      "__type": "SpotLight",
+                      "Attenuation": 6.623998,
+                      "ConeInner": 6.8640056,
+                      "ConeOuter": 14.183998,
+                      "FogMode": "Enabled",
+                      "FogStrength": 1,
+                      "LightColor": "0,0.76667,1,1",
+                      "Radius": 486.72006,
+                      "Shadows": true
+                    },
+                    {
+                      "__type": "ParticleEffect",
+                      "Alpha": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "ApplyColor": true,
+                      "ApplyRotation": true,
+                      "ApplyShape": false,
+                      "Bounce": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Brightness": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Bumpiness": {},
+                      "Collision": false,
+                      "CollisionRadius": 1,
+                      "Damping": {},
+                      "DieOnCollisionChance": {},
+                      "Force": false,
+                      "ForceDirection": "0,0,0",
+                      "ForceScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Friction": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Gradient": {
+                        "GradientA": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "GradientB": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "ConstantA": "1,1,1,1",
+                        "ConstantB": "1,1,1,1"
+                      },
+                      "Lifetime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "MaxParticles": 50,
+                      "PerParticleTimeScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "PreWarm": 0,
+                      "PushStrength": {},
+                      "Roll": {},
+                      "Scale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceId": {},
+                      "SequenceSpeed": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceTime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SheetSequence": false,
+                      "Space": "World",
+                      "StartVelocity": {
+                        "Constants": "0.12,0,0,0"
+                      },
+                      "Stretch": {},
+                      "TimeScale": 1,
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "ParticleSpriteRenderer",
+                      "Additive": false,
+                      "BlurAmount": 0.5,
+                      "BlurOpacity": 0.5,
+                      "BlurSpacing": 0.5,
+                      "DepthFeather": 0,
+                      "FaceVelocity": false,
+                      "FogStrength": 1,
+                      "LeadingTrail": true,
+                      "MotionBlur": false,
+                      "Opaque": false,
+                      "RotationOffset": 0,
+                      "Scale": 0.47,
+                      "Shadows": false,
+                      "SortMode": "Unsorted",
+                      "Texture": "dev/vgui/materials/hud/icon_check.vtex"
+                    },
+                    {
+                      "__type": "ParticleSphereEmitter",
+                      "Burst": 100,
+                      "Delay": 0,
+                      "DestroyOnEnd": false,
+                      "Duration": 10,
+                      "Loop": false,
+                      "OnEdge": false,
+                      "Radius": 9.92001,
+                      "Rate": 1000,
+                      "Velocity": 0.47999978
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Id": "fd88b7af-175f-4f74-b19f-6b6e22d66e6d",
+              "Name": "Row 3",
+              "Position": "16.2804,-1.731628,-0.0000009536743",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "FirefliesRow",
+                  "CellChangeCooldown": 2,
+                  "Cells": [
+                    {
+                      "_type": "component",
+                      "go": "dd1c64ac-c58a-4dcf-831a-cbd19972565e",
+                      "component_type": "FirefliesCell"
+                    },
+                    {
+                      "_type": "component",
+                      "go": "71c8a002-d37c-4ec5-a393-977c87f330a8",
+                      "component_type": "FirefliesCell"
+                    },
+                    {
+                      "_type": "component",
+                      "go": "c1e2d329-764d-41a0-95b9-a326c5c32e82",
+                      "component_type": "FirefliesCell"
+                    }
+                  ]
+                }
+              ],
+              "Children": [
+                {
+                  "Id": "dd1c64ac-c58a-4dcf-831a-cbd19972565e",
+                  "Name": "Cell 1",
+                  "Position": "0.7425232,17.38159,17.8878",
+                  "Rotation": "0,0.8660254,0,0.5000001",
+                  "Tags": "light_point,light,light_spot,particles",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "FirefliesCell",
+                      "Light": {
+                        "_type": "component",
+                        "go": "dd1c64ac-c58a-4dcf-831a-cbd19972565e",
+                        "component_type": "SpotLight"
+                      },
+                      "Particles": {
+                        "_type": "component",
+                        "go": "dd1c64ac-c58a-4dcf-831a-cbd19972565e",
+                        "component_type": "ParticleSphereEmitter"
+                      }
+                    },
+                    {
+                      "__type": "SpotLight",
+                      "Attenuation": 6.623998,
+                      "ConeInner": 6.8640056,
+                      "ConeOuter": 14.183998,
+                      "FogMode": "Enabled",
+                      "FogStrength": 1,
+                      "LightColor": "0,0.76667,1,1",
+                      "Radius": 486.72006,
+                      "Shadows": true
+                    },
+                    {
+                      "__type": "ParticleEffect",
+                      "Alpha": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "ApplyColor": true,
+                      "ApplyRotation": true,
+                      "ApplyShape": false,
+                      "Bounce": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Brightness": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Bumpiness": {},
+                      "Collision": false,
+                      "CollisionRadius": 1,
+                      "Damping": {},
+                      "DieOnCollisionChance": {},
+                      "Force": false,
+                      "ForceDirection": "0,0,0",
+                      "ForceScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Friction": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Gradient": {
+                        "GradientA": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "GradientB": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "ConstantA": "1,1,1,1",
+                        "ConstantB": "1,1,1,1"
+                      },
+                      "Lifetime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "MaxParticles": 50,
+                      "PerParticleTimeScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "PreWarm": 0,
+                      "PushStrength": {},
+                      "Roll": {},
+                      "Scale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceId": {},
+                      "SequenceSpeed": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceTime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SheetSequence": false,
+                      "Space": "World",
+                      "StartVelocity": {
+                        "Constants": "0.12,0,0,0"
+                      },
+                      "Stretch": {},
+                      "TimeScale": 1,
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "ParticleSpriteRenderer",
+                      "Additive": false,
+                      "BlurAmount": 0.5,
+                      "BlurOpacity": 0.5,
+                      "BlurSpacing": 0.5,
+                      "DepthFeather": 0,
+                      "FaceVelocity": false,
+                      "FogStrength": 1,
+                      "LeadingTrail": true,
+                      "MotionBlur": false,
+                      "Opaque": false,
+                      "RotationOffset": 0,
+                      "Scale": 0.47,
+                      "Shadows": false,
+                      "SortMode": "Unsorted",
+                      "Texture": "dev/vgui/materials/hud/icon_check.vtex"
+                    },
+                    {
+                      "__type": "ParticleSphereEmitter",
+                      "Burst": 100,
+                      "Delay": 0,
+                      "DestroyOnEnd": false,
+                      "Duration": 10,
+                      "Loop": false,
+                      "OnEdge": false,
+                      "Radius": 9.92001,
+                      "Rate": 1000,
+                      "Velocity": 0.47999978
+                    }
+                  ]
+                },
+                {
+                  "Id": "71c8a002-d37c-4ec5-a393-977c87f330a8",
+                  "Name": "Cell 2",
+                  "Position": "0.427124,-0.87854,17.34866",
+                  "Rotation": "0,0.8660254,0,0.5000001",
+                  "Tags": "light_point,light,light_spot,particles",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "FirefliesCell",
+                      "Light": {
+                        "_type": "component",
+                        "go": "71c8a002-d37c-4ec5-a393-977c87f330a8",
+                        "component_type": "SpotLight"
+                      },
+                      "Particles": {
+                        "_type": "component",
+                        "go": "71c8a002-d37c-4ec5-a393-977c87f330a8",
+                        "component_type": "ParticleSphereEmitter"
+                      }
+                    },
+                    {
+                      "__type": "SpotLight",
+                      "Attenuation": 6.623998,
+                      "ConeInner": 6.8640056,
+                      "ConeOuter": 14.183998,
+                      "FogMode": "Enabled",
+                      "FogStrength": 1,
+                      "LightColor": "0,0.76667,1,1",
+                      "Radius": 486.72006,
+                      "Shadows": true
+                    },
+                    {
+                      "__type": "ParticleEffect",
+                      "Alpha": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "ApplyColor": true,
+                      "ApplyRotation": true,
+                      "ApplyShape": false,
+                      "Bounce": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Brightness": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Bumpiness": {},
+                      "Collision": false,
+                      "CollisionRadius": 1,
+                      "Damping": {},
+                      "DieOnCollisionChance": {},
+                      "Force": false,
+                      "ForceDirection": "0,0,0",
+                      "ForceScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Friction": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Gradient": {
+                        "GradientA": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "GradientB": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "ConstantA": "1,1,1,1",
+                        "ConstantB": "1,1,1,1"
+                      },
+                      "Lifetime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "MaxParticles": 50,
+                      "PerParticleTimeScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "PreWarm": 0,
+                      "PushStrength": {},
+                      "Roll": {},
+                      "Scale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceId": {},
+                      "SequenceSpeed": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceTime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SheetSequence": false,
+                      "Space": "World",
+                      "StartVelocity": {
+                        "Constants": "0.12,0,0,0"
+                      },
+                      "Stretch": {},
+                      "TimeScale": 1,
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "ParticleSpriteRenderer",
+                      "Additive": false,
+                      "BlurAmount": 0.5,
+                      "BlurOpacity": 0.5,
+                      "BlurSpacing": 0.5,
+                      "DepthFeather": 0,
+                      "FaceVelocity": false,
+                      "FogStrength": 1,
+                      "LeadingTrail": true,
+                      "MotionBlur": false,
+                      "Opaque": false,
+                      "RotationOffset": 0,
+                      "Scale": 0.47,
+                      "Shadows": false,
+                      "SortMode": "Unsorted",
+                      "Texture": "dev/vgui/materials/hud/icon_check.vtex"
+                    },
+                    {
+                      "__type": "ParticleSphereEmitter",
+                      "Burst": 100,
+                      "Delay": 0,
+                      "DestroyOnEnd": false,
+                      "Duration": 10,
+                      "Loop": false,
+                      "OnEdge": false,
+                      "Radius": 9.92001,
+                      "Rate": 1000,
+                      "Velocity": 0.47999978
+                    }
+                  ]
+                },
+                {
+                  "Id": "c1e2d329-764d-41a0-95b9-a326c5c32e82",
+                  "Name": "Cell 3",
+                  "Position": "1.028931,-20.25452,17.54098",
+                  "Rotation": "0,0.8660254,0,0.5000001",
+                  "Tags": "light_point,light,light_spot,particles",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "FirefliesCell",
+                      "Light": {
+                        "_type": "component",
+                        "go": "c1e2d329-764d-41a0-95b9-a326c5c32e82",
+                        "component_type": "SpotLight"
+                      },
+                      "Particles": {
+                        "_type": "component",
+                        "go": "c1e2d329-764d-41a0-95b9-a326c5c32e82",
+                        "component_type": "ParticleSphereEmitter"
+                      }
+                    },
+                    {
+                      "__type": "SpotLight",
+                      "Attenuation": 6.623998,
+                      "ConeInner": 6.8640056,
+                      "ConeOuter": 14.183998,
+                      "FogMode": "Enabled",
+                      "FogStrength": 1,
+                      "LightColor": "0,0.76667,1,1",
+                      "Radius": 486.72006,
+                      "Shadows": true
+                    },
+                    {
+                      "__type": "ParticleEffect",
+                      "Alpha": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "ApplyColor": true,
+                      "ApplyRotation": true,
+                      "ApplyShape": false,
+                      "Bounce": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Brightness": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Bumpiness": {},
+                      "Collision": false,
+                      "CollisionRadius": 1,
+                      "Damping": {},
+                      "DieOnCollisionChance": {},
+                      "Force": false,
+                      "ForceDirection": "0,0,0",
+                      "ForceScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Friction": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Gradient": {
+                        "GradientA": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "GradientB": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "ConstantA": "1,1,1,1",
+                        "ConstantB": "1,1,1,1"
+                      },
+                      "Lifetime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "MaxParticles": 50,
+                      "PerParticleTimeScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "PreWarm": 0,
+                      "PushStrength": {},
+                      "Roll": {},
+                      "Scale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceId": {},
+                      "SequenceSpeed": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceTime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SheetSequence": false,
+                      "Space": "World",
+                      "StartVelocity": {
+                        "Constants": "0.12,0,0,0"
+                      },
+                      "Stretch": {},
+                      "TimeScale": 1,
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "ParticleSpriteRenderer",
+                      "Additive": false,
+                      "BlurAmount": 0.5,
+                      "BlurOpacity": 0.5,
+                      "BlurSpacing": 0.5,
+                      "DepthFeather": 0,
+                      "FaceVelocity": false,
+                      "FogStrength": 1,
+                      "LeadingTrail": true,
+                      "MotionBlur": false,
+                      "Opaque": false,
+                      "RotationOffset": 0,
+                      "Scale": 0.47,
+                      "Shadows": false,
+                      "SortMode": "Unsorted",
+                      "Texture": "dev/vgui/materials/hud/icon_check.vtex"
+                    },
+                    {
+                      "__type": "ParticleSphereEmitter",
+                      "Burst": 100,
+                      "Delay": 0,
+                      "DestroyOnEnd": false,
+                      "Duration": 10,
+                      "Loop": false,
+                      "OnEdge": false,
+                      "Radius": 9.92001,
+                      "Rate": 1000,
+                      "Velocity": 0.47999978
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Id": "dc66d77e-5c92-476e-b395-42b824532b31",
+              "Name": "Walls",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Children": [
+                {
+                  "Id": "b5cbbd4c-172b-4bb8-85ac-603ff751554d",
+                  "Name": "Cube",
+                  "Position": "0,29.76538,0",
+                  "Scale": "1,0.1028447,0.36",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                },
+                {
+                  "Id": "faa6e1c6-99e1-426e-a3b5-89a7ea594799",
+                  "Name": "Cube",
+                  "Position": "0,-1.324585,-2.712331",
+                  "Rotation": "0.7071068,0,0,0.7071068",
+                  "Scale": "1.058,0.03999995,1.399584",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "0,0,0,1"
+                    }
+                  ]
+                },
+                {
+                  "Id": "ad8fdd3f-bac1-4624-9a34-8b17a7aaa7ec",
+                  "Name": "Cube",
+                  "Position": "0,-36.03943,97.82642",
+                  "Scale": "1.844718,3.058483,0.03958355",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                },
+                {
+                  "Id": "2856c6fc-f081-4ef1-b21d-0fb5a42ce4b5",
+                  "Name": "Cube",
+                  "Position": "0,-33.58783,0",
+                  "Scale": "1,0.1028447,0.36",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                },
+                {
+                  "Id": "e39ba10a-7cb5-49f7-9289-ccb443a45566",
+                  "Name": "Cube",
+                  "Position": "-27.20483,-2.336975,0",
+                  "Scale": "0.1037194,1.197159,0.36",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                },
+                {
+                  "Id": "1118b0d9-c6f0-46e6-8e59-b568bed1a77f",
+                  "Name": "Cube",
+                  "Position": "26.22409,-2.336975,0",
+                  "Scale": "0.1037194,1.197159,0.36",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                },
+                {
+                  "Id": "fa5c8821-7f46-4658-a557-34b53c8706f2",
+                  "Name": "Cube",
+                  "Position": "8.339081,-2.336975,0",
+                  "Scale": "0.01364792,1.197159,0.36",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                },
+                {
+                  "Id": "3902f0c2-3542-455d-a65f-d17ae2c1f590",
+                  "Name": "Cube",
+                  "Position": "-8.270294,-2.336975,0",
+                  "Scale": "0.01364792,1.197159,0.36",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                },
+                {
+                  "Id": "9bb916ff-e8dc-4328-bac5-fc341f2bf67e",
+                  "Name": "Cube",
+                  "Position": "-8.270294,-2.336975,0",
+                  "Scale": "0.01364792,1.197159,0.36",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/dev/box.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": "d395c354-213d-45ca-a457-193e27902c09",
+          "Name": "Buttons",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Children": [
+            {
+              "Id": "087e3184-e926-4106-b16f-d73d7d76a22d",
+              "Name": "Start Button",
+              "Position": "40.14291,-34.69769,0",
+              "Scale": "0.2,0.2,0.2",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "BoxCollider",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                },
+                {
+                  "__type": "FirefliesTrigger",
+                  "FirefliesStand": {
+                    "_type": "component",
+                    "go": "c3c09df9-caf5-4f9f-9c15-e1676a4b6df4",
+                    "component_type": "FirefliesStand"
+                  },
+                  "OnTrigger": {
+                    "Version": 5,
+                    "UserData": {
+                      "Title": "On Trigger",
+                      "id": "bf44586d-45b8-48ff-9d0d-c8cacb064ffa",
+                      "ReferencedComponentTypes": [
+                        "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                      ]
+                    },
+                    "Variables": [],
+                    "Nodes": [
+                      {
+                        "Id": 0,
+                        "Type": "input",
+                        "UserData": {
+                          "Position": "320,16"
+                        }
+                      },
+                      {
+                        "Id": 1,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                        },
+                        "UserData": {
+                          "Position": "-0,64"
+                        }
+                      },
+                      {
+                        "Id": 2,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_name": "FirefliesStand",
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                        },
+                        "UserData": {
+                          "Position": "224,64"
+                        }
+                      },
+                      {
+                        "Id": 3,
+                        "Type": "call",
+                        "Properties": {
+                          "_isStatic": false,
+                          "_name": "Play",
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand"
+                        },
+                        "UserData": {
+                          "Position": "496,16"
+                        }
+                      }
+                    ],
+                    "Links": [
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 1,
+                        "DstName": "_this"
+                      },
+                      {
+                        "SrcId": 1,
+                        "SrcName": "_result",
+                        "DstId": 2,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 3,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 2,
+                        "SrcName": "_result",
+                        "DstId": 3,
+                        "DstName": "_target"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "Id": "f67b9c20-c156-48b3-bc7e-d998b31cea21",
+              "Name": "Row 1 Button",
+              "Position": "40.14291,-2.053467,0",
+              "Scale": "0.2,0.2,0.2",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "BoxCollider",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                },
+                {
+                  "__type": "FirefliesTrigger",
+                  "FirefliesStand": {
+                    "_type": "component",
+                    "go": "c3c09df9-caf5-4f9f-9c15-e1676a4b6df4",
+                    "component_type": "FirefliesStand"
+                  },
+                  "OnTrigger": {
+                    "Version": 5,
+                    "UserData": {
+                      "Title": "On Trigger",
+                      "id": "4d56fc14-12ec-45ac-800c-040c465cf7ca",
+                      "ReferencedComponentTypes": [
+                        "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                      ]
+                    },
+                    "Variables": [],
+                    "Nodes": [
+                      {
+                        "Id": 0,
+                        "Type": "input",
+                        "UserData": {
+                          "Position": "256,16"
+                        }
+                      },
+                      {
+                        "Id": 2,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                        },
+                        "UserData": {
+                          "Position": "-48,96"
+                        }
+                      },
+                      {
+                        "Id": 3,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_name": "FirefliesStand",
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                        },
+                        "UserData": {
+                          "Position": "160,96"
+                        }
+                      },
+                      {
+                        "Id": 5,
+                        "Type": "call",
+                        "Properties": {
+                          "_isStatic": false,
+                          "_name": "SwitchChangeCells",
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand"
+                        },
+                        "UserData": {
+                          "Position": "448,16"
+                        }
+                      }
+                    ],
+                    "Links": [
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 2,
+                        "DstName": "_this"
+                      },
+                      {
+                        "SrcId": 2,
+                        "SrcName": "_result",
+                        "DstId": 3,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 5,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 3,
+                        "SrcName": "_result",
+                        "DstId": 5,
+                        "DstName": "_target"
+                      },
+                      {
+                        "Value": 0,
+                        "DstId": 5,
+                        "DstName": "rowIndex"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "Id": "422a37d2-9e96-4d95-8812-ca343635fc5e",
+              "Name": "Row 2 Button",
+              "Position": "40.14291,12.2641,0",
+              "Scale": "0.2,0.2,0.2",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "BoxCollider",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                },
+                {
+                  "__type": "FirefliesTrigger",
+                  "FirefliesStand": {
+                    "_type": "component",
+                    "go": "c3c09df9-caf5-4f9f-9c15-e1676a4b6df4",
+                    "component_type": "FirefliesStand"
+                  },
+                  "OnTrigger": {
+                    "Version": 5,
+                    "UserData": {
+                      "Title": "On Trigger",
+                      "id": "78757300-d091-4443-b0b8-aac2ce0bce14"
+                    },
+                    "Variables": [],
+                    "Nodes": [
+                      {
+                        "Id": 0,
+                        "Type": "input",
+                        "UserData": {
+                          "Position": "272,0"
+                        }
+                      },
+                      {
+                        "Id": 1,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                        },
+                        "UserData": {
+                          "Position": "-48,112"
+                        }
+                      },
+                      {
+                        "Id": 2,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_name": "FirefliesStand",
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                        },
+                        "UserData": {
+                          "Position": "176,112"
+                        }
+                      },
+                      {
+                        "Id": 3,
+                        "Type": "call",
+                        "Properties": {
+                          "_isStatic": false,
+                          "_name": "SwitchChangeCells",
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand"
+                        },
+                        "UserData": {
+                          "Position": "464,0"
+                        }
+                      }
+                    ],
+                    "Links": [
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 1,
+                        "DstName": "_this"
+                      },
+                      {
+                        "SrcId": 1,
+                        "SrcName": "_result",
+                        "DstId": 2,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 3,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 2,
+                        "SrcName": "_result",
+                        "DstId": 3,
+                        "DstName": "_target"
+                      },
+                      {
+                        "Value": 1,
+                        "DstId": 3,
+                        "DstName": "rowIndex"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "Id": "e75b0593-7b24-4e78-ad36-f5b9de5f1556",
+              "Name": "Row 3 Button",
+              "Position": "40.14291,25.41364,0",
+              "Scale": "0.2,0.2,0.2",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "BoxCollider",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                },
+                {
+                  "__type": "FirefliesTrigger",
+                  "FirefliesStand": {
+                    "_type": "component",
+                    "go": "c3c09df9-caf5-4f9f-9c15-e1676a4b6df4",
+                    "component_type": "FirefliesStand"
+                  },
+                  "OnTrigger": {
+                    "Version": 5,
+                    "UserData": {
+                      "Title": "On Trigger",
+                      "id": "6dc710c2-69b1-4d65-8f88-123594121d02"
+                    },
+                    "Variables": [],
+                    "Nodes": [
+                      {
+                        "Id": 0,
+                        "Type": "input",
+                        "UserData": {
+                          "Position": "224,0"
+                        }
+                      },
+                      {
+                        "Id": 1,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                        },
+                        "UserData": {
+                          "Position": "-96,96"
+                        }
+                      },
+                      {
+                        "Id": 2,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_name": "FirefliesStand",
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                        },
+                        "UserData": {
+                          "Position": "128,96"
+                        }
+                      },
+                      {
+                        "Id": 3,
+                        "Type": "call",
+                        "Properties": {
+                          "_isStatic": false,
+                          "_name": "SwitchChangeCells",
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand"
+                        },
+                        "UserData": {
+                          "Position": "416,0"
+                        }
+                      }
+                    ],
+                    "Links": [
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 1,
+                        "DstName": "_this"
+                      },
+                      {
+                        "SrcId": 1,
+                        "SrcName": "_result",
+                        "DstId": 2,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 3,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 2,
+                        "SrcName": "_result",
+                        "DstId": 3,
+                        "DstName": "_target"
+                      },
+                      {
+                        "Value": 2,
+                        "DstId": 3,
+                        "DstName": "rowIndex"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "dev",
+  "Description": "",
+  "LastSaved": "2024-03-13T23:20:48.5702463\u002B03:00",
+  "__references": []
+}
