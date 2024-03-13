@@ -4,21 +4,6 @@ namespace Monologs;
 
 public class MonologSystem: Component
 {
-    #region Singleton
-
-    private static MonologSystem _instance;
-    public static MonologSystem Instance => _instance;
-
-    protected override void OnAwake()
-    {
-        if (_instance == null) 
-        {
-            _instance = this;
-        } 
-    }
-
-    #endregion
-    
     // ! Обычные C# ивенты блять не работают между компонентами, и не ясно почему.
     // public event EventHandler<MonologResource> OnMonologAdded;
     // public event EventHandler<MonologResource> OnMonologStarted;
@@ -29,7 +14,7 @@ public class MonologSystem: Component
     
     private Queue<MonologResource> _queue = new ();
 
-    private SoundHandle? _currentSoundHandle;
+    private SoundHandle _currentSoundHandle = null;
     private bool _isPlaying;
 
 

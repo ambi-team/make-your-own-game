@@ -4,7 +4,7 @@ namespace Monologs;
 
 public sealed class MonologTrigger : Component, Component.ITriggerListener
 {
-	[Property] public GameObject Game { get; set; }
+	[Property] public MonologSystem MonologSystem { get; set; }
 	[Property] public List<MonologResource> Monologs { get; set; }
 
 	[Property] public Action<GameObject> OnTriggerEntered { get; set; }
@@ -14,6 +14,13 @@ public sealed class MonologTrigger : Component, Component.ITriggerListener
 	public void OnTriggerEnter(Collider other)
 	{
 		OnTriggerEntered?.Invoke(other.GameObject);
+
+		foreach (var monolog in Monologs)
+		{
+			MonologSystem.AddToQueue(monolog);
+		}
+		
+		MonologSystem.Play();
 	}
 
 	public void OnTriggerExit(Collider other)
