@@ -3,7 +3,7 @@
 public sealed class WheelPuzzle : Component, IUsable
 {
 	#region Prop/Vars
-	[Property, Description("Сторона для прохождения")] public int sideCorrect = 4;
+	[Property, Description("Правильная сторона")] public int sideCorrect = 4;
 	[Property] public bool canRotate = true;
 	public int side = 1;
 	private int sideMax = 12;

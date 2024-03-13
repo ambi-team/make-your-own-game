@@ -216,10 +216,10 @@
                     "Id": 5,
                     "Type": "call",
                     "Properties": {
-                      "T": "package.ambi.myog/ReverseTime",
-                      "_isStatic": false,
                       "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "_name": "Get"
+                      "T": "package.ambi.myog/ReverseTime",
+                      "_name": "Get",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "16,160"
@@ -229,9 +229,9 @@
                     "Id": 7,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
                       "_type": "package.ambi.myog/ReverseTime",
-                      "_name": "StartRecord"
+                      "_name": "StartRecord",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "352,176"
@@ -405,6 +405,6 @@
   },
   "Title": "level2",
   "Description": "",
-  "LastSaved": "2024-03-13T08:13:17.5661886\u002B05:00",
+  "LastSaved": "2024-03-13T09:23:55.1565222\u002B05:00",
   "__references": []
 }
