@@ -1,30 +1,32 @@
 ﻿public sealed class Game : Component
 {
 	#region Props/Vars
-	[Property] public StatsData stats;
-	[Property] public SettingsData settings;
-	[Property] public Player ply;
+	[Property, RequireComponent] public StatsData Stats { get; set; }
+	[Property, RequireComponent] public SettingsData Settings { get; set; }
+	[Property, RequireComponent] public Player Ply { get; set; }
 	#endregion
 
 	#region Logic
 	public void Load()
 	{
-		stats = new();
-		stats.Load();
+		Stats.Load();
+		StatsSingleton.Data = Stats;
 
-		StatsSingleton.Data = stats;
-
-		settings = new();
-		settings.Load();
-
-		SettingsSingleton.Data = settings;
+		Settings.Load();
+		SettingsSingleton.Data = Settings;
 	}
 	#endregion
 
 	#region Components
 	protected override void OnStart()
 	{
-		//todo add load
+		if (Stats is null || Settings is null)
+		{
+			Stats = new();
+			Settings = new();
+		}
+
+		Load();
 	}
 	#endregion
 }
