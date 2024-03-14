@@ -1,8 +1,10 @@
-﻿public class SettingsData : ISaveData
+﻿using System.Text.Json.Serialization;
+
+public class SettingsData : ISaveData
 {
 	#region Props/Vars
 	public float FOV = 75f;
-	public Player ply;
+	[JsonIgnore] public Player ply;
 	#endregion
 
 	#region Logic
