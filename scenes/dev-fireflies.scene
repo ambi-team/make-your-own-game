@@ -1,15 +1,15 @@
 {
-  "Id": "9316521c-10b1-4e42-9d07-a63bacff7c6c",
+  "__guid": "9316521c-10b1-4e42-9d07-a63bacff7c6c",
   "GameObjects": [
     {
-      "Id": "ff140a58-6f14-4a53-9628-513e49cadf8e",
+      "__guid": "ff140a58-6f14-4a53-9628-513e49cadf8e",
       "Name": "\uD83C\uDFDE ENV \uD83C\uDFDE",
       "Position": "235.5777,345.3558,54.46339",
       "Enabled": true,
       "NetworkMode": 2
     },
     {
-      "Id": "dccc1113-9032-4082-a5d0-b3e76cc42376",
+      "__guid": "dccc1113-9032-4082-a5d0-b3e76cc42376",
       "Name": "Map",
       "Position": "-16.00771,61.8781,2112.087",
       "Enabled": true,
@@ -17,6 +17,7 @@
       "Components": [
         {
           "__type": "MapInstance",
+          "__guid": "430de2a4-dc14-4200-90c7-5794f810cb19",
           "MapName": "dev_main",
           "UseMapFromLaunch": false
         }
@@ -24,7 +25,7 @@
       "Children": []
     },
     {
-      "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+      "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
       "Name": "Sun",
       "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
       "Tags": "light_directional,light",
@@ -33,6 +34,7 @@
       "Components": [
         {
           "__type": "DirectionalLight",
+          "__guid": "f7eca013-6994-4ec2-ab26-4d966676b622",
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "1.96,1.96,1.96,1",
@@ -42,7 +44,7 @@
       ]
     },
     {
-      "Id": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
+      "__guid": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
       "Name": "2D Skybox",
       "Tags": "skybox",
       "Enabled": true,
@@ -50,11 +52,13 @@
       "Components": [
         {
           "__type": "SkyBox2D",
+          "__guid": "ce31efe1-3698-4ed2-b1f8-7d2722c1d5bb",
           "SkyMaterial": "materials/skybox/light_test_dark.vmat",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "EnvmapProbe",
+          "__guid": "61f51d3e-d2e1-4ca3-a443-f14cadfc09ef",
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
@@ -67,14 +71,14 @@
       ]
     },
     {
-      "Id": "d0254a7c-0b6d-4bf4-a448-d6871ab61082",
+      "__guid": "d0254a7c-0b6d-4bf4-a448-d6871ab61082",
       "Name": "\uD83D\uDCAB DATA \uD83D\uDCAB",
       "Position": "278.0361,331.6518,76.7455",
       "Enabled": true,
       "NetworkMode": 2
     },
     {
-      "Id": "cf7c6201-3164-4664-ad2c-281b3e45081d",
+      "__guid": "cf7c6201-3164-4664-ad2c-281b3e45081d",
       "Name": "Game",
       "Position": "183.8709,140.9425,99.10318",
       "Enabled": true,
@@ -82,9 +86,11 @@
       "Components": [
         {
           "__type": "ReverseTime",
+          "__guid": "8dfd9292-3e7a-4316-8ce8-fbb0d2cef1be",
           "defaultTimeRecoding": 20,
           "ply": {
             "_type": "component",
+            "component_id": "9bc2fb08-5c5c-4495-9aed-5d5d2c4608ee",
             "go": "43169f6e-d108-4963-87f0-001c6684eb98",
             "component_type": "Player"
           },
@@ -96,14 +102,11 @@
         },
         {
           "__type": "MonologSystem",
-          "_monologUI": {
-            "_type": "component",
-            "go": "846730fd-3358-4884-a6a5-f8d34c0ff616",
-            "component_type": "MonologUI"
-          }
+          "__guid": "89dae408-c70f-4f62-94ee-3279a65c17d1"
         },
         {
           "__type": "SoundPointComponent",
+          "__guid": "acc0e851-75b2-4712-8d3e-ecae7e42b637",
           "DistanceAttenuation": false,
           "DistanceAttenuationOverride": false,
           "Force2d": false,
@@ -125,7 +128,7 @@
       ]
     },
     {
-      "Id": "846730fd-3358-4884-a6a5-f8d34c0ff616",
+      "__guid": "846730fd-3358-4884-a6a5-f8d34c0ff616",
       "Name": "UI: Monolog",
       "Position": "310.5639,411.2138,-154.5842",
       "Enabled": true,
@@ -133,24 +136,16 @@
       "Components": [
         {
           "__type": "ScreenPanel",
+          "__guid": "394f4270-094c-48fc-891c-c81d30b54f4a",
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
           "ZIndex": 100
-        },
-        {
-          "__type": "MonologUI",
-          "_currentOpacity": 0,
-          "_currentText": "NoText!",
-          "AnimationDurationSeconds": 0.1,
-          "HideOpacity": 0,
-          "ShowOpacity": 1,
-          "Side": "Bottom"
         }
       ]
     },
     {
-      "Id": "649059c1-1edc-4780-b80f-3c23e2919e86",
+      "__guid": "649059c1-1edc-4780-b80f-3c23e2919e86",
       "Name": "UI: MainMenu",
       "Position": "278.0361,331.6518,76.7455",
       "Enabled": true,
@@ -158,41 +153,34 @@
       "Components": [
         {
           "__type": "ScreenPanel",
+          "__guid": "c39c7728-1f2a-4b7b-a3ce-c070f5246e9f",
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
           "ZIndex": 100
         },
         {
-          "__type": "MainMenu",
-          "MainMenuPanel": {
-            "_type": "component",
-            "go": "649059c1-1edc-4780-b80f-3c23e2919e86",
-            "component_type": "ScreenPanel"
-          }
-        },
-        {
-          "__type": "MainMenuPanel",
-          "MyStringValue": "Hello World!"
+          "__type": "MainMenuUI",
+          "__guid": "5da965d0-6fc7-47be-b0cf-0e380fa715be"
         }
       ]
     },
     {
-      "Id": "72bdae71-b4ad-4c65-87db-ff5a9c045778",
+      "__guid": "72bdae71-b4ad-4c65-87db-ff5a9c045778",
       "Name": "\u2705 LEVEL \u2705",
       "Position": "235.5777,345.3558,54.46339",
       "Enabled": true,
       "NetworkMode": 2
     },
     {
-      "Id": "2783be33-e57f-43b9-a36a-4565f0ffd550",
+      "__guid": "2783be33-e57f-43b9-a36a-4565f0ffd550",
       "Name": "World",
       "Position": "301.2039,151.7318,-14.53918",
       "Enabled": true,
       "NetworkMode": 2,
       "Children": [
         {
-          "Id": "af9c89f4-dde9-4ac3-846f-b2fc541efc30",
+          "__guid": "af9c89f4-dde9-4ac3-846f-b2fc541efc30",
           "Name": "Cube",
           "Position": "-7.461029,12.36,10.68686",
           "Scale": "0.5289635,0.6224717,0.0442064",
@@ -201,6 +189,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "0ba2cc1d-3174-460e-92a9-b42bcdea4ae4",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -208,18 +197,20 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "20fe128c-35cf-4602-a6bb-3148cd421be8",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": false
             },
             {
-              "__type": "TriggerObject"
+              "__type": "TriggerObject",
+              "__guid": "58aaa3b7-714c-401d-b4d5-e0009cee25e7"
             }
           ]
         },
         {
-          "Id": "26f7bb0c-5123-4cfe-9932-f9597be16c0a",
+          "__guid": "26f7bb0c-5123-4cfe-9932-f9597be16c0a",
           "Name": "Cube",
           "Position": "73.09052,100.1693,35.20406",
           "Scale": "0.5289635,0.6224717,0.0442064",
@@ -228,6 +219,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "d17beb62-90ed-453d-abbf-c76b46cf11e6",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -235,6 +227,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "3c65d523-cefc-40be-8234-4bac85d19be3",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
@@ -243,7 +236,7 @@
           ]
         },
         {
-          "Id": "372efa14-fb31-42df-9c54-b1caf1b6b658",
+          "__guid": "372efa14-fb31-42df-9c54-b1caf1b6b658",
           "Name": "Cube",
           "Position": "143.7265,100.1693,35.20406",
           "Scale": "0.5289635,0.6224717,0.0442064",
@@ -252,6 +245,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "c738b5b9-046e-4c3a-b98f-4a0b84092787",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -259,6 +253,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "d3f87455-e6e8-4905-ae6a-23810b471e08",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
@@ -267,7 +262,7 @@
           ]
         },
         {
-          "Id": "b55bc38c-ca46-4483-942b-64b96071a86d",
+          "__guid": "b55bc38c-ca46-4483-942b-64b96071a86d",
           "Name": "Cube",
           "Position": "143.7265,185.8891,45.705",
           "Scale": "0.5289635,0.6224717,0.0442064",
@@ -276,6 +271,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "f8eccdf4-12fb-4fea-ae0b-ad6373278c30",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -283,6 +279,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "25254956-463f-4a27-a24d-c8c9eeaf563b",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
@@ -291,7 +288,7 @@
           ]
         },
         {
-          "Id": "ee3bbc52-955d-4a4d-920d-cce9922d30bf",
+          "__guid": "ee3bbc52-955d-4a4d-920d-cce9922d30bf",
           "Name": "Cube",
           "Position": "89.38284,185.6289,62.28305",
           "Rotation": "0,0.1305262,0,0.9914449",
@@ -301,6 +298,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "4b159b39-3053-4cd3-bc4a-558d6a6d8f20",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -308,6 +306,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "ed32f8ab-402a-4f40-9f71-067c63ae5a0b",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
@@ -316,7 +315,7 @@
           ]
         },
         {
-          "Id": "406a2bc5-dd9c-415c-a895-ea255376241b",
+          "__guid": "406a2bc5-dd9c-415c-a895-ea255376241b",
           "Name": "PlaceForButton",
           "Position": "147.5785,-11.2951,22.6338",
           "Scale": "0.2116552,0.0604898,1.719332",
@@ -325,6 +324,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "1395e64d-ff31-4be9-b298-cb1a82a95ffa",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -332,6 +332,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "dcb0b96e-5714-4a96-b3b6-d8c99a86ea7e",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
@@ -340,7 +341,7 @@
           ],
           "Children": [
             {
-              "Id": "7a6952f6-f502-4489-b72f-c036992607c5",
+              "__guid": "7a6952f6-f502-4489-b72f-c036992607c5",
               "Name": "Button",
               "Position": "-1.143101,-38.16451,18.03082",
               "Scale": "0.6534992,0.894671,0.07965566",
@@ -349,6 +350,7 @@
               "Components": [
                 {
                   "__type": "ModelRenderer",
+                  "__guid": "d2b48599-f7dd-44fd-a4ae-fe7d27ed738c",
                   "BodyGroups": 18446744073709551615,
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "Off",
@@ -356,6 +358,7 @@
                 },
                 {
                   "__type": "TriggerButton",
+                  "__guid": "a41f1628-8562-4473-b5d8-3048bd953f69",
                   "Game": {
                     "_type": "gameobject",
                     "go": "cf7c6201-3164-4664-ad2c-281b3e45081d"
@@ -393,8 +396,8 @@
                         "Id": 4,
                         "Type": "property.get",
                         "Properties": {
-                          "_name": "Game",
-                          "_type": "package.ambi.myog/TriggerButton"
+                          "_type": "package.ambi.myog/TriggerButton",
+                          "_name": "Game"
                         },
                         "UserData": {
                           "Position": "-208,160"
@@ -404,10 +407,10 @@
                         "Id": 5,
                         "Type": "call",
                         "Properties": {
-                          "T": "package.ambi.myog/ReverseTime",
                           "_isStatic": false,
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
                           "_name": "Get",
-                          "_type": "Sandbox.Game/Sandbox.IComponentLister"
+                          "T": "package.ambi.myog/ReverseTime"
                         },
                         "UserData": {
                           "Position": "16,160"
@@ -418,8 +421,8 @@
                         "Type": "call",
                         "Properties": {
                           "_isStatic": false,
-                          "_name": "StartRecord",
-                          "_type": "package.ambi.myog/ReverseTime"
+                          "_type": "package.ambi.myog/ReverseTime",
+                          "_name": "StartRecord"
                         },
                         "UserData": {
                           "Position": "352,176"
@@ -439,8 +442,8 @@
                         "Id": 11,
                         "Type": "property.set",
                         "Properties": {
-                          "_name": "Tint",
-                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                          "_name": "Tint"
                         },
                         "UserData": {
                           "Position": "368,32"
@@ -457,8 +460,8 @@
                         "Id": 13,
                         "Type": "property.set",
                         "Properties": {
-                          "_name": "Tint",
-                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                          "_name": "Tint"
                         },
                         "UserData": {
                           "Position": "784,16"
@@ -552,6 +555,7 @@
                 },
                 {
                   "__type": "BoxCollider",
+                  "__guid": "87a6bf7e-5555-4931-8655-8f670c57ce93",
                   "Center": "0,0,0",
                   "IsTrigger": false,
                   "Scale": "50,50,50",
@@ -562,7 +566,7 @@
           ]
         },
         {
-          "Id": "874fc070-707f-4ccc-bb44-55b83e9f24b9",
+          "__guid": "874fc070-707f-4ccc-bb44-55b83e9f24b9",
           "Name": "TriggerObj",
           "Position": "-92.59567,0,27.69293",
           "Enabled": true,
@@ -570,6 +574,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "91836f29-643e-4a8a-aa6c-20216a28d50c",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -577,6 +582,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "07ed60aa-82b7-4f41-a7a8-323b01caf663",
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
@@ -584,6 +590,7 @@
             },
             {
               "__type": "TriggerObject",
+              "__guid": "76bfb9fe-1e1a-4b20-ba01-3c8c9b900ed9",
               "OnTriggerEntered": {
                 "Version": 5,
                 "UserData": {
@@ -610,8 +617,8 @@
                     "Id": 2,
                     "Type": "property.set",
                     "Properties": {
-                      "_name": "Tint",
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                      "_name": "Tint"
                     },
                     "UserData": {
                       "Position": "256,144"
@@ -660,8 +667,8 @@
                     "Id": 3,
                     "Type": "property.set",
                     "Properties": {
-                      "_name": "Tint",
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                      "_name": "Tint"
                     },
                     "UserData": {
                       "Position": "272,192"
@@ -708,7 +715,7 @@
           ]
         },
         {
-          "Id": "934d57de-1f40-43f6-99bc-30212cb807f3",
+          "__guid": "934d57de-1f40-43f6-99bc-30212cb807f3",
           "Name": "Monolog Trigger 1",
           "Position": "-92.59567,588.5242,27.69293",
           "Enabled": true,
@@ -716,6 +723,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "c9f7f844-1e4d-47d6-b865-5dbe9c2a3334",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -723,6 +731,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "cfc21de3-8ac2-438c-825c-654666dbad5f",
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
@@ -730,11 +739,13 @@
             },
             {
               "__type": "MonologTrigger",
+              "__guid": "df4885bc-784d-44a8-8587-b07e5bfb166d",
               "Monologs": [
-                "monologs/test.monolog"
+                "monologs/untitled.monolog"
               ],
               "MonologSystem": {
                 "_type": "component",
+                "component_id": "89dae408-c70f-4f62-94ee-3279a65c17d1",
                 "go": "cf7c6201-3164-4664-ad2c-281b3e45081d",
                 "component_type": "MonologSystem"
               }
@@ -742,7 +753,7 @@
           ]
         },
         {
-          "Id": "a30ca840-7f0e-4245-8f23-113843a4fccf",
+          "__guid": "a30ca840-7f0e-4245-8f23-113843a4fccf",
           "Name": "Monolog Trigger 1 (1)",
           "Position": "-99.09628,775.2009,31.25426",
           "Enabled": true,
@@ -750,6 +761,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "558aca4b-dad0-433b-8d08-680d91ead347",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -757,6 +769,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "3fad66fa-cb18-4064-bbcc-477be4bf2826",
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
@@ -765,7 +778,7 @@
           ]
         },
         {
-          "Id": "1896ddd3-bffd-4d87-83be-c955879177f7",
+          "__guid": "1896ddd3-bffd-4d87-83be-c955879177f7",
           "Name": "Monolog Trigger 1 (2)",
           "Position": "-97.61922,684.3221,29.98861",
           "Enabled": true,
@@ -773,6 +786,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "d236f238-f810-4ea5-a977-8a37983e4e05",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -780,6 +794,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "069c01a4-f91e-4e1e-ae6a-841c9a564217",
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
@@ -788,7 +803,7 @@
           ]
         },
         {
-          "Id": "d571de8e-aa8c-41e9-845b-e8e2683a5196",
+          "__guid": "d571de8e-aa8c-41e9-845b-e8e2683a5196",
           "Name": "TriggerTeleport",
           "Position": "-92.59567,-97.35979,29.78002",
           "Scale": "0.1523108,0.5770563,1.183053",
@@ -797,6 +812,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "ccad858a-27a9-4e96-b3a3-52a2c4b0aff8",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -804,6 +820,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "51e42921-e686-482f-ad3e-fa577b0a7848",
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "50,50,50",
@@ -811,12 +828,13 @@
             },
             {
               "__type": "TriggerTeleport",
+              "__guid": "abb26fec-3e0c-4d28-989b-972c01aec1b7",
               "PosToSpawn": "573,80,80"
             }
           ]
         },
         {
-          "Id": "b6b95076-1495-48de-9a7d-ea163c4cce77",
+          "__guid": "b6b95076-1495-48de-9a7d-ea163c4cce77",
           "Name": "TriggerCollision",
           "Position": "-92.59567,-189.6065,27.69293",
           "Enabled": true,
@@ -824,6 +842,7 @@
           "Components": [
             {
               "__type": "ModelRenderer",
+              "__guid": "b3233cd4-a7a4-477f-9b84-306173234a2a",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "On",
@@ -831,6 +850,7 @@
             },
             {
               "__type": "BoxCollider",
+              "__guid": "55c9a5a3-9d15-4693-8f38-39e46fbe2a66",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "54,54,54",
@@ -838,6 +858,7 @@
             },
             {
               "__type": "TriggerCollision",
+              "__guid": "0f86c77c-0236-4b0e-b41f-c2f1f2b2a5b0",
               "OnCollisionStarted": {
                 "Version": 5,
                 "UserData": {
@@ -867,8 +888,8 @@
                     "Id": 2,
                     "Type": "property.set",
                     "Properties": {
-                      "_name": "Tint",
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                      "_name": "Tint"
                     },
                     "UserData": {
                       "Position": "224,112"
@@ -930,8 +951,8 @@
                     "Id": 3,
                     "Type": "property.set",
                     "Properties": {
-                      "_name": "Tint",
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                      "_name": "Tint"
                     },
                     "UserData": {
                       "Position": "256,144"
@@ -970,7 +991,7 @@
       ]
     },
     {
-      "Id": "43169f6e-d108-4963-87f0-001c6684eb98",
+      "__guid": "43169f6e-d108-4963-87f0-001c6684eb98",
       "Name": "PlayerObj",
       "Position": "361.6956,96.61617,-11.06026",
       "Tags": "trigger,player",
@@ -979,21 +1000,21 @@
       "__Prefab": "prefabs/player.prefab"
     },
     {
-      "Id": "4f098a7f-85fc-4508-b95e-8793df395f7a",
+      "__guid": "4f098a7f-85fc-4508-b95e-8793df395f7a",
       "Name": "PosToSpawn #1",
       "Position": "573.9882,80.40993,80.30177",
       "Enabled": true,
       "NetworkMode": 2
     },
     {
-      "Id": "1e7c80ca-506c-490c-ae4f-2d92e025c803",
+      "__guid": "1e7c80ca-506c-490c-ae4f-2d92e025c803",
       "Name": "Firefly Pazzle",
       "Position": "292.3041,577.9126,8.010609",
       "Enabled": true,
       "NetworkMode": 2,
       "Children": [
         {
-          "Id": "c3c09df9-caf5-4f9f-9c15-e1676a4b6df4",
+          "__guid": "c3c09df9-caf5-4f9f-9c15-e1676a4b6df4",
           "Name": "Stand",
           "Position": "0,0,0",
           "Enabled": true,
@@ -1001,19 +1022,23 @@
           "Components": [
             {
               "__type": "FirefliesStand",
+              "__guid": "0846d1e6-0cd6-41df-9998-5838604af218",
               "Rows": [
                 {
                   "_type": "component",
+                  "component_id": "82dfeafc-1d87-4ab9-8b97-88fd872035b1",
                   "go": "4f06c2e1-bc37-4b16-ba62-377c8e4656ef",
                   "component_type": "FirefliesRow"
                 },
                 {
                   "_type": "component",
+                  "component_id": "bdfb15e2-e509-4455-820a-5be16cb1e415",
                   "go": "7450ad53-8683-4866-8e93-5da6d96eacde",
                   "component_type": "FirefliesRow"
                 },
                 {
                   "_type": "component",
+                  "component_id": "cbf86d68-2a38-4185-befb-c908988775b4",
                   "go": "fd88b7af-175f-4f74-b19f-6b6e22d66e6d",
                   "component_type": "FirefliesRow"
                 }
@@ -1024,7 +1049,7 @@
           ],
           "Children": [
             {
-              "Id": "4f06c2e1-bc37-4b16-ba62-377c8e4656ef",
+              "__guid": "4f06c2e1-bc37-4b16-ba62-377c8e4656ef",
               "Name": "Row 1",
               "Position": "-17.09756,-1.731628,-0.0000009536743",
               "Enabled": true,
@@ -1032,20 +1057,24 @@
               "Components": [
                 {
                   "__type": "FirefliesRow",
+                  "__guid": "82dfeafc-1d87-4ab9-8b97-88fd872035b1",
                   "CellChangeCooldown": 2,
                   "Cells": [
                     {
                       "_type": "component",
+                      "component_id": "86b7a1b1-d96c-4d5c-ae79-15cd3f89f6e5",
                       "go": "bb007a7f-0569-43b4-a4e9-1d220cc447ae",
                       "component_type": "FirefliesCell"
                     },
                     {
                       "_type": "component",
+                      "component_id": "3b129c10-101a-4830-ba8c-30a568fefd03",
                       "go": "2b9f9d8b-8413-4804-ab12-df7759581541",
                       "component_type": "FirefliesCell"
                     },
                     {
                       "_type": "component",
+                      "component_id": "7e2cc7fa-a7fd-4881-a475-235e178a1db3",
                       "go": "7c5283e6-e2b4-46e4-a666-13e9006e4be4",
                       "component_type": "FirefliesCell"
                     }
@@ -1054,7 +1083,7 @@
               ],
               "Children": [
                 {
-                  "Id": "bb007a7f-0569-43b4-a4e9-1d220cc447ae",
+                  "__guid": "bb007a7f-0569-43b4-a4e9-1d220cc447ae",
                   "Name": "Cell 1",
                   "Position": "0.3172607,19.354,20.46671",
                   "Rotation": "0,0.8660254,0,0.5000001",
@@ -1064,19 +1093,23 @@
                   "Components": [
                     {
                       "__type": "FirefliesCell",
+                      "__guid": "86b7a1b1-d96c-4d5c-ae79-15cd3f89f6e5",
                       "Light": {
                         "_type": "component",
+                        "component_id": "2e35e06c-ecd8-434e-b42e-e6873cf2dce7",
                         "go": "bb007a7f-0569-43b4-a4e9-1d220cc447ae",
                         "component_type": "SpotLight"
                       },
                       "Particles": {
                         "_type": "component",
+                        "component_id": "8af1d4b2-c877-4a3b-93a4-63c2c0a7be59",
                         "go": "bb007a7f-0569-43b4-a4e9-1d220cc447ae",
                         "component_type": "ParticleSphereEmitter"
                       }
                     },
                     {
                       "__type": "SpotLight",
+                      "__guid": "2e35e06c-ecd8-434e-b42e-e6873cf2dce7",
                       "Attenuation": 6.623998,
                       "ConeInner": 6.8640056,
                       "ConeOuter": 14.183998,
@@ -1088,6 +1121,7 @@
                     },
                     {
                       "__type": "ParticleEffect",
+                      "__guid": "b382e190-d363-4285-a797-2cfb26b8c0d8",
                       "Alpha": {
                         "Constants": "1,0,0,0"
                       },
@@ -1166,6 +1200,7 @@
                     },
                     {
                       "__type": "ParticleSpriteRenderer",
+                      "__guid": "fd754bba-3990-42c8-8cc0-0174b7837a2b",
                       "Additive": false,
                       "BlurAmount": 0.5,
                       "BlurOpacity": 0.5,
@@ -1184,6 +1219,7 @@
                     },
                     {
                       "__type": "ParticleSphereEmitter",
+                      "__guid": "8af1d4b2-c877-4a3b-93a4-63c2c0a7be59",
                       "Burst": 100,
                       "Delay": 0,
                       "DestroyOnEnd": false,
@@ -1197,7 +1233,7 @@
                   ]
                 },
                 {
-                  "Id": "2b9f9d8b-8413-4804-ab12-df7759581541",
+                  "__guid": "2b9f9d8b-8413-4804-ab12-df7759581541",
                   "Name": "Cell 2",
                   "Position": "0.001861572,1.093872,19.92757",
                   "Rotation": "0,0.8660254,0,0.5000001",
@@ -1207,19 +1243,23 @@
                   "Components": [
                     {
                       "__type": "FirefliesCell",
+                      "__guid": "3b129c10-101a-4830-ba8c-30a568fefd03",
                       "Light": {
                         "_type": "component",
+                        "component_id": "e209fd7f-8525-4fbb-89fe-160f3ab19d6c",
                         "go": "2b9f9d8b-8413-4804-ab12-df7759581541",
                         "component_type": "SpotLight"
                       },
                       "Particles": {
                         "_type": "component",
+                        "component_id": "8dbeace9-e515-4b21-af98-787828133ac5",
                         "go": "2b9f9d8b-8413-4804-ab12-df7759581541",
                         "component_type": "ParticleSphereEmitter"
                       }
                     },
                     {
                       "__type": "SpotLight",
+                      "__guid": "e209fd7f-8525-4fbb-89fe-160f3ab19d6c",
                       "Attenuation": 6.623998,
                       "ConeInner": 6.8640056,
                       "ConeOuter": 14.183998,
@@ -1231,6 +1271,7 @@
                     },
                     {
                       "__type": "ParticleEffect",
+                      "__guid": "ed5148de-1a44-4dd6-95b3-99ca8ca0ed0a",
                       "Alpha": {
                         "Constants": "1,0,0,0"
                       },
@@ -1309,6 +1350,7 @@
                     },
                     {
                       "__type": "ParticleSpriteRenderer",
+                      "__guid": "aa969f86-aec6-4458-b1d2-34326fa2ada0",
                       "Additive": false,
                       "BlurAmount": 0.5,
                       "BlurOpacity": 0.5,
@@ -1327,6 +1369,7 @@
                     },
                     {
                       "__type": "ParticleSphereEmitter",
+                      "__guid": "8dbeace9-e515-4b21-af98-787828133ac5",
                       "Burst": 100,
                       "Delay": 0,
                       "DestroyOnEnd": false,
@@ -1340,7 +1383,7 @@
                   ]
                 },
                 {
-                  "Id": "7c5283e6-e2b4-46e4-a666-13e9006e4be4",
+                  "__guid": "7c5283e6-e2b4-46e4-a666-13e9006e4be4",
                   "Name": "Cell 3",
                   "Position": "0.6036682,-18.2821,18.27365",
                   "Rotation": "0,0.8660254,0,0.5000001",
@@ -1350,19 +1393,23 @@
                   "Components": [
                     {
                       "__type": "FirefliesCell",
+                      "__guid": "7e2cc7fa-a7fd-4881-a475-235e178a1db3",
                       "Light": {
                         "_type": "component",
+                        "component_id": "02c1f3d0-98c2-4502-acb3-53a1eeb9dd05",
                         "go": "7c5283e6-e2b4-46e4-a666-13e9006e4be4",
                         "component_type": "SpotLight"
                       },
                       "Particles": {
                         "_type": "component",
+                        "component_id": "74343352-3b63-47fd-a7ac-ca9294bffb31",
                         "go": "7c5283e6-e2b4-46e4-a666-13e9006e4be4",
                         "component_type": "ParticleSphereEmitter"
                       }
                     },
                     {
                       "__type": "SpotLight",
+                      "__guid": "02c1f3d0-98c2-4502-acb3-53a1eeb9dd05",
                       "Attenuation": 6.623998,
                       "ConeInner": 6.8640056,
                       "ConeOuter": 14.183998,
@@ -1374,6 +1421,7 @@
                     },
                     {
                       "__type": "ParticleEffect",
+                      "__guid": "311e1e8a-f184-486c-a6f7-f524fbb20472",
                       "Alpha": {
                         "Constants": "1,0,0,0"
                       },
@@ -1452,6 +1500,7 @@
                     },
                     {
                       "__type": "ParticleSpriteRenderer",
+                      "__guid": "8f05ce62-5b51-4bcc-b7b0-2033f5537ab7",
                       "Additive": false,
                       "BlurAmount": 0.5,
                       "BlurOpacity": 0.5,
@@ -1470,6 +1519,7 @@
                     },
                     {
                       "__type": "ParticleSphereEmitter",
+                      "__guid": "74343352-3b63-47fd-a7ac-ca9294bffb31",
                       "Burst": 100,
                       "Delay": 0,
                       "DestroyOnEnd": false,
@@ -1485,7 +1535,7 @@
               ]
             },
             {
-              "Id": "7450ad53-8683-4866-8e93-5da6d96eacde",
+              "__guid": "7450ad53-8683-4866-8e93-5da6d96eacde",
               "Name": "Row 2",
               "Position": "-0.07061768,-1.731628,-0.0000009536743",
               "Enabled": true,
@@ -1493,20 +1543,24 @@
               "Components": [
                 {
                   "__type": "FirefliesRow",
+                  "__guid": "bdfb15e2-e509-4455-820a-5be16cb1e415",
                   "CellChangeCooldown": 2,
                   "Cells": [
                     {
                       "_type": "component",
+                      "component_id": "6dd5021d-9b5c-4f45-b58d-1584bf62f8ef",
                       "go": "f529c97d-7445-4bd9-8160-2e2141ceaf2e",
                       "component_type": "FirefliesCell"
                     },
                     {
                       "_type": "component",
+                      "component_id": "ad92b9f9-c997-4b75-ac51-0d326f390a47",
                       "go": "e2afb174-35ae-4dc2-87bc-7615f5119686",
                       "component_type": "FirefliesCell"
                     },
                     {
                       "_type": "component",
+                      "component_id": "7e1a4807-fb27-404d-9ec0-562936da9c35",
                       "go": "b414de67-2f93-4592-a7ec-936e9236f26d",
                       "component_type": "FirefliesCell"
                     }
@@ -1515,7 +1569,7 @@
               ],
               "Children": [
                 {
-                  "Id": "f529c97d-7445-4bd9-8160-2e2141ceaf2e",
+                  "__guid": "f529c97d-7445-4bd9-8160-2e2141ceaf2e",
                   "Name": "Cell 1",
                   "Position": "-0.8973083,18.02399,16.92427",
                   "Rotation": "0,0.8660254,0,0.5000001",
@@ -1525,19 +1579,23 @@
                   "Components": [
                     {
                       "__type": "FirefliesCell",
+                      "__guid": "6dd5021d-9b5c-4f45-b58d-1584bf62f8ef",
                       "Light": {
                         "_type": "component",
+                        "component_id": "65c04d43-d1d5-4711-a981-d8f50e36b0ed",
                         "go": "f529c97d-7445-4bd9-8160-2e2141ceaf2e",
                         "component_type": "SpotLight"
                       },
                       "Particles": {
                         "_type": "component",
+                        "component_id": "1bd6d340-f57d-4707-9ca7-edbcb5b8f9a7",
                         "go": "f529c97d-7445-4bd9-8160-2e2141ceaf2e",
                         "component_type": "ParticleSphereEmitter"
                       }
                     },
                     {
                       "__type": "SpotLight",
+                      "__guid": "65c04d43-d1d5-4711-a981-d8f50e36b0ed",
                       "Attenuation": 6.623998,
                       "ConeInner": 6.8640056,
                       "ConeOuter": 14.183998,
@@ -1549,6 +1607,7 @@
                     },
                     {
                       "__type": "ParticleEffect",
+                      "__guid": "792045a1-2bf9-4257-a072-ba1ff1dd1db8",
                       "Alpha": {
                         "Constants": "1,0,0,0"
                       },
@@ -1627,6 +1686,7 @@
                     },
                     {
                       "__type": "ParticleSpriteRenderer",
+                      "__guid": "9eda6b24-0b57-4f50-82da-12336cb605a6",
                       "Additive": false,
                       "BlurAmount": 0.5,
                       "BlurOpacity": 0.5,
@@ -1645,6 +1705,7 @@
                     },
                     {
                       "__type": "ParticleSphereEmitter",
+                      "__guid": "1bd6d340-f57d-4707-9ca7-edbcb5b8f9a7",
                       "Burst": 100,
                       "Delay": 0,
                       "DestroyOnEnd": false,
@@ -1658,7 +1719,7 @@
                   ]
                 },
                 {
-                  "Id": "e2afb174-35ae-4dc2-87bc-7615f5119686",
+                  "__guid": "e2afb174-35ae-4dc2-87bc-7615f5119686",
                   "Name": "Cell 2",
                   "Position": "-1.212708,-0.236145,16.38513",
                   "Rotation": "0,0.8660254,0,0.5000001",
@@ -1668,19 +1729,23 @@
                   "Components": [
                     {
                       "__type": "FirefliesCell",
+                      "__guid": "ad92b9f9-c997-4b75-ac51-0d326f390a47",
                       "Light": {
                         "_type": "component",
+                        "component_id": "8be67278-dd18-411e-96d5-232f44d95fee",
                         "go": "e2afb174-35ae-4dc2-87bc-7615f5119686",
                         "component_type": "SpotLight"
                       },
                       "Particles": {
                         "_type": "component",
+                        "component_id": "f98d4e5a-7a09-4d10-ba81-53fa802e72ed",
                         "go": "e2afb174-35ae-4dc2-87bc-7615f5119686",
                         "component_type": "ParticleSphereEmitter"
                       }
                     },
                     {
                       "__type": "SpotLight",
+                      "__guid": "8be67278-dd18-411e-96d5-232f44d95fee",
                       "Attenuation": 6.623998,
                       "ConeInner": 6.8640056,
                       "ConeOuter": 14.183998,
@@ -1692,6 +1757,7 @@
                     },
                     {
                       "__type": "ParticleEffect",
+                      "__guid": "5a606618-a95d-4d68-bed2-fa34baa5fc5a",
                       "Alpha": {
                         "Constants": "1,0,0,0"
                       },
@@ -1770,6 +1836,7 @@
                     },
                     {
                       "__type": "ParticleSpriteRenderer",
+                      "__guid": "ca3c28e1-ea31-4d26-8ca2-0ebe4a68699b",
                       "Additive": false,
                       "BlurAmount": 0.5,
                       "BlurOpacity": 0.5,
@@ -1788,6 +1855,7 @@
                     },
                     {
                       "__type": "ParticleSphereEmitter",
+                      "__guid": "f98d4e5a-7a09-4d10-ba81-53fa802e72ed",
                       "Burst": 100,
                       "Delay": 0,
                       "DestroyOnEnd": false,
@@ -1801,7 +1869,7 @@
                   ]
                 },
                 {
-                  "Id": "b414de67-2f93-4592-a7ec-936e9236f26d",
+                  "__guid": "b414de67-2f93-4592-a7ec-936e9236f26d",
                   "Name": "Cell 3",
                   "Position": "-0.6109009,-19.61212,16.13649",
                   "Rotation": "0,0.8660254,0,0.5000001",
@@ -1811,19 +1879,23 @@
                   "Components": [
                     {
                       "__type": "FirefliesCell",
+                      "__guid": "7e1a4807-fb27-404d-9ec0-562936da9c35",
                       "Light": {
                         "_type": "component",
+                        "component_id": "561e7ae6-fc0c-4735-9fa7-ef7226ea360a",
                         "go": "b414de67-2f93-4592-a7ec-936e9236f26d",
                         "component_type": "SpotLight"
                       },
                       "Particles": {
                         "_type": "component",
+                        "component_id": "e135b03e-7d36-41da-b761-32a8e4b15037",
                         "go": "b414de67-2f93-4592-a7ec-936e9236f26d",
                         "component_type": "ParticleSphereEmitter"
                       }
                     },
                     {
                       "__type": "SpotLight",
+                      "__guid": "561e7ae6-fc0c-4735-9fa7-ef7226ea360a",
                       "Attenuation": 6.623998,
                       "ConeInner": 6.8640056,
                       "ConeOuter": 14.183998,
@@ -1835,6 +1907,7 @@
                     },
                     {
                       "__type": "ParticleEffect",
+                      "__guid": "3b66b688-f747-4f76-b29d-753b61686de5",
                       "Alpha": {
                         "Constants": "1,0,0,0"
                       },
@@ -1913,6 +1986,7 @@
                     },
                     {
                       "__type": "ParticleSpriteRenderer",
+                      "__guid": "d90482f0-c748-4ac4-a75d-a332768bbab3",
                       "Additive": false,
                       "BlurAmount": 0.5,
                       "BlurOpacity": 0.5,
@@ -1931,6 +2005,7 @@
                     },
                     {
                       "__type": "ParticleSphereEmitter",
+                      "__guid": "e135b03e-7d36-41da-b761-32a8e4b15037",
                       "Burst": 100,
                       "Delay": 0,
                       "DestroyOnEnd": false,
@@ -1946,7 +2021,7 @@
               ]
             },
             {
-              "Id": "fd88b7af-175f-4f74-b19f-6b6e22d66e6d",
+              "__guid": "fd88b7af-175f-4f74-b19f-6b6e22d66e6d",
               "Name": "Row 3",
               "Position": "16.2804,-1.731628,-0.0000009536743",
               "Enabled": true,
@@ -1954,20 +2029,24 @@
               "Components": [
                 {
                   "__type": "FirefliesRow",
+                  "__guid": "cbf86d68-2a38-4185-befb-c908988775b4",
                   "CellChangeCooldown": 2,
                   "Cells": [
                     {
                       "_type": "component",
+                      "component_id": "4c763747-5eec-43e9-8275-96713002530c",
                       "go": "dd1c64ac-c58a-4dcf-831a-cbd19972565e",
                       "component_type": "FirefliesCell"
                     },
                     {
                       "_type": "component",
+                      "component_id": "a62a0207-5541-4178-935e-3e5d379a7fd4",
                       "go": "71c8a002-d37c-4ec5-a393-977c87f330a8",
                       "component_type": "FirefliesCell"
                     },
                     {
                       "_type": "component",
+                      "component_id": "1ac344a9-3392-48bd-9f30-2be72ae99201",
                       "go": "c1e2d329-764d-41a0-95b9-a326c5c32e82",
                       "component_type": "FirefliesCell"
                     }
@@ -1976,7 +2055,7 @@
               ],
               "Children": [
                 {
-                  "Id": "dd1c64ac-c58a-4dcf-831a-cbd19972565e",
+                  "__guid": "dd1c64ac-c58a-4dcf-831a-cbd19972565e",
                   "Name": "Cell 1",
                   "Position": "0.7425232,17.38159,17.8878",
                   "Rotation": "0,0.8660254,0,0.5000001",
@@ -1986,19 +2065,23 @@
                   "Components": [
                     {
                       "__type": "FirefliesCell",
+                      "__guid": "4c763747-5eec-43e9-8275-96713002530c",
                       "Light": {
                         "_type": "component",
+                        "component_id": "a0d72f08-9bd9-4319-ab87-2213e4e2e9e0",
                         "go": "dd1c64ac-c58a-4dcf-831a-cbd19972565e",
                         "component_type": "SpotLight"
                       },
                       "Particles": {
                         "_type": "component",
+                        "component_id": "5ed5a760-a0a5-47ac-aeaf-b8126bfb0100",
                         "go": "dd1c64ac-c58a-4dcf-831a-cbd19972565e",
                         "component_type": "ParticleSphereEmitter"
                       }
                     },
                     {
                       "__type": "SpotLight",
+                      "__guid": "a0d72f08-9bd9-4319-ab87-2213e4e2e9e0",
                       "Attenuation": 6.623998,
                       "ConeInner": 6.8640056,
                       "ConeOuter": 14.183998,
@@ -2010,6 +2093,7 @@
                     },
                     {
                       "__type": "ParticleEffect",
+                      "__guid": "a1bba2e5-6e19-4a12-a394-3f58e86a0aac",
                       "Alpha": {
                         "Constants": "1,0,0,0"
                       },
@@ -2088,6 +2172,7 @@
                     },
                     {
                       "__type": "ParticleSpriteRenderer",
+                      "__guid": "eee94efb-949a-4192-a373-d035a9327677",
                       "Additive": false,
                       "BlurAmount": 0.5,
                       "BlurOpacity": 0.5,
@@ -2106,6 +2191,7 @@
                     },
                     {
                       "__type": "ParticleSphereEmitter",
+                      "__guid": "5ed5a760-a0a5-47ac-aeaf-b8126bfb0100",
                       "Burst": 100,
                       "Delay": 0,
                       "DestroyOnEnd": false,
@@ -2119,7 +2205,7 @@
                   ]
                 },
                 {
-                  "Id": "71c8a002-d37c-4ec5-a393-977c87f330a8",
+                  "__guid": "71c8a002-d37c-4ec5-a393-977c87f330a8",
                   "Name": "Cell 2",
                   "Position": "0.427124,-0.87854,17.34866",
                   "Rotation": "0,0.8660254,0,0.5000001",
@@ -2129,19 +2215,23 @@
                   "Components": [
                     {
                       "__type": "FirefliesCell",
+                      "__guid": "a62a0207-5541-4178-935e-3e5d379a7fd4",
                       "Light": {
                         "_type": "component",
+                        "component_id": "75712992-ac71-47a7-91ed-1260d7dff790",
                         "go": "71c8a002-d37c-4ec5-a393-977c87f330a8",
                         "component_type": "SpotLight"
                       },
                       "Particles": {
                         "_type": "component",
+                        "component_id": "c22a4033-9572-45fc-a925-e25eff652147",
                         "go": "71c8a002-d37c-4ec5-a393-977c87f330a8",
                         "component_type": "ParticleSphereEmitter"
                       }
                     },
                     {
                       "__type": "SpotLight",
+                      "__guid": "75712992-ac71-47a7-91ed-1260d7dff790",
                       "Attenuation": 6.623998,
                       "ConeInner": 6.8640056,
                       "ConeOuter": 14.183998,
@@ -2153,6 +2243,7 @@
                     },
                     {
                       "__type": "ParticleEffect",
+                      "__guid": "0184522b-5043-4085-85f3-9a739789f474",
                       "Alpha": {
                         "Constants": "1,0,0,0"
                       },
@@ -2231,6 +2322,7 @@
                     },
                     {
                       "__type": "ParticleSpriteRenderer",
+                      "__guid": "2b0dd228-155f-4010-a563-0f2220d8b0b0",
                       "Additive": false,
                       "BlurAmount": 0.5,
                       "BlurOpacity": 0.5,
@@ -2249,6 +2341,7 @@
                     },
                     {
                       "__type": "ParticleSphereEmitter",
+                      "__guid": "c22a4033-9572-45fc-a925-e25eff652147",
                       "Burst": 100,
                       "Delay": 0,
                       "DestroyOnEnd": false,
@@ -2262,7 +2355,7 @@
                   ]
                 },
                 {
-                  "Id": "c1e2d329-764d-41a0-95b9-a326c5c32e82",
+                  "__guid": "c1e2d329-764d-41a0-95b9-a326c5c32e82",
                   "Name": "Cell 3",
                   "Position": "1.028931,-20.25452,17.54098",
                   "Rotation": "0,0.8660254,0,0.5000001",
@@ -2272,19 +2365,23 @@
                   "Components": [
                     {
                       "__type": "FirefliesCell",
+                      "__guid": "1ac344a9-3392-48bd-9f30-2be72ae99201",
                       "Light": {
                         "_type": "component",
+                        "component_id": "5f2a9eaa-0326-40cd-ab3b-e9ecefd2b483",
                         "go": "c1e2d329-764d-41a0-95b9-a326c5c32e82",
                         "component_type": "SpotLight"
                       },
                       "Particles": {
                         "_type": "component",
+                        "component_id": "76c568a2-f081-448f-8eb4-ce8528ede816",
                         "go": "c1e2d329-764d-41a0-95b9-a326c5c32e82",
                         "component_type": "ParticleSphereEmitter"
                       }
                     },
                     {
                       "__type": "SpotLight",
+                      "__guid": "5f2a9eaa-0326-40cd-ab3b-e9ecefd2b483",
                       "Attenuation": 6.623998,
                       "ConeInner": 6.8640056,
                       "ConeOuter": 14.183998,
@@ -2296,6 +2393,7 @@
                     },
                     {
                       "__type": "ParticleEffect",
+                      "__guid": "daef4e45-672e-48f3-a795-04883d3ffdb2",
                       "Alpha": {
                         "Constants": "1,0,0,0"
                       },
@@ -2374,6 +2472,7 @@
                     },
                     {
                       "__type": "ParticleSpriteRenderer",
+                      "__guid": "6f4a58df-9312-4380-9762-8555a81a3b5d",
                       "Additive": false,
                       "BlurAmount": 0.5,
                       "BlurOpacity": 0.5,
@@ -2392,6 +2491,7 @@
                     },
                     {
                       "__type": "ParticleSphereEmitter",
+                      "__guid": "76c568a2-f081-448f-8eb4-ce8528ede816",
                       "Burst": 100,
                       "Delay": 0,
                       "DestroyOnEnd": false,
@@ -2407,14 +2507,14 @@
               ]
             },
             {
-              "Id": "dc66d77e-5c92-476e-b395-42b824532b31",
+              "__guid": "dc66d77e-5c92-476e-b395-42b824532b31",
               "Name": "Walls",
               "Position": "0,0,0",
               "Enabled": true,
               "NetworkMode": 2,
               "Children": [
                 {
-                  "Id": "b5cbbd4c-172b-4bb8-85ac-603ff751554d",
+                  "__guid": "b5cbbd4c-172b-4bb8-85ac-603ff751554d",
                   "Name": "Cube",
                   "Position": "0,29.76538,0",
                   "Scale": "1,0.1028447,0.36",
@@ -2423,6 +2523,7 @@
                   "Components": [
                     {
                       "__type": "ModelRenderer",
+                      "__guid": "54bf1c8d-352c-41c3-b271-106b4f55f5f8",
                       "BodyGroups": 18446744073709551615,
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "On",
@@ -2431,7 +2532,7 @@
                   ]
                 },
                 {
-                  "Id": "faa6e1c6-99e1-426e-a3b5-89a7ea594799",
+                  "__guid": "faa6e1c6-99e1-426e-a3b5-89a7ea594799",
                   "Name": "Cube",
                   "Position": "0,-1.324585,-2.712331",
                   "Rotation": "0.7071068,0,0,0.7071068",
@@ -2441,6 +2542,7 @@
                   "Components": [
                     {
                       "__type": "ModelRenderer",
+                      "__guid": "cba90d25-5d46-4212-a43f-425b4301bad8",
                       "BodyGroups": 18446744073709551615,
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "On",
@@ -2449,7 +2551,7 @@
                   ]
                 },
                 {
-                  "Id": "ad8fdd3f-bac1-4624-9a34-8b17a7aaa7ec",
+                  "__guid": "ad8fdd3f-bac1-4624-9a34-8b17a7aaa7ec",
                   "Name": "Cube",
                   "Position": "0,-36.03943,97.82642",
                   "Scale": "1.844718,3.058483,0.03958355",
@@ -2458,6 +2560,7 @@
                   "Components": [
                     {
                       "__type": "ModelRenderer",
+                      "__guid": "7ca54b96-f6ee-40e2-8758-8854eb7bae76",
                       "BodyGroups": 18446744073709551615,
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "On",
@@ -2466,7 +2569,7 @@
                   ]
                 },
                 {
-                  "Id": "2856c6fc-f081-4ef1-b21d-0fb5a42ce4b5",
+                  "__guid": "2856c6fc-f081-4ef1-b21d-0fb5a42ce4b5",
                   "Name": "Cube",
                   "Position": "0,-33.58783,0",
                   "Scale": "1,0.1028447,0.36",
@@ -2475,6 +2578,7 @@
                   "Components": [
                     {
                       "__type": "ModelRenderer",
+                      "__guid": "f80a968e-1fc7-4799-8134-3e63ace41c59",
                       "BodyGroups": 18446744073709551615,
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "On",
@@ -2483,7 +2587,7 @@
                   ]
                 },
                 {
-                  "Id": "e39ba10a-7cb5-49f7-9289-ccb443a45566",
+                  "__guid": "e39ba10a-7cb5-49f7-9289-ccb443a45566",
                   "Name": "Cube",
                   "Position": "-27.20483,-2.336975,0",
                   "Scale": "0.1037194,1.197159,0.36",
@@ -2492,6 +2596,7 @@
                   "Components": [
                     {
                       "__type": "ModelRenderer",
+                      "__guid": "7fbf5834-2fdc-49e6-ae3b-e0cfba72eff3",
                       "BodyGroups": 18446744073709551615,
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "On",
@@ -2500,7 +2605,7 @@
                   ]
                 },
                 {
-                  "Id": "1118b0d9-c6f0-46e6-8e59-b568bed1a77f",
+                  "__guid": "1118b0d9-c6f0-46e6-8e59-b568bed1a77f",
                   "Name": "Cube",
                   "Position": "26.22409,-2.336975,0",
                   "Scale": "0.1037194,1.197159,0.36",
@@ -2509,6 +2614,7 @@
                   "Components": [
                     {
                       "__type": "ModelRenderer",
+                      "__guid": "eaa7df67-a73e-4e95-a7d3-6098149f3751",
                       "BodyGroups": 18446744073709551615,
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "On",
@@ -2517,7 +2623,7 @@
                   ]
                 },
                 {
-                  "Id": "fa5c8821-7f46-4658-a557-34b53c8706f2",
+                  "__guid": "fa5c8821-7f46-4658-a557-34b53c8706f2",
                   "Name": "Cube",
                   "Position": "8.339081,-2.336975,0",
                   "Scale": "0.01364792,1.197159,0.36",
@@ -2526,6 +2632,7 @@
                   "Components": [
                     {
                       "__type": "ModelRenderer",
+                      "__guid": "d68e7e38-b2ce-4920-bdc8-12a5e12d0db3",
                       "BodyGroups": 18446744073709551615,
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "On",
@@ -2534,7 +2641,7 @@
                   ]
                 },
                 {
-                  "Id": "3902f0c2-3542-455d-a65f-d17ae2c1f590",
+                  "__guid": "3902f0c2-3542-455d-a65f-d17ae2c1f590",
                   "Name": "Cube",
                   "Position": "-8.270294,-2.336975,0",
                   "Scale": "0.01364792,1.197159,0.36",
@@ -2543,6 +2650,7 @@
                   "Components": [
                     {
                       "__type": "ModelRenderer",
+                      "__guid": "827649fe-65a8-4659-b8cc-235e0279062f",
                       "BodyGroups": 18446744073709551615,
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "On",
@@ -2551,7 +2659,7 @@
                   ]
                 },
                 {
-                  "Id": "9bb916ff-e8dc-4328-bac5-fc341f2bf67e",
+                  "__guid": "9bb916ff-e8dc-4328-bac5-fc341f2bf67e",
                   "Name": "Cube",
                   "Position": "-8.270294,-2.336975,0",
                   "Scale": "0.01364792,1.197159,0.36",
@@ -2560,6 +2668,7 @@
                   "Components": [
                     {
                       "__type": "ModelRenderer",
+                      "__guid": "9fd45af1-1a82-4f45-a795-ae84e0aa5bbe",
                       "BodyGroups": 18446744073709551615,
                       "Model": "models/dev/box.vmdl",
                       "RenderType": "On",
@@ -2572,14 +2681,14 @@
           ]
         },
         {
-          "Id": "d395c354-213d-45ca-a457-193e27902c09",
+          "__guid": "d395c354-213d-45ca-a457-193e27902c09",
           "Name": "Buttons",
           "Position": "0,0,0",
           "Enabled": true,
           "NetworkMode": 2,
           "Children": [
             {
-              "Id": "087e3184-e926-4106-b16f-d73d7d76a22d",
+              "__guid": "087e3184-e926-4106-b16f-d73d7d76a22d",
               "Name": "Start Button",
               "Position": "40.14291,-34.69769,0",
               "Scale": "0.2,0.2,0.2",
@@ -2588,6 +2697,7 @@
               "Components": [
                 {
                   "__type": "ModelRenderer",
+                  "__guid": "5430071e-8577-4c1f-a8e9-b34c4313fba6",
                   "BodyGroups": 18446744073709551615,
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "On",
@@ -2595,6 +2705,7 @@
                 },
                 {
                   "__type": "BoxCollider",
+                  "__guid": "1b56e63f-a447-403d-86e2-af2132d7b01a",
                   "Center": "0,0,0",
                   "IsTrigger": false,
                   "Scale": "50,50,50",
@@ -2602,8 +2713,10 @@
                 },
                 {
                   "__type": "FirefliesTrigger",
+                  "__guid": "4c5682a2-19ba-4bbd-95ac-074d4c325d98",
                   "FirefliesStand": {
                     "_type": "component",
+                    "component_id": "0846d1e6-0cd6-41df-9998-5838604af218",
                     "go": "c3c09df9-caf5-4f9f-9c15-e1676a4b6df4",
                     "component_type": "FirefliesStand"
                   },
@@ -2639,8 +2752,8 @@
                         "Id": 2,
                         "Type": "property.get",
                         "Properties": {
-                          "_name": "FirefliesStand",
-                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger",
+                          "_name": "FirefliesStand"
                         },
                         "UserData": {
                           "Position": "224,64"
@@ -2651,8 +2764,8 @@
                         "Type": "call",
                         "Properties": {
                           "_isStatic": false,
-                          "_name": "Play",
-                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand"
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand",
+                          "_name": "Play"
                         },
                         "UserData": {
                           "Position": "496,16"
@@ -2690,7 +2803,7 @@
               ]
             },
             {
-              "Id": "f67b9c20-c156-48b3-bc7e-d998b31cea21",
+              "__guid": "f67b9c20-c156-48b3-bc7e-d998b31cea21",
               "Name": "Row 1 Button",
               "Position": "40.14291,-2.053467,0",
               "Scale": "0.2,0.2,0.2",
@@ -2699,6 +2812,7 @@
               "Components": [
                 {
                   "__type": "ModelRenderer",
+                  "__guid": "79dfcb4e-e4b2-4486-9164-cecbc8ccef5b",
                   "BodyGroups": 18446744073709551615,
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "On",
@@ -2706,6 +2820,7 @@
                 },
                 {
                   "__type": "BoxCollider",
+                  "__guid": "145cf40c-5b94-48df-a3bc-6f11e160dc39",
                   "Center": "0,0,0",
                   "IsTrigger": false,
                   "Scale": "50,50,50",
@@ -2713,8 +2828,10 @@
                 },
                 {
                   "__type": "FirefliesTrigger",
+                  "__guid": "aefabada-e3f8-4852-bc41-77744cd632ad",
                   "FirefliesStand": {
                     "_type": "component",
+                    "component_id": "0846d1e6-0cd6-41df-9998-5838604af218",
                     "go": "c3c09df9-caf5-4f9f-9c15-e1676a4b6df4",
                     "component_type": "FirefliesStand"
                   },
@@ -2750,8 +2867,8 @@
                         "Id": 3,
                         "Type": "property.get",
                         "Properties": {
-                          "_name": "FirefliesStand",
-                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger",
+                          "_name": "FirefliesStand"
                         },
                         "UserData": {
                           "Position": "160,96"
@@ -2762,8 +2879,8 @@
                         "Type": "call",
                         "Properties": {
                           "_isStatic": false,
-                          "_name": "SwitchChangeCells",
-                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand"
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand",
+                          "_name": "SwitchChangeCells"
                         },
                         "UserData": {
                           "Position": "448,16"
@@ -2806,7 +2923,7 @@
               ]
             },
             {
-              "Id": "422a37d2-9e96-4d95-8812-ca343635fc5e",
+              "__guid": "422a37d2-9e96-4d95-8812-ca343635fc5e",
               "Name": "Row 2 Button",
               "Position": "40.14291,12.2641,0",
               "Scale": "0.2,0.2,0.2",
@@ -2815,6 +2932,7 @@
               "Components": [
                 {
                   "__type": "ModelRenderer",
+                  "__guid": "fe3049ee-c0c2-4ae9-9bbe-7a85af8664b0",
                   "BodyGroups": 18446744073709551615,
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "On",
@@ -2822,6 +2940,7 @@
                 },
                 {
                   "__type": "BoxCollider",
+                  "__guid": "703d4157-3618-4327-a967-413d3d9d616d",
                   "Center": "0,0,0",
                   "IsTrigger": false,
                   "Scale": "50,50,50",
@@ -2829,8 +2948,10 @@
                 },
                 {
                   "__type": "FirefliesTrigger",
+                  "__guid": "607eed9e-6f26-4ceb-a571-55f3d849860f",
                   "FirefliesStand": {
                     "_type": "component",
+                    "component_id": "0846d1e6-0cd6-41df-9998-5838604af218",
                     "go": "c3c09df9-caf5-4f9f-9c15-e1676a4b6df4",
                     "component_type": "FirefliesStand"
                   },
@@ -2863,8 +2984,8 @@
                         "Id": 2,
                         "Type": "property.get",
                         "Properties": {
-                          "_name": "FirefliesStand",
-                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger",
+                          "_name": "FirefliesStand"
                         },
                         "UserData": {
                           "Position": "176,112"
@@ -2875,8 +2996,8 @@
                         "Type": "call",
                         "Properties": {
                           "_isStatic": false,
-                          "_name": "SwitchChangeCells",
-                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand"
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand",
+                          "_name": "SwitchChangeCells"
                         },
                         "UserData": {
                           "Position": "464,0"
@@ -2919,7 +3040,7 @@
               ]
             },
             {
-              "Id": "e75b0593-7b24-4e78-ad36-f5b9de5f1556",
+              "__guid": "e75b0593-7b24-4e78-ad36-f5b9de5f1556",
               "Name": "Row 3 Button",
               "Position": "40.14291,25.41364,0",
               "Scale": "0.2,0.2,0.2",
@@ -2928,6 +3049,7 @@
               "Components": [
                 {
                   "__type": "ModelRenderer",
+                  "__guid": "082a5c02-6fe2-44c9-8a55-3a1430360fed",
                   "BodyGroups": 18446744073709551615,
                   "Model": "models/dev/box.vmdl",
                   "RenderType": "On",
@@ -2935,6 +3057,7 @@
                 },
                 {
                   "__type": "BoxCollider",
+                  "__guid": "805629ec-778e-4155-9eb3-2b5ad33d3236",
                   "Center": "0,0,0",
                   "IsTrigger": false,
                   "Scale": "50,50,50",
@@ -2942,8 +3065,10 @@
                 },
                 {
                   "__type": "FirefliesTrigger",
+                  "__guid": "b54a3dfc-9272-4ee3-89b1-10df1d5d948a",
                   "FirefliesStand": {
                     "_type": "component",
+                    "component_id": "0846d1e6-0cd6-41df-9998-5838604af218",
                     "go": "c3c09df9-caf5-4f9f-9c15-e1676a4b6df4",
                     "component_type": "FirefliesStand"
                   },
@@ -2976,8 +3101,8 @@
                         "Id": 2,
                         "Type": "property.get",
                         "Properties": {
-                          "_name": "FirefliesStand",
-                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger"
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesTrigger",
+                          "_name": "FirefliesStand"
                         },
                         "UserData": {
                           "Position": "128,96"
@@ -2988,8 +3113,8 @@
                         "Type": "call",
                         "Properties": {
                           "_isStatic": false,
-                          "_name": "SwitchChangeCells",
-                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand"
+                          "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand",
+                          "_name": "SwitchChangeCells"
                         },
                         "UserData": {
                           "Position": "416,0"
@@ -3059,6 +3184,8 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-13T23:20:48.5702463\u002B03:00",
+  "LastSaved": "2024-03-15T02:27:15.8445808\u002B03:00",
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": []
 }

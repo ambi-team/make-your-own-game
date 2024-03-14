@@ -7,8 +7,8 @@
 		d.WriteJson(filename, value);
 	}
 
-	public static object Load<T>(string header)
+	public static object Load<T>(string filename)
 	{	
-		return d.ReadJson<T>(header);
+		return d.ReadJson<T>(filename);
 	}
 }

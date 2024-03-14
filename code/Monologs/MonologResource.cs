@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using Sandbox.Localization;
 
 namespace Monologs;
 
@@ -6,5 +7,5 @@ namespace Monologs;
 public class MonologResource: GameResource
 {
     public SoundEvent VoiceSound { get; init; }
-    public string SubtitleText { get; init; }
+    public LocalizedStrings SubtitleText { get; init; }
 }

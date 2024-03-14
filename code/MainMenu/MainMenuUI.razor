@@ -1,0 +1,180 @@
+@using Sandbox;
+@using Sandbox.Localization
+
+@inherits PanelComponent
+
+<root class="root" style="opacity: @(_mainMenuShow ? 1.0f : 0.0f)">
+	@if (_menuWindowEnable)
+	{
+		<div class="card" style="opacity: @(_menuWindowEnable ? 1.0f : 0.0f)">
+			<h1 class="card-title">Make Your Own Game</h1>
+
+			<div class="menu">
+				<button @onclick="@OnAchievementsClick" class="btn">Achievements</button>
+				<button @onclick="@OnSettingsClick" class="btn">Settings</button>
+				<button @onclick="@OnTitlesClick" class="btn">Titles</button>
+				<button @onclick="@OnExitClick" class="btn">Exit</button>
+			</div>
+		</div>
+	}
+
+	@if (_achievementsWindowEnable)
+	{
+		<div class="card" style="opacity: @(_achievementsWindowEnable ? 1.0f : 0.0f)">
+			<h1 class="card-title">Make Your Own Game</h1>
+
+			<div class="achievements scroll">
+				@foreach (var (key, achievement) in Achievement.GetAll())
+				{
+					<div class="borders">
+						<div class="image @(achievement.IsLock ? "locked" : "unlocked")">
+
+						</div>
+
+						<div class="info">
+							<div class="title">@achievement.Name.ToString()</div>
+							<div class="description">@achievement.Description.ToString()</div>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+	}
+
+	@if (_settingsWindowEnable)
+	{
+		<div class="card" style="opacity: @(_settingsWindowEnable ? 1.0f : 0.0f)">
+			<h1 class="card-title">Make Your Own Game</h1>
+
+			<div class="settings">
+
+			</div>
+		</div>
+	}
+
+    @if (_titlesWindowEnable)
+    {
+	    <div class="card" style="opacity: @(_titlesWindowEnable ? 1.0f : 0.0f)">
+		    <h1 class="card-title">Make Your Own Game</h1>
+
+		    <div class="titles">
+
+		    </div>
+	    </div>
+    }
+
+	@if (_exitWindowEnable)
+    {
+	    <div class="card" style="opacity: @(_exitWindowEnable ? 1.0f : 0.0f)">
+		    <h1 class="card-title">Make Your Own Game</h1>
+
+		    <div class="exit">
+
+		    </div>
+	    </div>
+    }
+</root>
+  
+@code
+{
+	private bool _menuWindowEnable = true;
+	private bool _achievementsWindowEnable = false;
+	private bool _settingsWindowEnable = false;
+	private bool _titlesWindowEnable = false;
+	private bool _exitWindowEnable = false;
+
+	private bool _mainMenuShow;
+	
+	private Achievement achi_press_esc = Achievement.CreateOrGet("press_esc_4_times", LocalizedStrings.FromTuple(("en", "The holy button"), ("ru", "Святая кнопка")), LocalizedStrings.FromTuple(("en", "Don't press Escape on four times"), ("ru", "Не следует нажимать Escape четыре раза")), 4);
+	
+	
+	public void OnAchievementsClick()
+	{
+		CloseWindows(false);
+		_achievementsWindowEnable = true;
+		
+		Log.Info("On Achievements Click");
+	}
+	
+	public void OnSettingsClick()
+	{
+		CloseWindows(false);
+		_settingsWindowEnable = true;
+		
+		Log.Info("On Settings Click");
+	}
+	
+	public void OnTitlesClick()
+	{
+		CloseWindows(false);
+		_titlesWindowEnable = true;
+		
+		Log.Info("On Titles Click");
+	}
+	
+	public void OnExitClick()
+	{
+		CloseWindows(false);
+		_exitWindowEnable = true;
+		
+		Log.Info("On Exit Click");
+	}
+
+
+	public void CloseWindows(bool showMenuWindow)
+	{
+		_menuWindowEnable = showMenuWindow;
+		_achievementsWindowEnable = false;
+		_settingsWindowEnable = false;
+		_titlesWindowEnable = false;
+		_exitWindowEnable = false;
+	}
+	
+	
+	public void Show()
+	{
+		_mainMenuShow = true;
+	}
+
+	public void Hide()
+	{
+		_mainMenuShow = false;
+	}
+	
+	
+	protected override void OnUpdate()
+	{
+		if (Input.EscapePressed)
+		{
+			achi_press_esc.AddCount(1);
+			
+			if (!_mainMenuShow)
+			{
+				Show();
+			}
+			else
+			{
+				if (_achievementsWindowEnable || _settingsWindowEnable || _titlesWindowEnable || _exitWindowEnable)
+				{
+					CloseWindows(true);
+				}
+				else
+				{
+					Hide();
+				}
+			}
+		}
+	}
+
+	protected override void OnStart()
+	{
+		Enabled = true;
+	}
+	
+	
+	protected override int BuildHash() => System.HashCode.Combine( 
+		_mainMenuShow, 
+		_menuWindowEnable, _achievementsWindowEnable, 
+		_settingsWindowEnable, _titlesWindowEnable, _exitWindowEnable 
+	);
+}

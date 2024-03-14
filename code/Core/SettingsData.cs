@@ -3,7 +3,14 @@
 public class SettingsData : ISaveData
 {
 	#region Props/Vars
+	public string LanguageKey = "en";
+	
 	public float FOV = 75f;
+	public float MouseSensitivity = 1f;
+	public float Volume = 1f;
+
+	public bool EnableShadows = true;
+	
 	[JsonIgnore] public Player ply;
 	#endregion
 
@@ -17,12 +24,20 @@ public class SettingsData : ISaveData
 	#region ISaveData
 	public void Save()
 	{
-		//todo
+		SaveData.Save("settings.json", this);
 	}
 
 	public void Load()
 	{
-		//todo
+		var settings = (SettingsData) SaveData.Load<SettingsData>("settings.json");
+		
+		LanguageKey = settings.LanguageKey;
+		
+		FOV = settings.FOV;
+		MouseSensitivity = settings.MouseSensitivity;
+		Volume = settings.Volume;
+
+		EnableShadows = settings.EnableShadows;
 	}
 	#endregion
 }

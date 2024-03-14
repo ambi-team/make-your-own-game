@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Text.Json.Serialization;
+using Sandbox.Localization;
 
 public class Achievement : ISaveData
 {
 	#region Props/Vars
 	[JsonIgnore] public string ID { get; set; }
-	[JsonIgnore] public string Name { get; set; }
-	[JsonIgnore] public string Description { get; set; }
+	[JsonIgnore] public LocalizedStrings Name { get; set; }
+	[JsonIgnore] public LocalizedStrings Description { get; set; }
 	public bool IsLock { get; set; } = true;
 	[JsonIgnore] public int MaxCount { get; set; } = 1;
 	public int Count { get; set; } = 0;
@@ -21,7 +22,7 @@ public class Achievement : ISaveData
 	#endregion
 
 	#region Logic 
-	private Achievement(string id, string name, string description, bool isLock, int maxCount, int count)
+	private Achievement(string id, LocalizedStrings name, LocalizedStrings description, bool isLock, int maxCount, int count)
 	{
 		ID = id;
 		Name = name;
@@ -33,13 +34,20 @@ public class Achievement : ISaveData
 
 	public Achievement() { }
 
-	public static Achievement CreateOrGet(string id = "", string name = "Unknow", string desc = "Description", int maxCount = 1)
+	public static Achievement CreateOrGet(string id = "", LocalizedStrings name = null, LocalizedStrings desc = null, int maxCount = 1)
 	{
 		Achievement achievement;
 		if (achievements.TryGetValue(id, out achievement))
 		{
-			if (achievement.CanLoad()) achievement.Load();
+			if (achievement.CanLoad()) 
+				achievement.Load();
 
+			if (name != null)
+				achievement.Name = name;
+			
+			if (desc != null)
+				achievement.Description = desc;
+			
 			return achievement;
 		}
 
