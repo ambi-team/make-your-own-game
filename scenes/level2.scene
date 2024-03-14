@@ -205,8 +205,8 @@
                     "Id": 4,
                     "Type": "property.get",
                     "Properties": {
-                      "_type": "package.ambi.myog/TriggerButton",
-                      "_name": "Game"
+                      "_name": "Game",
+                      "_type": "package.ambi.myog/TriggerButton"
                     },
                     "UserData": {
                       "Position": "-208,160"
@@ -216,10 +216,10 @@
                     "Id": 5,
                     "Type": "call",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "T": "package.ambi.myog/ReverseTime",
                       "_name": "Get",
-                      "_isStatic": false
+                      "T": "package.ambi.myog/ReverseTime",
+                      "_isStatic": false,
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister"
                     },
                     "UserData": {
                       "Position": "16,160"
@@ -229,9 +229,9 @@
                     "Id": 7,
                     "Type": "call",
                     "Properties": {
-                      "_type": "package.ambi.myog/ReverseTime",
                       "_name": "StartRecord",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_type": "package.ambi.myog/ReverseTime"
                     },
                     "UserData": {
                       "Position": "352,176"
@@ -251,8 +251,8 @@
                     "Id": 11,
                     "Type": "property.set",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                     },
                     "UserData": {
                       "Position": "368,32"
@@ -269,8 +269,8 @@
                     "Id": 13,
                     "Type": "property.set",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                     },
                     "UserData": {
                       "Position": "784,16"
@@ -380,6 +380,97 @@
       "Enabled": true,
       "NetworkMode": 2,
       "__Prefab": "prefabs/wheel_puzzle.prefab"
+    },
+    {
+      "Id": "951d8398-58f6-4bac-870f-d7be9ead9c3e",
+      "Name": "Object",
+      "Position": "-2051.312,156.0535,-733.059",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologSystem",
+          "_monologUI": {
+            "_type": "component",
+            "go": "4223cba9-5ad1-4a46-8b7f-bcc41e0f3b2d",
+            "component_type": "MonologUI"
+          }
+        }
+      ]
+    },
+    {
+      "Id": "4223cba9-5ad1-4a46-8b7f-bcc41e0f3b2d",
+      "Name": "Screen",
+      "Position": "-2033.218,143.6797,-766.9572",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MonologUI",
+          "_currentOpacity": 0,
+          "_currentText": "NoText!",
+          "AnimationDurationSeconds": 0.1,
+          "HideOpacity": 0,
+          "ShowOpacity": 1,
+          "Side": "Up"
+        }
+      ]
+    },
+    {
+      "Id": "9e45cc5e-5aef-471e-b75f-8a194067a645",
+      "Name": "Cube",
+      "Position": "-2033.218,143.6797,-678.2734",
+      "Scale": "1,0.1685324,1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "MonologTrigger",
+          "Game": {
+            "_type": "gameobject",
+            "go": "1365e926-bdc2-4255-a744-047e5170dd1b"
+          },
+          "Monologs": [
+            "code/test.monolog"
+          ],
+          "OnTriggerEntered": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Entered",
+              "id": "9cb35db9-ea7a-4ad4-b95d-90f2b939a968"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              }
+            ],
+            "Links": []
+          }
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -405,6 +496,6 @@
   },
   "Title": "level2",
   "Description": "",
-  "LastSaved": "2024-03-13T09:23:55.1565222\u002B05:00",
+  "LastSaved": "2024-03-13T20:42:50.949877\u002B05:00",
   "__references": []
 }

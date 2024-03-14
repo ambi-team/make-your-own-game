@@ -1,0 +1,27 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Dark Forest",
+      "Type": "map",
+      "Org": "ambi",
+      "Ident": "dark_final",
+      "Tags": "forest",
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "ambi.table_lamp#49624",
+        "andiq.tiles092#12695"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/dark_forest.vmap"
+      }
+    }
+  }
+}
