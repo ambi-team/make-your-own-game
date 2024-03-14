@@ -1,4 +1,4 @@
-public static class Settings
+public static class SettingsSingleton
 {
     public static SettingsData Data;
 }
