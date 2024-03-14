@@ -72,6 +72,8 @@
 
 	public void Load()
 	{
+		if (!FileSystem.Data.FileExists(filename + ".json")) return;
+
 		StatsData data = (StatsData)SaveData.Load<StatsData>(filename + ".json");
 
 		Level1EnteredTheRedDoor = data.Level1EnteredTheRedDoor;

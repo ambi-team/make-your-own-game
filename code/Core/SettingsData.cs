@@ -17,12 +17,12 @@ public class SettingsData : ISaveData
 	#region ISaveData
 	public void Save()
 	{
-		throw new System.NotImplementedException();
+		//todo
 	}
 
 	public void Load()
 	{
-		throw new System.NotImplementedException();
+		//todo
 	}
 	#endregion
 }

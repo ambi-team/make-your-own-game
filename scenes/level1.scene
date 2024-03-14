@@ -39,7 +39,7 @@
           "FogStrength": 1,
           "LightColor": "1.96,1.96,1.96,1",
           "Shadows": false,
-          "SkyColor": "0.2532,0.32006,0.35349,1"
+          "SkyColor": "1,1,1,1"
         }
       ]
     },
@@ -85,41 +85,32 @@
       "NetworkMode": 2,
       "Components": [
         {
+          "__type": "Game",
+          "__guid": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
+          "Settings": {},
+          "Stats": {}
+        },
+        {
           "__type": "ReverseTime",
           "__guid": "08ec93ac-988a-42fc-8dc0-f302d80c8516",
           "defaultTimeRecoding": 15,
           "ply": {
             "_type": "component",
-            "component_id": "2ed8fded-f681-4382-9439-8aee65d277f6",
-            "go": "e99edea2-ec4e-459e-9603-f1bd06bb74e1",
+            "component_id": "2f3b1ad7-6340-44e5-82fe-902dd69737f6",
+            "go": "d5d572c3-1210-4a3a-b85a-7d2252d5a6be",
             "component_type": "Player"
           },
-          "pseudoPlyColor": "0.5123,0.62251,0.92558,0.79",
+          "pseudoPlyColor": "0.0133,0.26402,0.95349,0.74",
           "pseudoPlyPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/player.prefab"
+          },
+          "HUD": {
+            "_type": "component",
+            "component_id": "cffc752a-56d4-444b-b78f-f04722289e5f",
+            "go": "3c9d460f-acce-4c96-a9b6-95073c9af1e6",
+            "component_type": "ReverseTimeHud"
           }
-        },
-        {
-          "__type": "SoundPointComponent",
-          "__guid": "1f486ad9-ceb5-4c6e-bcc5-e8f8d6e9dbe6",
-          "DistanceAttenuation": false,
-          "DistanceAttenuationOverride": false,
-          "Force2d": false,
-          "MaxRepeatTime": 1,
-          "MinRepeatTime": 1,
-          "Occlusion": false,
-          "OcclusionOverride": false,
-          "OcclusionRadius": 32,
-          "Pitch": 1,
-          "PlayOnStart": true,
-          "ReflectionOverride": false,
-          "Reflections": false,
-          "Repeat": false,
-          "SoundEvent": "sound/coin1.sound",
-          "SoundOverride": false,
-          "StopOnNew": false,
-          "Volume": 1
         }
       ]
     },
@@ -169,392 +160,6 @@
       "Enabled": true,
       "NetworkMode": 2,
       "Children": [
-        {
-          "__guid": "75a4882d-7478-4c22-945e-018577e7b433",
-          "Name": "Cube",
-          "Position": "-1857.999,553.5502,10.6869",
-          "Scale": "0.5289635,0.6224717,0.0442064",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "__guid": "fcbfdfb2-c4e6-4a18-b99d-52ab432e6837",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "__guid": "733d1c6f-a5bf-4a98-a388-e121054e73d6",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false
-            },
-            {
-              "__type": "TriggerObject",
-              "__guid": "6170196a-631b-4614-be21-e4dd4f5a0d48"
-            }
-          ]
-        },
-        {
-          "__guid": "f140d8b7-4f6a-4d8e-9e76-6abeb4492a70",
-          "Name": "Cube",
-          "Position": "-1777.448,641.3596,35.20405",
-          "Scale": "0.5289635,0.6224717,0.0442064",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "__guid": "9077ba71-5a1f-42ab-afc8-994037404c48",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "__guid": "552f82b0-1ee7-4355-95fd-4709facdab4c",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": true
-            }
-          ]
-        },
-        {
-          "__guid": "1a6a7d65-950b-4ff6-bab0-ad8ac17e9d37",
-          "Name": "Cube",
-          "Position": "-1706.812,641.3596,35.20405",
-          "Scale": "0.5289635,0.6224717,0.0442064",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "__guid": "f80417d3-8ab1-49b0-b920-76059d49d196",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "__guid": "c0da71f5-425e-48f1-a291-757e1f16d693",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": true
-            }
-          ]
-        },
-        {
-          "__guid": "bab4d0d8-9de5-440e-ade0-09645ca69c8a",
-          "Name": "Cube",
-          "Position": "-1706.812,727.0794,45.70502",
-          "Scale": "0.5289635,0.6224717,0.0442064",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "__guid": "943f52ec-42c5-4025-845e-f9243667d327",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "__guid": "79ca2c45-358e-450b-b73f-da407fd103d1",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": true
-            }
-          ]
-        },
-        {
-          "__guid": "6447958e-1605-4bde-b1a8-0573a9d1ea99",
-          "Name": "Cube",
-          "Position": "-1761.155,726.8192,62.28303",
-          "Rotation": "0,0.1305262,0,0.9914449",
-          "Scale": "0.5289635,0.6224717,0.0442064",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "__guid": "0b061953-ec84-495b-8479-79481b4354bf",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "__guid": "0afe121a-0752-498b-8dda-7282fbeed8ef",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": true
-            }
-          ]
-        },
-        {
-          "__guid": "0f86289d-c30b-4bce-ac27-2ca526c8dced",
-          "Name": "PlaceForButton",
-          "Position": "-1702.96,529.8952,22.6338",
-          "Scale": "0.2116552,0.0604898,1.719332",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "__guid": "57b2e4a3-e313-4406-afd4-3bf0742caf40",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,0.75814,0.80651,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "__guid": "fe4f2973-a825-4bab-b722-17a73db18bc9",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "aea73803-04e4-488d-9cb2-1961c73873b0",
-              "Name": "Button",
-              "Position": "-1.143101,-38.16451,18.03082",
-              "Scale": "0.6534992,0.894671,0.07965566",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "Components": [
-                {
-                  "__type": "ModelRenderer",
-                  "__guid": "60c211fe-a8f9-42e1-8f4c-d88f913c3654",
-                  "BodyGroups": 18446744073709551615,
-                  "Model": "models/dev/box.vmdl",
-                  "RenderType": "Off",
-                  "Tint": "0.9814,0.10042,0.10042,1"
-                },
-                {
-                  "__type": "TriggerButton",
-                  "__guid": "7cc2981e-2f81-4ef5-bc0f-95096c1ef4ed",
-                  "Game": {
-                    "_type": "gameobject",
-                    "go": "8afd8364-bb30-4946-97a5-39510f7e1920"
-                  },
-                  "OnTrigger": {
-                    "Version": 5,
-                    "UserData": {
-                      "Title": "On Trigger",
-                      "id": "fa2d600c-d120-44ed-b0ba-ce81b9fb5859",
-                      "ReferencedComponentTypes": [
-                        "package.ambi.myog/TriggerButton",
-                        "Sandbox.Game/Sandbox.ModelRenderer"
-                      ]
-                    },
-                    "Variables": [],
-                    "Nodes": [
-                      {
-                        "Id": 0,
-                        "Type": "input",
-                        "UserData": {
-                          "Position": "128,80"
-                        }
-                      },
-                      {
-                        "Id": 3,
-                        "Type": "scene.get",
-                        "Properties": {
-                          "T": "package.ambi.myog/TriggerButton"
-                        },
-                        "UserData": {
-                          "Position": "-416,160"
-                        }
-                      },
-                      {
-                        "Id": 4,
-                        "Type": "property.get",
-                        "Properties": {
-                          "_type": "package.ambi.myog/TriggerButton",
-                          "_name": "Game"
-                        },
-                        "UserData": {
-                          "Position": "-208,160"
-                        }
-                      },
-                      {
-                        "Id": 5,
-                        "Type": "call",
-                        "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                          "_isStatic": false,
-                          "T": "package.ambi.myog/ReverseTime",
-                          "_name": "Get"
-                        },
-                        "UserData": {
-                          "Position": "16,160"
-                        }
-                      },
-                      {
-                        "Id": 7,
-                        "Type": "call",
-                        "Properties": {
-                          "_type": "package.ambi.myog/ReverseTime",
-                          "_isStatic": false,
-                          "_name": "StartRecord"
-                        },
-                        "UserData": {
-                          "Position": "352,176"
-                        }
-                      },
-                      {
-                        "Id": 10,
-                        "Type": "scene.get",
-                        "Properties": {
-                          "T": "Sandbox.Game/Sandbox.ModelRenderer"
-                        },
-                        "UserData": {
-                          "Position": "112,-48"
-                        }
-                      },
-                      {
-                        "Id": 11,
-                        "Type": "property.set",
-                        "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                          "_name": "Tint"
-                        },
-                        "UserData": {
-                          "Position": "368,32"
-                        }
-                      },
-                      {
-                        "Id": 12,
-                        "Type": "time.delay",
-                        "UserData": {
-                          "Position": "560,128"
-                        }
-                      },
-                      {
-                        "Id": 13,
-                        "Type": "property.set",
-                        "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                          "_name": "Tint"
-                        },
-                        "UserData": {
-                          "Position": "784,16"
-                        }
-                      }
-                    ],
-                    "Links": [
-                      {
-                        "SrcId": 0,
-                        "SrcName": "_target",
-                        "DstId": 3,
-                        "DstName": "_this"
-                      },
-                      {
-                        "SrcId": 3,
-                        "SrcName": "_result",
-                        "DstId": 4,
-                        "DstName": "_target"
-                      },
-                      {
-                        "SrcId": 4,
-                        "SrcName": "_result",
-                        "DstId": 5,
-                        "DstName": "_target"
-                      },
-                      {
-                        "SrcId": 0,
-                        "SrcName": "_signal",
-                        "DstId": 7,
-                        "DstName": "_signal"
-                      },
-                      {
-                        "SrcId": 5,
-                        "SrcName": "_result",
-                        "DstId": 7,
-                        "DstName": "_target"
-                      },
-                      {
-                        "SrcId": 0,
-                        "SrcName": "_target",
-                        "DstId": 10,
-                        "DstName": "_this"
-                      },
-                      {
-                        "SrcId": 0,
-                        "SrcName": "_signal",
-                        "DstId": 11,
-                        "DstName": "_signal"
-                      },
-                      {
-                        "SrcId": 10,
-                        "SrcName": "_result",
-                        "DstId": 11,
-                        "DstName": "_target"
-                      },
-                      {
-                        "Value": "0.98605,0.12842,0.12842,1",
-                        "DstId": 11,
-                        "DstName": "_value"
-                      },
-                      {
-                        "SrcId": 0,
-                        "SrcName": "_signal",
-                        "DstId": 12,
-                        "DstName": "_signal"
-                      },
-                      {
-                        "Value": 2,
-                        "DstId": 12,
-                        "DstName": "seconds"
-                      },
-                      {
-                        "SrcId": 12,
-                        "SrcName": "_signal",
-                        "DstId": 13,
-                        "DstName": "_signal"
-                      },
-                      {
-                        "SrcId": 10,
-                        "SrcName": "_result",
-                        "DstId": 13,
-                        "DstName": "_target"
-                      },
-                      {
-                        "Value": "0.48084,0.93953,0.35396,1",
-                        "DstId": 13,
-                        "DstName": "_value"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "__type": "BoxCollider",
-                  "__guid": "92792c54-2891-4c5c-92f9-e38261084e02",
-                  "Center": "0,0,0",
-                  "IsTrigger": false,
-                  "Scale": "50,50,50",
-                  "Static": false
-                }
-              ]
-            }
-          ]
-        },
         {
           "__guid": "87203683-539e-4fd1-9c64-a2d003b54107",
           "Name": "TriggerObj",
@@ -891,90 +496,251 @@
           ]
         },
         {
-          "__guid": "4f4652a0-2430-4bfe-9d79-9ad734043999",
-          "Name": "Sphere",
-          "Position": "-1878.557,505.0544,50.06261",
-          "Rotation": "-0.5,0.5,-0.5000001,0.5000001",
-          "Scale": "1,0.1450526,1",
+          "__guid": "1e1f781a-56a1-4256-bee1-b44232bc5876",
+          "Name": "PlaceForButton",
+          "Position": "-542.5428,-571.8672,31.05541",
+          "Scale": "0.2116552,0.0604898,1.719332",
           "Enabled": true,
           "NetworkMode": 2,
           "Components": [
             {
               "__type": "ModelRenderer",
-              "__guid": "ade0ad72-c42a-4786-b3aa-bbb59a46b0cd",
+              "__guid": "1c8cac64-ae93-4985-8e97-cf6622bbb3fd",
               "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/sphere.vmdl",
+              "Model": "models/dev/box.vmdl",
               "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "Tint": "1,0.75814,0.80651,1"
             },
             {
-              "__type": "WheelPuzzle",
-              "__guid": "1daa2b70-9f02-4b2b-93e7-a767f074a5ac",
-              "canRotate": true,
-              "sideCorrect": 4
-            },
-            {
-              "__type": "SphereCollider",
-              "__guid": "ce739ffc-7b91-4b3c-bf44-ae03cc265d91",
+              "__type": "BoxCollider",
+              "__guid": "7cd664de-98e6-46da-bdcc-69ba2cf875c3",
               "Center": "0,0,0",
               "IsTrigger": false,
-              "Radius": 34,
+              "Scale": "50,50,50",
               "Static": false
             }
           ],
           "Children": [
             {
-              "__guid": "bf11a98d-90cc-41ba-a770-a566b855e3c9",
-              "Name": "Cube",
-              "Position": "1.677246,-8.479127,18.6297",
-              "Scale": "0.0442862,1,0.5199051",
+              "__guid": "e36c6139-fc50-41e2-bad8-3a9d69682be1",
+              "Name": "Button",
+              "Position": "-1.143101,-38.164,18.03083",
+              "Scale": "0.6534992,0.894671,0.07965566",
               "Enabled": true,
               "NetworkMode": 2,
               "Components": [
                 {
                   "__type": "ModelRenderer",
-                  "__guid": "9e635d3a-f93c-48f3-b2e1-001ecedd15e9",
+                  "__guid": "bd251830-1f12-4a0e-9858-91e5d746334e",
                   "BodyGroups": 18446744073709551615,
                   "Model": "models/dev/box.vmdl",
-                  "RenderType": "On",
-                  "Tint": "0.9907,0.02765,0.02765,1"
-                }
-              ]
-            },
-            {
-              "__guid": "5e6c28be-8443-4c12-82ef-bc04588f028e",
-              "Name": "Cube (1)",
-              "Position": "1.200684,-27.26451,-12.94666",
-              "Scale": "0.0442862,0.3425601,0.7842059",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "Components": [
+                  "RenderType": "Off",
+                  "Tint": "0.28372,0.84481,1,0.02"
+                },
                 {
-                  "__type": "ModelRenderer",
-                  "__guid": "7a80863b-2ae3-4dc4-8e85-57a8be95e832",
-                  "BodyGroups": 18446744073709551615,
-                  "Model": "models/dev/box.vmdl",
-                  "RenderType": "On",
-                  "Tint": "0.02765,0.9907,0.14001,1"
-                }
-              ]
-            },
-            {
-              "__guid": "8ccf71d2-9557-4fe1-bf28-ad140cba3f1f",
-              "Name": "Cube (2)",
-              "Position": "-0.498291,0,0",
-              "Rotation": "0,0.7071067,0,0.7071068",
-              "Scale": "0.06937091,1.268515,1.252335",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "Components": [
+                  "__type": "TriggerButton",
+                  "__guid": "ceee109c-352b-4d6f-9647-913ebb3fb2a8",
+                  "Game": {
+                    "_type": "gameobject",
+                    "go": "8afd8364-bb30-4946-97a5-39510f7e1920"
+                  },
+                  "OnTrigger": {
+                    "Version": 5,
+                    "UserData": {
+                      "Title": "On Trigger",
+                      "id": "fa2d600c-d120-44ed-b0ba-ce81b9fb5859",
+                      "ReferencedComponentTypes": [
+                        "package.ambi.myog/TriggerButton",
+                        "Sandbox.Game/Sandbox.ModelRenderer"
+                      ]
+                    },
+                    "Variables": [],
+                    "Nodes": [
+                      {
+                        "Id": 0,
+                        "Type": "input",
+                        "UserData": {
+                          "Position": "128,80"
+                        }
+                      },
+                      {
+                        "Id": 3,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "package.ambi.myog/TriggerButton"
+                        },
+                        "UserData": {
+                          "Position": "-416,160"
+                        }
+                      },
+                      {
+                        "Id": 4,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_type": "package.ambi.myog/TriggerButton",
+                          "_name": "Game"
+                        },
+                        "UserData": {
+                          "Position": "-208,160"
+                        }
+                      },
+                      {
+                        "Id": 5,
+                        "Type": "call",
+                        "Properties": {
+                          "T": "package.ambi.myog/ReverseTime",
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                          "_isStatic": false,
+                          "_name": "Get"
+                        },
+                        "UserData": {
+                          "Position": "16,160"
+                        }
+                      },
+                      {
+                        "Id": 7,
+                        "Type": "call",
+                        "Properties": {
+                          "_type": "package.ambi.myog/ReverseTime",
+                          "_isStatic": false,
+                          "_name": "StartRecord"
+                        },
+                        "UserData": {
+                          "Position": "352,176"
+                        }
+                      },
+                      {
+                        "Id": 10,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                        },
+                        "UserData": {
+                          "Position": "112,-48"
+                        }
+                      },
+                      {
+                        "Id": 11,
+                        "Type": "property.set",
+                        "Properties": {
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                          "_name": "Tint"
+                        },
+                        "UserData": {
+                          "Position": "368,32"
+                        }
+                      },
+                      {
+                        "Id": 12,
+                        "Type": "time.delay",
+                        "UserData": {
+                          "Position": "560,128"
+                        }
+                      },
+                      {
+                        "Id": 13,
+                        "Type": "property.set",
+                        "Properties": {
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                          "_name": "Tint"
+                        },
+                        "UserData": {
+                          "Position": "784,16"
+                        }
+                      }
+                    ],
+                    "Links": [
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 3,
+                        "DstName": "_this"
+                      },
+                      {
+                        "SrcId": 3,
+                        "SrcName": "_result",
+                        "DstId": 4,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 4,
+                        "SrcName": "_result",
+                        "DstId": 5,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 7,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 5,
+                        "SrcName": "_result",
+                        "DstId": 7,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 10,
+                        "DstName": "_this"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 11,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 10,
+                        "SrcName": "_result",
+                        "DstId": 11,
+                        "DstName": "_target"
+                      },
+                      {
+                        "Value": "0.98605,0.12842,0.12842,1",
+                        "DstId": 11,
+                        "DstName": "_value"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 12,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "Value": 2,
+                        "DstId": 12,
+                        "DstName": "seconds"
+                      },
+                      {
+                        "SrcId": 12,
+                        "SrcName": "_signal",
+                        "DstId": 13,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 10,
+                        "SrcName": "_result",
+                        "DstId": 13,
+                        "DstName": "_target"
+                      },
+                      {
+                        "Value": "0.48084,0.93953,0.35396,1",
+                        "DstId": 13,
+                        "DstName": "_value"
+                      }
+                    ]
+                  }
+                },
                 {
-                  "__type": "ModelRenderer",
-                  "__guid": "8d827ad9-0769-4577-ab05-6ad1ee7e4832",
-                  "BodyGroups": 18446744073709551615,
-                  "Model": "models/dev/box.vmdl",
-                  "RenderType": "On",
-                  "Tint": "0.35146,0.33006,0.97209,1"
+                  "__type": "BoxCollider",
+                  "__guid": "8101edde-38ad-49cf-8526-83f081d93152",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
                 }
               ]
             }
@@ -983,55 +749,41 @@
       ]
     },
     {
-      "__guid": "e99edea2-ec4e-459e-9603-f1bd06bb74e1",
-      "Name": "PlayerObj",
-      "Position": "-2437.869,32.75986,160.699",
-      "Tags": "player,trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "__Prefab": "prefabs/player.prefab"
-    },
-    {
-      "__guid": "e56d3304-25e7-42be-8c66-38c20ba08eda",
-      "Name": "Listener",
-      "Position": "-2906.543,-27.47873,1651.286",
+      "__guid": "3c9d460f-acce-4c96-a9b6-95073c9af1e6",
+      "Name": "UI: Time Reverse",
+      "Position": "-2043.884,199.3956,-725.5105",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "AudioListener",
-          "__guid": "5e8966f6-ea22-48b2-9df3-75343bc2e471",
-          "UseCameraDirection": true
+          "__type": "ScreenPanel",
+          "__guid": "177b8552-b8e8-4324-9ee2-5fa1e29006e7",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
         },
         {
-          "__type": "SoundPointComponent",
-          "__guid": "6f6f0964-a36f-4ee3-8d6d-5dfa80373fab",
-          "DistanceAttenuation": false,
-          "DistanceAttenuationOverride": false,
-          "Force2d": false,
-          "MaxRepeatTime": 1,
-          "MinRepeatTime": 1,
-          "Occlusion": false,
-          "OcclusionOverride": false,
-          "OcclusionRadius": 32,
-          "Pitch": 1,
-          "PlayOnStart": true,
-          "ReflectionOverride": false,
-          "Reflections": false,
-          "Repeat": false,
-          "SoundEvent": "sound/monologue/chapter 1/chapter1_14.sound",
-          "SoundOverride": false,
-          "StopOnNew": false,
-          "Volume": 1
+          "__type": "ReverseTimeHud",
+          "__guid": "cffc752a-56d4-444b-b78f-f04722289e5f",
+          "rTime": {
+            "_type": "component",
+            "component_id": "08ec93ac-988a-42fc-8dc0-f302d80c8516",
+            "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
+            "component_type": "ReverseTime"
+          }
         }
       ]
     },
     {
-      "__guid": "5731020e-436c-4768-b15a-189152dc1c78",
-      "Name": "\uD83E\uDDE1sadsd",
-      "Position": "-2894.507,-7.317856,1640.441",
+      "__guid": "d5d572c3-1210-4a3a-b85a-7d2252d5a6be",
+      "Name": "PlayerObject",
+      "Position": "-1139.206,-1129.537,164.7618",
+      "Rotation": "-0.00000664802,0.000004023314,0.00001994406,1",
+      "Tags": "player,trigger",
       "Enabled": true,
-      "NetworkMode": 2
+      "NetworkMode": 2,
+      "__Prefab": "prefabs/player.prefab"
     }
   ],
   "SceneProperties": {
@@ -1057,11 +809,8 @@
   },
   "Title": "level1",
   "Description": "",
-  "LastSaved": "2024-03-14T20:41:20.4541326\u002B05:00",
+  "LastSaved": "2024-03-15T00:34:25.9944116\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": [
-    "ambi.myog_monologue_lvl1_14",
-    "igrotronika.coin1"
-  ]
+  "__references": []
 }

@@ -1,19 +1,23 @@
 ﻿public sealed class Game : Component
 {
 	#region Props/Vars
-	[Property, RequireComponent] public StatsData Stats { get; set; }
-	[Property, RequireComponent] public SettingsData Settings { get; set; }
-	[Property, RequireComponent] public Player Ply { get; set; }
+	[Property] public StatsData Stats { get; set; }
+	[Property] public SettingsData Settings { get; set; }
+	[Property] public Player Ply { get; set; }
 	#endregion
 
 	#region Logic
 	public void Load()
 	{
+		Log.Info($"[Game] Loading...");
+
 		Stats.Load();
 		StatsSingleton.Data = Stats;
 
 		Settings.Load();
 		SettingsSingleton.Data = Settings;
+
+		Log.Info($"[Game] Loaded!");
 	}
 	#endregion
 
@@ -27,6 +31,8 @@
 		}
 
 		Load();
+
+		Log.Info(StatsSingleton.Data.Level1EnteredTheRedDoor); //todo remove
 	}
 	#endregion
 }
