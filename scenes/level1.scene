@@ -27,7 +27,7 @@
     {
       "__guid": "b0a50d4f-72c3-421a-914f-804a513b815d",
       "Name": "Sun",
-      "Rotation": "-0.0314205,-0.7060665,0.03273448,-0.7066904",
+      "Rotation": "-0.1819871,0.7914293,0.130771,0.5686996",
       "Tags": "light_directional,light",
       "Enabled": true,
       "NetworkMode": 2,
@@ -38,7 +38,7 @@
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "1.96,1.96,1.96,1",
-          "Shadows": false,
+          "Shadows": true,
           "SkyColor": "1,1,1,1"
         }
       ]
@@ -53,8 +53,8 @@
         {
           "__type": "SkyBox2D",
           "__guid": "4752b8ff-0197-4d08-8123-9ea694b45e8f",
-          "SkyMaterial": "materials/skybox/light_test_dark.vmat",
-          "Tint": "1,1,1,1"
+          "SkyMaterial": "materials/skybox/light_test_sky_sunset.vmat",
+          "Tint": "0.92372,0.6186,1,1"
         },
         {
           "__type": "EnvmapProbe",
@@ -89,7 +89,7 @@
           "__guid": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
           "Ply": {
             "_type": "component",
-            "component_id": "c0d33c20-3b72-4864-82cb-2670688f0bcd",
+            "component_id": "dde7188f-1f80-44cd-8030-811cfa5e67a7",
             "go": "d5d572c3-1210-4a3a-b85a-7d2252d5a6be",
             "component_type": "Player"
           },
@@ -102,7 +102,7 @@
           "defaultTimeRecoding": 15,
           "ply": {
             "_type": "component",
-            "component_id": "c0d33c20-3b72-4864-82cb-2670688f0bcd",
+            "component_id": "dde7188f-1f80-44cd-8030-811cfa5e67a7",
             "go": "d5d572c3-1210-4a3a-b85a-7d2252d5a6be",
             "component_type": "Player"
           },
@@ -134,21 +134,6 @@
           "Opacity": 1,
           "Scale": 1,
           "ZIndex": 100
-        },
-        {
-          "__type": "MainMenu",
-          "__guid": "a6f57908-a28a-4369-a790-ab02372508c6",
-          "MainMenuPanel": {
-            "_type": "component",
-            "component_id": "801ffb3e-a82f-40be-9fc6-d37f2784bf88",
-            "go": "a19b2945-4045-486c-ad22-dd8208f5117c",
-            "component_type": "ScreenPanel"
-          }
-        },
-        {
-          "__type": "MainMenuPanel",
-          "__guid": "b4dacd81-e20b-48ea-b3b1-4ed9d545aba9",
-          "MyStringValue": "Hello World!"
         }
       ]
     },
@@ -218,8 +203,8 @@
                     "Id": 2,
                     "Type": "property.set",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                     },
                     "UserData": {
                       "Position": "256,144"
@@ -268,8 +253,8 @@
                     "Id": 3,
                     "Type": "property.set",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                     },
                     "UserData": {
                       "Position": "272,192"
@@ -401,8 +386,8 @@
                     "Id": 2,
                     "Type": "property.set",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                     },
                     "UserData": {
                       "Position": "224,112"
@@ -464,8 +449,8 @@
                     "Id": 3,
                     "Type": "property.set",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
+                      "_name": "Tint",
+                      "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                     },
                     "UserData": {
                       "Position": "256,144"
@@ -583,8 +568,8 @@
                         "Id": 4,
                         "Type": "property.get",
                         "Properties": {
-                          "_type": "package.ambi.myog/TriggerButton",
-                          "_name": "Game"
+                          "_name": "Game",
+                          "_type": "package.ambi.myog/TriggerButton"
                         },
                         "UserData": {
                           "Position": "-208,160"
@@ -595,9 +580,9 @@
                         "Type": "call",
                         "Properties": {
                           "T": "package.ambi.myog/ReverseTime",
-                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                          "_name": "Get",
                           "_isStatic": false,
-                          "_name": "Get"
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister"
                         },
                         "UserData": {
                           "Position": "16,160"
@@ -607,9 +592,9 @@
                         "Id": 7,
                         "Type": "call",
                         "Properties": {
-                          "_type": "package.ambi.myog/ReverseTime",
+                          "_name": "StartRecord",
                           "_isStatic": false,
-                          "_name": "StartRecord"
+                          "_type": "package.ambi.myog/ReverseTime"
                         },
                         "UserData": {
                           "Position": "352,176"
@@ -629,8 +614,8 @@
                         "Id": 11,
                         "Type": "property.set",
                         "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                          "_name": "Tint"
+                          "_name": "Tint",
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                         },
                         "UserData": {
                           "Position": "368,32"
@@ -647,8 +632,8 @@
                         "Id": 13,
                         "Type": "property.set",
                         "Properties": {
-                          "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                          "_name": "Tint"
+                          "_name": "Tint",
+                          "_type": "Sandbox.Game/Sandbox.ModelRenderer"
                         },
                         "UserData": {
                           "Position": "784,16"
@@ -790,6 +775,373 @@
       "Enabled": true,
       "NetworkMode": 2,
       "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "__guid": "1ece8b0d-cbaa-4632-bc28-abb07c9de9da",
+      "Name": "grass_4",
+      "Position": "-456.5962,-1793.604,128.0063",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "10eb96a0-05e0-4bc0-af89-c42fa079a354",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/forest/grass_4.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "2fc44e23-a2cc-4929-abfb-ba0069e19b58",
+      "Name": "grass_4 (1)",
+      "Position": "-568.7745,-1793.604,128.0071",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "8d4f1c44-afdb-410f-847b-54eabd6b5326",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/forest/grass_4.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "ba3fdb8a-9aac-4598-92d8-425a05ec8348",
+      "Name": "grass_4 (2)",
+      "Position": "-568.7744,-1772.336,128.0071",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "39d0608a-9452-4cf2-9fb6-fac9415a38dd",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/forest/grass_4.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "271d78bb-55e0-4c91-aa13-f3420b0809d3",
+      "Name": "grass_4 (3)",
+      "Position": "-592.8138,-1772.335,128.0073",
+      "Rotation": "-0.000001125264,0.000003411034,-0.5000018,0.8660243",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "954e65a0-a352-44be-afb0-9ced1515b763",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/forest/grass_4.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "aeea5a88-b150-4275-bcc9-e3ebbcecb596",
+      "Name": "bulrush_2",
+      "Position": "-420.7375,-1834.789,121.647",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "f1f61f08-529d-436d-9652-4a5bddb2794b",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/forest/bulrush_2.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "ed5080b2-d4a2-4f04-b5e1-18daedf305fe",
+      "Name": "arch",
+      "Position": "-255.3183,-2286.863,126.6087",
+      "Rotation": "-0.0000002040811,0.000003586045,-0.2588211,0.9659251",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "43ff1b9b-d224-4831-b10c-677d9e5cb60d",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/forest/arch.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "b5177037-cac3-490c-9389-44e9e1d5d761",
+      "Name": "wood_barrel",
+      "Position": "-591.1055,-2203.572,128.0067",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "773462ca-891a-48dc-8dd2-5b113b8493b8",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/forest/wood_barrel.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "ce7c3b90-1fd2-4fdf-be02-0b24a1168ca1",
+      "Name": "wood_barrel",
+      "Position": "-623.7267,-2232.229,128.0068",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "a6cdfdfe-ac99-414a-99a6-b5629347c2f4",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/forest/wood_barrel.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "772caa1c-e889-4049-89b1-99ef9bba4f63",
+      "Name": "small_red_rock_5",
+      "Position": "-176.6565,-1863.549,123.0836",
+      "Rotation": "-0.000001028313,0.000007361174,0.000003084938,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "55c3159d-0d8f-4608-a354-42a81a7da4ab",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/sand_valley/small_red_rock_5.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "655dc3d9-c59e-45f0-98ab-de9fa0595ff8",
+      "Name": "smallrock_3",
+      "Position": "-362.684,-1872.537,128.0056",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "a9c2b2a1-63ab-42d2-b5d4-5cc713a95cbf",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/forest/smallrock_3.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "00e38e3d-5aa1-4b0e-811a-9479822e2499",
+      "Name": "smallrock_3",
+      "Position": "-623.0198,-2152.195,128.007",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "59e97c0a-a4ea-43e4-aca6-7043fe98c13a",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/forest/smallrock_3.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "54447762-b9ed-406b-9d1d-683113931181",
+      "Name": "smallrock_3 (1)",
+      "Position": "-623.0185,-1858.14,128.0074",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "eadec320-810b-40fe-b829-6e4a744a3b54",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/forest/smallrock_3.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "6980b93b-196b-48b0-a375-c42f486ef849",
+      "Name": "smallrock_3 (2)",
+      "Position": "-623.0186,-1878.792,123.9967",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "90bbbf0a-eead-4c60-b161-f40dd17012af",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/forest/smallrock_3.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "942e29a9-06eb-4d88-ae3f-7e1b6e6c058b",
+      "Name": "box",
+      "Position": "-145.2111,-1922.027,124.6233",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "5df6683c-6cc5-4789-97c5-5f470bc05a16",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/forest/box.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "1556d721-ebdd-4369-8ce5-742f53f17918",
+      "Name": "tree_9",
+      "Position": "-218.017,-1954.736,128.0044",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "a80ca095-df82-40f5-92f2-3c852ce794d5",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/forest/tree_9.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "46bb48b9-6d84-4cb7-b2a8-c9e54a9cae0b",
+      "Name": "altar",
+      "Position": "-496.7989,-2033.445,128.0063",
+      "Rotation": "0.0000007310095,0.000003516674,-0.000002193029,0.9999999",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "aa3a52bb-8102-4c69-b219-36f51270b659",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/altar.vmdl",
+          "RenderType": "On",
+          "Tint": "0.95349,0.46566,0.36809,1"
+        }
+      ]
+    },
+    {
+      "__guid": "6b3a51fc-c46e-429d-96f0-b97f3570fac4",
+      "Name": "skull",
+      "Position": "-441.9501,-1871.948,125.5535",
+      "Rotation": "0.000003516674,-0.0000007310094,-0.9999999,-0.000002145767",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "4b22c4c2-895f-48d9-b394-70dd65dd47ca",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/sand_valley/skull.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "5fc2a21a-2cb6-4669-969c-422d16b5c935",
+      "Name": "door_blue",
+      "Position": "-633.9758,-1934.744,128.0068",
+      "Rotation": "-0.00001550913,0.00001279804,0.9914491,-0.1304945",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "949960fb-7a7a-4b20-bc68-dc2b313012f1",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/door_blue.vmdl",
+          "RenderType": "On",
+          "Tint": "0.43197,0.90497,0.96744,1"
+        }
+      ]
+    },
+    {
+      "__guid": "c819711b-2293-4ac5-9b04-bd7ace55010a",
+      "Name": "door_blue (1)",
+      "Position": "-561.0052,-1856.793,128.0093",
+      "Rotation": "-0.00001922617,0.000005888764,0.8660414,-0.4999723",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "6e925f21-18d1-438d-91fb-22ab7090fbd0",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/door_blue.vmdl",
+          "RenderType": "On",
+          "Tint": "0.8093,0.07152,0.07152,1"
+        }
+      ]
+    },
+    {
+      "__guid": "17fab165-47da-462c-bed4-27aa9c1385dd",
+      "Name": "water_tower",
+      "Position": "854.491,-3124.551,133.756",
+      "Rotation": "-0.003892023,0.03856528,0.1003342,0.9941984",
+      "Scale": "1.56246,1.56246,1.625442",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "11bdc04f-85b0-4b85-a0a1-8ef0e81edc1b",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/sand_valley/water_tower.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "d1aa15e0-091a-42f7-bff0-28d547780aa4",
+      "Name": "rune",
+      "Position": "-568.9709,-1900.253,128.0076",
+      "Rotation": "-0.00001370597,0.0000147129,0.9659175,0.2588499",
+      "Scale": "1,1.315457,1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Prop",
+          "__guid": "739d3fce-7ec2-4b9f-a2e7-a7e68afcd7d2",
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/sand_valley/rune.vmdl"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -815,8 +1167,22 @@
   },
   "Title": "level1",
   "Description": "",
-  "LastSaved": "2024-03-15T04:05:49.7260893\u002B05:00",
+  "LastSaved": "2024-03-15T05:22:26.5206802\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": []
+  "__references": [
+    "ambi.altar",
+    "ambi.arch",
+    "ambi.bulrush_2",
+    "ambi.grass_4",
+    "ambi.rune",
+    "ambi.skull",
+    "ambi.small_red_rock_5",
+    "ambi.smallrock_3",
+    "ambi.tradis_red_door",
+    "ambi.tree_9",
+    "ambi.water_tower",
+    "ambi.wooden_barrel",
+    "ambi.wooden_box"
+  ]
 }
