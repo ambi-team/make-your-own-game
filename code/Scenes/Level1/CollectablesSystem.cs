@@ -1,17 +1,16 @@
-﻿using Sandbox.Localization;
-
-public sealed class CollectablesSystem : Component
+﻿public sealed class CollectablesSystem : Component
 {
+	#region Props/Vars
 	[Property] public List<Collectables> collectables;
 	[Property] public SoundEvent collectSound;
 	[Property] public bool isFinished = false;
 	private List<bool> finishedCollectables = new();
 
-	[Property] public LocalizedStrings ab;
-
 	private int finished = 0;
 	private int max = 4;
+	#endregion
 
+	#region Logic
 	public void FinishChallenge()
 	{
 		finished++;
@@ -20,8 +19,11 @@ public sealed class CollectablesSystem : Component
 		if (finished < max) return;
 
 		isFinished = true;
+		//todo
 	}
+	#endregion
 
+	#region Components
 	protected override void OnStart()
 	{
 		foreach (var obj in collectables)
@@ -29,13 +31,6 @@ public sealed class CollectablesSystem : Component
 			finishedCollectables.Add(false);
 			obj.OnEntered += FinishChallenge;
 		}
-
-		Log.Info(ab);
-
-		SettingsSingleton.Data.LanguageKey = "ru";
-		Log.Info(ab);
-
-		SettingsSingleton.Data.LanguageKey = "fr";
-		Log.Info(ab);
 	}
+	#endregion
 }
