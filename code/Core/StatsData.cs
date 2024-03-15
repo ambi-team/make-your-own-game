@@ -33,6 +33,36 @@
 	}
 	#endregion
 
+	#region Finish Additional Challenges
+	private bool _level1AddChallengeFinished = false;
+	public bool Level1AddChallengeFinished
+	{
+		get { return _level1AddChallengeFinished; }
+		set { _level1AddChallengeFinished = value; Save(); }
+	}
+
+	private bool _level2AddChallengeFinished = false;
+	public bool Level2AddChallengeFinished
+	{
+		get { return _level2AddChallengeFinished; }
+		set { _level2AddChallengeFinished = value; Save(); }
+	}
+
+	private bool _level3AddChallengeFinished = false;
+	public bool Level3AddChallengeFinished
+	{
+		get { return _level3AddChallengeFinished; }
+		set { _level3AddChallengeFinished = value; Save(); }
+	}
+
+	private bool _level4AddChallengeFinished = false;
+	public bool Level4AddChallengeFinished
+	{
+		get { return _level4AddChallengeFinished; }
+		set { _level4AddChallengeFinished = value; Save(); }
+	}
+	#endregion
+
 	#region Which Sigil
 	private int _level2Sigil = 0; // 0 - Фотокарточка леса, 1 - Фигурка молнии, 2 - Танцующий кактус
 	public int Level2Sigil {
@@ -85,6 +115,11 @@
 		Level2EnteredTheRedDoor = data.Level2EnteredTheRedDoor;
 		Level3EnteredTheRedDoor = data.Level3EnteredTheRedDoor;
 		Level4EnteredTheRedDoor = data.Level4EnteredTheRedDoor;
+
+		Level1AddChallengeFinished = data.Level1AddChallengeFinished;
+		Level2AddChallengeFinished = data.Level2AddChallengeFinished;
+		Level3AddChallengeFinished = data.Level3AddChallengeFinished;
+		Level4AddChallengeFinished = data.Level4AddChallengeFinished;
 
 		Level2Sigil = data.Level2Sigil;
 		Level3Sigil = data.Level3Sigil;
