@@ -26,6 +26,8 @@ public class SettingsData : ISaveData
 	{
 		ply.Camera.Camera.FieldOfView = FOV;
 		ply.Camera.Sensivity = MouseSensitivity;
+
+		Log.Info($"[Settings] Setup");
 	}
 	#endregion
 
