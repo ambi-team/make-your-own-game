@@ -37,7 +37,12 @@ public class SettingsData : ISaveData
 
 	public void Load()
 	{
-		if (!FileSystem.Data.FileExists(filename + ".json")) return;
+		if (!FileSystem.Data.FileExists(filename + ".json"))
+		{
+			Save();
+
+			return;
+		}
 
 		var settings = (SettingsData) SaveData.Load<SettingsData>($"{filename}.json");
 		

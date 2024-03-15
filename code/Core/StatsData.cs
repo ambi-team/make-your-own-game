@@ -72,7 +72,12 @@
 
 	public void Load()
 	{
-		if (!FileSystem.Data.FileExists(filename + ".json")) return;
+		if (!FileSystem.Data.FileExists(filename + ".json"))
+		{
+			Save();
+
+			return;
+		}
 
 		StatsData data = (StatsData)SaveData.Load<StatsData>(filename + ".json");
 
