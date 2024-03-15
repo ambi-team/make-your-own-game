@@ -31,8 +31,6 @@
 		}
 
 		Load();
-
-		Log.Info(StatsSingleton.Data.Level1EnteredTheRedDoor); //todo remove
 	}
 	#endregion
 }

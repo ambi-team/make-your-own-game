@@ -13,7 +13,7 @@ public sealed class ReverseTime : Component
 
 	public bool onRecording;
 	public int indexRecord = 0;
-
+	
 	public bool onPlaying;
 	private int indexPlay = 0;
 

@@ -87,6 +87,12 @@
         {
           "__type": "Game",
           "__guid": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
+          "Ply": {
+            "_type": "component",
+            "component_id": "c0d33c20-3b72-4864-82cb-2670688f0bcd",
+            "go": "d5d572c3-1210-4a3a-b85a-7d2252d5a6be",
+            "component_type": "Player"
+          },
           "Settings": {},
           "Stats": {}
         },
@@ -96,7 +102,7 @@
           "defaultTimeRecoding": 15,
           "ply": {
             "_type": "component",
-            "component_id": "2f3b1ad7-6340-44e5-82fe-902dd69737f6",
+            "component_id": "c0d33c20-3b72-4864-82cb-2670688f0bcd",
             "go": "d5d572c3-1210-4a3a-b85a-7d2252d5a6be",
             "component_type": "Player"
           },
@@ -524,7 +530,7 @@
             {
               "__guid": "e36c6139-fc50-41e2-bad8-3a9d69682be1",
               "Name": "Button",
-              "Position": "-1.143101,-38.164,18.03083",
+              "Position": "-1.143101,-38.16501,18.03084",
               "Scale": "0.6534992,0.894671,0.07965566",
               "Enabled": true,
               "NetworkMode": 2,
@@ -809,7 +815,7 @@
   },
   "Title": "level1",
   "Description": "",
-  "LastSaved": "2024-03-15T00:34:25.9944116\u002B05:00",
+  "LastSaved": "2024-03-15T04:05:49.7260893\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
