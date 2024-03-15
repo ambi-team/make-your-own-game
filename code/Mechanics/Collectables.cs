@@ -6,9 +6,11 @@ public sealed class Collectables : Component, Component.ITriggerListener
 
 	public event Action OnEntered;
 
-	private void OnTriggerEnter(Collider other)
+	public void OnTriggerEnter(Collider other)
 	{
 		if (other.GameObject != Game.Ply.GameObject) return;
+
+		GameObject.Destroy();
 
 		OnEntered?.Invoke();
 	}
