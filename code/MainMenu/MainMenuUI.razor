@@ -1,5 +1,6 @@
 @using Sandbox;
 @using Sandbox.Localization
+@using System;
 
 @inherits PanelComponent
 
@@ -10,6 +11,7 @@
 			<h1 class="card-title">Make Your Own Game</h1>
 
 			<div class="menu">
+				<button @onclick="@OnPlayClick" class="btn">Play</button>
 				<button @onclick="@OnAchievementsClick" class="btn">Achievements</button>
 				<button @onclick="@OnSettingsClick" class="btn">Settings</button>
 				<button @onclick="@OnTitlesClick" class="btn">Titles</button>
@@ -77,6 +79,7 @@
   
 @code
 {
+	private bool _playWindowEnable = true;
 	private bool _menuWindowEnable = true;
 	private bool _achievementsWindowEnable = false;
 	private bool _settingsWindowEnable = false;
@@ -84,16 +87,26 @@
 	private bool _exitWindowEnable = false;
 
 	private bool _mainMenuShow;
-	
+
 	private Achievement achi_press_esc = Achievement.CreateOrGet("press_esc_4_times", LocalizedStrings.FromTuple(("en", "The holy button"), ("ru", "Святая кнопка")), LocalizedStrings.FromTuple(("en", "Don't press Escape on four times"), ("ru", "Не следует нажимать Escape четыре раза")), 4);
-	
-	
+
+	public event Action OnPlayClicked;
+
 	public void OnAchievementsClick()
 	{
 		CloseWindows(false);
 		_achievementsWindowEnable = true;
-		
+
 		Log.Info("On Achievements Click");
+	}
+
+	public void OnPlayClick()
+	{
+		Hide();
+
+		OnPlayClicked?.Invoke();
+
+		Log.Info("On Play Click");
 	}
 	
 	public void OnSettingsClick()
@@ -124,6 +137,7 @@
 	public void CloseWindows(bool showMenuWindow)
 	{
 		_menuWindowEnable = showMenuWindow;
+		_playWindowEnable = false;
 		_achievementsWindowEnable = false;
 		_settingsWindowEnable = false;
 		_titlesWindowEnable = false;
@@ -154,7 +168,7 @@
 			}
 			else
 			{
-				if (_achievementsWindowEnable || _settingsWindowEnable || _titlesWindowEnable || _exitWindowEnable)
+				if (_achievementsWindowEnable || _settingsWindowEnable || _titlesWindowEnable || _exitWindowEnable || _playWindowEnable)
 				{
 					CloseWindows(true);
 				}
