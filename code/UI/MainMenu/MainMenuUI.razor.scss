@@ -22,8 +22,8 @@
 	padding: 20px 20px 20px 20px;
 	//border: 5px solid #2a2a2a;
 	
-	width: 70vw;
-	height: 70vh;
+	width: 75vw;
+	height: 100vh;
 	
 	justify-content: center;
 }
@@ -40,6 +40,15 @@
 
 // === MENU ===
 .menu
+{
+	margin-top: 50px;
+
+	flex-direction: column;
+}
+
+
+// === SETTINGS ===
+.settings
 {
 	margin-top: 50px;
 
@@ -125,8 +134,39 @@
 		font-style: italic;
 	}
 }
+.btn.outline
+{
+	border: 1px solid #2a2a2a;
+	border-radius: 14px;
+}
 
-.scroll {
+.scroll 
+{
 	overflow: scroll;
 	flex-direction: column;
 }
+
+.slider
+{
+	font-size: 42px;
+	font-family: 'Gentium Book Plus';
+	color: black;
+	
+	flex-direction: column;
+	
+	flex-basis: 300px;
+	margin: 25px 0px 25px 0px;
+
+	.label
+	{
+		opacity: 1;
+		flex-grow: 1;
+		font-weight: bolder;
+	}
+
+	.output
+	{
+		justify-content: center;
+	}
+}
+

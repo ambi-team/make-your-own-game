@@ -3,13 +3,26 @@
 public class SettingsData : ISaveData
 {
 	#region Props/Vars
-	public string LanguageKey = "en";
 	[JsonIgnore] public bool hasLoaded = false;
 	[JsonIgnore] private string filename = "settings";
 
-	public float FOV = 75f;
-	public float MouseSensitivity = 1f;
-	public float Volume = 1f;
+	
+	public string LanguageKey = "en";
+	
+	/// <summary>
+	/// От 60 до 180 
+	/// </summary>
+	public float FOV = Preferences.FieldOfView;
+	
+	/// <summary>
+	/// От 1 до 20
+	/// </summary>
+	public float MouseSensitivity = Preferences.Sensitivity;
+	
+	/// <summary>
+	/// От 0 до 100
+	/// </summary>
+	public float Volume = 50f;
 
 	public bool EnableShadows = true;
 	
@@ -33,12 +46,16 @@ public class SettingsData : ISaveData
 	public void Save()
 	{
 		SaveData.Save($"{filename}.json", this);
+		
+		Log.Info("Settings Saved!");
 	}
 
 	public void Load()
 	{
 		if (!FileSystem.Data.FileExists(filename + ".json"))
 		{
+			Log.Info("Settings Not Found! Creating...");
+			
 			Save();
 
 			return;
@@ -47,6 +64,7 @@ public class SettingsData : ISaveData
 		var settings = (SettingsData) SaveData.Load<SettingsData>($"{filename}.json");
 		
 		LanguageKey = settings.LanguageKey;
+		Log.Info(LanguageKey);
 		
 		FOV = settings.FOV;
 		MouseSensitivity = settings.MouseSensitivity;
@@ -55,6 +73,8 @@ public class SettingsData : ISaveData
 		EnableShadows = settings.EnableShadows;
 
 		hasLoaded = true;
+		
+		Log.Info("Settings Loaded!");
 	}
 	#endregion
 }

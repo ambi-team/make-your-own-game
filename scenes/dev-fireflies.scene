@@ -90,7 +90,7 @@
           "defaultTimeRecoding": 20,
           "ply": {
             "_type": "component",
-            "component_id": "9bc2fb08-5c5c-4495-9aed-5d5d2c4608ee",
+            "component_id": "86ab5afa-a3e9-4056-8522-a65fe1569c15",
             "go": "43169f6e-d108-4963-87f0-001c6684eb98",
             "component_type": "Player"
           },
@@ -407,10 +407,10 @@
                         "Id": 5,
                         "Type": "call",
                         "Properties": {
-                          "_isStatic": false,
                           "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                          "T": "package.ambi.myog/ReverseTime",
                           "_name": "Get",
-                          "T": "package.ambi.myog/ReverseTime"
+                          "_isStatic": false
                         },
                         "UserData": {
                           "Position": "16,160"
@@ -420,9 +420,9 @@
                         "Id": 7,
                         "Type": "call",
                         "Properties": {
-                          "_isStatic": false,
                           "_type": "package.ambi.myog/ReverseTime",
-                          "_name": "StartRecord"
+                          "_name": "StartRecord",
+                          "_isStatic": false
                         },
                         "UserData": {
                           "Position": "352,176"
@@ -2763,9 +2763,9 @@
                         "Id": 3,
                         "Type": "call",
                         "Properties": {
-                          "_isStatic": false,
                           "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand",
-                          "_name": "Play"
+                          "_name": "Play",
+                          "_isStatic": false
                         },
                         "UserData": {
                           "Position": "496,16"
@@ -2878,9 +2878,9 @@
                         "Id": 5,
                         "Type": "call",
                         "Properties": {
-                          "_isStatic": false,
                           "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand",
-                          "_name": "SwitchChangeCells"
+                          "_name": "SwitchChangeCells",
+                          "_isStatic": false
                         },
                         "UserData": {
                           "Position": "448,16"
@@ -2995,9 +2995,9 @@
                         "Id": 3,
                         "Type": "call",
                         "Properties": {
-                          "_isStatic": false,
                           "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand",
-                          "_name": "SwitchChangeCells"
+                          "_name": "SwitchChangeCells",
+                          "_isStatic": false
                         },
                         "UserData": {
                           "Position": "464,0"
@@ -3112,9 +3112,9 @@
                         "Id": 3,
                         "Type": "call",
                         "Properties": {
-                          "_isStatic": false,
                           "_type": "package.ambi.myog/Sandbox.Mechanics.FirefliesPuzzle.FirefliesStand",
-                          "_name": "SwitchChangeCells"
+                          "_name": "SwitchChangeCells",
+                          "_isStatic": false
                         },
                         "UserData": {
                           "Position": "416,0"
@@ -3184,7 +3184,7 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-15T02:27:15.8445808\u002B03:00",
+  "LastSaved": "2024-03-15T22:52:36.9778287\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

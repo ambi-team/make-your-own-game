@@ -1,0 +1,277 @@
+@using Sandbox;
+@using Sandbox.Localization
+@using Sandbox.UI;
+@using System;
+
+@inherits PanelComponent
+
+<root class="root" style="opacity: @(_mainMenuShow ? 1.0f : 0.0f)">
+	<div class="card">
+		<div style="align-content: center">
+			<h1 class="card-title">Make Your Own Game</h1>
+			@if (!_menuWindowEnable)
+			{
+				<button class="btn outline" style="margin-left: 20px; margin-top: auto; margin-bottom: auto; width: 130px !important; height: 80px !important;" @onclick="@OnBackClick">@_backButtonName</button>
+			}
+		</div>
+
+		@if (_menuWindowEnable)
+		{
+			<div class="menu">
+				<button @onclick="@OnPlayClick" class="btn">@_playButtonName</button>
+				<button @onclick="@OnAchievementsClick" class="btn">@_achievementsButtonName</button>
+				<button @onclick="@OnSettingsClick" class="btn">@_settingsButtonName</button>
+				<button @onclick="@OnTitlesClick" class="btn">@_titlesButtonName</button>
+				<button @onclick="@OnExitClick" class="btn">@_exitButtonName</button>
+			</div>
+		}
+		
+		@if (_achievementsWindowEnable)
+        {
+            <div class="achievements scroll">
+            	@foreach (var (key, achievement) in Achievement.GetAll())
+            	{
+            		<div class="borders">
+            			<div class="image @(achievement.IsLock ? _lockedName.ToString() : _unlockedName.ToString())">
+    
+            			</div>
+    
+            			<div class="info">
+            				<div class="title">@achievement.Name</div>
+            				<div class="description">@achievement.Description</div>
+            			</div>
+            		</div>
+            	}
+            </div>
+        }
+		
+		@if (_settingsWindowEnable)
+        {
+	        // TODO: Настройки пока что не приминяются! Они сохраняются, но на игру не влияют.
+        	<div class="settings">
+        		<row class="slider">
+        			<label class="label">@_fovName</label>
+        			<SliderControl Min="@(60)" Max="@(180)" ShowValueTooltip="@false" Value:bind="@FovValue"/>
+        			<output class="output">
+        				@FovValue.ToString( "0.00" )
+        			</output>
+        		</row>
+        		
+        		<row class="slider">
+        			<label class="label">@_mouseSensitivityName</label>
+        			<SliderControl Min="@(1)" Max="@(20)" ShowValueTooltip="@false" Value:bind="@MouseSensitivityValue"/>
+        			<output class="output">
+        				@MouseSensitivityValue.ToString( "0.00" )
+        			</output>
+        		</row>
+        		
+        		<row class="slider">
+        			<label class="label">@_volumeName</label>
+        			<SliderControl Min="@(0)" Max="@(100)" ShowValueTooltip="@false" Value:bind="@VolumeValue"/>
+        			<output class="output">
+        				@VolumeValue.ToString( "0.00" )
+        			</output>
+        		</row>
+        		
+        		<row style="height: 200px">
+        			<button class="btn" @onclick="@(() => EnableShadowValue = !EnableShadowValue)">@(EnableShadowValue ? _disableShadowName.ToString() : _enableShadowName.ToString())</button>
+        		</row>
+        		
+        		<div style="height: 200px">
+        			<button class="btn" @onclick="@(() => LanguageKey = "en")">English</button>
+        			<button class="btn" @onclick="@(() => LanguageKey = "ru")">Русский</button>
+        		</div>
+        	</div>
+        }
+        
+        @if (_titlesWindowEnable)
+        {
+	        // TODO: Нужно сделать окно титров!
+            <div class="titles">
+
+            </div>
+        }
+    
+        @if (_exitWindowEnable)
+        {
+	        // TODO: Нужно сделать окно при нажатии кнопки выхода!
+            <div class="exit">
+
+            </div>
+        }
+	</div>
+</root>
+  
+@code
+{
+	private LocalizedStrings _backButtonName = LocalizedStrings.FromTuple(("ru", "Назад"), ("en", "Back"));
+	
+	private LocalizedStrings _enableShadowName = LocalizedStrings.FromTuple(("ru", "Включить Тени"), ("en", "Enable Shadows"));
+	private LocalizedStrings _disableShadowName = LocalizedStrings.FromTuple(("ru", "Выключить Тени"), ("en", "Disable Shadows"));
+	
+	private LocalizedStrings _lockedName = LocalizedStrings.FromTuple(("ru", "Заблокировано"), ("en", "Locked"));
+	private LocalizedStrings _unlockedName = LocalizedStrings.FromTuple(("ru", "Разблокировано"), ("en", "Unlocked"));
+	
+	private LocalizedStrings _fovName = LocalizedStrings.FromTuple(("ru", "Поле Зрения"), ("en", "FOV"));
+	private LocalizedStrings _mouseSensitivityName = LocalizedStrings.FromTuple(("ru", "Чувствительность Мыши"), ("en", "Mouse Sensitivity"));
+	private LocalizedStrings _volumeName = LocalizedStrings.FromTuple(("ru", "Громкость"), ("en", "Volume"));
+	
+	private LocalizedStrings _playButtonName = LocalizedStrings.FromTuple(("ru", "Играть"), ("en", "Play"));
+	private LocalizedStrings _achievementsButtonName = LocalizedStrings.FromTuple(("ru", "Достижения"), ("en", "Achievements"));
+	private LocalizedStrings _settingsButtonName = LocalizedStrings.FromTuple(("ru", "Настройки"), ("en", "Settings"));
+	private LocalizedStrings _titlesButtonName = LocalizedStrings.FromTuple(("ru", "Титры"), ("en", "Titles"));
+	private LocalizedStrings _exitButtonName = LocalizedStrings.FromTuple(("ru", "Выйти"), ("en", "Exit"));
+
+	
+	private bool _playWindowEnable = true;
+	private bool _menuWindowEnable = true;
+	private bool _achievementsWindowEnable = false;
+	private bool _settingsWindowEnable = false;
+	private bool _titlesWindowEnable = false;
+	private bool _exitWindowEnable = false;
+
+	private bool _mainMenuShow;
+
+	public float FovValue
+	{
+		get => SettingsSingleton.Data.FOV;
+		set { SettingsSingleton.Data.FOV = value; SettingsSingleton.Data.Save(); }
+	}
+
+	public float MouseSensitivityValue
+	{
+		get => SettingsSingleton.Data.MouseSensitivity;
+		set { SettingsSingleton.Data.MouseSensitivity = value; SettingsSingleton.Data.Save(); }
+	}
+	
+	public float VolumeValue
+	{
+		get => SettingsSingleton.Data.Volume;
+		set { SettingsSingleton.Data.Volume = value; SettingsSingleton.Data.Save(); }
+	}
+	
+	public string LanguageKey
+	{
+		get => SettingsSingleton.Data.LanguageKey;
+		set { SettingsSingleton.Data.LanguageKey = value; SettingsSingleton.Data.Save(); }
+	}
+	
+	public bool EnableShadowValue
+	{
+		get => SettingsSingleton.Data.EnableShadows;
+		set { SettingsSingleton.Data.EnableShadows = value; SettingsSingleton.Data.Save(); }
+	}
+
+	private Achievement achi_press_esc = Achievement.CreateOrGet("press_esc_4_times", LocalizedStrings.FromTuple(("en", "The holy button"), ("ru", "Святая кнопка")), LocalizedStrings.FromTuple(("en", "Don't press Escape on four times"), ("ru", "Не следует нажимать Escape четыре раза")), 4);
+
+	public event Action OnPlayClicked;
+
+	public void OnAchievementsClick()
+	{
+		CloseWindows(false);
+		_achievementsWindowEnable = true;
+
+		Log.Info("On Achievements Click");
+	}
+
+	public void OnPlayClick()
+	{
+		Hide();
+
+		OnPlayClicked?.Invoke();
+
+		Log.Info("On Play Click");
+	}
+	
+	public void OnSettingsClick()
+	{
+		CloseWindows(false);
+		_settingsWindowEnable = true;
+		
+		Log.Info("On Settings Click");
+	}
+	
+	public void OnTitlesClick()
+	{
+		CloseWindows(false);
+		_titlesWindowEnable = true;
+		
+		Log.Info("On Titles Click");
+	}
+	
+	public void OnExitClick()
+	{
+		CloseWindows(false);
+		_exitWindowEnable = true;
+		
+		Log.Info("On Exit Click");
+	}
+
+	public void OnBackClick()
+	{
+		CloseWindows(true);
+	}
+
+
+	public void CloseWindows(bool showMenuWindow)
+	{
+		_menuWindowEnable = showMenuWindow;
+		_playWindowEnable = false;
+		_achievementsWindowEnable = false;
+		_settingsWindowEnable = false;
+		_titlesWindowEnable = false;
+		_exitWindowEnable = false;
+	}
+	
+	
+	public void Show()
+	{
+		_mainMenuShow = true;
+	}
+
+	public void Hide()
+	{
+		_mainMenuShow = false;
+	}
+	
+	
+	protected override void OnUpdate()
+	{
+		if (Input.EscapePressed)
+		{
+			achi_press_esc.AddCount(1);
+			
+			if (!_mainMenuShow)
+			{
+				Show();
+			}
+			else
+			{
+				if (_achievementsWindowEnable || _settingsWindowEnable || _titlesWindowEnable || _exitWindowEnable || _playWindowEnable)
+				{
+					CloseWindows(true);
+				}
+				else
+				{
+					Hide();
+				}
+			}
+		}
+	}
+
+	protected override void OnStart()
+	{
+		Enabled = true;
+
+		var data = new SettingsData();
+		data.Load();
+		SettingsSingleton.Data = data;
+	}
+	
+	
+	protected override int BuildHash() => System.HashCode.Combine( 
+		_mainMenuShow, LanguageKey,
+		_menuWindowEnable, _achievementsWindowEnable, 
+		_settingsWindowEnable, _titlesWindowEnable, _exitWindowEnable 
+	);
+}
