@@ -951,6 +951,92 @@
           }
         }
       ]
+    },
+    {
+      "__guid": "abab228a-c91c-4424-9c56-0fed0b716eac",
+      "Name": "Trigger Monol",
+      "Position": "-918.2102,-1025.75,215.954",
+      "Scale": "0.05082905,1,1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "9e1977a8-326f-4257-9cd8-7df76222196c",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "f4047c27-a9a0-47e8-8e55-f7ae4d113a9a",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "MonologTrigger",
+          "__guid": "1bd4b8de-0b1a-4877-b066-b0c7e01ec6fa",
+          "Monologs": [
+            "monologues/beginning/beginning_1.monolog",
+            "monologues/beginning/beginning_2.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "441601c9-87b6-49ec-8637-ffdbae127f44",
+            "go": "b7303a6b-4fea-4080-9b4c-f67bcd75d286",
+            "component_type": "MonologSystem"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "b7303a6b-4fea-4080-9b4c-f67bcd75d286",
+      "Name": "Monologue System",
+      "Position": "-1108.829,-933.1975,219.609",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologSystem",
+          "__guid": "441601c9-87b6-49ec-8637-ffdbae127f44",
+          "_monologUI": {
+            "_type": "component",
+            "component_id": "d94d6e87-cc2e-49dc-bf08-6b44d91839fa",
+            "go": "8cfabfdb-989c-48fb-b1d3-cf60bb6b4929",
+            "component_type": "MonologUI"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "8cfabfdb-989c-48fb-b1d3-cf60bb6b4929",
+      "Name": "UI: Monologue",
+      "Position": "-1108.829,-933.1975,219.609",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "a72785f3-430e-4ee8-9dbb-5126f65175af",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MonologUI",
+          "__guid": "d94d6e87-cc2e-49dc-bf08-6b44d91839fa",
+          "_currentOpacity": 0,
+          "_currentText": "NoText!",
+          "AnimationDurationSeconds": 0.1,
+          "HideOpacity": 0,
+          "ShowOpacity": 1,
+          "Side": "Up"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -976,7 +1062,7 @@
   },
   "Title": "level1",
   "Description": "",
-  "LastSaved": "2024-03-16T00:46:43.9549967\u002B05:00",
+  "LastSaved": "2024-03-16T02:16:22.4453656\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

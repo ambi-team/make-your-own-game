@@ -6,8 +6,6 @@
 @attribute [StyleSheet]
 @inherits PanelComponent
 
-@namespace Monologs;
-
 <root class="root">
 	<div class="@(Side == SubtitleSide.Up ? "monolog animated-opacity top" : "monolog animated-opacity bottom")" style="transition: all @(AnimationDurationSeconds)s linear; opacity: @_currentOpacity">
 		<text class="text">@_currentText</text>
