@@ -6,10 +6,25 @@ public sealed class Player : Component
 	[Property] public CharacterController Character { get; set; }
 	[Property] public PlayerMovement Movement { get; set; }
 	[Property] public CameraMovement Camera { get; set; }
-	#endregion
 
-	#region Player Logic
-	public void Use()
+    public int Loality { 
+		get 
+		{
+			var stats = StatsSingleton.Data;
+			int result = 0;
+
+			result += (stats.Level1EnteredTheRedDoor) ? 0 : 1;
+			result += (stats.Level2EnteredTheRedDoor) ? 0 : 1;
+			result += (stats.Level3EnteredTheRedDoor) ? 0 : 1;
+			result += (stats.Level4EnteredTheRedDoor) ? 0 : 1;
+
+			return result;
+		}
+	}
+    #endregion
+
+    #region Player Logic
+    public void Use()
 	{
 		var pos = Movement.Head.Transform.Position; // Head from Movement, cuz IsPseudo haven't Camera
 		var forward = Movement.Head.Transform.Rotation.Forward; 

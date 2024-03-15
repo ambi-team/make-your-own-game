@@ -89,7 +89,7 @@
           "__guid": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
           "Ply": {
             "_type": "component",
-            "component_id": "195c71ea-8ed5-42e4-9c0d-92cb6bfa4544",
+            "component_id": "70cf5cf7-6d62-4e65-838a-65199d916b3f",
             "go": "d5d572c3-1210-4a3a-b85a-7d2252d5a6be",
             "component_type": "Player"
           },
@@ -102,7 +102,7 @@
           "defaultTimeRecoding": 15,
           "ply": {
             "_type": "component",
-            "component_id": "195c71ea-8ed5-42e4-9c0d-92cb6bfa4544",
+            "component_id": "70cf5cf7-6d62-4e65-838a-65199d916b3f",
             "go": "d5d572c3-1210-4a3a-b85a-7d2252d5a6be",
             "component_type": "Player"
           },
@@ -117,6 +117,38 @@
             "go": "3c9d460f-acce-4c96-a9b6-95073c9af1e6",
             "component_type": "ReverseTimeHud"
           }
+        },
+        {
+          "__type": "CollectablesSystem",
+          "__guid": "0a77f3a6-ad64-474b-b8e3-1cb7e93981c4",
+          "collectables": [
+            {
+              "_type": "component",
+              "component_id": "fb1a8732-eb68-4a01-8437-4fdf8be7e522",
+              "go": "84251d48-4763-4fd8-975d-9d371e6a3b28",
+              "component_type": "Collectables"
+            },
+            {
+              "_type": "component",
+              "component_id": "25066185-d6f8-446e-8837-07ec581b140c",
+              "go": "cfbbfedd-3bb7-442e-be53-ee9b40be5c26",
+              "component_type": "Collectables"
+            },
+            {
+              "_type": "component",
+              "component_id": "10df5a83-df27-4f4e-b100-70648594bbd3",
+              "go": "0e54c0c6-c2b9-49ac-8cf4-18b6a218d326",
+              "component_type": "Collectables"
+            },
+            {
+              "_type": "component",
+              "component_id": "e3d9d530-c265-40b0-a781-3b4bb0ff4df5",
+              "go": "c53233df-316d-405e-8cec-6c8bc07c3c96",
+              "component_type": "Collectables"
+            }
+          ],
+          "collectSound": "sound/coin3.sound",
+          "isFinished": false
         }
       ]
     },
@@ -584,9 +616,9 @@
                         "Type": "call",
                         "Properties": {
                           "T": "package.ambi.myog/ReverseTime",
+                          "_isStatic": false,
                           "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                          "_name": "Get",
-                          "_isStatic": false
+                          "_name": "Get"
                         },
                         "UserData": {
                           "Position": "16,160"
@@ -596,9 +628,9 @@
                         "Id": 7,
                         "Type": "call",
                         "Properties": {
+                          "_isStatic": false,
                           "_type": "package.ambi.myog/ReverseTime",
-                          "_name": "StartRecord",
-                          "_isStatic": false
+                          "_name": "StartRecord"
                         },
                         "UserData": {
                           "Position": "352,176"
@@ -779,6 +811,146 @@
       "Enabled": true,
       "NetworkMode": 2,
       "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "__guid": "84251d48-4763-4fd8-975d-9d371e6a3b28",
+      "Name": "Cube",
+      "Position": "-1113.853,-965.79,172.7489",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "d58f3e16-3565-4379-9f5f-7b2981652755",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "a87286cf-9a7c-4739-ae44-54ed313b2adf",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Collectables",
+          "__guid": "fb1a8732-eb68-4a01-8437-4fdf8be7e522",
+          "Game": {
+            "_type": "component",
+            "component_id": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
+            "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
+            "component_type": "Game"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "cfbbfedd-3bb7-442e-be53-ee9b40be5c26",
+      "Name": "Cube (1)",
+      "Position": "-1248.019,-965.79,172.7489",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "b3cd1478-1447-46df-804e-097a81c2ec4b",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "65176bac-9141-49ab-950c-faadecd1598f",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Collectables",
+          "__guid": "25066185-d6f8-446e-8837-07ec581b140c",
+          "Game": {
+            "_type": "component",
+            "component_id": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
+            "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
+            "component_type": "Game"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "0e54c0c6-c2b9-49ac-8cf4-18b6a218d326",
+      "Name": "Cube (2)",
+      "Position": "-1004.563,-965.79,172.7489",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "78c8020a-2218-40c8-bedc-5b7c9e3d5fda",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "2fde3966-4401-4faf-9fdc-66a8101266f9",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Collectables",
+          "__guid": "10df5a83-df27-4f4e-b100-70648594bbd3",
+          "Game": {
+            "_type": "component",
+            "component_id": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
+            "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
+            "component_type": "Game"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "c53233df-316d-405e-8cec-6c8bc07c3c96",
+      "Name": "Cube (3)",
+      "Position": "-913.567,-965.79,172.7489",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "a5de8d7c-8061-4ea6-89be-2bdc19501809",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "7d427005-7558-46b0-869f-7cdcde7f6a63",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Collectables",
+          "__guid": "e3d9d530-c265-40b0-a781-3b4bb0ff4df5",
+          "Game": {
+            "_type": "component",
+            "component_id": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
+            "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
+            "component_type": "Game"
+          }
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -804,8 +976,10 @@
   },
   "Title": "level1",
   "Description": "",
-  "LastSaved": "2024-03-15T21:33:31.5086327\u002B05:00",
+  "LastSaved": "2024-03-16T00:46:43.9549967\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": []
+  "__references": [
+    "igrotronika.coin3"
+  ]
 }

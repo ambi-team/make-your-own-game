@@ -1,7 +1,4 @@
 ﻿using System;
-
-namespace Sandbox.Mechanics.FirefliesPuzzle;
-
 public class FirefliesRow: Component
 {
     [Property] public List<FirefliesCell> Cells { get; set; }
