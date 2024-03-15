@@ -24,6 +24,8 @@ public class SettingsData : ISaveData
 
 	public void Setup()
 	{
+		if (ply is null) return;
+
 		ply.Camera.Camera.FieldOfView = FOV;
 		ply.Camera.Sensivity = MouseSensitivity;
 
@@ -57,6 +59,8 @@ public class SettingsData : ISaveData
 		EnableShadows = settings.EnableShadows;
 
 		hasLoaded = true;
+
+		Setup();
 	}
 	#endregion
 }

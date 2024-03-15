@@ -1,6 +1,4 @@
-﻿namespace Sandbox.Mechanics.FirefliesPuzzle;
-
-public class FirefliesCell: Component
+﻿public class FirefliesCell: Component
 {
     [Property] public Light Light { get; set; }
     [Property] public ParticleEmitter Particles { get; set; }

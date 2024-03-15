@@ -1,7 +1,5 @@
 ﻿using System;
 
-namespace Sandbox.Mechanics.FirefliesPuzzle;
-
 public class FirefliesStand: Component
 {
     [Property] public List<FirefliesRow> Rows { get; set; }
@@ -22,7 +20,7 @@ public class FirefliesStand: Component
 
     private float _timer;
     private bool _timerStarted;
-    private bool _firefliesPlaying;
+	private bool _firefliesPlaying = false;
 
     private bool _isCompleted;
 
@@ -83,7 +81,11 @@ public class FirefliesStand: Component
         return rowsCount == 0;
     }
 
-    
+    protected override void OnStart()
+    {
+        _firefliesPlaying = false;
+
+	}
     protected override void OnUpdate()
     {
         if (_timerStarted)
