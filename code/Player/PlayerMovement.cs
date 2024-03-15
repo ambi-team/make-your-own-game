@@ -268,7 +268,13 @@ public sealed class PlayerMovement : Component
 		_animationHelper = Components.Get<CitizenAnimationHelper>();
 		_collider = Components.Get<BoxCollider>();
 	}
-	
+
+	protected override void OnUpdate()
+	{
+		if (Input.Pressed("Noclip"))
+			Fly = !Fly; //
+	}
+
 	protected override void OnFixedUpdate()
 	{
 		// from OnUpdate to here

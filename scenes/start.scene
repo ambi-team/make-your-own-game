@@ -1,37 +1,40 @@
 {
-  "Id": "2d221acd-052e-4a36-ac25-11956daa42f6",
+  "__guid": "2d221acd-052e-4a36-ac25-11956daa42f6",
   "GameObjects": [
     {
-      "Id": "6680b82e-ea56-43e3-bee0-33d9da4785c5",
+      "__guid": "6680b82e-ea56-43e3-bee0-33d9da4785c5",
       "Name": "\uD83C\uDFDE ENV \uD83C\uDFDE",
       "Position": "235.5777,345.3558,54.46339",
-      "Enabled": true
+      "Enabled": true,
+      "NetworkMode": 2
     },
     {
-      "Id": "a2ccb07d-bd53-4ef4-b5b4-879613dcc88b",
+      "__guid": "a2ccb07d-bd53-4ef4-b5b4-879613dcc88b",
       "Name": "Map",
       "Position": "-16.00771,61.8781,2112.087",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "MapInstance",
+          "__guid": "48e3139c-501f-4b83-b129-a7c567c327cd",
           "MapName": "start",
-          "OnMapLoaded": null,
-          "OnMapUnloaded": null,
           "UseMapFromLaunch": false
         }
       ],
       "Children": []
     },
     {
-      "Id": "a852db2a-ee3f-4eb4-8c9d-ffacc874013f",
+      "__guid": "a852db2a-ee3f-4eb4-8c9d-ffacc874013f",
       "Name": "Sun",
       "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
       "Tags": "light_directional,light",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "DirectionalLight",
+          "__guid": "a37c682f-1c76-4378-ade0-86cbdfe66457",
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "1.96,1.96,1.96,1",
@@ -41,18 +44,21 @@
       ]
     },
     {
-      "Id": "aa901fcd-6d8e-4be6-a071-79d4b10df406",
+      "__guid": "aa901fcd-6d8e-4be6-a071-79d4b10df406",
       "Name": "2D Skybox",
       "Tags": "skybox",
       "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
           "__type": "SkyBox2D",
+          "__guid": "11d772ad-3f59-4472-98d7-ee68d9078711",
           "SkyMaterial": "materials/skybox/light_test_dark.vmat",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "EnvmapProbe",
+          "__guid": "be5344f0-1bdb-448b-82c8-6382e22333ea",
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
@@ -63,6 +69,15 @@
           "TintColor": "1,1,1,1"
         }
       ]
+    },
+    {
+      "__guid": "67766837-4b50-4f0f-bf5e-2df457f434eb",
+      "Name": "player",
+      "Position": "-3486.568,-1060.433,64",
+      "Tags": "trigger,player",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefabs/player.prefab"
     }
   ],
   "SceneProperties": {
@@ -88,6 +103,8 @@
   },
   "Title": "start",
   "Description": "",
-  "LastSaved": "2024-03-09T18:45:50.8965262\u002B05:00",
+  "LastSaved": "2024-03-15T16:26:18.5549263\u002B05:00",
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": []
 }

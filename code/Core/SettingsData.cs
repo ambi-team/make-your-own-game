@@ -4,7 +4,9 @@ public class SettingsData : ISaveData
 {
 	#region Props/Vars
 	public string LanguageKey = "en";
-	
+	[JsonIgnore] public bool hasLoaded = false;
+	[JsonIgnore] private string filename = "settings";
+
 	public float FOV = 75f;
 	public float MouseSensitivity = 1f;
 	public float Volume = 1f;
@@ -19,17 +21,25 @@ public class SettingsData : ISaveData
 	{
 		ply = player;
 	}
+
+	public void Setup()
+	{
+		ply.Camera.Camera.FieldOfView = FOV;
+		ply.Camera.Sensivity = MouseSensitivity;
+	}
 	#endregion
 
 	#region ISaveData
 	public void Save()
 	{
-		SaveData.Save("settings.json", this);
+		SaveData.Save($"{filename}.json", this);
 	}
 
 	public void Load()
 	{
-		var settings = (SettingsData) SaveData.Load<SettingsData>("settings.json");
+		if (!FileSystem.Data.FileExists(filename + ".json")) return;
+
+		var settings = (SettingsData) SaveData.Load<SettingsData>($"{filename}.json");
 		
 		LanguageKey = settings.LanguageKey;
 		
@@ -38,6 +48,8 @@ public class SettingsData : ISaveData
 		Volume = settings.Volume;
 
 		EnableShadows = settings.EnableShadows;
+
+		hasLoaded = true;
 	}
 	#endregion
 }

@@ -7,7 +7,7 @@
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
-  "Resources": null,
+  "Resources": "\nfonts/*\nMainMenu/*\n*.scss",
   "HasCode": true,
   "CodePath": "/code/",
   "PackageReferences": [],
@@ -222,6 +222,7 @@
         }
       ]
     },
-    "MapStartupScene": "scenes/level1.scene"
+    "MapStartupScene": "scenes/level1.scene",
+    "StartupScene": "scenes/level1.scene"
   }
 }

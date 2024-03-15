@@ -12,7 +12,9 @@ public sealed class CameraMovement : Component
 	public SceneTraceResult traceResult;
 	private float distanceTraceResult = 255f;
 
-	private CameraComponent Camera;
+	public float Sensivity = 1f;
+
+	public CameraComponent Camera;
 	private ModelRenderer BodyRenderer;
 	#endregion
 
@@ -36,8 +38,8 @@ public sealed class CameraMovement : Component
 	{
 		var eyeAngles = Head.Transform.Rotation.Angles();
 
-		eyeAngles.pitch += Input.MouseDelta.y * 0.1f;
-		eyeAngles.yaw -= Input.MouseDelta.x * 0.1f;
+		eyeAngles.pitch += Input.MouseDelta.y * 0.1f * Sensivity;
+		eyeAngles.yaw -= Input.MouseDelta.x * 0.1f * Sensivity;
 		eyeAngles.roll = 0f;
 
 		eyeAngles.pitch = eyeAngles.pitch.Clamp( -89.9f, 89.9f );
