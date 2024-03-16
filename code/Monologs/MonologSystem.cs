@@ -84,7 +84,8 @@ public class MonologSystem: Component
     private void PlayMonolog(MonologResource monolog)
     {
         _monologUI.Show(monolog.SubtitleText.ToString());
-        _currentSoundHandle = Sound.Play(monolog.VoiceSound);
+        monolog.VoiceSound.UI = true;
+		_currentSoundHandle = Sound.Play(monolog.VoiceSound);
         
         Log.Info($"Monolog {monolog.VoiceSound.ResourceName} played.");
     }

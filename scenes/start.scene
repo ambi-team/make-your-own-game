@@ -29,7 +29,6 @@
       "Name": "Sun",
       "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
       "Tags": "light_directional,light",
-      "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
@@ -449,7 +448,7 @@
         {
           "__guid": "a7015d1a-f002-4b02-b070-e71265f1b585",
           "Name": "Monologue System",
-          "Position": "80.52954,90.29004,20.58778",
+          "Position": "80.52954,90.29004,13.49544",
           "Enabled": true,
           "NetworkMode": 2,
           "Components": [
@@ -491,7 +490,7 @@
   },
   "Title": "start",
   "Description": "",
-  "LastSaved": "2024-03-16T21:15:24.1960902\u002B05:00",
+  "LastSaved": "2024-03-16T21:23:58.0689078\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
