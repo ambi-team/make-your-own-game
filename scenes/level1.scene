@@ -769,8 +769,8 @@
                             "Type": "call",
                             "Properties": {
                               "T": "package.ambi.myog/ReverseTime",
-                              "_isStatic": false,
                               "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                              "_isStatic": false,
                               "_name": "Get"
                             },
                             "UserData": {
@@ -781,8 +781,8 @@
                             "Id": 7,
                             "Type": "call",
                             "Properties": {
-                              "_isStatic": false,
                               "_type": "package.ambi.myog/ReverseTime",
+                              "_isStatic": false,
                               "_name": "StartRecord"
                             },
                             "UserData": {
@@ -1030,8 +1030,8 @@
                             "Type": "call",
                             "Properties": {
                               "T": "package.ambi.myog/ReverseTime",
-                              "_isStatic": false,
                               "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                              "_isStatic": false,
                               "_name": "Get"
                             },
                             "UserData": {
@@ -1042,8 +1042,8 @@
                             "Id": 7,
                             "Type": "call",
                             "Properties": {
-                              "_isStatic": false,
                               "_type": "package.ambi.myog/ReverseTime",
+                              "_isStatic": false,
                               "_name": "StartRecord"
                             },
                             "UserData": {
@@ -1429,83 +1429,6 @@
                       "Game": {
                         "_type": "gameobject",
                         "go": "8afd8364-bb30-4946-97a5-39510f7e1920"
-                      },
-                      "OnTeleportStarted": {
-                        "Version": 5,
-                        "UserData": {
-                          "Title": "On Teleport Started",
-                          "id": "7c44196d-2740-4974-800e-199372177fd4",
-                          "ReferencedComponentTypes": []
-                        },
-                        "Variables": [],
-                        "Nodes": [
-                          {
-                            "Id": 0,
-                            "Type": "input"
-                          },
-                          {
-                            "Id": 4,
-                            "Type": "property.get",
-                            "Properties": {
-                              "_type": "Sandbox.Game/Sandbox.GameObject",
-                              "_name": "Parent"
-                            },
-                            "UserData": {
-                              "Position": "-64,128"
-                            }
-                          },
-                          {
-                            "Id": 6,
-                            "Type": "call",
-                            "Properties": {
-                              "T": "Sandbox.Game/Sandbox.SoundPointComponent",
-                              "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                              "_isStatic": false,
-                              "_name": "Get"
-                            },
-                            "UserData": {
-                              "Position": "96,144"
-                            }
-                          },
-                          {
-                            "Id": 8,
-                            "Type": "call",
-                            "Properties": {
-                              "_type": "Sandbox.Game/Sandbox.Component",
-                              "_isStatic": false,
-                              "_name": "Destroy"
-                            },
-                            "UserData": {
-                              "Position": "416,176"
-                            }
-                          }
-                        ],
-                        "Links": [
-                          {
-                            "SrcId": 0,
-                            "SrcName": "_target",
-                            "DstId": 4,
-                            "DstName": "_target"
-                          },
-                          {
-                            "SrcId": 4,
-                            "SrcName": "_result",
-                            "DstId": 6,
-                            "DstName": "_target"
-                          },
-                          {
-                            "SrcId": 0,
-                            "SrcName": "_signal",
-                            "DstId": 8,
-                            "DstName": "_signal"
-                          },
-                          {
-                            "SrcId": 6,
-                            "SrcName": "_result",
-                            "DstId": 8,
-                            "DstName": "_target"
-                          }
-                        ]
                       },
                       "PosToSpawn": "-430,-4077,243"
                     }
@@ -2045,7 +1968,7 @@
   },
   "Title": "level1",
   "Description": "",
-  "LastSaved": "2024-03-16T23:42:13.6058185\u002B05:00",
+  "LastSaved": "2024-03-17T00:21:58.5929971\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
