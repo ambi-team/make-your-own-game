@@ -68,7 +68,6 @@ public class SettingsData : ISaveData
 		var settings = (SettingsData) SaveData.Load<SettingsData>($"{filename}.json");
 		
 		LanguageKey = settings.LanguageKey;
-		Log.Info(LanguageKey);
 		
 		FOV = settings.FOV;
 		MouseSensitivity = settings.MouseSensitivity;
