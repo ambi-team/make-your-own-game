@@ -1,0 +1,53 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "good_2",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "good_2",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "ambi.deep_plate#49836",
+        "ambi.plate#49841",
+        "ambi.circle#50560",
+        "ambi.refrigerator#49549",
+        "ambi.book_6#49681",
+        "ambi.computer_monitor#49612",
+        "ambi.computer#49620",
+        "ambi.closet_mini#49834",
+        "ambi.plant#49909",
+        "andiq.tiles092#12695",
+        "ambi.speaker#49623",
+        "ambi.computer_chair#49546",
+        "ambi.keyboard#49619",
+        "ambi.plate_2#49842",
+        "ambi.cup#49617",
+        "ambi.tardis_red_door#51035",
+        "ambi.power_energetics#49621",
+        "ambi.cardboard_box#49833",
+        "ambi.curtain_open#50232",
+        "ambi.divan#49837",
+        "ambi.book_2#49678",
+        "ambi.computer_mouse#49614",
+        "ambi.fork#49838",
+        "ambi.hanging_lamp#49849",
+        "ambi.table_lamp#49624",
+        "ambi.closet#49905",
+        "ambi.desk#49613",
+        "ambi.bedside_table#49828"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/good_2.vmap"
+      }
+    }
+  }
+}

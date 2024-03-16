@@ -12,7 +12,6 @@
       "HasAssets": false,
       "AssetsPath": null,
       "Resources": null,
-      "MenuResources": "*",
       "HasCode": false,
       "CodePath": null,
       "PackageReferences": [],
@@ -48,7 +47,10 @@
         "ambi.table_lamp#49624",
         "ambi.plate_2#49842",
         "ambi.curtain#49835",
-        "ambi.book_6#49681"
+        "ambi.book_6#49681",
+        "ambi.curtain_open#50232",
+        "ambi.tardis_red_door#51035",
+        "ambi.circle#50560"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/start.vmap"

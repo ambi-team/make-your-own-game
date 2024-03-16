@@ -1,0 +1,42 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "the_forest",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "the_forest",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "ambi.wooden_box#50899",
+        "ambi.altar#50384",
+        "ambi.redrock_3#50935",
+        "ambi.rail#50931",
+        "caro.sky_001#27739",
+        "ambi.small_red_rock_5#50950",
+        "ambi.small_red_rock_2#50947",
+        "ambi.cactus2#50913",
+        "ambi.dead_bush#50915",
+        "ambi.small_red_rock_1#50945",
+        "ambi.circle#50560",
+        "ambi.cactus#50912",
+        "ambi.pit#50802",
+        "ambi.cactus3#50914",
+        "andiq.tiles092#12695",
+        "ambi.small_red_rock_3#50948",
+        "ambi.redrock_4#50937"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/the_forest.vpk"
+      }
+    }
+  }
+}
