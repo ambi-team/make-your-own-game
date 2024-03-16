@@ -7,50 +7,25 @@ public class SettingsData : ISaveData
 	[JsonIgnore] private string filename = "settings";
 
 	
-	public string _LanguageKey = "en";
-    public string LanguageKey 
-	{
-		get { return _LanguageKey; }
-		set { _LanguageKey = value; Save(); }
-	}
-
-    /// <summary>
-    /// От 60 до 180 
-    /// </summary>
-    public float _FOV = Preferences.FieldOfView;
-	public float FOV
-	{
-		get { return _FOV; }
-		set { _FOV = value; Save(); }
-	}
-
+	public string LanguageKey = "en";
+	
+	/// <summary>
+	/// От 60 до 180 
+	/// </summary>
+	public float FOV = Preferences.FieldOfView;
+	
 	/// <summary>
 	/// От 1 до 20
 	/// </summary>
-	public float _MouseSensitivity = Preferences.Sensitivity;
-	public float MouseSensitivity
-	{
-		get { return MouseSensitivity; }
-		set { MouseSensitivity = value; Save(); }
-	}
-
+	public float MouseSensitivity = Preferences.Sensitivity;
+	
 	/// <summary>
 	/// От 0 до 100
 	/// </summary>
-	public float _Volume = 50f;
-	public float Volume
-	{
-		get { return _Volume; }
-		set { _Volume = value; Save(); }
-	}
+	public float Volume = 50f;
 
-	public bool _EnableShadows = true;
-	public bool EnableShadows
-	{
-		get { return _EnableShadows; }
-		set { _EnableShadows = value; Save(); }
-	}
-
+	public bool EnableShadows = true;
+	
 	[JsonIgnore] public Player ply;
 	#endregion
 
@@ -93,6 +68,7 @@ public class SettingsData : ISaveData
 		var settings = (SettingsData) SaveData.Load<SettingsData>($"{filename}.json");
 		
 		LanguageKey = settings.LanguageKey;
+		Log.Info(LanguageKey);
 		
 		FOV = settings.FOV;
 		MouseSensitivity = settings.MouseSensitivity;

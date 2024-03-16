@@ -307,7 +307,7 @@
           "__guid": "fda7235b-4d00-4ee0-b127-989b3a967534",
           "Ply": {
             "_type": "component",
-            "component_id": "2b3fb4d0-8d65-443e-be05-2c564c8a0202",
+            "component_id": "9e269059-d78d-408a-aee0-685fde673b70",
             "go": "67766837-4b50-4f0f-bf5e-2df457f434eb",
             "component_type": "Player"
           },
@@ -430,16 +430,16 @@
       ]
     },
     {
-      "__guid": "d20748ee-5c8d-45be-8b4b-e60013a390b3",
-      "Name": "Object",
-      "Position": "-3541.162,-1067.179,48.28011",
+      "__guid": "b82a6b78-2476-418e-8614-0b5f061f6bea",
+      "Name": "PlayerWithSound",
+      "Position": "-3618.435,-1175.15,49.75446",
       "Enabled": true,
       "NetworkMode": 2,
       "Children": [
         {
           "__guid": "67766837-4b50-4f0f-bf5e-2df457f434eb",
           "Name": "player",
-          "Position": "5.830811,6.74707,-44.93095",
+          "Position": "83.10376,114.7184,-46.4053",
           "Rotation": "0,0,-0.7071067,0.7071068",
           "Tags": "trigger,player",
           "Enabled": true,
@@ -449,7 +449,7 @@
         {
           "__guid": "a7015d1a-f002-4b02-b070-e71265f1b585",
           "Name": "Monologue System",
-          "Position": "-1.583008,-3.3396,9.855286",
+          "Position": "80.52954,90.29004,20.58778",
           "Enabled": true,
           "NetworkMode": 2,
           "Components": [
@@ -464,29 +464,6 @@
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "__guid": "891f8a23-0263-444b-9b22-b6b0290e163c",
-      "Name": "MainMenu",
-      "Position": "-3426.37,-957.1321,86.46001",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ScreenPanel",
-          "__guid": "163824f0-5942-40a3-a3aa-6d1b539877f8",
-          "AutoScreenScale": true,
-          "Opacity": 1,
-          "Scale": 1,
-          "ZIndex": 100
-        },
-        {
-          "__type": "MainMenuUI",
-          "__guid": "772f0dcd-68ad-4421-8477-9ecdfa6b75e2",
-          "canHide": true,
-          "hasPseusoMainMenuScene": false
         }
       ]
     }
@@ -514,7 +491,7 @@
   },
   "Title": "start",
   "Description": "",
-  "LastSaved": "2024-03-16T18:52:03.640766\u002B05:00",
+  "LastSaved": "2024-03-16T20:57:59.4970163\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
