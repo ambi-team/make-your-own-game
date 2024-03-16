@@ -1,8 +1,9 @@
 ﻿using System;
 
-public sealed class TriggerObject : Component, Component.ITriggerListener
+public sealed class TriggerListObjects : Component, Component.ITriggerListener
 {
 	#region Props/Vars
+	[Property] public List<GameObject> objs;
 	[Property] public Game Game { get; set; }
 
 	[Property] public Action<Player> OnTriggerEntered { get; set; }
