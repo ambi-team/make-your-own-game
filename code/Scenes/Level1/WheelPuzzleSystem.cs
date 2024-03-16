@@ -46,7 +46,7 @@ public sealed class WheelPuzzleSystem : Component
 	}
 	#endregion
 
-		#region Components
+	#region Components
 	protected override void OnStart()
 	{
 		if (wheelBig is null) { Log.Error($"[WheelPuzzleSystem] Require Wheel Big!"); return; }
