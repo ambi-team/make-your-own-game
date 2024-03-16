@@ -7,10 +7,11 @@ public class MonologSystem: Component
     // ! Обычные C# ивенты блять не работают между компонентами, и не ясно почему.
     // public event EventHandler<MonologResource> OnMonologAdded;
     // public event EventHandler<MonologResource> OnMonologStarted;
-    // public event EventHandler OnMonologEnded; 
-    
-    
-    [Property] private MonologUI _monologUI { get; set; }
+    public event Action OnMonologEnded;
+	public event Action<MonologResource> OnReplicaEnded;
+
+
+	[Property] private MonologUI _monologUI { get; set; }
     
     private Queue<MonologResource> _queue = new ();
 
@@ -100,13 +101,18 @@ public class MonologSystem: Component
             {
                 _monologUI.Hide();
                 _isPlaying = false;
-                
-                return;
+
+                OnMonologEnded?.Invoke();
+
+
+				return;
             }
             
             _monologUI.Hide();
-            
-            var monolog = _queue.Dequeue();
+
+            OnReplicaEnded?.Invoke(_queue.Peek());
+
+			var monolog = _queue.Dequeue();
             PlayMonolog(monolog);
         }
         else if (_currentSoundHandle == null && QueueLength > 0)

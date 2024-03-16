@@ -105,24 +105,26 @@
 @code
 {
 	private LocalizedStrings _backButtonName = LocalizedStrings.FromTuple(("ru", "Назад"), ("en", "Back"));
-	
+
 	private LocalizedStrings _enableShadowName = LocalizedStrings.FromTuple(("ru", "Включить Тени"), ("en", "Enable Shadows"));
 	private LocalizedStrings _disableShadowName = LocalizedStrings.FromTuple(("ru", "Выключить Тени"), ("en", "Disable Shadows"));
-	
+
 	private LocalizedStrings _lockedName = LocalizedStrings.FromTuple(("ru", "Заблокировано"), ("en", "Locked"));
 	private LocalizedStrings _unlockedName = LocalizedStrings.FromTuple(("ru", "Разблокировано"), ("en", "Unlocked"));
-	
+
 	private LocalizedStrings _fovName = LocalizedStrings.FromTuple(("ru", "Поле Зрения"), ("en", "FOV"));
 	private LocalizedStrings _mouseSensitivityName = LocalizedStrings.FromTuple(("ru", "Чувствительность Мыши"), ("en", "Mouse Sensitivity"));
 	private LocalizedStrings _volumeName = LocalizedStrings.FromTuple(("ru", "Громкость"), ("en", "Volume"));
-	
+
 	private LocalizedStrings _playButtonName = LocalizedStrings.FromTuple(("ru", "Играть"), ("en", "Play"));
 	private LocalizedStrings _achievementsButtonName = LocalizedStrings.FromTuple(("ru", "Достижения"), ("en", "Achievements"));
 	private LocalizedStrings _settingsButtonName = LocalizedStrings.FromTuple(("ru", "Настройки"), ("en", "Settings"));
 	private LocalizedStrings _titlesButtonName = LocalizedStrings.FromTuple(("ru", "Титры"), ("en", "Titles"));
 	private LocalizedStrings _exitButtonName = LocalizedStrings.FromTuple(("ru", "Выйти"), ("en", "Exit"));
 
-	
+	[Property] public bool canHide = true;
+	[Property] public bool hasPseusoMainMenuScene = false;
+
 	private bool _playWindowEnable = true;
 	private bool _menuWindowEnable = true;
 	private bool _achievementsWindowEnable = false;
@@ -143,19 +145,19 @@
 		get => SettingsSingleton.Data.MouseSensitivity;
 		set { SettingsSingleton.Data.MouseSensitivity = value; SettingsSingleton.Data.Save(); }
 	}
-	
+
 	public float VolumeValue
 	{
 		get => SettingsSingleton.Data.Volume;
 		set { SettingsSingleton.Data.Volume = value; SettingsSingleton.Data.Save(); }
 	}
-	
+
 	public string LanguageKey
 	{
 		get => SettingsSingleton.Data.LanguageKey;
 		set { SettingsSingleton.Data.LanguageKey = value; SettingsSingleton.Data.Save(); }
 	}
-	
+
 	public bool EnableShadowValue
 	{
 		get => SettingsSingleton.Data.EnableShadows;
@@ -180,30 +182,32 @@
 
 		OnPlayClicked?.Invoke();
 
+		if (hasPseusoMainMenuScene) Scene.LoadFromFile("scenes/level1.scene");
+
 		Log.Info("On Play Click");
 	}
-	
+
 	public void OnSettingsClick()
 	{
 		CloseWindows(false);
 		_settingsWindowEnable = true;
-		
+
 		Log.Info("On Settings Click");
 	}
-	
+
 	public void OnTitlesClick()
 	{
 		CloseWindows(false);
 		_titlesWindowEnable = true;
-		
+
 		Log.Info("On Titles Click");
 	}
-	
+
 	public void OnExitClick()
 	{
 		CloseWindows(false);
 		_exitWindowEnable = true;
-		
+
 		Log.Info("On Exit Click");
 	}
 
@@ -222,8 +226,8 @@
 		_titlesWindowEnable = false;
 		_exitWindowEnable = false;
 	}
-	
-	
+
+
 	public void Show()
 	{
 		_mainMenuShow = true;
@@ -233,14 +237,14 @@
 	{
 		_mainMenuShow = false;
 	}
-	
-	
+
+
 	protected override void OnUpdate()
 	{
 		if (Input.EscapePressed)
 		{
 			achi_press_esc.AddCount(1);
-			
+
 			if (!_mainMenuShow)
 			{
 				Show();
@@ -253,6 +257,8 @@
 				}
 				else
 				{
+					if (!canHide) return;
+
 					Hide();
 				}
 			}
@@ -266,6 +272,8 @@
 		var data = new SettingsData();
 		data.Load();
 		SettingsSingleton.Data = data;
+
+		if (hasPseusoMainMenuScene) Show();
 	}
 	
 	

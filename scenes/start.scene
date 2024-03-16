@@ -38,7 +38,7 @@
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "1.96,1.96,1.96,1",
-          "Shadows": true,
+          "Shadows": false,
           "SkyColor": "0.2532,0.32006,0.35349,1"
         }
       ]
@@ -71,13 +71,392 @@
       ]
     },
     {
+      "__guid": "d869a569-1bf8-49b3-ac9e-70a89b6b7398",
+      "Name": "\u2705 LEVEL \u2705",
+      "Position": "235.5777,345.3558,54.46339",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
       "__guid": "67766837-4b50-4f0f-bf5e-2df457f434eb",
       "Name": "player",
-      "Position": "-3486.568,-1060.433,64",
+      "Position": "-3535.331,-1060.432,3.349162",
+      "Rotation": "0,0,-0.7071067,0.7071068",
       "Tags": "trigger,player",
       "Enabled": true,
       "NetworkMode": 2,
       "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "__guid": "a681763d-61ba-48b5-b96c-60f1d700087b",
+      "Name": "Trigger Mon 1",
+      "Position": "-3531.139,-1064.406,71.0143",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologTrigger",
+          "__guid": "ff27a0f0-0699-46cb-86b0-b2eae87e5990",
+          "Monologs": [
+            "monologues/beginning/replica1.monolog",
+            "monologues/beginning/replica2.monolog",
+            "monologues/beginning/beginning3.monolog",
+            "monologues/beginning/beggining4.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "49c98bc0-4f26-4fde-926c-7df47b171358",
+            "go": "a7015d1a-f002-4b02-b070-e71265f1b585",
+            "component_type": "MonologSystem"
+          },
+          "OnTriggerEntered": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Entered",
+              "id": "1bf98dbe-77d8-46fa-8304-b1dbb8c2daf4"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              }
+            ],
+            "Links": []
+          }
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "22995cbb-23f3-45cc-8371-1c64f698aa23",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "46a0af2c-179e-4696-80be-9059b025989a",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Destroy"
+                },
+                "UserData": {
+                  "Position": "208,64"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 3,
+                "DstName": "_target"
+              }
+            ]
+          },
+          "Scale": "71.89999,128.8,70.4",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "a7015d1a-f002-4b02-b070-e71265f1b585",
+      "Name": "Monologue System",
+      "Position": "-3463.35,-1044.733,116.3866",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologSystem",
+          "__guid": "49c98bc0-4f26-4fde-926c-7df47b171358",
+          "_monologUI": {
+            "_type": "component",
+            "component_id": "7e5f1a3b-4a87-48f4-a1e9-4ada611dac9a",
+            "go": "f108b5d6-d954-489a-a9ff-3f93f29cd898",
+            "component_type": "MonologUI"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "f108b5d6-d954-489a-a9ff-3f93f29cd898",
+      "Name": "UI: Monologue",
+      "Position": "-3463.35,-1044.733,116.3866",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologUI",
+          "__guid": "7e5f1a3b-4a87-48f4-a1e9-4ada611dac9a",
+          "_currentOpacity": 0,
+          "_currentText": "NoText!",
+          "AnimationDurationSeconds": 0.1,
+          "HideOpacity": 0,
+          "ShowOpacity": 1,
+          "Side": "Up"
+        },
+        {
+          "__type": "ScreenPanel",
+          "__guid": "0fde41c8-4f9b-45ee-98bf-ca95ed0dd454",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        }
+      ]
+    },
+    {
+      "__guid": "27426be9-2308-4b3d-a592-d412130f5adc",
+      "Name": "System",
+      "Position": "-3463.35,-1044.733,116.3866",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "StartSpawnDoors",
+          "__guid": "0c77304f-b4aa-44ee-989e-c62b8daa06a5",
+          "doorBlue": {
+            "_type": "gameobject",
+            "go": "ce3866c9-fd4b-43b8-8604-632511986312"
+          },
+          "doorRed": {
+            "_type": "gameobject",
+            "go": "53ada858-31a0-4451-92d2-1dc7a0b002d4"
+          },
+          "monologueTrigger": "monologues/beginning/beggining8.monolog",
+          "spawnSound": "sound/notification7.sound",
+          "sys": {
+            "_type": "component",
+            "component_id": "49c98bc0-4f26-4fde-926c-7df47b171358",
+            "go": "a7015d1a-f002-4b02-b070-e71265f1b585",
+            "component_type": "MonologSystem"
+          },
+          "triggerToLevel1": {
+            "_type": "gameobject",
+            "go": "e853aeea-a429-4b0a-8f9f-c84522d12b3d"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "ce3866c9-fd4b-43b8-8604-632511986312",
+      "Name": "Door Blue",
+      "Position": "-3479.673,-1448.844,1.672913",
+      "Rotation": "0,0,-1,0.0000001947072",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "c3e669fb-7ad4-4868-bf57-ca7183a51db8",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/door_blue.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "fc3a9893-fb8e-4027-b951-9cb7edc1804f",
+          "IsTrigger": true,
+          "Model": "models/door_blue.vmdl",
+          "Static": true
+        },
+        {
+          "__type": "TriggerTeleport",
+          "__guid": "115d4751-0c50-489e-804b-b031569a1df6",
+          "Game": {
+            "_type": "gameobject",
+            "go": "15b01c66-d9ec-435c-980c-c7f97b61ef7e"
+          },
+          "PosToSpawn": "1410,3564,1994"
+        }
+      ]
+    },
+    {
+      "__guid": "53ada858-31a0-4451-92d2-1dc7a0b002d4",
+      "Name": "Door Red",
+      "Position": "-3575.715,-1448.844,1.672913",
+      "Rotation": "0,0,-1,0.0000001947072",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "26cf13b0-ecbc-4c54-94c7-c39e877179f9",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/door_blue.vmdl",
+          "RenderType": "On",
+          "Tint": "0.82326,0.17231,0.17231,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "25c39d42-8dad-43e9-a2a9-74558a726704",
+          "Center": "0,0,43.89999",
+          "IsTrigger": true,
+          "Scale": "50,19,139.0999",
+          "Static": true
+        },
+        {
+          "__type": "TriggerTeleport",
+          "__guid": "f937464c-c2ac-4c92-bc62-c858428dae7b",
+          "Game": {
+            "_type": "gameobject",
+            "go": "15b01c66-d9ec-435c-980c-c7f97b61ef7e"
+          },
+          "PosToSpawn": "1410,3564,1994"
+        }
+      ]
+    },
+    {
+      "__guid": "15b01c66-d9ec-435c-980c-c7f97b61ef7e",
+      "Name": "Game",
+      "Position": "183.8709,140.9425,99.10318",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Game",
+          "__guid": "fda7235b-4d00-4ee0-b127-989b3a967534",
+          "Ply": {
+            "_type": "component",
+            "component_id": "19febf1c-f32a-4022-9aee-13cd39f896b6",
+            "go": "67766837-4b50-4f0f-bf5e-2df457f434eb",
+            "component_type": "Player"
+          },
+          "Settings": {},
+          "Stats": {}
+        }
+      ]
+    },
+    {
+      "__guid": "8f07e6e6-b101-4e8f-b5d2-b88e9c133286",
+      "Name": "Trigger Mon 2",
+      "Position": "1394.694,3566.901,2032.979",
+      "Scale": "2.382218,2.677958,3.239179",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "044015c0-7a76-485b-aa9e-abd09f314fa5",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,12",
+          "Static": true
+        },
+        {
+          "__type": "MonologTrigger",
+          "__guid": "e22fa374-6a90-46d7-a2d1-2da529d60ab4",
+          "Monologs": [
+            "monologues/beginning/beggining5.monolog",
+            "monologues/beginning/beggining6.monolog",
+            "monologues/beginning/beggining7.monolog",
+            "monologues/beginning/beggining8.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "49c98bc0-4f26-4fde-926c-7df47b171358",
+            "go": "a7015d1a-f002-4b02-b070-e71265f1b585",
+            "component_type": "MonologSystem"
+          },
+          "OnTriggerEntered": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Entered",
+              "id": "cf90d8f4-1a10-4efa-aad3-b8dff0e3e82c",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Destroy"
+                },
+                "UserData": {
+                  "Position": "192,160"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "e853aeea-a429-4b0a-8f9f-c84522d12b3d",
+      "Name": "Trigger To Level1",
+      "Position": "1251.348,3574.754,2030.518",
+      "Scale": "1.000352,1,1.385103",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "20366748-e257-4526-b707-137bb3dbf97f",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "31a8b2a7-9d68-43c6-9314-57f38ae9fddd"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              }
+            ],
+            "Links": []
+          },
+          "Scale": "50,50,50",
+          "Static": true
+        },
+        {
+          "__type": "TriggerLoadScene",
+          "__guid": "6f43cb4f-df20-4951-bcf5-2890934565a4",
+          "scene": "scenes/level1.scene"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -103,8 +482,11 @@
   },
   "Title": "start",
   "Description": "",
-  "LastSaved": "2024-03-15T16:26:18.5549263\u002B05:00",
+  "LastSaved": "2024-03-16T18:11:50.895899\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": []
+  "__references": [
+    "ambi.tradis_red_door",
+    "igrotronika.notification7"
+  ]
 }

@@ -1,0 +1,14 @@
+{
+  "VoiceSound": "sound/monologue/beginning/beginning_1.sound",
+  "SubtitleText": {
+    "Strings": {
+      "en": "Greetings, Author",
+      "ru": "\u041F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E, \u0410\u0432\u0442\u043E\u0440"
+    }
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "ambi.myog_monologue1"
+  ]
+}

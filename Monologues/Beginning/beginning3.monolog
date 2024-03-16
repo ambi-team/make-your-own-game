@@ -1,0 +1,14 @@
+{
+  "VoiceSound": "sound/monologue/beginning/beginning_3.sound",
+  "SubtitleText": {
+    "Strings": {
+      "en": "Every level you make will be changed depending on the items that you pick up",
+      "ru": "\u041B\u044E\u0431\u043E\u0439 \u0441\u043E\u0437\u0434\u0430\u043D\u043D\u044B\u0439 \u0442\u043E\u0431\u043E\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C. \u0411\u0443\u0434\u0435\u0442 \u043C\u0435\u043D\u044F\u0442\u044C\u0441\u044F \u0432 \u0437\u0430\u0432\u0438\u0441\u0438\u043C\u043E\u0441\u0442\u0438 \u043E\u0442 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432 \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0442\u044B \u0441\u043E\u0431\u0435\u0440\u0451\u0448\u044C."
+    }
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "ambi.myog_monologue3"
+  ]
+}
