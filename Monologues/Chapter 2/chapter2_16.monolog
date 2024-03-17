@@ -1,0 +1,14 @@
+{
+  "VoiceSound": "sound/monologue/chapter 2/chapter2_16.sound",
+  "SubtitleText": {
+    "Strings": {
+      "en": "Just kidding! \n",
+      "ru": "\u042F \u043F\u043E\u0448\u0443\u0442\u0438\u043B, \u043D\u0435 \u0432\u043E\u043B\u043D\u0443\u0439\u0441\u044F."
+    }
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "ambi.myog_monologue_lvl2_16"
+  ]
+}

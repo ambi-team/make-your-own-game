@@ -78,7 +78,7 @@
           "__guid": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
           "Ply": {
             "_type": "component",
-            "component_id": "7611270a-f153-401e-86af-3382d2834ea4",
+            "component_id": "9cf171fa-0ceb-444e-88a6-f7d825808df8",
             "go": "d5d572c3-1210-4a3a-b85a-7d2252d5a6be",
             "component_type": "Player"
           },
@@ -88,10 +88,10 @@
         {
           "__type": "ReverseTime",
           "__guid": "08ec93ac-988a-42fc-8dc0-f302d80c8516",
-          "defaultTimeRecoding": 15,
+          "defaultTimeRecoding": 20,
           "ply": {
             "_type": "component",
-            "component_id": "7611270a-f153-401e-86af-3382d2834ea4",
+            "component_id": "9cf171fa-0ceb-444e-88a6-f7d825808df8",
             "go": "d5d572c3-1210-4a3a-b85a-7d2252d5a6be",
             "component_type": "Player"
           },
@@ -108,36 +108,81 @@
           }
         },
         {
-          "__type": "CollectablesSystem",
-          "__guid": "0a77f3a6-ad64-474b-b8e3-1cb7e93981c4",
-          "collectables": [
-            {
-              "_type": "component",
-              "component_id": "fb1a8732-eb68-4a01-8437-4fdf8be7e522",
-              "go": "84251d48-4763-4fd8-975d-9d371e6a3b28",
-              "component_type": "Collectables"
-            },
-            {
-              "_type": "component",
-              "component_id": "25066185-d6f8-446e-8837-07ec581b140c",
-              "go": "cfbbfedd-3bb7-442e-be53-ee9b40be5c26",
-              "component_type": "Collectables"
-            },
-            {
-              "_type": "component",
-              "component_id": "10df5a83-df27-4f4e-b100-70648594bbd3",
-              "go": "0e54c0c6-c2b9-49ac-8cf4-18b6a218d326",
-              "component_type": "Collectables"
-            },
-            {
-              "_type": "component",
-              "component_id": "e3d9d530-c265-40b0-a781-3b4bb0ff4df5",
-              "go": "c53233df-316d-405e-8cec-6c8bc07c3c96",
-              "component_type": "Collectables"
-            }
-          ],
-          "collectSound": "sound/coin3.sound",
-          "isFinished": false
+          "__type": "Sigil1Complete",
+          "__guid": "f95a388c-a69d-4f0d-848e-1075e40e5f5c",
+          "door1": {
+            "_type": "gameobject",
+            "go": "97973493-802a-41a0-90f9-49b6fcdc7711"
+          },
+          "door2": {
+            "_type": "gameobject",
+            "go": "496ed8c3-ac4b-45a1-909a-956e1a4a03d7"
+          },
+          "replica1": "monologues/chapter 1/chapter1_13.monolog",
+          "replica2": "monologues/chapter 1/chapter1_14.monolog",
+          "replica3": "monologues/chapter 1/chapter1_15.monolog",
+          "sigil1": false,
+          "sigil2": false,
+          "sys": {
+            "_type": "component",
+            "component_id": "441601c9-87b6-49ec-8637-ffdbae127f44",
+            "go": "b7303a6b-4fea-4080-9b4c-f67bcd75d286",
+            "component_type": "MonologSystem"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "8cfabfdb-989c-48fb-b1d3-cf60bb6b4929",
+      "Name": "UI: Monologue",
+      "Position": "-1108.829,-870.8134,219.609",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "a72785f3-430e-4ee8-9dbb-5126f65175af",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MonologUI",
+          "__guid": "d94d6e87-cc2e-49dc-bf08-6b44d91839fa",
+          "_currentOpacity": 0,
+          "_currentText": "NoText!",
+          "AnimationDurationSeconds": 0.1,
+          "HideOpacity": 0,
+          "ShowOpacity": 1,
+          "Side": "Up"
+        }
+      ]
+    },
+    {
+      "__guid": "3c9d460f-acce-4c96-a9b6-95073c9af1e6",
+      "Name": "UI: Time Reverse",
+      "Position": "-2043.884,199.3956,-725.5105",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "177b8552-b8e8-4324-9ee2-5fa1e29006e7",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "ReverseTimeHud",
+          "__guid": "cffc752a-56d4-444b-b78f-f04722289e5f",
+          "rTime": {
+            "_type": "component",
+            "component_id": "08ec93ac-988a-42fc-8dc0-f302d80c8516",
+            "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
+            "component_type": "ReverseTime"
+          }
         }
       ]
     },
@@ -165,6 +210,25 @@
       ]
     },
     {
+      "__guid": "b7303a6b-4fea-4080-9b4c-f67bcd75d286",
+      "Name": "Monologue System",
+      "Position": "-1108.829,-933.1975,219.609",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologSystem",
+          "__guid": "441601c9-87b6-49ec-8637-ffdbae127f44",
+          "_monologUI": {
+            "_type": "component",
+            "component_id": "d94d6e87-cc2e-49dc-bf08-6b44d91839fa",
+            "go": "8cfabfdb-989c-48fb-b1d3-cf60bb6b4929",
+            "component_type": "MonologUI"
+          }
+        }
+      ]
+    },
+    {
       "__guid": "7bffd3c7-0c06-49a2-b846-38aa70d9d729",
       "Name": "\u2705 LEVEL \u2705",
       "Position": "235.5777,345.3558,54.46339",
@@ -178,341 +242,6 @@
       "Enabled": true,
       "NetworkMode": 2,
       "Children": [
-        {
-          "__guid": "87203683-539e-4fd1-9c64-a2d003b54107",
-          "Name": "TriggerObj",
-          "Position": "-2065.885,458.29,27.69293",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "__guid": "8cd24123-1dbc-4360-bc37-724651835618",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "0.13333,1,0,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "__guid": "a2b93bf0-0514-4e70-8730-c7f95f9b92e1",
-              "Center": "0,0,0",
-              "IsTrigger": true,
-              "Scale": "50,50,50",
-              "Static": false
-            },
-            {
-              "__type": "TriggerObject",
-              "__guid": "9e7e53c3-c025-44b4-9ad4-821a08d1bc4a",
-              "OnTriggerEntered": {
-                "Version": 5,
-                "UserData": {
-                  "Title": "On Trigger Entered",
-                  "id": "6162eb17-266c-4a56-8311-149c5380ca3f"
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input"
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.Game/Sandbox.ModelRenderer"
-                    },
-                    "UserData": {
-                      "Position": "-48,144"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "property.set",
-                    "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
-                    },
-                    "UserData": {
-                      "Position": "256,144"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 1,
-                    "DstName": "_this"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "Value": "1,0,0,1",
-                    "DstId": 2,
-                    "DstName": "_value"
-                  }
-                ]
-              },
-              "OnTriggerExited": {
-                "Version": 5,
-                "UserData": {
-                  "Title": "On Trigger Exited",
-                  "id": "c95b0a2c-7fb7-4032-9bec-52160aa29015"
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input"
-                  },
-                  {
-                    "Id": 3,
-                    "Type": "property.set",
-                    "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
-                    },
-                    "UserData": {
-                      "Position": "272,192"
-                    }
-                  },
-                  {
-                    "Id": 4,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.Game/Sandbox.ModelRenderer"
-                    },
-                    "UserData": {
-                      "Position": "-64,192"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 3,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 4,
-                    "SrcName": "_result",
-                    "DstId": 3,
-                    "DstName": "_target"
-                  },
-                  {
-                    "Value": "0.13333,1,0,1",
-                    "DstId": 3,
-                    "DstName": "_value"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 4,
-                    "DstName": "_this"
-                  }
-                ]
-              }
-            }
-          ]
-        },
-        {
-          "__guid": "0e826a31-2dbf-42e6-8494-c557c0137211",
-          "Name": "TriggerTeleport",
-          "Position": "-2118.075,545.4453,29.78003",
-          "Scale": "0.1523108,0.5770563,1.183053",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "__guid": "0f829171-1596-461e-a6c7-6da7f14e7c3a",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "0.78476,0.24679,0.85581,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "__guid": "0d74f127-9831-44df-837b-60fc2ca517bb",
-              "Center": "0,0,0",
-              "IsTrigger": true,
-              "Scale": "50,50,50",
-              "Static": false
-            },
-            {
-              "__type": "TriggerTeleport",
-              "__guid": "fc44a776-5caa-4d27-9fde-a05de761aaab",
-              "PosToSpawn": "573,80,80"
-            }
-          ]
-        },
-        {
-          "__guid": "96733614-179e-49c6-aafd-1d6e2010ca51",
-          "Name": "TriggerCollision",
-          "Position": "-2078.014,648.1294,27.69293",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "ModelRenderer",
-              "__guid": "fc882e25-012c-440d-b35f-8665a4476f0a",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "0.13333,1,0,1"
-            },
-            {
-              "__type": "BoxCollider",
-              "__guid": "f04bf397-89fc-4456-b848-19a117362342",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false
-            },
-            {
-              "__type": "TriggerCollision",
-              "__guid": "5e41e431-8be2-4b28-84d3-a1bcf03d0717",
-              "OnCollisionStarted": {
-                "Version": 5,
-                "UserData": {
-                  "Title": "On Collision Started",
-                  "id": "53474bfd-4ad6-474d-a704-b77275356384",
-                  "ReferencedComponentTypes": [
-                    "Sandbox.Game/Sandbox.ModelRenderer"
-                  ]
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input"
-                  },
-                  {
-                    "Id": 1,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.Game/Sandbox.ModelRenderer"
-                    },
-                    "UserData": {
-                      "Position": "-80,96"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "property.set",
-                    "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
-                    },
-                    "UserData": {
-                      "Position": "224,112"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 1,
-                    "DstName": "_this"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 1,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "Value": "1,0,0,1",
-                    "DstId": 2,
-                    "DstName": "_value"
-                  }
-                ]
-              },
-              "OnCollisionStoped": {
-                "Version": 5,
-                "UserData": {
-                  "Title": "On Collision Stoped",
-                  "id": "71255137-ec15-4d15-80ce-f9d621c731ad",
-                  "ReferencedComponentTypes": [
-                    "Sandbox.Game/Sandbox.ModelRenderer"
-                  ]
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input"
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.Game/Sandbox.ModelRenderer"
-                    },
-                    "UserData": {
-                      "Position": "-32,128"
-                    }
-                  },
-                  {
-                    "Id": 3,
-                    "Type": "property.set",
-                    "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                      "_name": "Tint"
-                    },
-                    "UserData": {
-                      "Position": "256,144"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 2,
-                    "DstName": "_this"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 3,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 2,
-                    "SrcName": "_result",
-                    "DstId": 3,
-                    "DstName": "_target"
-                  },
-                  {
-                    "Value": "0.13333,1,0,1",
-                    "DstId": 3,
-                    "DstName": "_value"
-                  }
-                ]
-              }
-            }
-          ]
-        },
         {
           "__guid": "def3a88c-9793-4c9e-b8e4-64e00a0b9af6",
           "Name": "Challenge Reverse Time",
@@ -768,10 +497,10 @@
                             "Id": 5,
                             "Type": "call",
                             "Properties": {
-                              "T": "package.ambi.myog/ReverseTime",
                               "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                              "_isStatic": false,
-                              "_name": "Get"
+                              "_name": "Get",
+                              "T": "package.ambi.myog/ReverseTime",
+                              "_isStatic": false
                             },
                             "UserData": {
                               "Position": "16,160"
@@ -782,8 +511,8 @@
                             "Type": "call",
                             "Properties": {
                               "_type": "package.ambi.myog/ReverseTime",
-                              "_isStatic": false,
-                              "_name": "StartRecord"
+                              "_name": "StartRecord",
+                              "_isStatic": false
                             },
                             "UserData": {
                               "Position": "352,176"
@@ -1531,6 +1260,250 @@
               ]
             },
             {
+              "__guid": "55403b7a-3b0d-46b3-b886-c66462a5c473",
+              "Name": "PlaceTeleport",
+              "Position": "757.872,-319.5105,-434.6483",
+              "Scale": "1.348819,1.579894,0.3952307",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "f889f018-5c96-495b-8905-ddf82cd4f5b2",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.47907,0.45679,0.45679,1"
+                },
+                {
+                  "__type": "BoxCollider",
+                  "__guid": "d18e377e-9637-4d19-b2ca-7efa7e0af351",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                }
+              ],
+              "Children": [
+                {
+                  "__guid": "483861a6-c3ac-4516-92ff-478c28378ab4",
+                  "Name": "Burst",
+                  "Position": "1.832246,-0.7486414,77.78181",
+                  "Rotation": "0,0,0.7071068,0.7071069",
+                  "Scale": "0.0903952,0.0225737,4.350198",
+                  "Tags": "particles",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ParticleEffect",
+                      "__guid": "6a4a5dce-3948-43ec-aab4-50e574af3233",
+                      "Alpha": {
+                        "Type": "Curve",
+                        "CurveA": [
+                          {
+                            "y": 1
+                          },
+                          {
+                            "x": 1
+                          }
+                        ],
+                        "Constants": "1,0,0,0"
+                      },
+                      "ApplyColor": true,
+                      "ApplyRotation": false,
+                      "ApplyShape": true,
+                      "Bounce": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Brightness": {
+                        "Constants": "4,0,0,0"
+                      },
+                      "Bumpiness": {},
+                      "Collision": false,
+                      "CollisionRadius": 1,
+                      "Damping": {},
+                      "DieOnCollisionChance": {},
+                      "Force": false,
+                      "ForceDirection": "0,0,-800",
+                      "ForceScale": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Friction": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "Gradient": {
+                        "Evaluation": "Particle",
+                        "GradientA": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "GradientB": {
+                          "color": [
+                            {
+                              "t": 0.5,
+                              "c": "1,1,1,1"
+                            }
+                          ],
+                          "alpha": []
+                        },
+                        "ConstantA": "1,1,1,1",
+                        "ConstantB": "1,1,1,1"
+                      },
+                      "Lifetime": {
+                        "Type": "Range",
+                        "Evaluation": "Particle",
+                        "Constants": "1,3,0,0"
+                      },
+                      "MaxParticles": 55,
+                      "PerParticleTimeScale": {
+                        "Constants": "1,0.4,0,0"
+                      },
+                      "PreWarm": 0,
+                      "PushStrength": {},
+                      "Roll": {
+                        "Type": "Range",
+                        "Evaluation": "Particle",
+                        "Constants": "0,360,0,0"
+                      },
+                      "Scale": {
+                        "Type": "Curve",
+                        "CurveA": [
+                          {
+                            "in": -9.333329,
+                            "out": 9.333329
+                          },
+                          {
+                            "x": 0.03325123,
+                            "y": 1,
+                            "in": -0.056075174,
+                            "out": 0.056075174
+                          },
+                          {
+                            "x": 1,
+                            "in": 2.9152544,
+                            "out": -2.9152544
+                          }
+                        ],
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceId": {},
+                      "SequenceSpeed": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SequenceTime": {
+                        "Constants": "1,0,0,0"
+                      },
+                      "SheetSequence": false,
+                      "Space": "World",
+                      "StartVelocity": {
+                        "Type": "Range",
+                        "Evaluation": "Particle",
+                        "Constants": "10,70,0,0"
+                      },
+                      "Stretch": {},
+                      "TimeScale": 1,
+                      "Tint": "0.00443,0.95349,0.89022,1"
+                    },
+                    {
+                      "__type": "ParticleSpriteRenderer",
+                      "__guid": "da5b1949-cbfe-4cef-8930-fd0ea7540fd8",
+                      "Additive": false,
+                      "BlurAmount": 0.5,
+                      "BlurOpacity": 0.91,
+                      "BlurSpacing": 0.73,
+                      "DepthFeather": 0,
+                      "FaceVelocity": false,
+                      "FogStrength": 0,
+                      "LeadingTrail": true,
+                      "MotionBlur": false,
+                      "Opaque": false,
+                      "RotationOffset": 0,
+                      "Scale": 1.32,
+                      "Shadows": false,
+                      "SortMode": "Unsorted",
+                      "Texture": "materials/particles/shapes/circle1.vtex"
+                    },
+                    {
+                      "__type": "ParticleSphereEmitter",
+                      "__guid": "5987711f-190c-4c0c-84e0-2d526da3317b",
+                      "Burst": 0,
+                      "Delay": 0,
+                      "DestroyOnEnd": true,
+                      "Duration": 0.4,
+                      "Loop": true,
+                      "OnEdge": false,
+                      "Radius": 1.09,
+                      "Rate": 310.22,
+                      "Velocity": 102.19
+                    }
+                  ]
+                },
+                {
+                  "__guid": "cad76ea4-1b5f-452d-a65d-66889a25b6aa",
+                  "Name": "Teleport 1",
+                  "Position": "0,0,105.0274",
+                  "Scale": "1,1,3.312144",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "BoxCollider",
+                      "__guid": "82ef60c4-c6a1-4ae5-b159-77d749ff1bbf",
+                      "Center": "0,0,0",
+                      "IsTrigger": true,
+                      "Scale": "50,50,50",
+                      "Static": false
+                    },
+                    {
+                      "__type": "TriggerTeleport",
+                      "__guid": "1600769b-6a83-4ec9-ab77-eb3966e25094",
+                      "Game": {
+                        "_type": "gameobject",
+                        "go": "8afd8364-bb30-4946-97a5-39510f7e1920"
+                      },
+                      "PosToSpawn": "-430,-4077,243"
+                    }
+                  ]
+                },
+                {
+                  "__guid": "77137378-ffee-4306-8a5e-2edd9a45c3c2",
+                  "Name": "Sound",
+                  "Position": "-1.811914,0.5543973,-0.00001930365",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "SoundPointComponent",
+                      "__guid": "b8b3343b-57f3-4dc1-b254-f89a4f9f4570",
+                      "DistanceAttenuation": false,
+                      "DistanceAttenuationOverride": false,
+                      "Force2d": false,
+                      "MaxRepeatTime": 1,
+                      "MinRepeatTime": 1,
+                      "Occlusion": false,
+                      "OcclusionOverride": false,
+                      "OcclusionRadius": 32,
+                      "Pitch": 0.55,
+                      "PlayOnStart": true,
+                      "ReflectionOverride": false,
+                      "Reflections": false,
+                      "Repeat": true,
+                      "SoundEvent": "sound/coin3.sound",
+                      "SoundOverride": true,
+                      "StopOnNew": false,
+                      "Volume": 0.11
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "__guid": "8d3e67de-15cb-4823-8399-f05ee2920c48",
               "Name": "Cube (4)",
               "Position": "467.6356,-17.52637,-385.5241",
@@ -1750,9 +1723,9 @@
                         "Id": 6,
                         "Type": "call",
                         "Properties": {
-                          "T": "Sandbox.Game/Sandbox.BoxCollider",
                           "_type": "Sandbox.Game/Sandbox.IComponentLister",
                           "_name": "Get",
+                          "T": "Sandbox.Game/Sandbox.BoxCollider",
                           "_isStatic": false
                         },
                         "UserData": {
@@ -1774,9 +1747,9 @@
                         "Id": 8,
                         "Type": "call",
                         "Properties": {
-                          "T": "Sandbox.Game/Sandbox.ModelRenderer",
                           "_type": "Sandbox.Game/Sandbox.IComponentLister",
                           "_name": "Get",
+                          "T": "Sandbox.Game/Sandbox.ModelRenderer",
                           "_isStatic": false
                         },
                         "UserData": {
@@ -1959,9 +1932,9 @@
                         "Id": 4,
                         "Type": "call",
                         "Properties": {
-                          "T": "Sandbox.Game/Sandbox.BoxCollider",
                           "_type": "Sandbox.Game/Sandbox.IComponentLister",
                           "_name": "Get",
+                          "T": "Sandbox.Game/Sandbox.BoxCollider",
                           "_isStatic": false
                         },
                         "UserData": {
@@ -1983,9 +1956,9 @@
                         "Id": 6,
                         "Type": "call",
                         "Properties": {
-                          "T": "Sandbox.Game/Sandbox.ModelRenderer",
                           "_type": "Sandbox.Game/Sandbox.IComponentLister",
                           "_name": "Get",
+                          "T": "Sandbox.Game/Sandbox.ModelRenderer",
                           "_isStatic": false
                         },
                         "UserData": {
@@ -2236,9 +2209,9 @@
                         "Id": 6,
                         "Type": "call",
                         "Properties": {
-                          "T": "Sandbox.Game/Sandbox.BoxCollider",
                           "_type": "Sandbox.Game/Sandbox.IComponentLister",
                           "_name": "Get",
+                          "T": "Sandbox.Game/Sandbox.BoxCollider",
                           "_isStatic": false
                         },
                         "UserData": {
@@ -2260,9 +2233,9 @@
                         "Id": 8,
                         "Type": "call",
                         "Properties": {
-                          "T": "Sandbox.Game/Sandbox.ModelRenderer",
                           "_type": "Sandbox.Game/Sandbox.IComponentLister",
                           "_name": "Get",
+                          "T": "Sandbox.Game/Sandbox.ModelRenderer",
                           "_isStatic": false
                         },
                         "UserData": {
@@ -2445,9 +2418,9 @@
                         "Id": 4,
                         "Type": "call",
                         "Properties": {
-                          "T": "Sandbox.Game/Sandbox.BoxCollider",
                           "_type": "Sandbox.Game/Sandbox.IComponentLister",
                           "_name": "Get",
+                          "T": "Sandbox.Game/Sandbox.BoxCollider",
                           "_isStatic": false
                         },
                         "UserData": {
@@ -2469,9 +2442,9 @@
                         "Id": 6,
                         "Type": "call",
                         "Properties": {
-                          "T": "Sandbox.Game/Sandbox.ModelRenderer",
                           "_type": "Sandbox.Game/Sandbox.IComponentLister",
                           "_name": "Get",
+                          "T": "Sandbox.Game/Sandbox.ModelRenderer",
                           "_isStatic": false
                         },
                         "UserData": {
@@ -2611,7 +2584,7 @@
             },
             {
               "__guid": "4af6302c-92a4-4857-9e5b-31f47f53a7a1",
-              "Name": "Cube",
+              "Name": "Sigil 1",
               "Position": "848.7909,-643.3713,-408.2578",
               "Rotation": "0,0,0.9238795,0.3826834",
               "Scale": "1.462612,1.462612,1.462612",
@@ -2658,7 +2631,8 @@
                       "Title": "On Trigger Entered",
                       "id": "b3f42d1b-c356-472f-a951-e0abfca04e82",
                       "ReferencedComponentTypes": [
-                        "package.ambi.myog/TriggerListObjects"
+                        "package.ambi.myog/TriggerListObjects",
+                        "package.ambi.myog/TriggerObject"
                       ]
                     },
                     "Variables": [],
@@ -2723,6 +2697,74 @@
                         "UserData": {
                           "Position": "720,128"
                         }
+                      },
+                      {
+                        "Id": 11,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "package.ambi.myog/TriggerObject"
+                        },
+                        "UserData": {
+                          "Position": "-224,368"
+                        }
+                      },
+                      {
+                        "Id": 12,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_type": "package.ambi.myog/TriggerObject",
+                          "_name": "Game"
+                        },
+                        "UserData": {
+                          "Position": "16,352"
+                        }
+                      },
+                      {
+                        "Id": 13,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_type": "Sandbox.Game/Sandbox.Component",
+                          "_name": "GameObject"
+                        },
+                        "UserData": {
+                          "Position": "240,400"
+                        }
+                      },
+                      {
+                        "Id": 14,
+                        "Type": "call",
+                        "Properties": {
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                          "_name": "Get",
+                          "T": "package.ambi.myog/Sigil1Complete",
+                          "_isStatic": false
+                        },
+                        "UserData": {
+                          "Position": "560,352"
+                        }
+                      },
+                      {
+                        "Id": 16,
+                        "Type": "call",
+                        "Properties": {
+                          "_type": "package.ambi.myog/Sigil1Complete",
+                          "_name": "SpawnDoors",
+                          "_isStatic": false
+                        },
+                        "UserData": {
+                          "Position": "640,544"
+                        }
+                      },
+                      {
+                        "Id": 17,
+                        "Type": "property.set",
+                        "Properties": {
+                          "_type": "package.ambi.myog/Sigil1Complete",
+                          "_name": "sigil1"
+                        },
+                        "UserData": {
+                          "Position": "336,528"
+                        }
                       }
                     ],
                     "Links": [
@@ -2773,6 +2815,53 @@
                         "SrcName": "_target",
                         "DstId": 8,
                         "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 11,
+                        "SrcName": "_result",
+                        "DstId": 12,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 12,
+                        "SrcName": "_result",
+                        "DstId": 13,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 13,
+                        "SrcName": "_result",
+                        "DstId": 14,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 17,
+                        "SrcName": "_signal",
+                        "DstId": 16,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 14,
+                        "SrcName": "_result",
+                        "DstId": 16,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 17,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 14,
+                        "SrcName": "_result",
+                        "DstId": 17,
+                        "DstName": "_target"
+                      },
+                      {
+                        "Value": true,
+                        "DstId": 17,
+                        "DstName": "_value"
                       }
                     ]
                   }
@@ -2828,33 +2917,1366 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "__guid": "3c9d460f-acce-4c96-a9b6-95073c9af1e6",
-      "Name": "UI: Time Reverse",
-      "Position": "-2043.884,199.3956,-725.5105",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ScreenPanel",
-          "__guid": "177b8552-b8e8-4324-9ee2-5fa1e29006e7",
-          "AutoScreenScale": true,
-          "Opacity": 1,
-          "Scale": 1,
-          "ZIndex": 100
         },
         {
-          "__type": "ReverseTimeHud",
-          "__guid": "cffc752a-56d4-444b-b78f-f04722289e5f",
-          "rTime": {
-            "_type": "component",
-            "component_id": "08ec93ac-988a-42fc-8dc0-f302d80c8516",
-            "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
-            "component_type": "ReverseTime"
-          }
+          "__guid": "4c3e86d3-bd9d-4ecc-8310-c991f8ef86e8",
+          "Name": "Challenge Circle",
+          "Position": "-1483.913,3094.284,520.3273",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Children": [
+            {
+              "__guid": "e73633af-1f47-46a9-b9ff-e1e361e58b25",
+              "Name": "Enter",
+              "Position": "1107.363,-150.3723,2.095032",
+              "Rotation": "0,0,1,0.0000001490116",
+              "Scale": "0.01011298,2.823708,4.291754",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "ece1a160-e187-4fd6-b3fa-9c63c0f51c33",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": "materials/color_low/white.vmat",
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "Off",
+                  "Tint": "0.79457,0,0.95349,0.62"
+                }
+              ]
+            },
+            {
+              "__guid": "1dc558c1-2204-4c34-99df-7e87c9b86534",
+              "Name": "Wall 1",
+              "Position": "-340.111,-321.7781,-8.698364",
+              "Scale": "0.1191454,9.044588,1.781144",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "73831d48-4f07-4742-b224-2cc7db7457c9",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.47907,0.45679,0.45679,1"
+                },
+                {
+                  "__type": "BoxCollider",
+                  "__guid": "e5ff3708-d57e-494d-a672-56560eab690b",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                }
+              ]
+            },
+            {
+              "__guid": "5917ae8d-52c3-420b-b6b0-623488411b8a",
+              "Name": "Wall 2",
+              "Position": "-340.111,266.3892,-13.71674",
+              "Scale": "0.1191454,9.284904,1.781144",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "9b042248-8e3e-4950-8cb0-dad5f3a28e42",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.47907,0.45679,0.45679,1"
+                },
+                {
+                  "__type": "BoxCollider",
+                  "__guid": "bfde25be-0665-4214-bb7d-3149a8d6e15b",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                }
+              ]
+            },
+            {
+              "__guid": "57166add-64fc-476e-9e03-6e3e4e01cfa5",
+              "Name": "Door",
+              "Position": "-339.1099,-30.25928,-11.90881",
+              "Scale": "0.1191454,2.585273,1.781144",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "fdd52af5-e2b7-4faf-8265-da37f3a68463",
+                  "BodyGroups": 18446744073709551615,
+                  "MaterialOverride": "materials/color_low/white.vmat",
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "Off",
+                  "Tint": "0.92558,0,0,0.76"
+                },
+                {
+                  "__type": "BoxCollider",
+                  "__guid": "6c825a67-6e6a-4fcb-b11e-507c298cad99",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                }
+              ]
+            },
+            {
+              "__guid": "7991fe1c-f290-4bc6-84fb-ec93e6173522",
+              "Name": "Cube",
+              "Position": "525.312,-150.9971,-51.19928",
+              "Rotation": "-0.00401318,0.004396634,0.7385293,-0.6741952",
+              "Scale": "26.2653,0.1051834,0.05048533",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "f4b43597-f7c6-4613-9ce0-7763f3aab72d",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.80465,0.13411,0,1"
+                }
+              ]
+            },
+            {
+              "__guid": "186659b6-a712-4cfd-9901-66ad65e70048",
+              "Name": "Cube (4)",
+              "Position": "86.13452,-241.0664,-51.19928",
+              "Rotation": "-0.005946636,0.0002711436,0.04549119,-0.9989471",
+              "Scale": "17.72764,0.1051834,0.05048533",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "c488a18a-153b-494d-b85f-dde069f04141",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.80465,0.13411,0,1"
+                }
+              ]
+            },
+            {
+              "__guid": "b412a42a-c57d-49c0-8d95-f6b15f4d90fd",
+              "Name": "Cube (4)",
+              "Position": "525.312,-280.0752,-21.33423",
+              "Rotation": "-0.00401318,0.004396634,0.7385293,-0.6741952",
+              "Scale": "2.178962,-1.51941,-1.693204",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "a476758e-b701-4e9e-b427-d031b8b01e85",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.80465,0.13411,0,1"
+                },
+                {
+                  "__type": "BoxCollider",
+                  "__guid": "7418f5bb-fbe0-46cf-acbe-9acb7f8bce0a",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": true
+                }
+              ]
+            },
+            {
+              "__guid": "0cc7a6c2-47cb-4360-9931-10ea6a6c1dc0",
+              "Name": "Wheel 1",
+              "Position": "547.3811,56.60156,-51.62225",
+              "Rotation": "-0.004013166,0.004396658,0.6741952,0.7385293",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "WheelPuzzleSystem",
+                  "__guid": "5bd4d8bf-819e-4396-b425-c1fb698e015a",
+                  "isCompleted": false,
+                  "OnCompeleted": {
+                    "Version": 5,
+                    "UserData": {
+                      "Title": "On Compeleted",
+                      "id": "b0fc8f8e-e40f-4eae-a169-cbec005b4e09",
+                      "ReferencedComponentTypes": [
+                        "package.ambi.myog/ListGameObjects"
+                      ]
+                    },
+                    "Variables": [],
+                    "Nodes": [
+                      {
+                        "Id": 0,
+                        "Type": "input"
+                      },
+                      {
+                        "Id": 10,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "package.ambi.myog/ListGameObjects"
+                        },
+                        "UserData": {
+                          "Position": "-384,288"
+                        }
+                      },
+                      {
+                        "Id": 11,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_type": "package.ambi.myog/ListGameObjects",
+                          "_name": "Objects"
+                        },
+                        "UserData": {
+                          "Position": "-176,288"
+                        }
+                      },
+                      {
+                        "Id": 12,
+                        "Type": "list.get",
+                        "UserData": {
+                          "Position": "64,288"
+                        }
+                      },
+                      {
+                        "Id": 13,
+                        "Type": "call",
+                        "Properties": {
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                          "_name": "Get",
+                          "T": "package.ambi.myog/WheelChallengeSystem",
+                          "_isStatic": false
+                        },
+                        "UserData": {
+                          "Position": "128,128"
+                        }
+                      },
+                      {
+                        "Id": 14,
+                        "Type": "call",
+                        "Properties": {
+                          "_type": "package.ambi.myog/WheelChallengeSystem",
+                          "_name": "Complete",
+                          "_isStatic": false
+                        },
+                        "UserData": {
+                          "Position": "432,16"
+                        }
+                      }
+                    ],
+                    "Links": [
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 10,
+                        "DstName": "_this"
+                      },
+                      {
+                        "SrcId": 10,
+                        "SrcName": "_result",
+                        "DstId": 11,
+                        "DstName": "_target"
+                      },
+                      {
+                        "Value": 0,
+                        "DstId": 12,
+                        "DstName": "index"
+                      },
+                      {
+                        "SrcId": 11,
+                        "SrcName": "_result",
+                        "DstId": 12,
+                        "DstName": "list"
+                      },
+                      {
+                        "SrcId": 12,
+                        "SrcName": "_result",
+                        "DstId": 13,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 14,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 13,
+                        "SrcName": "_result",
+                        "DstId": 14,
+                        "DstName": "_target"
+                      }
+                    ]
+                  },
+                  "wheelBig": {
+                    "_type": "component",
+                    "component_id": "8772d9e2-5d2c-4b0a-a6b3-9e4a077f135a",
+                    "go": "1c6a1852-1106-4047-9faa-e09a19ab1d32",
+                    "component_type": "WheelPuzzle"
+                  },
+                  "wheelMedium": {
+                    "_type": "component",
+                    "component_id": "f1078081-b6d2-48b1-a077-a1060de17580",
+                    "go": "6a6c6bce-987a-4136-95a7-37bf9fb84bb9",
+                    "component_type": "WheelPuzzle"
+                  },
+                  "wheelSmall": {
+                    "_type": "component",
+                    "component_id": "8d535add-6d40-4e7f-8b23-3395be29766d",
+                    "go": "2b88331d-ec5f-483e-9d06-a133ee1ae5c3",
+                    "component_type": "WheelPuzzle"
+                  }
+                },
+                {
+                  "__type": "ListGameObjects",
+                  "__guid": "910651ed-52a6-4d54-b6de-4f92ecc299d2",
+                  "Objects": [
+                    {
+                      "_type": "gameobject",
+                      "go": "56aa2f3c-7f6a-4bab-89a3-08c439c27f90"
+                    }
+                  ]
+                }
+              ],
+              "Children": [
+                {
+                  "__guid": "2b88331d-ec5f-483e-9d06-a133ee1ae5c3",
+                  "Name": "Wheel Small",
+                  "Position": "-0.0001208968,-0.7347946,4.798862",
+                  "Rotation": "-0.7071067,0.00000002980232,0.0000001033768,0.7071068",
+                  "Scale": "1.245165,1,1.275283",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "__guid": "6cd8943f-6dbc-4b5d-b1af-3deed7d54910",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/circle.vmdl",
+                      "RenderType": "On",
+                      "Tint": "0.31163,0.31163,0.31163,1"
+                    },
+                    {
+                      "__type": "WheelPuzzle",
+                      "__guid": "8d535add-6d40-4e7f-8b23-3395be29766d",
+                      "canRotate": true,
+                      "sideCorrect": 4
+                    },
+                    {
+                      "__type": "ModelCollider",
+                      "__guid": "3ecee935-dc88-4561-8978-4e061daf220e",
+                      "IsTrigger": false,
+                      "Model": "models/circle.vmdl",
+                      "Static": true
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "__guid": "0de971ba-a997-49d9-a0c3-a746983b6fb4",
+                      "Name": "Cube",
+                      "Position": "-0.5669283,-0.3690023,-0.1445896",
+                      "Rotation": "0.4999999,-0.5,0.5000002,0.5000001",
+                      "Scale": "0.4318773,0.07615279,0.03860123",
+                      "Enabled": true,
+                      "NetworkMode": 2,
+                      "Components": [
+                        {
+                          "__type": "ModelRenderer",
+                          "__guid": "e1edd96a-23c0-4641-928b-095fda0c4433",
+                          "BodyGroups": 18446744073709551615,
+                          "Model": "models/dev/box.vmdl",
+                          "RenderType": "On",
+                          "Tint": "0.80392,0.13333,0,1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "__guid": "6a6c6bce-987a-4136-95a7-37bf9fb84bb9",
+                  "Name": "Wheel Medium",
+                  "Position": "0,0,3.228672",
+                  "Rotation": "-0.7071068,0.000000073757,0.000000073757,0.7071068",
+                  "Scale": "2.486243,2.147556,2.491187",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "__guid": "0e61db6f-2a02-4de0-a92c-fff60ae91d1a",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/circle.vmdl",
+                      "RenderType": "On",
+                      "Tint": "0.55686,0.55686,0.55686,1"
+                    },
+                    {
+                      "__type": "WheelPuzzle",
+                      "__guid": "f1078081-b6d2-48b1-a077-a1060de17580",
+                      "canRotate": true,
+                      "sideCorrect": 4
+                    },
+                    {
+                      "__type": "ModelCollider",
+                      "__guid": "009d254d-cdd9-4256-90d7-29f1e0a1c0dc",
+                      "IsTrigger": false,
+                      "Model": "models/circle.vmdl",
+                      "Static": true
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "__guid": "c55e6e09-f707-4297-9487-982a529c7e69",
+                      "Name": "Cube",
+                      "Position": "-0.6165568,-0.2826009,7.02144",
+                      "Rotation": "0.4949254,-0.4993035,0.5006414,0.5050873",
+                      "Scale": "0.1792955,0.04649494,0.01842049",
+                      "Enabled": true,
+                      "NetworkMode": 2,
+                      "Components": [
+                        {
+                          "__type": "ModelRenderer",
+                          "__guid": "5576442e-fbab-4bd3-a570-bfe93f68a6a5",
+                          "BodyGroups": 18446744073709551615,
+                          "Model": "models/dev/box.vmdl",
+                          "RenderType": "On",
+                          "Tint": "0.80392,0.13333,0,1"
+                        }
+                      ]
+                    },
+                    {
+                      "__guid": "76382f8c-7077-497d-a8f8-a02e88deb01f",
+                      "Name": "Cube",
+                      "Position": "0.1710283,-0.3310451,-7.510978",
+                      "Rotation": "0.4940481,-0.4999654,0.4999659,0.505954",
+                      "Scale": "0.1792955,0.05829409,0.01842049",
+                      "Enabled": true,
+                      "NetworkMode": 2,
+                      "Components": [
+                        {
+                          "__type": "ModelRenderer",
+                          "__guid": "56f87c15-8dc5-4dd1-a91d-6cd9c3cf774a",
+                          "BodyGroups": 18446744073709551615,
+                          "Model": "models/dev/box.vmdl",
+                          "RenderType": "On",
+                          "Tint": "0.80392,0.13333,0,1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "__guid": "1c6a1852-1106-4047-9faa-e09a19ab1d32",
+                  "Name": "Wheel Big",
+                  "Position": "0,0,0",
+                  "Rotation": "-0.7071068,0.00000007375699,0.00000007375699,0.7071068",
+                  "Scale": "4.874965,4.161299,4.642739",
+                  "Enabled": true,
+                  "NetworkMode": 2,
+                  "Components": [
+                    {
+                      "__type": "ModelRenderer",
+                      "__guid": "6abed6f9-e1ac-42b9-aa6e-a4a4f55841b0",
+                      "BodyGroups": 18446744073709551615,
+                      "Model": "models/circle.vmdl",
+                      "RenderType": "On",
+                      "Tint": "1,1,1,1"
+                    },
+                    {
+                      "__type": "WheelPuzzle",
+                      "__guid": "8772d9e2-5d2c-4b0a-a6b3-9e4a077f135a",
+                      "canRotate": true,
+                      "sideCorrect": 4
+                    },
+                    {
+                      "__type": "ModelCollider",
+                      "__guid": "7e006b14-a716-4654-9abf-a6e8a27f7e19",
+                      "IsTrigger": false,
+                      "Model": "models/circle.vmdl",
+                      "Static": true
+                    }
+                  ],
+                  "Children": [
+                    {
+                      "__guid": "eaa95297-4a45-4d00-a95f-e26796e6eba0",
+                      "Name": "Cube",
+                      "Position": "-0.07753738,-0.4014142,-5.92865",
+                      "Rotation": "0.4999999,-0.5,0.5,0.5000001",
+                      "Scale": "0.2228712,0.0206647,0.01087404",
+                      "Enabled": true,
+                      "NetworkMode": 2,
+                      "Components": [
+                        {
+                          "__type": "ModelRenderer",
+                          "__guid": "9af3e4ed-9ddf-433c-ba36-8d96280d5a02",
+                          "BodyGroups": 18446744073709551615,
+                          "Model": "models/dev/box.vmdl",
+                          "RenderType": "On",
+                          "Tint": "0.80465,0.13411,0,1"
+                        }
+                      ]
+                    },
+                    {
+                      "__guid": "3938672a-ffc8-4f75-9636-e4592b74b5e0",
+                      "Name": "Cube",
+                      "Position": "-0.4298754,-0.5155329,5.587981",
+                      "Rotation": "0.5010793,-0.5018944,0.4981209,0.4988997",
+                      "Scale": "0.2228712,0.0206647,0.01087404",
+                      "Enabled": true,
+                      "NetworkMode": 2,
+                      "Components": [
+                        {
+                          "__type": "ModelRenderer",
+                          "__guid": "7f0e6d66-5339-4c54-ba38-d15f8597dba0",
+                          "BodyGroups": 18446744073709551615,
+                          "Model": "models/dev/box.vmdl",
+                          "RenderType": "On",
+                          "Tint": "0.80465,0.13411,0,1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "__guid": "56aa2f3c-7f6a-4bab-89a3-08c439c27f90",
+              "Name": "Wheel Challenge System",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "WheelChallengeSystem",
+                  "__guid": "9923a770-8cb8-4649-a660-1ba9dd0dcdee",
+                  "door": {
+                    "_type": "gameobject",
+                    "go": "57166add-64fc-476e-9e03-6e3e4e01cfa5"
+                  },
+                  "sysList": [
+                    {
+                      "_type": "component",
+                      "component_id": "5bd4d8bf-819e-4396-b425-c1fb698e015a",
+                      "go": "0cc7a6c2-47cb-4360-9931-10ea6a6c1dc0",
+                      "component_type": "WheelPuzzleSystem"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "__guid": "921b8b08-70fe-4e58-8b0c-fa5968885e2a",
+              "Name": "Sigil 2",
+              "Position": "-594.5427,-18.64478,-39.06836",
+              "Rotation": "0,0,-0.130526,0.9914449",
+              "Scale": "1.462612,1.462612,1.462612",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "bb9fbc91-18ad-4e7a-94cc-ab7ab3b375b0",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/sigils/dance_cactus.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                },
+                {
+                  "__type": "HighlightOutline",
+                  "__guid": "366ec26b-2e78-49b1-82ef-2c6458eb508a",
+                  "Color": "654.8803,665.98,0,1",
+                  "InsideColor": "1,1,1,0",
+                  "InsideObscuredColor": "0,0,0,0",
+                  "ObscuredColor": "0,0,0,0",
+                  "Width": 0.25
+                },
+                {
+                  "__type": "BoxCollider",
+                  "__guid": "dbb00e01-2a0c-4ff5-a218-a0da16e1b9ca",
+                  "Center": "0,0,3.5",
+                  "IsTrigger": true,
+                  "Scale": "4,16,12",
+                  "Static": false
+                },
+                {
+                  "__type": "TriggerObject",
+                  "__guid": "241a44c3-62cb-4037-b6e3-7c145af8c88e",
+                  "Game": {
+                    "_type": "component",
+                    "component_id": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
+                    "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
+                    "component_type": "Game"
+                  },
+                  "OnTriggerEntered": {
+                    "Version": 5,
+                    "UserData": {
+                      "Title": "On Trigger Entered",
+                      "id": "b3f42d1b-c356-472f-a951-e0abfca04e82",
+                      "ReferencedComponentTypes": [
+                        "package.ambi.myog/TriggerListObjects"
+                      ]
+                    },
+                    "Variables": [],
+                    "Nodes": [
+                      {
+                        "Id": 0,
+                        "Type": "input"
+                      },
+                      {
+                        "Id": 9,
+                        "Type": "call",
+                        "Properties": {
+                          "_type": "Sandbox.Game/Sandbox.GameObject",
+                          "_name": "Destroy",
+                          "_isStatic": false
+                        },
+                        "UserData": {
+                          "Position": "256,-48"
+                        }
+                      },
+                      {
+                        "Id": 10,
+                        "Type": "scene.get",
+                        "Properties": {
+                          "T": "package.ambi.myog/TriggerObject"
+                        },
+                        "UserData": {
+                          "Position": "-224,144"
+                        }
+                      },
+                      {
+                        "Id": 12,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_type": "package.ambi.myog/TriggerObject",
+                          "_name": "Game"
+                        },
+                        "UserData": {
+                          "Position": "16,128"
+                        }
+                      },
+                      {
+                        "Id": 13,
+                        "Type": "property.get",
+                        "Properties": {
+                          "_type": "Sandbox.Game/Sandbox.Component",
+                          "_name": "GameObject"
+                        },
+                        "UserData": {
+                          "Position": "240,176"
+                        }
+                      },
+                      {
+                        "Id": 14,
+                        "Type": "call",
+                        "Properties": {
+                          "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                          "_name": "Get",
+                          "T": "package.ambi.myog/Sigil1Complete",
+                          "_isStatic": false
+                        },
+                        "UserData": {
+                          "Position": "512,128"
+                        }
+                      },
+                      {
+                        "Id": 15,
+                        "Type": "property.set",
+                        "Properties": {
+                          "_type": "package.ambi.myog/Sigil1Complete",
+                          "_name": "sigil2"
+                        },
+                        "UserData": {
+                          "Position": "256,304"
+                        }
+                      },
+                      {
+                        "Id": 16,
+                        "Type": "call",
+                        "Properties": {
+                          "_type": "package.ambi.myog/Sigil1Complete",
+                          "_name": "SpawnDoors",
+                          "_isStatic": false
+                        },
+                        "UserData": {
+                          "Position": "576,320"
+                        }
+                      }
+                    ],
+                    "Links": [
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 9,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 9,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_target",
+                        "DstId": 10,
+                        "DstName": "_this"
+                      },
+                      {
+                        "SrcId": 10,
+                        "SrcName": "_result",
+                        "DstId": 12,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 12,
+                        "SrcName": "_result",
+                        "DstId": 13,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 13,
+                        "SrcName": "_result",
+                        "DstId": 14,
+                        "DstName": "_target"
+                      },
+                      {
+                        "SrcId": 0,
+                        "SrcName": "_signal",
+                        "DstId": 15,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 14,
+                        "SrcName": "_result",
+                        "DstId": 15,
+                        "DstName": "_target"
+                      },
+                      {
+                        "Value": true,
+                        "DstId": 15,
+                        "DstName": "_value"
+                      },
+                      {
+                        "SrcId": 15,
+                        "SrcName": "_signal",
+                        "DstId": 16,
+                        "DstName": "_signal"
+                      },
+                      {
+                        "SrcId": 14,
+                        "SrcName": "_result",
+                        "DstId": 16,
+                        "DstName": "_target"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "97973493-802a-41a0-90f9-49b6fcdc7711",
+          "Name": "Door Blue",
+          "Position": "2991.023,-1215.218,11.00152",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "9f89b9c4-ef86-4de7-a72b-8943cf5c1bf3",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/door_blue.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "ab638ae8-61be-4658-9ef5-018fe99a47dc",
+              "IsTrigger": true,
+              "Model": "models/door_blue.vmdl",
+              "OnTriggerEnter": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Trigger Enter",
+                  "id": "fc4a9441-61d4-4419-82f7-66e720d3f40c",
+                  "ReferencedComponentTypes": [
+                    "package.ambi.myog/DoorNextLevel"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.Component",
+                      "_name": "GameObject"
+                    },
+                    "UserData": {
+                      "Position": "160,112"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "package.ambi.myog/DoorNextLevel"
+                    },
+                    "UserData": {
+                      "Position": "-592,272"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "call",
+                    "Properties": {
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "NextLevel",
+                      "_isStatic": false
+                    },
+                    "UserData": {
+                      "Position": "528,464"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "Game"
+                    },
+                    "UserData": {
+                      "Position": "-272,304"
+                    }
+                  },
+                  {
+                    "Id": 5,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/Game",
+                      "_name": "Ply"
+                    },
+                    "UserData": {
+                      "Position": "0,320"
+                    }
+                  },
+                  {
+                    "Id": 6,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.Component",
+                      "_name": "GameObject"
+                    },
+                    "UserData": {
+                      "Position": "128,224"
+                    }
+                  },
+                  {
+                    "Id": 7,
+                    "Type": "op.equal",
+                    "UserData": {
+                      "Position": "432,224"
+                    }
+                  },
+                  {
+                    "Id": 9,
+                    "Type": "if",
+                    "UserData": {
+                      "Position": "576,224"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "obj",
+                    "DstId": 1,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 2,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 9,
+                    "SrcName": "true",
+                    "DstId": 3,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 3,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 4,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "_result",
+                    "DstId": 5,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 5,
+                    "SrcName": "_result",
+                    "DstId": 6,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 7,
+                    "DstName": "a"
+                  },
+                  {
+                    "SrcId": 6,
+                    "SrcName": "_result",
+                    "DstId": 7,
+                    "DstName": "b"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 9,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 7,
+                    "SrcName": "_result",
+                    "DstId": 9,
+                    "DstName": "condition"
+                  }
+                ]
+              },
+              "Static": false
+            },
+            {
+              "__type": "DoorNextLevel",
+              "__guid": "b6164b97-0667-484a-b938-17f72c8d9c95",
+              "canChangeLoyality": true,
+              "Game": {
+                "_type": "component",
+                "component_id": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
+                "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
+                "component_type": "Game"
+              },
+              "OnFinished": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Finished",
+                  "id": "38b23d35-c27f-4f10-81f9-5b80e809fb8f",
+                  "ReferencedComponentTypes": [
+                    "package.ambi.myog/DoorNextLevel"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "package.ambi.myog/DoorNextLevel"
+                    },
+                    "UserData": {
+                      "Position": "-240,80"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "Game"
+                    },
+                    "UserData": {
+                      "Position": "16,80"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/Game",
+                      "_name": "Stats"
+                    },
+                    "UserData": {
+                      "Position": "288,112"
+                    }
+                  },
+                  {
+                    "Id": 5,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_type": "package.ambi.myog/StatsData",
+                      "_name": "Level1EnteredTheRedDoor"
+                    },
+                    "UserData": {
+                      "Position": "448,96"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 3,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 3,
+                    "SrcName": "_result",
+                    "DstId": 4,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 5,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "_result",
+                    "DstId": 5,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": false,
+                    "DstId": 5,
+                    "DstName": "_value"
+                  }
+                ]
+              },
+              "plusLoyality": true,
+              "scene": "scenes/level2.scene"
+            }
+          ]
+        },
+        {
+          "__guid": "496ed8c3-ac4b-45a1-909a-956e1a4a03d7",
+          "Name": "Door Red",
+          "Position": "2991.023,-1339.167,11.00152",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "9442d92b-b992-476c-a187-4e408bf51bd1",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/door_blue.vmdl",
+              "RenderType": "On",
+              "Tint": "0.91163,0.11872,0.11872,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "5e470e6f-5cc9-41a7-aff7-77cb9da46986",
+              "IsTrigger": true,
+              "Model": "models/door_blue.vmdl",
+              "OnTriggerEnter": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Trigger Enter",
+                  "id": "8ed87279-5f2e-412b-8ef3-00d95f6358c9",
+                  "ReferencedComponentTypes": [
+                    "package.ambi.myog/DoorNextLevel"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 1,
+                    "Type": "input",
+                    "UserData": {
+                      "Position": "32,-80"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.Component",
+                      "_name": "GameObject"
+                    },
+                    "UserData": {
+                      "Position": "192,32"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "package.ambi.myog/DoorNextLevel"
+                    },
+                    "UserData": {
+                      "Position": "-560,192"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "call",
+                    "Properties": {
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "NextLevel",
+                      "_isStatic": false
+                    },
+                    "UserData": {
+                      "Position": "560,384"
+                    }
+                  },
+                  {
+                    "Id": 5,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "Game"
+                    },
+                    "UserData": {
+                      "Position": "-240,224"
+                    }
+                  },
+                  {
+                    "Id": 6,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/Game",
+                      "_name": "Ply"
+                    },
+                    "UserData": {
+                      "Position": "32,240"
+                    }
+                  },
+                  {
+                    "Id": 7,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.Component",
+                      "_name": "GameObject"
+                    },
+                    "UserData": {
+                      "Position": "160,144"
+                    }
+                  },
+                  {
+                    "Id": 8,
+                    "Type": "op.equal",
+                    "UserData": {
+                      "Position": "464,144"
+                    }
+                  },
+                  {
+                    "Id": 9,
+                    "Type": "if",
+                    "UserData": {
+                      "Position": "608,144"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 1,
+                    "SrcName": "obj",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_target",
+                    "DstId": 3,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 9,
+                    "SrcName": "true",
+                    "DstId": 4,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 3,
+                    "SrcName": "_result",
+                    "DstId": 4,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 3,
+                    "SrcName": "_result",
+                    "DstId": 5,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 5,
+                    "SrcName": "_result",
+                    "DstId": 6,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 6,
+                    "SrcName": "_result",
+                    "DstId": 7,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 8,
+                    "DstName": "a"
+                  },
+                  {
+                    "SrcId": 7,
+                    "SrcName": "_result",
+                    "DstId": 8,
+                    "DstName": "b"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_signal",
+                    "DstId": 9,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 8,
+                    "SrcName": "_result",
+                    "DstId": 9,
+                    "DstName": "condition"
+                  }
+                ]
+              },
+              "Static": false
+            },
+            {
+              "__type": "DoorNextLevel",
+              "__guid": "bc603e0e-90bc-4eae-8219-fb1a48ce3939",
+              "canChangeLoyality": true,
+              "Game": {
+                "_type": "component",
+                "component_id": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
+                "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
+                "component_type": "Game"
+              },
+              "OnFinished": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Finished",
+                  "id": "9c19fb97-a408-43d0-afe5-8308ffaa7aa4",
+                  "ReferencedComponentTypes": [
+                    "package.ambi.myog/DoorNextLevel"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "package.ambi.myog/DoorNextLevel"
+                    },
+                    "UserData": {
+                      "Position": "-208,144"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "Game"
+                    },
+                    "UserData": {
+                      "Position": "48,144"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/Game",
+                      "_name": "Stats"
+                    },
+                    "UserData": {
+                      "Position": "320,176"
+                    }
+                  },
+                  {
+                    "Id": 5,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_type": "package.ambi.myog/StatsData",
+                      "_name": "Level1EnteredTheRedDoor"
+                    },
+                    "UserData": {
+                      "Position": "480,160"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 1,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 4,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 5,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "_result",
+                    "DstId": 5,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": true,
+                    "DstId": 5,
+                    "DstName": "_value"
+                  }
+                ]
+              },
+              "plusLoyality": false,
+              "scene": "scenes/level2.scene"
+            }
+          ]
         }
       ]
     },
@@ -2869,175 +4291,69 @@
       "__Prefab": "prefabs/player.prefab"
     },
     {
-      "__guid": "84251d48-4763-4fd8-975d-9d371e6a3b28",
+      "__guid": "0fe99348-2ea3-4053-a1a6-86986b548e7a",
       "Name": "Cube",
-      "Position": "-1113.853,-965.79,172.7489",
+      "Position": "-3590.185,-3379.189,175.0202",
+      "Scale": "4.435741,-4.03357,1",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ModelRenderer",
-          "__guid": "d58f3e16-3565-4379-9f5f-7b2981652755",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
           "__type": "BoxCollider",
-          "__guid": "a87286cf-9a7c-4739-ae44-54ed313b2adf",
+          "__guid": "a71457d7-bb36-428e-b975-34a2653637c7",
           "Center": "0,0,0",
           "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "Collectables",
-          "__guid": "fb1a8732-eb68-4a01-8437-4fdf8be7e522",
-          "Game": {
-            "_type": "component",
-            "component_id": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
-            "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
-            "component_type": "Game"
-          }
-        }
-      ]
-    },
-    {
-      "__guid": "cfbbfedd-3bb7-442e-be53-ee9b40be5c26",
-      "Name": "Cube (1)",
-      "Position": "-1248.019,-965.79,172.7489",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "b3cd1478-1447-46df-804e-097a81c2ec4b",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "__guid": "65176bac-9141-49ab-950c-faadecd1598f",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "Collectables",
-          "__guid": "25066185-d6f8-446e-8837-07ec581b140c",
-          "Game": {
-            "_type": "component",
-            "component_id": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
-            "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
-            "component_type": "Game"
-          }
-        }
-      ]
-    },
-    {
-      "__guid": "0e54c0c6-c2b9-49ac-8cf4-18b6a218d326",
-      "Name": "Cube (2)",
-      "Position": "-1004.563,-965.79,172.7489",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "78c8020a-2218-40c8-bedc-5b7c9e3d5fda",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "__guid": "2fde3966-4401-4faf-9fdc-66a8101266f9",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "Collectables",
-          "__guid": "10df5a83-df27-4f4e-b100-70648594bbd3",
-          "Game": {
-            "_type": "component",
-            "component_id": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
-            "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
-            "component_type": "Game"
-          }
-        }
-      ]
-    },
-    {
-      "__guid": "c53233df-316d-405e-8cec-6c8bc07c3c96",
-      "Name": "Cube (3)",
-      "Position": "-913.567,-965.79,172.7489",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "a5de8d7c-8061-4ea6-89be-2bdc19501809",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "__guid": "7d427005-7558-46b0-869f-7cdcde7f6a63",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "Collectables",
-          "__guid": "e3d9d530-c265-40b0-a781-3b4bb0ff4df5",
-          "Game": {
-            "_type": "component",
-            "component_id": "f7e506fe-dd3e-4236-834a-ca4426b21b72",
-            "go": "8afd8364-bb30-4946-97a5-39510f7e1920",
-            "component_type": "Game"
-          }
-        }
-      ]
-    },
-    {
-      "__guid": "abab228a-c91c-4424-9c56-0fed0b716eac",
-      "Name": "Trigger Monol",
-      "Position": "-918.2102,-1025.75,204.0175",
-      "Scale": "0.05082905,1,1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "9e1977a8-326f-4257-9cd8-7df76222196c",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "__guid": "f4047c27-a9a0-47e8-8e55-f7ae4d113a9a",
-          "Center": "0,0,0",
-          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "63c8e037-a066-4d70-8934-a3478e2f9208",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Destroy",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "64,160"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              }
+            ]
+          },
           "Scale": "50,50,50",
           "Static": false
         },
         {
           "__type": "MonologTrigger",
-          "__guid": "1bd4b8de-0b1a-4877-b066-b0c7e01ec6fa",
+          "__guid": "773ebd35-c7de-488b-b7bf-af4fa7ce4845",
           "Monologs": [
-            "monologues/beginning/beginning_1.monolog",
-            "monologues/beginning/beginning_2.monolog"
+            "monologues/chapter 1/chaper1_1.monolog",
+            "monologues/chapter 1/chapter1_2.monolog",
+            "monologues/chapter 1/chapter1_3.monolog"
           ],
           "MonologSystem": {
             "_type": "component",
@@ -3049,48 +4365,151 @@
       ]
     },
     {
-      "__guid": "b7303a6b-4fea-4080-9b4c-f67bcd75d286",
-      "Name": "Monologue System",
-      "Position": "-1108.829,-933.1975,219.609",
+      "__guid": "f74518a1-6b63-47f3-8050-878c4caa888c",
+      "Name": "Cube (1)",
+      "Position": "-191.4976,-3747.654,223.7082",
+      "Scale": "4.435741,-1.025692,2.791363",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "MonologSystem",
-          "__guid": "441601c9-87b6-49ec-8637-ffdbae127f44",
-          "_monologUI": {
+          "__type": "BoxCollider",
+          "__guid": "da40586f-baaf-48e0-848f-28eee273e52d",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "63c8e037-a066-4d70-8934-a3478e2f9208",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Destroy",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "64,160"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              }
+            ]
+          },
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "MonologTrigger",
+          "__guid": "99197b6a-82a3-40df-84f5-667a46d4eb0d",
+          "Monologs": [
+            "monologues/chapter 1/chapter1_4.monolog",
+            "monologues/chapter 1/chapter1_5.monolog",
+            "monologues/chapter 1/chapter1_6.monolog"
+          ],
+          "MonologSystem": {
             "_type": "component",
-            "component_id": "d94d6e87-cc2e-49dc-bf08-6b44d91839fa",
-            "go": "8cfabfdb-989c-48fb-b1d3-cf60bb6b4929",
-            "component_type": "MonologUI"
+            "component_id": "441601c9-87b6-49ec-8637-ffdbae127f44",
+            "go": "b7303a6b-4fea-4080-9b4c-f67bcd75d286",
+            "component_type": "MonologSystem"
           }
         }
       ]
     },
     {
-      "__guid": "8cfabfdb-989c-48fb-b1d3-cf60bb6b4929",
-      "Name": "UI: Monologue",
-      "Position": "-1108.829,-933.1975,219.609",
+      "__guid": "898144e7-1c40-44da-9661-06ad76e7893d",
+      "Name": "Cube (3)",
+      "Position": "-867.1884,2443.72,679.5689",
+      "Rotation": "0,0,-0.7071068,0.7071068",
+      "Scale": "4.435741,-1.025692,2.791363",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ScreenPanel",
-          "__guid": "a72785f3-430e-4ee8-9dbb-5126f65175af",
-          "AutoScreenScale": true,
-          "Opacity": 1,
-          "Scale": 1,
-          "ZIndex": 100
+          "__type": "BoxCollider",
+          "__guid": "9ab12622-eecc-4a6d-9025-92b17e8b5110",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "63c8e037-a066-4d70-8934-a3478e2f9208",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Destroy",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "64,160"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              }
+            ]
+          },
+          "Scale": "50,50,50",
+          "Static": false
         },
         {
-          "__type": "MonologUI",
-          "__guid": "d94d6e87-cc2e-49dc-bf08-6b44d91839fa",
-          "_currentOpacity": 0,
-          "_currentText": "NoText!",
-          "AnimationDurationSeconds": 0.1,
-          "HideOpacity": 0,
-          "ShowOpacity": 1,
-          "Side": "Up"
+          "__type": "MonologTrigger",
+          "__guid": "bb3b621e-5e40-48c3-bb77-45788205d16b",
+          "Monologs": [
+            "monologues/chapter 1/chapter1_7.monolog",
+            "monologues/chapter 1/chapter1_8.monolog",
+            "monologues/chapter 1/chapter1_9.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "441601c9-87b6-49ec-8637-ffdbae127f44",
+            "go": "b7303a6b-4fea-4080-9b4c-f67bcd75d286",
+            "component_type": "MonologSystem"
+          }
         }
       ]
     }
@@ -3118,11 +4537,14 @@
   },
   "Title": "level1",
   "Description": "",
-  "LastSaved": "2024-03-17T02:03:30.1923182\u002B05:00",
+  "LastSaved": "2024-03-17T07:51:48.3907984\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
+    "ambi.circle",
+    "ambi.dance_cactus",
     "ambi.forestcard",
+    "ambi.tradis_red_door",
     "igrotronika.coin3"
   ]
 }

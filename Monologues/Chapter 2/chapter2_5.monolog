@@ -1,0 +1,14 @@
+{
+  "VoiceSound": "sound/monologue/chapter 2/chapter2_5.sound",
+  "SubtitleText": {
+    "Strings": {
+      "en": "No, they can\u2019t.",
+      "ru": "\u041D\u0435\u0442. \u041D\u0435 \u043C\u043E\u0433\u0443\u0442."
+    }
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "ambi.myog_monologue_lvl2_5"
+  ]
+}

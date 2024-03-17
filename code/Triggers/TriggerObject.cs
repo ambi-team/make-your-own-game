@@ -12,16 +12,18 @@ public sealed class TriggerObject : Component, Component.ITriggerListener
 	#region Logic
 	public void OnTriggerEnter(Collider other)
 	{
-		if (other.GameObject != Game.Ply.GameObject) return;
+		Player ply;
+		if (!other.Components.TryGet(out ply)) return;
 
-		OnTriggerEntered?.Invoke(Game.Ply);
+		OnTriggerEntered?.Invoke(ply);
 	}
 
 	public void OnTriggerExit(Collider other)
 	{
-		if (other.GameObject != Game.Ply.GameObject) return;
+		Player ply;
+		if (!other.Components.TryGet(out ply)) return;
 
-		OnTriggerExited?.Invoke(Game.Ply);
+		OnTriggerExited?.Invoke(ply);
 	}
 	#endregion
 }

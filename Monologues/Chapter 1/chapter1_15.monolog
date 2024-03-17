@@ -1,0 +1,14 @@
+{
+  "VoiceSound": "sound/monologue/chapter 1/chapter1_15.sound",
+  "SubtitleText": {
+    "Strings": {
+      "en": "Time to choose. ",
+      "ru": "\u0412\u0440\u0435\u043C\u044F \u0432\u044B\u0431\u0438\u0440\u0430\u0442\u044C. "
+    }
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "ambi.myog_monologue_lvl1_15"
+  ]
+}

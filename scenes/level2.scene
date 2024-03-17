@@ -2,6 +2,29 @@
   "__guid": "b9fcea21-2b89-49ac-8016-b257b6e29c9b",
   "GameObjects": [
     {
+      "__guid": "77f6d1c7-64d6-425b-9213-4a0fad66f19f",
+      "Name": "\uD83C\uDFDE ENV \uD83C\uDFDE",
+      "Position": "235.5777,345.3558,54.46339",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "5d2eadc3-5875-4f99-94c8-bd36dc780193",
+      "Name": "Skybox",
+      "Position": "692.0435,-1913.295,612.5312",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "__guid": "c1f108e0-3ed0-4739-ab7f-1544e63f8454",
+          "SkyMaterial": "materials/skybox/light_test_sky_default.vmat",
+          "Tint": "0.99535,0.15277,0.15277,1"
+        }
+      ]
+    },
+    {
       "__guid": "e92c23fe-09a1-403f-830b-0ec289c88058",
       "Name": "Map",
       "Position": "-3514.012,-4323.683,2977.615",
@@ -11,43 +34,16 @@
         {
           "__type": "MapInstance",
           "__guid": "b2d8384f-b472-4559-b99b-6653570773e8",
-          "MapName": "start",
+          "MapName": "sandvalley",
           "UseMapFromLaunch": false
         }
       ],
       "Children": []
     },
     {
-      "__guid": "19a4de12-2054-4827-84c0-194536c10358",
-      "Name": "2D Skybox",
-      "Tags": "skybox",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "SkyBox2D",
-          "__guid": "3cba3f4b-9294-4851-bd17-219c19b543e6",
-          "SkyMaterial": "materials/dev/default_sky.vmat",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "EnvmapProbe",
-          "__guid": "1250ff4f-dbe7-4ee5-b8e8-d5896930a2a6",
-          "Bounds": {
-            "Mins": "-512,-512,-512",
-            "Maxs": "512,512,512"
-          },
-          "Feathering": 0.02,
-          "Projection": "Sphere",
-          "Texture": "textures/cubemaps/default2.vtex",
-          "TintColor": "1,1,1,1"
-        }
-      ]
-    },
-    {
       "__guid": "85b0498a-6d99-4f9a-b486-38ad29f86f24",
       "Name": "Sun",
-      "Rotation": "-0.0314205,-0.7060665,0.03273448,-0.7066904",
+      "Rotation": "0,-0.7071068,0,0.7071068",
       "Tags": "light_directional,light",
       "Enabled": true,
       "NetworkMode": 2,
@@ -57,27 +53,87 @@
           "__guid": "06937036-f4cd-400d-bcde-82d41109fcdc",
           "FogMode": "Enabled",
           "FogStrength": 1,
-          "LightColor": "1.96,1.96,1.96,1",
-          "Shadows": false,
-          "SkyColor": "0.2532,0.32006,0.35349,1"
+          "LightColor": "1,0,0,1",
+          "Shadows": true,
+          "SkyColor": "1,1,1,1"
         }
       ]
     },
     {
-      "__guid": "77f6d1c7-64d6-425b-9213-4a0fad66f19f",
-      "Name": "\uD83C\uDFDE ENV \uD83C\uDFDE",
-      "Position": "235.5777,345.3558,54.46339",
+      "__guid": "76b0f6c2-8e6e-4328-b09f-cf7fd1d920f6",
+      "Name": "\uD83D\uDCAB DATA \uD83D\uDCAB",
+      "Position": "278.0361,331.6518,76.7455",
       "Enabled": true,
       "NetworkMode": 2
     },
     {
-      "__guid": "e30bde70-75b3-4dbb-83a0-5b89add30603",
-      "Name": "PlayerObj",
-      "Position": "-3397.304,32.75986,89.18408",
-      "Tags": "trigger,player",
+      "__guid": "5b64f399-a819-441a-a61f-8d7d6c66a9dc",
+      "Name": "Monologue System",
+      "Position": "-1108.829,-933.1975,219.609",
       "Enabled": true,
       "NetworkMode": 2,
-      "__Prefab": "prefabs/player.prefab"
+      "Components": [
+        {
+          "__type": "MonologSystem",
+          "__guid": "7db95854-c0a0-4fec-88b1-5b276aefa80c",
+          "_monologUI": {
+            "_type": "component",
+            "component_id": "b8a42153-6c50-4328-a976-668f6edb44ba",
+            "go": "a15dfcd0-7f59-45ec-97fc-7c3abfc235a6",
+            "component_type": "MonologUI"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "6ee1cccb-0653-4fec-b1f2-bf8bae8022ba",
+      "Name": "UI: MainMenu",
+      "Position": "278.0361,331.6518,76.7455",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "6874934d-e904-41b3-bb54-759306657110",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MainMenuUI",
+          "__guid": "8029dd64-9a35-4c0c-b911-da3ba20ace72",
+          "canHide": true,
+          "hasPseusoMainMenuScene": false
+        }
+      ]
+    },
+    {
+      "__guid": "a15dfcd0-7f59-45ec-97fc-7c3abfc235a6",
+      "Name": "UI: Monologue",
+      "Position": "-1108.829,-870.8134,219.609",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "0852ca4d-49a5-4470-b8f1-0b97c8d8e47a",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MonologUI",
+          "__guid": "b8a42153-6c50-4328-a976-668f6edb44ba",
+          "_currentOpacity": 0,
+          "_currentText": "NoText!",
+          "AnimationDurationSeconds": 0.1,
+          "HideOpacity": 0,
+          "ShowOpacity": 1,
+          "Side": "Up"
+        }
+      ]
     },
     {
       "__guid": "1365e926-bdc2-4255-a744-047e5170dd1b",
@@ -87,25 +143,2059 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ReverseTime",
-          "__guid": "d46feed6-49bc-41df-a79b-5ea7d4f8c200",
-          "defaultTimeRecoding": 20,
-          "ply": {
+          "__type": "Game",
+          "__guid": "03058762-bb13-4d38-8523-5cb358351ee4",
+          "Ply": {
             "_type": "component",
-            "component_id": "4e4a8b5a-0dc5-4526-a1a4-9d593d7082a8",
+            "component_id": "99dce472-48f1-4323-8fba-c0d07aed1bb3",
             "go": "e30bde70-75b3-4dbb-83a0-5b89add30603",
             "component_type": "Player"
           },
-          "pseudoPlyColor": "0.5123,0.62251,0.92558,0.79",
-          "pseudoPlyPrefab": {
+          "Settings": {},
+          "Stats": {}
+        },
+        {
+          "__type": "Sigil2Complete",
+          "__guid": "a1a55bde-56db-4972-a7cd-3c39d59da9a1",
+          "door1": {
             "_type": "gameobject",
-            "prefab": "prefabs/player.prefab"
+            "go": "edcca7ab-0e79-4e52-9375-c59e4cec805e"
           },
-          "HUD": {
+          "door2": {
+            "_type": "gameobject",
+            "go": "660e4f9a-25d3-49f1-a309-ac049d23cc71"
+          },
+          "replica1": "monologues/chapter 2/chapter2_19.monolog",
+          "sigil1": false,
+          "sigil2": false,
+          "sys": {
             "_type": "component",
-            "component_id": "d0cbd966-d881-4599-9c8b-d3905aba2ea4",
-            "go": "a7e4a34f-0a35-4af1-bd1e-5ab930b70c95",
-            "component_type": "ReverseTimeHud"
+            "component_id": "7db95854-c0a0-4fec-88b1-5b276aefa80c",
+            "go": "5b64f399-a819-441a-a61f-8d7d6c66a9dc",
+            "component_type": "MonologSystem"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "e0475d13-6e7e-4539-b2fe-b00416c72132",
+      "Name": "Sigil 2",
+      "Position": "-258.9551,-35215.88,4684.244",
+      "Rotation": "0,0,0.6087615,0.7933533",
+      "Scale": "4.126057,4.126057,4.126057",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "129624c5-70fd-4c21-9cab-6354b40e4401",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/sigils/angelus.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "e13891fe-4f55-434f-b0a7-f08431a70f69",
+          "Color": "654.8803,665.98,0,1",
+          "InsideColor": "1,1,1,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "ef2da8b4-2ce5-4db2-869e-f0e21773edac",
+          "Center": "0,0,3.5",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "eb2ef632-175f-4c53-9214-da4f9374aa87",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 1,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-0,32"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.Component",
+                  "_name": "GameObject"
+                },
+                "UserData": {
+                  "Position": "-112,208"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
+                },
+                "UserData": {
+                  "Position": "128,144"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.set",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
+                },
+                "UserData": {
+                  "Position": "384,256"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 1,
+                "SrcName": "obj",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "Value": "6335,919,412",
+                "DstId": 4,
+                "DstName": "_value"
+              }
+            ]
+          },
+          "Scale": "4,16,12",
+          "Static": false
+        },
+        {
+          "__type": "TriggerObject",
+          "__guid": "d2172144-ddd7-4b75-b754-0d1cd798b6fe",
+          "Game": {
+            "_type": "component",
+            "component_id": "03058762-bb13-4d38-8523-5cb358351ee4",
+            "go": "1365e926-bdc2-4255-a744-047e5170dd1b",
+            "component_type": "Game"
+          },
+          "OnTriggerEntered": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Entered",
+              "id": "b3f42d1b-c356-472f-a951-e0abfca04e82",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/TriggerObject"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 9,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Destroy",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "256,-48"
+                }
+              },
+              {
+                "Id": 10,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/TriggerObject"
+                },
+                "UserData": {
+                  "Position": "-224,144"
+                }
+              },
+              {
+                "Id": 12,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "package.ambi.myog/TriggerObject",
+                  "_name": "Game"
+                },
+                "UserData": {
+                  "Position": "16,128"
+                }
+              },
+              {
+                "Id": 13,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.Component",
+                  "_name": "GameObject"
+                },
+                "UserData": {
+                  "Position": "240,176"
+                }
+              },
+              {
+                "Id": 17,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                  "_name": "Get",
+                  "T": "package.ambi.myog/Sigil2Complete",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "576,160"
+                }
+              },
+              {
+                "Id": 18,
+                "Type": "property.set",
+                "Properties": {
+                  "_type": "package.ambi.myog/Sigil2Complete",
+                  "_name": "sigil2"
+                },
+                "UserData": {
+                  "Position": "288,320"
+                }
+              },
+              {
+                "Id": 19,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.ambi.myog/Sigil2Complete",
+                  "_name": "SpawnDoors",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "576,352"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 9,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 9,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 10,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 10,
+                "SrcName": "_result",
+                "DstId": 12,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 12,
+                "SrcName": "_result",
+                "DstId": 13,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 13,
+                "SrcName": "_result",
+                "DstId": 17,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 18,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 17,
+                "SrcName": "_result",
+                "DstId": 18,
+                "DstName": "_target"
+              },
+              {
+                "Value": true,
+                "DstId": 18,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 18,
+                "SrcName": "_signal",
+                "DstId": 19,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 17,
+                "SrcName": "_result",
+                "DstId": 19,
+                "DstName": "_target"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "9da195f0-9c54-4a25-959c-68b54d292233",
+      "Name": "Sigil 1",
+      "Position": "9466.378,5575.77,9954.355",
+      "Rotation": "0,0,0.9914449,0.1305262",
+      "Scale": "5.762847,5.762847,5.762847",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "23ae7c44-26ba-4d05-9a13-dc881c1c6ec1",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/sigils/vape.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "d73232bf-60d6-466b-adcc-262641b9cce9",
+          "Color": "654.8803,665.98,0,1",
+          "InsideColor": "1,1,1,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "636a9a36-a697-44f6-9f5b-6db514b1d4b0",
+          "Center": "0,0,3.5",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "3b38b826-552c-4de9-a168-6967bd830a6e",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/ListGameObjects"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.Component",
+                  "_name": "GameObject"
+                },
+                "UserData": {
+                  "Position": "-112,176"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
+                },
+                "UserData": {
+                  "Position": "128,112"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property.set",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
+                },
+                "UserData": {
+                  "Position": "384,224"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "package.ambi.myog/ListGameObjects",
+                  "_name": "Objects"
+                },
+                "UserData": {
+                  "Position": "0,448"
+                }
+              },
+              {
+                "Id": 7,
+                "Type": "list.get",
+                "UserData": {
+                  "Position": "272,464"
+                }
+              },
+              {
+                "Id": 8,
+                "Type": "property.set",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Enabled"
+                },
+                "UserData": {
+                  "Position": "464,480"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/ListGameObjects"
+                },
+                "UserData": {
+                  "Position": "-304,416"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "obj",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "Value": "6335,919,412",
+                "DstId": 3,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "Value": 0,
+                "DstId": 7,
+                "DstName": "index"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 7,
+                "DstName": "list"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 8,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 7,
+                "SrcName": "_result",
+                "DstId": 8,
+                "DstName": "_target"
+              },
+              {
+                "Value": false,
+                "DstId": 8,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 9,
+                "DstName": "_this"
+              }
+            ]
+          },
+          "Scale": "4,16,12",
+          "Static": false
+        },
+        {
+          "__type": "TriggerObject",
+          "__guid": "46573f9a-113d-41d7-abd5-bda5f115e203",
+          "Game": {
+            "_type": "component",
+            "component_id": "03058762-bb13-4d38-8523-5cb358351ee4",
+            "go": "1365e926-bdc2-4255-a744-047e5170dd1b",
+            "component_type": "Game"
+          },
+          "OnTriggerEntered": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Entered",
+              "id": "b3f42d1b-c356-472f-a951-e0abfca04e82",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/TriggerObject"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 9,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Destroy",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "256,-48"
+                }
+              },
+              {
+                "Id": 10,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/TriggerObject"
+                },
+                "UserData": {
+                  "Position": "-224,144"
+                }
+              },
+              {
+                "Id": 12,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "package.ambi.myog/TriggerObject",
+                  "_name": "Game"
+                },
+                "UserData": {
+                  "Position": "16,128"
+                }
+              },
+              {
+                "Id": 13,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.Component",
+                  "_name": "GameObject"
+                },
+                "UserData": {
+                  "Position": "240,176"
+                }
+              },
+              {
+                "Id": 17,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                  "_name": "Get",
+                  "T": "package.ambi.myog/Sigil2Complete",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "576,160"
+                }
+              },
+              {
+                "Id": 19,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.ambi.myog/Sigil2Complete",
+                  "_name": "SpawnDoors",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "576,352"
+                }
+              },
+              {
+                "Id": 20,
+                "Type": "property.set",
+                "Properties": {
+                  "_type": "package.ambi.myog/Sigil2Complete",
+                  "_name": "sigil1"
+                },
+                "UserData": {
+                  "Position": "288,336"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 9,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 9,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 10,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 10,
+                "SrcName": "_result",
+                "DstId": 12,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 12,
+                "SrcName": "_result",
+                "DstId": 13,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 13,
+                "SrcName": "_result",
+                "DstId": 17,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 20,
+                "SrcName": "_signal",
+                "DstId": 19,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 17,
+                "SrcName": "_result",
+                "DstId": 19,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 20,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 17,
+                "SrcName": "_result",
+                "DstId": 20,
+                "DstName": "_target"
+              },
+              {
+                "Value": true,
+                "DstId": 20,
+                "DstName": "_value"
+              }
+            ]
+          }
+        },
+        {
+          "__type": "ListGameObjects",
+          "__guid": "7fb70e0d-fd21-445d-bd2c-af15113c6e34",
+          "Objects": [
+            {
+              "_type": "gameobject",
+              "go": "ea870fb4-2370-41cc-8222-294e8556e0b9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "24addce8-aa61-4552-b90e-f13338ebf8a9",
+      "Name": "\u2705 LEVEL \u2705",
+      "Position": "235.5777,345.3558,54.46339",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "7f5e3741-82c2-438b-bef9-82f81ab11171",
+      "Name": "World",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "c68e06dc-dd40-4e5d-bfa6-d042134963c8",
+          "Name": "Trigger Hui Negative",
+          "Position": "6283.161,517.755,433.7718",
+          "Scale": "1.909174,3.049182,0.6436779",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "BoxCollider",
+              "__guid": "53e3bb0d-4819-4e71-8054-c0ea71a0458d",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "OnTriggerEnter": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Trigger Enter",
+                  "id": "3a1f2c1f-77c0-4de7-accf-1d8d824bfdaf",
+                  "ReferencedComponentTypes": [
+                    "package.ambi.myog/StartFuckingTheSecondWorld"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "package.ambi.myog/StartFuckingTheSecondWorld"
+                    },
+                    "UserData": {
+                      "Position": "-64,128"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "call",
+                    "Properties": {
+                      "_type": "package.ambi.myog/StartFuckingTheSecondWorld",
+                      "_name": "PlayMons",
+                      "_isStatic": false
+                    },
+                    "UserData": {
+                      "Position": "288,128"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "call",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
+                      "_name": "Destroy",
+                      "_isStatic": false
+                    },
+                    "UserData": {
+                      "Position": "320,-16"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 1,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 3,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 3,
+                    "DstName": "_target"
+                  }
+                ]
+              },
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "StartFuckingTheSecondWorld",
+              "__guid": "70ddda8d-8ace-45c1-8d39-76d3e79c9176",
+              "map": {
+                "_type": "gameobject",
+                "go": "e92c23fe-09a1-403f-830b-0ec289c88058"
+              },
+              "mon2": "monologues/chapter 2/chapter2_2.monolog",
+              "mon3": "monologues/chapter 2/chapter2_3.monolog",
+              "mon4": "monologues/chapter 2/chapter2_4.monolog",
+              "mon5": "monologues/chapter 2/chapter2_5.monolog",
+              "sys": {
+                "_type": "component",
+                "component_id": "7db95854-c0a0-4fec-88b1-5b276aefa80c",
+                "go": "5b64f399-a819-441a-a61f-8d7d6c66a9dc",
+                "component_type": "MonologSystem"
+              },
+              "triggerNegative": "monologues/chapter 2/chapter2_1negaive.monolog",
+              "triggerPlus": "monologues/chapter 2/chapter2_1.monolog"
+            }
+          ]
+        },
+        {
+          "__guid": "660e4f9a-25d3-49f1-a309-ac049d23cc71",
+          "Name": "Door Blue",
+          "Position": "1676.761,8730.986,324.2907",
+          "Rotation": "0,0,-0.7071069,-0.7071066",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "0f4daa0e-39a0-4fa3-8a8c-0dc2ee01b4e2",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/door_blue.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "8dcbca20-5e91-48d9-9f6b-e2d9c959cd2a",
+              "IsTrigger": true,
+              "Model": "models/door_blue.vmdl",
+              "OnTriggerEnter": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Trigger Enter",
+                  "id": "fc4a9441-61d4-4419-82f7-66e720d3f40c",
+                  "ReferencedComponentTypes": [
+                    "package.ambi.myog/DoorNextLevel"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.Component",
+                      "_name": "GameObject"
+                    },
+                    "UserData": {
+                      "Position": "160,112"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "package.ambi.myog/DoorNextLevel"
+                    },
+                    "UserData": {
+                      "Position": "-592,272"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "call",
+                    "Properties": {
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "NextLevel",
+                      "_isStatic": false
+                    },
+                    "UserData": {
+                      "Position": "528,464"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "Game"
+                    },
+                    "UserData": {
+                      "Position": "-272,304"
+                    }
+                  },
+                  {
+                    "Id": 5,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/Game",
+                      "_name": "Ply"
+                    },
+                    "UserData": {
+                      "Position": "0,320"
+                    }
+                  },
+                  {
+                    "Id": 6,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.Component",
+                      "_name": "GameObject"
+                    },
+                    "UserData": {
+                      "Position": "128,224"
+                    }
+                  },
+                  {
+                    "Id": 7,
+                    "Type": "op.equal",
+                    "UserData": {
+                      "Position": "432,224"
+                    }
+                  },
+                  {
+                    "Id": 9,
+                    "Type": "if",
+                    "UserData": {
+                      "Position": "576,224"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "obj",
+                    "DstId": 1,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 2,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 9,
+                    "SrcName": "true",
+                    "DstId": 3,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 3,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 4,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "_result",
+                    "DstId": 5,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 5,
+                    "SrcName": "_result",
+                    "DstId": 6,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 7,
+                    "DstName": "a"
+                  },
+                  {
+                    "SrcId": 6,
+                    "SrcName": "_result",
+                    "DstId": 7,
+                    "DstName": "b"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 9,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 7,
+                    "SrcName": "_result",
+                    "DstId": 9,
+                    "DstName": "condition"
+                  }
+                ]
+              },
+              "Static": false
+            },
+            {
+              "__type": "DoorNextLevel",
+              "__guid": "9791e322-aabd-480e-a863-17deb62666b5",
+              "canChangeLoyality": true,
+              "Game": {
+                "_type": "component",
+                "component_id": "03058762-bb13-4d38-8523-5cb358351ee4",
+                "go": "1365e926-bdc2-4255-a744-047e5170dd1b",
+                "component_type": "Game"
+              },
+              "OnFinished": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Finished",
+                  "id": "38b23d35-c27f-4f10-81f9-5b80e809fb8f",
+                  "ReferencedComponentTypes": [
+                    "package.ambi.myog/DoorNextLevel"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "package.ambi.myog/DoorNextLevel"
+                    },
+                    "UserData": {
+                      "Position": "-240,80"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "Game"
+                    },
+                    "UserData": {
+                      "Position": "16,80"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/Game",
+                      "_name": "Stats"
+                    },
+                    "UserData": {
+                      "Position": "288,112"
+                    }
+                  },
+                  {
+                    "Id": 5,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_type": "package.ambi.myog/StatsData",
+                      "_name": "Level1EnteredTheRedDoor"
+                    },
+                    "UserData": {
+                      "Position": "448,96"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 3,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 3,
+                    "SrcName": "_result",
+                    "DstId": 4,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 5,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "_result",
+                    "DstId": 5,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": false,
+                    "DstId": 5,
+                    "DstName": "_value"
+                  }
+                ]
+              },
+              "plusLoyality": true,
+              "scene": "scenes/level3.scene",
+              "OnComponentStart": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Component Start",
+                  "id": "ccf1f592-5e84-4364-a839-14511968fc09",
+                  "ReferencedComponentTypes": []
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 1,
+                    "Type": "input",
+                    "UserData": {
+                      "Position": "80,80"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
+                      "_name": "Enabled"
+                    },
+                    "UserData": {
+                      "Position": "272,80"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_signal",
+                    "DstId": 2,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_target",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": false,
+                    "DstId": 2,
+                    "DstName": "_value"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "43982690-c087-4c69-831f-c347854fbda9",
+          "Name": "Enter",
+          "Position": "1647.214,5097.065,431.3083",
+          "Rotation": "0,0,1,0.0000001490116",
+          "Scale": "0.01011298,52.86319,4.291754",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "a57b7e00-71c5-46b4-bd90-9119d6efb980",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/color_low/white.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "Off",
+              "Tint": "0.79457,0,0.95349,0.62"
+            }
+          ]
+        },
+        {
+          "__guid": "89859fee-6ec1-45c8-97f4-044ce33a25f9",
+          "Name": "Enter",
+          "Position": "8847.275,4653.966,394.8246",
+          "Rotation": "0,0,0.9238796,-0.3826833",
+          "Scale": "0.01011298,52.86319,4.291754",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "964ff3d0-4b5d-4c7a-86b1-b722e4f17208",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/color_low/white.vmat",
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "Off",
+              "Tint": "0.79457,0,0.95349,0.62"
+            }
+          ]
+        },
+        {
+          "__guid": "7267ffae-0edd-4701-8ce8-40ca83232b55",
+          "Name": "Enter Teleport",
+          "Position": "1632.439,5097.065,431.3083",
+          "Rotation": "0,0,1,0.0000001490116",
+          "Scale": "0.2965747,52.86319,4.291754",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "TriggerTeleport",
+              "__guid": "951c7a3e-8dee-4330-8886-5d92940f7798",
+              "Game": {
+                "_type": "gameobject",
+                "go": "1365e926-bdc2-4255-a744-047e5170dd1b"
+              },
+              "PosToSpawn": "3150,-30064,2762"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "8a3f39ef-5e48-4eaa-ade8-f1aeb91b0c60",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "OnTriggerEnter": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Trigger Enter",
+                  "id": "f1b64e6a-51c1-4d3b-a803-1dc76c7dda8e",
+                  "ReferencedComponentTypes": []
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "call",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
+                      "_name": "Destroy",
+                      "_isStatic": false
+                    },
+                    "UserData": {
+                      "Position": "192,128"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 1,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 1,
+                    "DstName": "_target"
+                  }
+                ]
+              },
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "467e7d56-ea97-42f5-81c4-af489cd8cb15",
+          "Name": "Enter Teleport Fly",
+          "Position": "8995.926,4528.504,378.3717",
+          "Rotation": "0,0,0.9238796,-0.3826832",
+          "Scale": "0.2965747,52.86319,4.291754",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "BoxCollider",
+              "__guid": "5ebaa85c-2d61-40b3-a08a-8a9ae3b9b461",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "50,50,50",
+              "Static": false
+            },
+            {
+              "__type": "TriggerAdvanceTeleport",
+              "__guid": "34c76290-9e16-4298-8a4f-0356c7203a42",
+              "Game": {
+                "_type": "gameobject",
+                "go": "1365e926-bdc2-4255-a744-047e5170dd1b"
+              },
+              "OnTeleportStarted": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Teleport Started",
+                  "id": "9f60f377-8e80-4e08-bfef-7ff508803d4f",
+                  "ReferencedComponentTypes": []
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "call",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
+                      "_name": "Destroy",
+                      "_isStatic": false
+                    },
+                    "UserData": {
+                      "Position": "240,144"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 1,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 1,
+                    "DstName": "_target"
+                  }
+                ]
+              },
+              "PosToSpawn": {
+                "_type": "gameobject",
+                "go": "0b364ffa-c5b7-43e2-bd87-1bf36058c84d"
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "edcca7ab-0e79-4e52-9375-c59e4cec805e",
+          "Name": "Door Red",
+          "Position": "1676.761,8607.037,324.2907",
+          "Rotation": "0,0,-0.7071069,-0.7071066",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "13c2780f-a88b-43f3-8923-522344272b88",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/door_blue.vmdl",
+              "RenderType": "On",
+              "Tint": "0.91163,0.11872,0.11872,1"
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "27dd76aa-967b-4b1e-b688-ab0bd4bc4928",
+              "IsTrigger": true,
+              "Model": "models/door_blue.vmdl",
+              "OnTriggerEnter": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Trigger Enter",
+                  "id": "8ed87279-5f2e-412b-8ef3-00d95f6358c9",
+                  "ReferencedComponentTypes": [
+                    "package.ambi.myog/DoorNextLevel"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 1,
+                    "Type": "input",
+                    "UserData": {
+                      "Position": "32,-80"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.Component",
+                      "_name": "GameObject"
+                    },
+                    "UserData": {
+                      "Position": "192,32"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "package.ambi.myog/DoorNextLevel"
+                    },
+                    "UserData": {
+                      "Position": "-560,192"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "call",
+                    "Properties": {
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "NextLevel",
+                      "_isStatic": false
+                    },
+                    "UserData": {
+                      "Position": "560,384"
+                    }
+                  },
+                  {
+                    "Id": 5,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "Game"
+                    },
+                    "UserData": {
+                      "Position": "-240,224"
+                    }
+                  },
+                  {
+                    "Id": 6,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/Game",
+                      "_name": "Ply"
+                    },
+                    "UserData": {
+                      "Position": "32,240"
+                    }
+                  },
+                  {
+                    "Id": 7,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.Component",
+                      "_name": "GameObject"
+                    },
+                    "UserData": {
+                      "Position": "160,144"
+                    }
+                  },
+                  {
+                    "Id": 8,
+                    "Type": "op.equal",
+                    "UserData": {
+                      "Position": "464,144"
+                    }
+                  },
+                  {
+                    "Id": 9,
+                    "Type": "if",
+                    "UserData": {
+                      "Position": "608,144"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 1,
+                    "SrcName": "obj",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_target",
+                    "DstId": 3,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 9,
+                    "SrcName": "true",
+                    "DstId": 4,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 3,
+                    "SrcName": "_result",
+                    "DstId": 4,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 3,
+                    "SrcName": "_result",
+                    "DstId": 5,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 5,
+                    "SrcName": "_result",
+                    "DstId": 6,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 6,
+                    "SrcName": "_result",
+                    "DstId": 7,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 8,
+                    "DstName": "a"
+                  },
+                  {
+                    "SrcId": 7,
+                    "SrcName": "_result",
+                    "DstId": 8,
+                    "DstName": "b"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_signal",
+                    "DstId": 9,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 8,
+                    "SrcName": "_result",
+                    "DstId": 9,
+                    "DstName": "condition"
+                  }
+                ]
+              },
+              "Static": false
+            },
+            {
+              "__type": "DoorNextLevel",
+              "__guid": "a916996d-5d7b-4626-baa1-a18999484e6d",
+              "canChangeLoyality": true,
+              "Game": {
+                "_type": "component",
+                "component_id": "03058762-bb13-4d38-8523-5cb358351ee4",
+                "go": "1365e926-bdc2-4255-a744-047e5170dd1b",
+                "component_type": "Game"
+              },
+              "OnFinished": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Finished",
+                  "id": "9c19fb97-a408-43d0-afe5-8308ffaa7aa4",
+                  "ReferencedComponentTypes": [
+                    "package.ambi.myog/DoorNextLevel"
+                  ]
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "scene.get",
+                    "Properties": {
+                      "T": "package.ambi.myog/DoorNextLevel"
+                    },
+                    "UserData": {
+                      "Position": "-208,144"
+                    }
+                  },
+                  {
+                    "Id": 2,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "Game"
+                    },
+                    "UserData": {
+                      "Position": "48,144"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "property.get",
+                    "Properties": {
+                      "_type": "package.ambi.myog/Game",
+                      "_name": "Stats"
+                    },
+                    "UserData": {
+                      "Position": "320,176"
+                    }
+                  },
+                  {
+                    "Id": 5,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_type": "package.ambi.myog/StatsData",
+                      "_name": "Level1EnteredTheRedDoor"
+                    },
+                    "UserData": {
+                      "Position": "480,160"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 1,
+                    "DstName": "_this"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 2,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 2,
+                    "SrcName": "_result",
+                    "DstId": 4,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 5,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "_result",
+                    "DstId": 5,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": true,
+                    "DstId": 5,
+                    "DstName": "_value"
+                  }
+                ]
+              },
+              "plusLoyality": false,
+              "scene": "scenes/level3.scene",
+              "OnComponentStart": {
+                "Version": 5,
+                "UserData": {
+                  "Title": "On Component Start",
+                  "id": "14c75ca3-2f37-46b0-a73e-9e3c8f5c97f7"
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "property.set",
+                    "Properties": {
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
+                      "_name": "Enabled"
+                    },
+                    "UserData": {
+                      "Position": "192,-0"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 1,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 1,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": false,
+                    "DstId": 1,
+                    "DstName": "_value"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "bde59aab-7f7d-4faf-b790-70deaeda8396",
+          "Name": "Invisible Block",
+          "Position": "6422.798,9372.694,220.2836",
+          "Scale": "29.72722,28.23245,1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "aa6cef2d-0375-45f9-bfe5-15aa52abd8eb",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "Off",
+              "Tint": "0.98605,0.96961,0,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "__guid": "996c0e3c-27eb-4256-a301-08f3a24546bc",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "5cfbbb43-0e08-40a7-9b2d-72f7d8943407",
+      "Name": "Fly World",
+      "Position": "3555.804,2193.6,10154.09",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "45bf72a6-d58a-4e08-a49a-76dd18bf2927",
+      "Name": "Abstract World",
+      "Position": "-2636.773,-31406.84,2363.184",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "81a2d0e0-5b84-402f-90f5-9fb36d4206e8",
+      "Name": "Enter Teleport",
+      "Position": "-1763.475,-31250.36,2028.456",
+      "Rotation": "0,0,1,0.0000001490116",
+      "Scale": "228.8547,185.7376,15.4184",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "TriggerTeleport",
+          "__guid": "5dcdd125-ff44-4aad-a2d1-db8fe350ea71",
+          "Game": {
+            "_type": "gameobject",
+            "go": "1365e926-bdc2-4255-a744-047e5170dd1b"
+          },
+          "PosToSpawn": "3150,-30064,2762"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "8774b4cf-7316-4613-9dce-0eb98ff5de9d",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "e30bde70-75b3-4dbb-83a0-5b89add30603",
+      "Name": "PlayerObj",
+      "Position": "6293.804,496.7845,557.4611",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Tags": "player,trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "__guid": "66f4fc46-d690-457e-8a6d-9c4667fd4ea4",
+      "Name": "Spawn Abstract",
+      "Position": "3154.236,-30064.23,2762.098",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "837b9893-c0ab-4edf-84a9-6cdae9b8b7b1",
+      "Name": "Cube (1)",
+      "Position": "3057.041,-30064.23,2520.217",
+      "Scale": "4.984263,7.221158,2.511929",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "49577012-76b1-41d5-8ac7-6d914d393489",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "MonologTrigger",
+          "__guid": "7a7df1d4-436c-476b-adda-4969f5ed4214",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/chapter2_13.monolog",
+            "monologues/chapter 2/chapter2_14.monolog",
+            "monologues/chapter 2/chapter2_15.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "7db95854-c0a0-4fec-88b1-5b276aefa80c",
+            "go": "5b64f399-a819-441a-a61f-8d7d6c66a9dc",
+            "component_type": "MonologSystem"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "e69747c2-f491-4d89-a68e-8d89aac2625e",
+      "Name": "Cube (2)",
+      "Position": "2022.974,2373.18,9353.546",
+      "Scale": "4.984263,7.221158,2.511929",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "f39be3c4-64fa-4d15-9e9d-1c18a08a82e3",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "MonologTrigger",
+          "__guid": "e14fa224-9eab-416c-ac82-bea4e41c9625",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/chapter2_6.monolog",
+            "monologues/chapter 2/chapter2_7.monolog",
+            "monologues/chapter 2/chapter2_8.monolog",
+            "monologues/chapter 2/chapter2_9.monolog",
+            "monologues/chapter 2/chapter2_10.monolog",
+            "monologues/chapter 2/chapter2_11.monolog",
+            "monologues/chapter 2/chapter2_12.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "7db95854-c0a0-4fec-88b1-5b276aefa80c",
+            "go": "5b64f399-a819-441a-a61f-8d7d6c66a9dc",
+            "component_type": "MonologSystem"
+          },
+          "OnTriggerEntered": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Entered",
+              "id": "3e68d2eb-51a1-4840-aa05-69a59e6e3e0f"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/ListGameObjects"
+                },
+                "UserData": {
+                  "Position": "-512,112"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property.get",
+                "Properties": {
+                  "_type": "package.ambi.myog/ListGameObjects",
+                  "_name": "Objects"
+                },
+                "UserData": {
+                  "Position": "-256,128"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "list.get",
+                "UserData": {
+                  "Position": "16,144"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.set",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Enabled"
+                },
+                "UserData": {
+                  "Position": "208,160"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "Value": 0,
+                "DstId": 3,
+                "DstName": "index"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "list"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "Value": true,
+                "DstId": 4,
+                "DstName": "_value"
+              }
+            ]
+          }
+        },
+        {
+          "__type": "ListGameObjects",
+          "__guid": "1c94fb35-fa8a-46f2-8afb-d82d41c88e19",
+          "Objects": [
+            {
+              "_type": "gameobject",
+              "go": "ea870fb4-2370-41cc-8222-294e8556e0b9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "0b364ffa-c5b7-43e2-bd87-1bf36058c84d",
+      "Name": "Spawn Fly Islands",
+      "Position": "2022.974,2373.18,9537.825",
+      "Rotation": "0,0,0.258819,0.9659258",
+      "Scale": "0.5640128,1.604869,1.147384",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "ea870fb4-2370-41cc-8222-294e8556e0b9",
+      "Name": "Teleport To Fly Island",
+      "Position": "6741.821,3721.983,7674.361",
+      "Scale": "280.6955,276.5451,1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "45f03d00-8cb3-435f-8f30-f411d8fe045a",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "TriggerAdvanceTeleport",
+          "__guid": "c9001f01-afe8-4423-bd5f-5486bd5e446e",
+          "Game": {
+            "_type": "gameobject",
+            "go": "1365e926-bdc2-4255-a744-047e5170dd1b"
+          },
+          "OnComponentStart": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Component Start",
+              "id": "06d31ff4-8d20-4a76-95b4-473792ff4268"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "property.set",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Enabled"
+                },
+                "UserData": {
+                  "Position": "160,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "Value": false,
+                "DstId": 1,
+                "DstName": "_value"
+              }
+            ]
+          },
+          "PosToSpawn": {
+            "_type": "gameobject",
+            "go": "0b364ffa-c5b7-43e2-bd87-1bf36058c84d"
           }
         }
       ]
@@ -134,8 +2224,12 @@
   },
   "Title": "level2",
   "Description": "",
-  "LastSaved": "2024-03-15T04:04:46.5762018\u002B05:00",
+  "LastSaved": "2024-03-17T09:29:56.063779\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": []
+  "__references": [
+    "ambi.angel_statuette",
+    "ambi.tradis_red_door",
+    "ambi.vape"
+  ]
 }

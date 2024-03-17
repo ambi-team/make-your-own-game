@@ -17,6 +17,7 @@ public class MonologSystem: Component
 
     private SoundHandle _currentSoundHandle = null;
     private bool _isPlaying;
+    public TimeUntil delay { get; set; } = 2f;
 
 
     public int QueueLength => _queue.Count;
@@ -85,6 +86,7 @@ public class MonologSystem: Component
     {
         _monologUI.Show(monolog.SubtitleText.ToString());
         monolog.VoiceSound.UI = true;
+        monolog.VoiceSound.Volume = SettingsSingleton.Data.Volume / 100;
 		_currentSoundHandle = Sound.Play(monolog.VoiceSound);
         
         Log.Info($"Monolog {monolog.VoiceSound.ResourceName} played.");
@@ -111,11 +113,11 @@ public class MonologSystem: Component
             
             _monologUI.Hide();
 
-            OnReplicaEnded?.Invoke(_queue.Peek());
+			OnReplicaEnded?.Invoke(_queue.Peek());
 
-			var monolog = _queue.Dequeue();
+            var monolog = _queue.Dequeue();
             PlayMonolog(monolog);
-        }
+		}
         else if (_currentSoundHandle == null && QueueLength > 0)
         {
             var monolog = _queue.Dequeue();

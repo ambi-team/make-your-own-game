@@ -12,7 +12,7 @@ public sealed class WheelPuzzleSystem : Component
 	private bool readyWheelMedium = false;
 	private bool readyWheelSmall = false;
 
-	public bool isCompleted = false;
+	[Property] public bool isCompleted = false;
 	#endregion
 
 	#region Hooks

@@ -1,0 +1,14 @@
+{
+  "VoiceSound": "sound/monologue/chapter 4/chapter4_10.sound",
+  "SubtitleText": {
+    "Strings": {
+      "en": "The fire is out now\u2026 Our journey has come to an end. This is your last challenge. ",
+      "ru": "\u0418 \u0432\u043E\u0442 \u043E\u0433\u043E\u043D\u044C \u043F\u043E\u0442\u0443\u0445\u2026  \u041F\u0440\u0438\u0448\u043B\u043E \u0432\u0440\u0435\u043C\u044F \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u044C \u043D\u0430\u0448\u0435 \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435. \u042D\u0442\u043E \u0442\u0432\u043E\u0451 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0435\u0435 \u0438\u0441\u043F\u044B\u0442\u0430\u043D\u0438\u0435"
+    }
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "ambi.myog_monologue_lvl4_10"
+  ]
+}

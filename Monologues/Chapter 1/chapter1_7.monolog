@@ -1,0 +1,11 @@
+{
+  "VoiceSound": "sound/monologue/chapter 1/chapter1_7.sound",
+  "SubtitleText": {
+    "Strings": {}
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "ambi.myog_monologue_lvl1_7"
+  ]
+}

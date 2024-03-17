@@ -1,0 +1,14 @@
+{
+  "VoiceSound": "sound/monologue/chapter 4/chapter4_7.sound",
+  "SubtitleText": {
+    "Strings": {
+      "en": "We lose inspiration and passion, and our work becomes lifeless.\n",
+      "ru": "\u041F\u0435\u0440\u0435\u0434 \u0442\u043E\u0431\u043E\u0439 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C. \n"
+    }
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "ambi.myog_monologue_lvl4_7"
+  ]
+}

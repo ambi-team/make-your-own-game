@@ -1,41 +1,46 @@
 {
   "RootObject": {
-    "Id": "3e753369-1bc3-4b3f-aac8-097ddca0912f",
-    "Name": "Wheel Puzzle",
-    "Position": "-1886.645,31.28625,-700.8259",
+    "__guid": "0cc7a6c2-47cb-4360-9931-10ea6a6c1dc0",
+    "Name": "wheel_puzzle",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "WheelPuzzleSystem",
+        "__guid": "fda9ca1c-9669-4c41-97a3-a6982e7a88f2",
         "wheelBig": {
           "_type": "component",
-          "go": "a57a9d1e-9f0c-4c4d-9bb4-600c74c86455",
+          "component_id": "7b41fc82-ceb3-4898-af83-6dd69f31bf9d",
+          "go": "e5fef7f2-8611-4bfd-bcc6-52ea4b2c8b2a",
           "component_type": "WheelPuzzle"
         },
         "wheelMedium": {
           "_type": "component",
-          "go": "e31a64c3-2413-419e-8612-e60b5746372c",
+          "component_id": "212c2083-b4cf-4a3c-ae89-1d008455881b",
+          "go": "3a38ed5c-81c8-4971-9572-004b808cedba",
           "component_type": "WheelPuzzle"
         },
         "wheelSmall": {
           "_type": "component",
-          "go": "32112f21-8e1f-450b-bb20-a1505e639b68",
+          "component_id": "5c63850b-a89e-49ab-a3cf-a2325a934575",
+          "go": "60472ff1-23ae-4638-a7cc-f6634e1177fa",
           "component_type": "WheelPuzzle"
         }
       }
     ],
     "Children": [
       {
-        "Id": "32112f21-8e1f-450b-bb20-a1505e639b68",
+        "__guid": "60472ff1-23ae-4638-a7cc-f6634e1177fa",
         "Name": "Wheel Small",
-        "Position": "0,-0.7348226,4.640282",
+        "Position": "0,-0.7348226,4.798871",
         "Rotation": "-0.7071067,0.00000007375699,0.00000007375698,0.7071068",
+        "Scale": "1.245165,1,1.275283",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
           {
             "__type": "ModelRenderer",
+            "__guid": "674efaa3-6abf-495c-9e72-37bdd5b853d0",
             "BodyGroups": 18446744073709551615,
             "Model": "models/circle.vmdl",
             "RenderType": "On",
@@ -43,11 +48,13 @@
           },
           {
             "__type": "WheelPuzzle",
+            "__guid": "5c63850b-a89e-49ab-a3cf-a2325a934575",
             "canRotate": true,
             "sideCorrect": 2
           },
           {
             "__type": "ModelCollider",
+            "__guid": "d3a40222-84f2-4485-9822-df5a528cc420",
             "IsTrigger": false,
             "Model": "models/circle.vmdl",
             "Static": true
@@ -55,7 +62,7 @@
         ],
         "Children": [
           {
-            "Id": "314b8f2a-8e98-4c2e-84e5-444993eee479",
+            "__guid": "5d839bf8-ccf6-4c15-b5c2-c9103b01cc17",
             "Name": "Cube",
             "Position": "-0.04147442,-0.3767712,-5.767334",
             "Rotation": "0.4999999,-0.5,0.5,0.5000001",
@@ -65,6 +72,7 @@
             "Components": [
               {
                 "__type": "ModelRenderer",
+                "__guid": "2129d3ee-0d86-4812-b888-205cecb6ffbb",
                 "BodyGroups": 18446744073709551615,
                 "Model": "models/dev/box.vmdl",
                 "RenderType": "On",
@@ -75,16 +83,17 @@
         ]
       },
       {
-        "Id": "e31a64c3-2413-419e-8612-e60b5746372c",
+        "__guid": "3a38ed5c-81c8-4971-9572-004b808cedba",
         "Name": "Wheel Medium",
         "Position": "0,0,3.228672",
         "Rotation": "-0.7071068,0.00000007375699,0.00000007375699,0.7071068",
-        "Scale": "2,2,2",
+        "Scale": "2.486243,2.147556,2.491187",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
           {
             "__type": "ModelRenderer",
+            "__guid": "5cc2deec-2acb-4790-93b1-0fdbdece742f",
             "BodyGroups": 18446744073709551615,
             "Model": "models/circle.vmdl",
             "RenderType": "On",
@@ -92,11 +101,13 @@
           },
           {
             "__type": "WheelPuzzle",
+            "__guid": "212c2083-b4cf-4a3c-ae89-1d008455881b",
             "canRotate": true,
             "sideCorrect": 9
           },
           {
             "__type": "ModelCollider",
+            "__guid": "3a8044dc-85e0-45c2-ab78-653e8acefdc1",
             "IsTrigger": false,
             "Model": "models/circle.vmdl",
             "Static": true
@@ -104,7 +115,7 @@
         ],
         "Children": [
           {
-            "Id": "2edc17d1-e1a1-4a7f-832e-6969f1f7bbc5",
+            "__guid": "24f07320-8500-4281-a7fa-03ee633a63cd",
             "Name": "Cube",
             "Position": "0.01980831,-0.7145625,-6.318421",
             "Rotation": "0.4999999,-0.5,0.4999999,0.5000002",
@@ -114,6 +125,7 @@
             "Components": [
               {
                 "__type": "ModelRenderer",
+                "__guid": "4ef36f22-5bf1-4b38-bc97-1535573521bf",
                 "BodyGroups": 18446744073709551615,
                 "Model": "models/dev/box.vmdl",
                 "RenderType": "On",
@@ -124,16 +136,16 @@
         ]
       },
       {
-        "Id": "a57a9d1e-9f0c-4c4d-9bb4-600c74c86455",
+        "__guid": "e5fef7f2-8611-4bfd-bcc6-52ea4b2c8b2a",
         "Name": "Wheel Big",
-        "Position": "0,0,0",
         "Rotation": "-0.7071067,0.00000007375699,0.00000007375698,0.7071068",
-        "Scale": "4,4,4",
+        "Scale": "4.874965,4.161299,4.642739",
         "Enabled": true,
         "NetworkMode": 2,
         "Components": [
           {
             "__type": "ModelRenderer",
+            "__guid": "f74abc9c-ab7c-427e-81e0-198e6fde2373",
             "BodyGroups": 18446744073709551615,
             "Model": "models/circle.vmdl",
             "RenderType": "On",
@@ -141,11 +153,13 @@
           },
           {
             "__type": "WheelPuzzle",
+            "__guid": "7b41fc82-ceb3-4898-af83-6dd69f31bf9d",
             "canRotate": true,
             "sideCorrect": 4
           },
           {
             "__type": "ModelCollider",
+            "__guid": "420a628f-85cd-42af-896b-6e70d1facc7b",
             "IsTrigger": false,
             "Model": "models/circle.vmdl",
             "Static": true
@@ -153,7 +167,7 @@
         ],
         "Children": [
           {
-            "Id": "f2aeba9b-1813-41a9-92d9-6d20f5ac322c",
+            "__guid": "98aca02a-5d40-4e07-b281-adf7ac1bf037",
             "Name": "Cube",
             "Position": "-0.07753738,-0.4014142,-5.92865",
             "Rotation": "0.4999999,-0.5,0.5,0.5000001",
@@ -163,6 +177,7 @@
             "Components": [
               {
                 "__type": "ModelRenderer",
+                "__guid": "9c2d2a7e-8df6-4da3-aa82-62565dc810d8",
                 "BodyGroups": 18446744073709551615,
                 "Model": "models/dev/box.vmdl",
                 "RenderType": "On",
@@ -177,6 +192,8 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
   "__references": [
     "ambi.circle"
   ]

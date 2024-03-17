@@ -1,0 +1,14 @@
+{
+  "VoiceSound": "sound/monologue/chapter 1/chapter1_14.sound",
+  "SubtitleText": {
+    "Strings": {
+      "en": "You have reached this goal, now it is time to conquer the next world. You have two doors, and my goal is to make you choose the Blue one. I advise you to choose only this door.",
+      "ru": "\u042D\u0442\u0430 \u0446\u0435\u043B\u044C \u0434\u043E\u0441\u0442\u0438\u0433\u043D\u0443\u0442\u0430, \u043F\u043E\u0440\u0430 \u043F\u043E\u043A\u043E\u0440\u044F\u0442\u044C \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439 \u043C\u0438\u0440. \u0423 \u0442\u0435\u0431\u044F \u0434\u0432\u0435 \u0434\u0432\u0435\u0440\u0438, \u043C\u043E\u044F \u0446\u0435\u043B\u044C \u0443\u043A\u0430\u0437\u0430\u0442\u044C \u043D\u0430 \u0421\u0438\u043D\u044E\u044E. \u0421\u043E\u0432\u0435\u0442\u0443\u044E \u0432\u044B\u0431\u0438\u0440\u0430\u0442\u044C \u0442\u043E\u043B\u044C\u043A\u043E \u0441\u0438\u043D\u0438\u0435 \u0434\u0432\u0435\u0440\u0438."
+    }
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "ambi.myog_monologue_lvl1_14"
+  ]
+}

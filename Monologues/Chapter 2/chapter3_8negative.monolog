@@ -1,0 +1,14 @@
+{
+  "VoiceSound": "sound/monologue/chapter 3/chapter3_8_2.sound",
+  "SubtitleText": {
+    "Strings": {
+      "en": "Finally\u2026 you made it. I thought you could do that a bit faster. No, you would have done it a lot faster, if only you had chosen the blue door.",
+      "ru": "\u041D\u0430\u043A\u043E\u043D\u0435\u0446\u2026\u0442\u044B \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u043B. \u042F \u043E\u0436\u0438\u0434\u0430\u043B \u043E\u0442 \u0442\u0435\u0431\u044F \u0431\u043E\u043B\u044C\u0448\u0435\u0439 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438. \u0422\u044B \u0431\u044B \u0441\u0434\u0435\u043B\u0430\u0442\u044C \u044D\u0442\u043E \u0433\u043E\u0440\u0430\u0437\u0434\u043E \u0431\u044B\u0441\u0442\u0440\u0435\u0435, \u0435\u0441\u043B\u0438 \u0431\u044B \u0432\u044B\u0431\u0440\u0430\u043B \u0441\u0438\u043D\u044E\u044E \u0434\u0432\u0435\u0440\u044C.\n"
+    }
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "ambi.myog_monologue_lvl3_8_negative"
+  ]
+}

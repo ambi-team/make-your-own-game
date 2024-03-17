@@ -57,7 +57,7 @@
         },
         "Invert": false,
         "IsPseudo": false,
-        "JumpForce": 300,
+        "JumpForce": 350,
         "MaxForce": 50,
         "RunSpeed": 240,
         "Speed": 160

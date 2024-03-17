@@ -1,0 +1,14 @@
+{
+  "VoiceSound": "sound/monologue/chapter 3/chapter3_12.sound",
+  "SubtitleText": {
+    "Strings": {
+      "en": "Prepare for the final challenges.",
+      "ru": "\u041F\u0440\u0438\u0433\u043E\u0442\u043E\u0432\u044C\u0441\u044F \u043A \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u043C \u0438\u0441\u043F\u044B\u0442\u0430\u043D\u0438\u044F\u043C.\n"
+    }
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "ambi.myog_monologue_lvl3_12"
+  ]
+}

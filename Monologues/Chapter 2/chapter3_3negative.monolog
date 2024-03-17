@@ -1,0 +1,14 @@
+{
+  "VoiceSound": "sound/monologue/chapter 3/chapter3_3_2.sound",
+  "SubtitleText": {
+    "Strings": {
+      "en": "See these doorways? They all have a looped path except one. Now stop wasting my time and find the exit.",
+      "ru": "\u0412\u0438\u0434\u0438\u0448\u044C \u044D\u0442\u0438 \u043F\u0440\u043E\u0445\u043E\u0434\u044B,\u0432\u0441\u0435 \u0438\u0445 \u043F\u0443\u0442\u0438 \u0446\u0438\u043A\u043B\u0438\u0447\u043D\u044B, \u043A\u0440\u043E\u043C\u0435 \u043E\u0434\u043D\u043E\u0433\u043E. \u041D\u0430\u0439\u0434\u0438 \u0435\u0433\u043E \u0438 \u043D\u0435 \u0437\u0430\u0442\u044F\u0433\u0438\u0432\u0430\u0439. \n"
+    }
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "ambi.myog_monologue_lvl3_3_negative"
+  ]
+}
