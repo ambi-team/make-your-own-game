@@ -6,25 +6,25 @@ public class SettingsData : ISaveData
 	[JsonIgnore] public bool hasLoaded = false;
 	[JsonIgnore] private string filename = "settings";
 
-	
-	public string LanguageKey = "en";
+
+	public string LanguageKey { get; set; } = "en";
 	
 	/// <summary>
-	/// От 60 до 180 
+	/// От 60 до 120 
 	/// </summary>
-	public float FOV = Preferences.FieldOfView;
-	
+	public float FOV { get; set; } = 90;
+
 	/// <summary>
 	/// От 1 до 20
 	/// </summary>
-	public float MouseSensitivity = Preferences.Sensitivity;
-	
+	public float MouseSensitivity { get; set; } = 2f;
+
 	/// <summary>
 	/// От 0 до 100
 	/// </summary>
-	public float Volume = 50f;
+	public float Volume { get; set; } = 50f;
 
-	public bool EnableShadows = true;
+	public bool EnableShadows { get; set; } = true;
 	
 	[JsonIgnore] public Player ply;
 	#endregion
@@ -35,14 +35,18 @@ public class SettingsData : ISaveData
 		ply = player;
 	}
 
-	public void Setup()
+	public void Apply()
 	{
-		if (ply is null) return;
+		if (ply is null)
+		{
+			Log.Info("Error: No Player in Settings!");
+			return;
+		}
 
 		ply.Camera.Camera.FieldOfView = FOV;
 		ply.Camera.Sensivity = MouseSensitivity;
 
-		Log.Info($"[Settings] Setup");
+		Log.Info($"[Settings] Apply");
 	}
 	#endregion
 
@@ -59,8 +63,17 @@ public class SettingsData : ISaveData
 		if (!FileSystem.Data.FileExists(filename + ".json"))
 		{
 			Log.Info("Settings Not Found! Creating...");
+
+			LanguageKey = "en";
+			
+			FOV = Preferences.FieldOfView;
+			MouseSensitivity = Preferences.Sensitivity;
+			Volume = 50f;
+
+			EnableShadows = true;
 			
 			Save();
+			Apply();
 
 			return;
 		}
@@ -68,7 +81,6 @@ public class SettingsData : ISaveData
 		var settings = (SettingsData) SaveData.Load<SettingsData>($"{filename}.json");
 		
 		LanguageKey = settings.LanguageKey;
-		Log.Info(LanguageKey);
 		
 		FOV = settings.FOV;
 		MouseSensitivity = settings.MouseSensitivity;
@@ -78,7 +90,7 @@ public class SettingsData : ISaveData
 
 		hasLoaded = true;
 
-		Setup();
+		Apply();
 	}
 	#endregion
 }

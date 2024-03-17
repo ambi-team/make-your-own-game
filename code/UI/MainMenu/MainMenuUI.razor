@@ -11,7 +11,7 @@
 			<h1 class="card-title">Make Your Own Game</h1>
 			@if (!_menuWindowEnable)
 			{
-				<button class="btn outline" style="margin-left: 20px; margin-top: auto; margin-bottom: auto; width: 130px !important; height: 80px !important;" @onclick="@OnBackClick">@_backButtonName</button>
+				<button class="btn outline" style="margin-left: 20px; margin-top: 35px; width: 170px !important; height: 80px !important;" @onclick="@OnBackClick">@_backButtonName</button>
 			}
 		</div>
 
@@ -21,8 +21,6 @@
 				<button @onclick="@OnPlayClick" class="btn">@_playButtonName</button>
 				<button @onclick="@OnAchievementsClick" class="btn">@_achievementsButtonName</button>
 				<button @onclick="@OnSettingsClick" class="btn">@_settingsButtonName</button>
-				<button @onclick="@OnTitlesClick" class="btn">@_titlesButtonName</button>
-				<button @onclick="@OnExitClick" class="btn">@_exitButtonName</button>
 			</div>
 		}
 		
@@ -47,11 +45,10 @@
 		
 		@if (_settingsWindowEnable)
         {
-	        // TODO: Настройки пока что не приминяются! Они сохраняются, но на игру не влияют.
         	<div class="settings">
         		<row class="slider">
         			<label class="label">@_fovName</label>
-        			<SliderControl Min="@(60)" Max="@(180)" ShowValueTooltip="@false" Value:bind="@FovValue"/>
+        			<SliderControl Min="@(75)" Max="@(120)" ShowValueTooltip="@false" Value:bind="@FovValue"/>
         			<output class="output">
         				@FovValue.ToString( "0.00" )
         			</output>
@@ -59,7 +56,7 @@
         		
         		<row class="slider">
         			<label class="label">@_mouseSensitivityName</label>
-        			<SliderControl Min="@(1)" Max="@(20)" ShowValueTooltip="@false" Value:bind="@MouseSensitivityValue"/>
+        			<SliderControl Min="@(0.1f)" Max="@(5)" ShowValueTooltip="@false" Value:bind="@MouseSensitivityValue"/>
         			<output class="output">
         				@MouseSensitivityValue.ToString( "0.00" )
         			</output>
@@ -83,22 +80,6 @@
         		</div>
         	</div>
         }
-        
-        @if (_titlesWindowEnable)
-        {
-	        // TODO: Нужно сделать окно титров!
-            <div class="titles">
-
-            </div>
-        }
-    
-        @if (_exitWindowEnable)
-        {
-	        // TODO: Нужно сделать окно при нажатии кнопки выхода!
-            <div class="exit">
-
-            </div>
-        }
 	</div>
 </root>
   
@@ -119,8 +100,6 @@
 	private LocalizedStrings _playButtonName = LocalizedStrings.FromTuple(("ru", "Играть"), ("en", "Play"));
 	private LocalizedStrings _achievementsButtonName = LocalizedStrings.FromTuple(("ru", "Достижения"), ("en", "Achievements"));
 	private LocalizedStrings _settingsButtonName = LocalizedStrings.FromTuple(("ru", "Настройки"), ("en", "Settings"));
-	private LocalizedStrings _titlesButtonName = LocalizedStrings.FromTuple(("ru", "Авторы"), ("en", "Credits"));
-	private LocalizedStrings _exitButtonName = LocalizedStrings.FromTuple(("ru", "Выйти"), ("en", "Exit"));
 
 	[Property] public bool canHide = true;
 	[Property] public bool hasPseusoMainMenuScene = false;
@@ -129,45 +108,49 @@
 	private bool _menuWindowEnable = true;
 	private bool _achievementsWindowEnable = false;
 	private bool _settingsWindowEnable = false;
-	private bool _titlesWindowEnable = false;
-	private bool _exitWindowEnable = false;
 
 	private bool _mainMenuShow;
 
 	public float FovValue
 	{
 		get => SettingsSingleton.Data.FOV;
-		set { SettingsSingleton.Data.FOV = value; SettingsSingleton.Data.Save(); }
+		set { SettingsSingleton.Data.FOV = value; OnSettingsSave(); }
 	}
 
 	public float MouseSensitivityValue
 	{
 		get => SettingsSingleton.Data.MouseSensitivity;
-		set { SettingsSingleton.Data.MouseSensitivity = value; SettingsSingleton.Data.Save(); }
+		set { SettingsSingleton.Data.MouseSensitivity = value; OnSettingsSave(); }
 	}
 
 	public float VolumeValue
 	{
 		get => SettingsSingleton.Data.Volume;
-		set { SettingsSingleton.Data.Volume = value; SettingsSingleton.Data.Save(); }
+		set { SettingsSingleton.Data.Volume = value; OnSettingsSave(); }
 	}
 
 	public string LanguageKey
 	{
 		get => SettingsSingleton.Data.LanguageKey;
-		set { SettingsSingleton.Data.LanguageKey = value; SettingsSingleton.Data.Save(); }
+		set { SettingsSingleton.Data.LanguageKey = value; OnSettingsSave(); }
 	}
 
 	public bool EnableShadowValue
 	{
 		get => SettingsSingleton.Data.EnableShadows;
-		set { SettingsSingleton.Data.EnableShadows = value; SettingsSingleton.Data.Save(); }
+		set { SettingsSingleton.Data.EnableShadows = value; OnSettingsSave(); }
 	}
 
 	private Achievement achi_press_esc = Achievement.CreateOrGet("press_esc_4_times", LocalizedStrings.FromTuple(("en", "The holy button"), ("ru", "Святая кнопка")), LocalizedStrings.FromTuple(("en", "Don't press Escape on four times"), ("ru", "Не следует нажимать Escape четыре раза")), 4);
 
 	public event Action OnPlayClicked;
 
+	public void OnSettingsSave()
+	{
+		SettingsSingleton.Data.Save(); 
+		SettingsSingleton.Data.Apply();
+	}
+	
 	public void OnAchievementsClick()
 	{
 		CloseWindows(false);
@@ -195,22 +178,6 @@
 		Log.Info("On Settings Click");
 	}
 
-	public void OnTitlesClick()
-	{
-		CloseWindows(false);
-		_titlesWindowEnable = true;
-
-		Log.Info("On Titles Click");
-	}
-
-	public void OnExitClick()
-	{
-		CloseWindows(false);
-		_exitWindowEnable = true;
-
-		Log.Info("On Exit Click");
-	}
-
 	public void OnBackClick()
 	{
 		CloseWindows(true);
@@ -223,8 +190,6 @@
 		_playWindowEnable = false;
 		_achievementsWindowEnable = false;
 		_settingsWindowEnable = false;
-		_titlesWindowEnable = false;
-		_exitWindowEnable = false;
 	}
 
 
@@ -251,7 +216,7 @@
 			}
 			else
 			{
-				if (_achievementsWindowEnable || _settingsWindowEnable || _titlesWindowEnable || _exitWindowEnable || _playWindowEnable)
+				if (_achievementsWindowEnable || _settingsWindowEnable || _playWindowEnable)
 				{
 					CloseWindows(true);
 				}
@@ -269,10 +234,6 @@
 	{
 		Enabled = true;
 
-		var data = new SettingsData();
-		data.Load();
-		SettingsSingleton.Data = data;
-
 		if (hasPseusoMainMenuScene) Show();
 	}
 	
@@ -280,6 +241,6 @@
 	protected override int BuildHash() => System.HashCode.Combine( 
 		_mainMenuShow, LanguageKey,
 		_menuWindowEnable, _achievementsWindowEnable, 
-		_settingsWindowEnable, _titlesWindowEnable, _exitWindowEnable 
+		_settingsWindowEnable
 	);
 }

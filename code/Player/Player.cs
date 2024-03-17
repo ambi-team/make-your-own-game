@@ -48,6 +48,10 @@ public sealed class Player : Component
 	#region Components
 	protected override void OnStart()
 	{
+		SettingsSingleton.Data = new SettingsData();
+		SettingsSingleton.Data.SetPlayer(this);
+		SettingsSingleton.Data.Load();
+		
 		if (Character is null)
 			Character = GameObject.Components.GetInChildrenOrSelf<CharacterController>();
 

@@ -90,7 +90,7 @@
           "defaultTimeRecoding": 20,
           "ply": {
             "_type": "component",
-            "component_id": "86ab5afa-a3e9-4056-8522-a65fe1569c15",
+            "component_id": "81b21dc8-c06d-44f1-940f-812e2e9ae77e",
             "go": "43169f6e-d108-4963-87f0-001c6684eb98",
             "component_type": "Player"
           },
@@ -102,7 +102,13 @@
         },
         {
           "__type": "MonologSystem",
-          "__guid": "89dae408-c70f-4f62-94ee-3279a65c17d1"
+          "__guid": "89dae408-c70f-4f62-94ee-3279a65c17d1",
+          "_monologUI": {
+            "_type": "component",
+            "component_id": "f237411a-af81-4a24-8c02-0c134455e1dc",
+            "go": "846730fd-3358-4884-a6a5-f8d34c0ff616",
+            "component_type": "MonologUI"
+          }
         },
         {
           "__type": "SoundPointComponent",
@@ -141,6 +147,16 @@
           "Opacity": 1,
           "Scale": 1,
           "ZIndex": 100
+        },
+        {
+          "__type": "MonologUI",
+          "__guid": "f237411a-af81-4a24-8c02-0c134455e1dc",
+          "_currentOpacity": 0,
+          "_currentText": "ERROR: No Text!",
+          "AnimationDurationSeconds": 0.1,
+          "HideOpacity": 0,
+          "ShowOpacity": 1,
+          "Side": "Up"
         }
       ]
     },
@@ -161,7 +177,9 @@
         },
         {
           "__type": "MainMenuUI",
-          "__guid": "5da965d0-6fc7-47be-b0cf-0e380fa715be"
+          "__guid": "5da965d0-6fc7-47be-b0cf-0e380fa715be",
+          "canHide": true,
+          "hasPseusoMainMenuScene": false
         }
       ]
     },
@@ -740,8 +758,9 @@
             {
               "__type": "MonologTrigger",
               "__guid": "df4885bc-784d-44a8-8587-b07e5bfb166d",
+              "canRemove": false,
               "Monologs": [
-                "monologs/untitled.monolog"
+                "monologues/beginning/beggining4.monolog"
               ],
               "MonologSystem": {
                 "_type": "component",
@@ -3184,7 +3203,7 @@
   },
   "Title": "dev",
   "Description": "",
-  "LastSaved": "2024-03-15T22:52:36.9778287\u002B03:00",
+  "LastSaved": "2024-03-17T08:32:01.2098569\u002B03:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

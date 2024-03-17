@@ -4,6 +4,7 @@
 
 	public static void Save(string filename, object value)
 	{
+		Log.Info(d.GetFullPath(filename));
 		d.WriteJson(filename, value);
 	}
 
