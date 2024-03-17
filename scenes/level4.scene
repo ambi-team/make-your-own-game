@@ -25,48 +25,1017 @@
       "Children": []
     },
     {
-      "__guid": "98ade22b-8988-4c46-86aa-1b7a68a5a0ff",
-      "Name": "Sun",
-      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
-      "Tags": "light_directional,light",
+      "__guid": "3c3a94bb-e5ef-40b8-b94b-2a16644843fa",
+      "Name": "\uD83D\uDCAB DATA \uD83D\uDCAB",
+      "Position": "278.0361,331.6518,76.7455",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "38c2c769-67de-469b-8a16-dd39a1193daa",
+      "Name": "Game",
+      "Position": "183.8709,140.9425,99.10318",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "DirectionalLight",
-          "__guid": "3ea0ec6b-fafb-42dc-a27d-e901c3612803",
-          "FogMode": "Enabled",
-          "FogStrength": 1,
-          "LightColor": "1.96,1.96,1.96,1",
-          "Shadows": true,
-          "SkyColor": "0.2532,0.32006,0.35349,1"
+          "__type": "Game",
+          "__guid": "a6774a0e-20bb-4701-931d-7acf13a53823",
+          "Ply": {
+            "_type": "component",
+            "component_id": "8de0c7a8-ccdb-4379-9596-dcf4193be6dc",
+            "go": "aa08bbf2-2897-420a-a48b-0bb7a3f3e811",
+            "component_type": "Player"
+          },
+          "Settings": {
+            "LanguageKey": "en",
+            "FOV": 90,
+            "MouseSensitivity": 2,
+            "Volume": 50,
+            "EnableShadows": true
+          },
+          "Stats": {}
+        },
+        {
+          "__type": "Last",
+          "__guid": "af48761e-f92a-4c11-83c0-5919ca9e5631",
+          "map": {
+            "_type": "gameobject",
+            "go": "55d396a6-98e6-47ba-b89a-cf2a54427246"
+          }
         }
       ]
     },
     {
-      "__guid": "5737fd72-ebad-4af5-8d14-2ce16e3970e7",
-      "Name": "2D Skybox",
+      "__guid": "f3d58d87-d396-47a7-b7ab-56cf5a3bd590",
+      "Name": "UI: Monologue",
+      "Position": "-1108.829,-870.8134,219.609",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "c386aae3-cb43-4366-b6c1-d1740b0f9d46",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MonologUI",
+          "__guid": "ff04252f-c2e2-44fe-bf9b-db7ba513d1e9",
+          "_currentOpacity": 0,
+          "_currentText": "NoText!",
+          "AnimationDurationSeconds": 0.1,
+          "HideOpacity": 0,
+          "ShowOpacity": 1,
+          "Side": "Up"
+        }
+      ]
+    },
+    {
+      "__guid": "1b645121-51ec-4bd7-a01c-9386ba827cfd",
+      "Name": "UI: MainMenu",
+      "Position": "278.0361,331.6518,76.7455",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "dfa0ef81-d127-4b45-b219-4cbceccb83d0",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MainMenuUI",
+          "__guid": "683c2fdc-8fdf-48c7-b783-e74f78a0a568",
+          "canHide": true,
+          "hasPseusoMainMenuScene": false
+        }
+      ]
+    },
+    {
+      "__guid": "90f3472a-7169-47ec-89d1-549de6fb5116",
+      "Name": "Monologue System",
+      "Position": "-1108.829,-933.1975,219.609",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologSystem",
+          "__guid": "9d8a2eb8-898c-4f16-be7a-254c127dadb0",
+          "_monologUI": {
+            "_type": "component",
+            "component_id": "ff04252f-c2e2-44fe-bf9b-db7ba513d1e9",
+            "go": "f3d58d87-d396-47a7-b7ab-56cf5a3bd590",
+            "component_type": "MonologUI"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "78ae6e34-1579-4976-8593-c2de5bd17421",
+      "Name": "\u2705 LEVEL \u2705",
+      "Position": "235.5777,345.3558,54.46339",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "aa08bbf2-2897-420a-a48b-0bb7a3f3e811",
+      "Name": "PlayerObject",
+      "Position": "8185.416,10140.97,737.4114",
+      "Rotation": "-0.00000664802,0.000004023314,0.9999999,-0.00001975894",
+      "Tags": "trigger,player",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "__guid": "06dce409-d314-4658-8e41-72b64eec957a",
+      "Name": "Cube",
+      "Position": "8137.817,10057.12,800.8893",
+      "Scale": "6.132838,11.88334,9.903289",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologTrigger",
+          "__guid": "6e740f24-f323-49d7-9fa2-7dfaf1bd46eb",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/chapter4_1.monolog",
+            "monologues/chapter 2/chapter4_2.monolog",
+            "monologues/chapter 2/chapter4_3.monolog",
+            "monologues/chapter 2/chapter4_4.monolog",
+            "monologues/chapter 2/chapter4_5.monolog",
+            "monologues/chapter 2/chapter4_7.monolog",
+            "monologues/chapter 2/chapter4_13.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "9d8a2eb8-898c-4f16-be7a-254c127dadb0",
+            "go": "90f3472a-7169-47ec-89d1-549de6fb5116",
+            "component_type": "MonologSystem"
+          }
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "19ca24e8-6ba8-48d5-a5a3-ce6227836efb",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "eca257f6-b294-434c-96bd-a5c363e05342",
+      "Name": "Cube (4)",
+      "Position": "2663.302,12215.99,916.1658",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Scale": "5.915982,42.20748,10.11871",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologTrigger",
+          "__guid": "d7cd4b69-456d-4fe4-8a31-54b384cb546c",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/chapter4_11.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "9d8a2eb8-898c-4f16-be7a-254c127dadb0",
+            "go": "90f3472a-7169-47ec-89d1-549de6fb5116",
+            "component_type": "MonologSystem"
+          }
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "8b2f557e-f5b9-4039-b85d-672d4b2218de",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "358aa080-9dc9-4956-9c0c-6c9c8dd11c0f",
+      "Name": "Cube (5)",
+      "Position": "2640.531,13433.69,2084.653",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Scale": "5.915982,42.20748,10.11871",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologTrigger",
+          "__guid": "7480353c-4881-44b5-ab1f-a526bd2b4186",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/chapter4_12.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "9d8a2eb8-898c-4f16-be7a-254c127dadb0",
+            "go": "90f3472a-7169-47ec-89d1-549de6fb5116",
+            "component_type": "MonologSystem"
+          }
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "17dcfac9-fffa-45e2-b8e7-b196ede6a631",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "4b29b2fc-f2d8-471a-b9ca-a35c58f4f77c",
+      "Name": "Spot Light",
+      "Position": "7911.552,10173.6,886.5947",
+      "Rotation": "-0.7071068,0.0000001376788,0.7071067,0.0000001376788",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SpotLight",
+          "__guid": "13e41120-a9a5-43b0-bd9b-84e2699e35c5",
+          "Attenuation": 1,
+          "ConeInner": 15,
+          "ConeOuter": 60.77,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "26.1144,28.00469,28.58,1",
+          "Radius": 1000,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "4ea270fd-8cac-4c47-9031-948351d50018",
+      "Name": "Spot Light (1)",
+      "Position": "5386.495,9519.978,886.5947",
+      "Rotation": "-0.7071068,0.0000001376788,0.7071067,0.0000001376788",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SpotLight",
+          "__guid": "6cdeb6c0-f33e-441b-b0cc-e158196a7696",
+          "Attenuation": 1,
+          "ConeInner": 15,
+          "ConeOuter": 60.77,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "26.1144,28.00469,28.58,1",
+          "Radius": 1000,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "caefae32-28ae-48c8-8bbb-1fc151d547e1",
+      "Name": "Spot Light (2)",
+      "Position": "3493.132,8148.503,895.3828",
+      "Rotation": "-0.7071068,0.0000001376788,0.7071067,0.0000001376788",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SpotLight",
+          "__guid": "9201d821-b390-473d-a579-266aee7c70b3",
+          "Attenuation": 1,
+          "ConeInner": 15,
+          "ConeOuter": 60.77,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "26.1144,28.00469,28.58,1",
+          "Radius": 1000,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "530d2718-b165-46ff-bfbc-d51a1e437c75",
+      "Name": "Spot Light (3)",
+      "Position": "2664.686,9525.791,886.0023",
+      "Rotation": "-0.7071068,0.0000001376788,0.7071067,0.0000001376788",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SpotLight",
+          "__guid": "d8b38385-f08c-4ebf-b4c0-2162540fb8d7",
+          "Attenuation": 1,
+          "ConeInner": 15,
+          "ConeOuter": 60.77,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "26.1144,28.00469,28.58,1",
+          "Radius": 1000,
+          "Shadows": true
+        }
+      ]
+    },
+    {
+      "__guid": "68944b4b-40bd-4f86-9f7c-689c5b2336e5",
+      "Name": "Skybox",
+      "Position": "692.0435,-1913.295,612.5312",
       "Tags": "skybox",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
           "__type": "SkyBox2D",
-          "__guid": "a7bbc87c-3fcc-4224-9c80-9450d066d087",
-          "SkyMaterial": "materials/skybox/light_test_dark.vmat",
+          "__guid": "e61e2606-8582-4653-be6d-fa4850c31a45",
+          "SkyMaterial": "materials/skybox/light_test_sky_default.vmat",
+          "Tint": "0,0,0,1"
+        }
+      ]
+    },
+    {
+      "__guid": "54a6df26-107f-45e2-a027-6e003bf21914",
+      "Name": "Cube",
+      "Position": "3323.881,13585.63,2234.504",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "ed7ddc5d-4b8c-46aa-9251-3430243913f8",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/color_low/white.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,0.13"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "6cb1cc69-d665-42bf-9e8a-5dbd78181708",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "19ccd809-377e-439c-b58c-891fd6c26b68",
+      "Name": "Cube (2)",
+      "Position": "3375.645,13585.63,2261.061",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "7aba78f4-60bf-4206-b5b3-e08947e11a37",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/color_low/white.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,0.13"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "459ce87f-afb1-400b-b397-197380e18bbd",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "ce869cad-0648-48a5-a5e1-46a567303f7c",
+      "Name": "Cube (3)",
+      "Position": "3426.963,13585.63,2292.523",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "2ccb0d77-fa74-41b6-a009-f148a489ea19",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/color_low/white.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,0.13"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "238d7481-9c9f-4498-9e6d-63bb4ab95fef",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "834e8d6c-d73c-40a4-aa4a-1a5561eb5cb6",
+      "Name": "Door Blue",
+      "Position": "2403.97,14700.67,2354.105",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "ba753aba-46b8-44a8-9d7d-e90fa9ffd0a1",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/door_blue.vmdl",
+          "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
-          "__type": "EnvmapProbe",
-          "__guid": "e215d5f7-3121-4823-8cd3-d452d08d4d37",
-          "Bounds": {
-            "Mins": "-512,-512,-512",
-            "Maxs": "512,512,512"
+          "__type": "ModelCollider",
+          "__guid": "177c5bf5-9d4e-4e83-9a32-fc59263b0ef0",
+          "IsTrigger": true,
+          "Model": "models/door_blue.vmdl",
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "fc4a9441-61d4-4419-82f7-66e720d3f40c",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/DoorNextLevel"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "160,112"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "-592,272"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_name": "NextLevel",
+                  "_isStatic": false,
+                  "_type": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "528,464"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Game",
+                  "_type": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "-272,304"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Ply",
+                  "_type": "package.ambi.myog/Game"
+                },
+                "UserData": {
+                  "Position": "0,320"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "128,224"
+                }
+              },
+              {
+                "Id": 7,
+                "Type": "op.equal",
+                "UserData": {
+                  "Position": "432,224"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "if",
+                "UserData": {
+                  "Position": "576,224"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "obj",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 2,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "true",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 7,
+                "DstName": "a"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 7,
+                "DstName": "b"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 9,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 7,
+                "SrcName": "_result",
+                "DstId": 9,
+                "DstName": "condition"
+              }
+            ]
           },
-          "Feathering": 0.02,
-          "Projection": "Sphere",
-          "Texture": "textures/cubemaps/default2.vtex",
-          "TintColor": "1,1,1,1"
+          "Static": false
+        },
+        {
+          "__type": "DoorNextLevel",
+          "__guid": "6d0e1704-e6a8-4641-8846-d506f7c07346",
+          "canChangeLoyality": true,
+          "OnFinished": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Finished",
+              "id": "38b23d35-c27f-4f10-81f9-5b80e809fb8f",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/DoorNextLevel"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 2,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "-240,80"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Game",
+                  "_type": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "16,80"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Stats",
+                  "_type": "package.ambi.myog/Game"
+                },
+                "UserData": {
+                  "Position": "288,112"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property.set",
+                "Properties": {
+                  "_name": "Level1EnteredTheRedDoor",
+                  "_type": "package.ambi.myog/StatsData"
+                },
+                "UserData": {
+                  "Position": "448,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 5,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "Value": false,
+                "DstId": 5,
+                "DstName": "_value"
+              }
+            ]
+          },
+          "plusLoyality": true,
+          "scene": "scenes/the_end_neutral1.scene"
+        }
+      ]
+    },
+    {
+      "__guid": "2b6ae316-e808-4c2b-923b-9b13744a60aa",
+      "Name": "Door Red",
+      "Position": "2496.054,14692.4,2354.105",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "0f91e02c-e508-4904-8d96-1ffc5fd8022d",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/door_blue.vmdl",
+          "RenderType": "On",
+          "Tint": "0.91163,0.11872,0.11872,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "6603e0a9-78af-4c16-a738-193576ec1d5c",
+          "IsTrigger": true,
+          "Model": "models/door_blue.vmdl",
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "8ed87279-5f2e-412b-8ef3-00d95f6358c9",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/DoorNextLevel"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 1,
+                "Type": "input",
+                "UserData": {
+                  "Position": "32,-80"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "192,32"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "-560,192"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "call",
+                "Properties": {
+                  "_name": "NextLevel",
+                  "_isStatic": false,
+                  "_type": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "560,384"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Game",
+                  "_type": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "-240,224"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Ply",
+                  "_type": "package.ambi.myog/Game"
+                },
+                "UserData": {
+                  "Position": "32,240"
+                }
+              },
+              {
+                "Id": 7,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "160,144"
+                }
+              },
+              {
+                "Id": 8,
+                "Type": "op.equal",
+                "UserData": {
+                  "Position": "464,144"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "if",
+                "UserData": {
+                  "Position": "608,144"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 1,
+                "SrcName": "obj",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_target",
+                "DstId": 3,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "true",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 7,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 8,
+                "DstName": "a"
+              },
+              {
+                "SrcId": 7,
+                "SrcName": "_result",
+                "DstId": 8,
+                "DstName": "b"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 9,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 8,
+                "SrcName": "_result",
+                "DstId": 9,
+                "DstName": "condition"
+              }
+            ]
+          },
+          "Static": false
+        },
+        {
+          "__type": "DoorNextLevel",
+          "__guid": "42ebc5b7-b5c4-4beb-9dfa-054b579b809e",
+          "canChangeLoyality": true,
+          "OnFinished": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Finished",
+              "id": "9c19fb97-a408-43d0-afe5-8308ffaa7aa4",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/DoorNextLevel"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "-208,144"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Game",
+                  "_type": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "48,144"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Stats",
+                  "_type": "package.ambi.myog/Game"
+                },
+                "UserData": {
+                  "Position": "320,176"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property.set",
+                "Properties": {
+                  "_name": "Level1EnteredTheRedDoor",
+                  "_type": "package.ambi.myog/StatsData"
+                },
+                "UserData": {
+                  "Position": "480,160"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 5,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "Value": true,
+                "DstId": 5,
+                "DstName": "_value"
+              }
+            ]
+          },
+          "plusLoyality": false,
+          "scene": "scenes/the_end_neutral1.scene"
+        }
+      ]
+    },
+    {
+      "__guid": "19eb17e2-0484-46a6-9578-48e0d129ab90",
+      "Name": "Music",
+      "Position": "-1363.934,2514.673,740.0167",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Music",
+          "__guid": "0a7021fe-56dd-47d9-8f32-1c612443c36b",
+          "music": "sound/music_4.sound"
         }
       ]
     }
@@ -94,8 +1063,12 @@
   },
   "Title": "level4",
   "Description": "",
-  "LastSaved": "2024-03-14T21:58:32.016524\u002B05:00",
+  "LastSaved": "2024-03-17T15:47:31.3261263\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": []
+  "__references": [
+    "ambi.music_4",
+    "ambi.tradis_red_door",
+    "ambi.white"
+  ]
 }

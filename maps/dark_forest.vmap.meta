@@ -22,7 +22,9 @@
         "ambi.burnt_tree_2#51365",
         "ambi.burnt_tree_1#51364",
         "ambi.burnt_tree_3#51366",
-        "ambi.lamppost#51329"
+        "ambi.lamppost#51329",
+        "ambi.curtain#49835",
+        "ambi.speaker#49623"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/dark_forest.vmap"

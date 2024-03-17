@@ -1,9 +1,809 @@
 {
-  "Id": "00000000-0000-0000-0000-000000000000",
-  "GameObjects": null,
-  "SceneProperties": null,
-  "Title": null,
-  "Description": null,
-  "LastSaved": "0001-01-01T00:00:00\u002B00:00",
-  "__references": []
+  "__guid": "bb926636-1be7-496e-8838-553db2e3c559",
+  "GameObjects": [
+    {
+      "__guid": "a04c6620-5354-4c70-a09b-40fb97d8818c",
+      "Name": "\uD83C\uDFDE ENV \uD83C\uDFDE",
+      "Position": "235.5777,345.3558,54.46339",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "dca95c43-394e-49c1-8855-7a7dd3d3f452",
+      "Name": "Map",
+      "Position": "-16.00771,61.8781,2112.087",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__guid": "e9486b54-3c51-48e7-9bb8-53c1afb91aef",
+          "MapName": "neutral_1",
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "9bcbb69f-3616-4ebf-be31-40114e279e4e",
+      "Name": "Sun",
+      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "__guid": "28f27c24-74a2-4d14-a6ca-a7903923ea02",
+          "__enabled": false,
+          "FogMode": "Enabled",
+          "FogStrength": 0,
+          "LightColor": "0.33488,0.17134,0.17134,1",
+          "Shadows": true,
+          "SkyColor": "0,0,0,1"
+        }
+      ]
+    },
+    {
+      "__guid": "d8d333ae-4af6-4394-b28d-3bbeb17d16bf",
+      "Name": "\uD83D\uDCAB DATA \uD83D\uDCAB",
+      "Position": "278.0361,331.6518,76.7455",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "0d0eef83-189e-4f57-8298-8cf76a20a8d0",
+      "Name": "Game",
+      "Position": "183.8709,140.9425,99.10318",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Game",
+          "__guid": "4ff09a96-ac26-4d4f-8f4a-e213d753bd36",
+          "Ply": {
+            "_type": "component",
+            "component_id": "1e34e9de-6b76-40d4-a020-36a9ff465381",
+            "go": "86a90753-827a-453a-b558-d5af7d5f1b06",
+            "component_type": "Player"
+          },
+          "Settings": {
+            "LanguageKey": "en",
+            "FOV": 90,
+            "MouseSensitivity": 2,
+            "Volume": 50,
+            "EnableShadows": true
+          },
+          "Stats": {}
+        }
+      ]
+    },
+    {
+      "__guid": "45149af4-3200-4370-9ef0-80dfcc146fcc",
+      "Name": "UI: MainMenu",
+      "Position": "278.0361,331.6518,76.7455",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "6360ebed-2de3-40cb-914e-dcd9b4d2a731",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MainMenuUI",
+          "__guid": "2c01edd5-07fd-410c-aaa6-9f3679a67c6d",
+          "canHide": true,
+          "hasPseusoMainMenuScene": false
+        }
+      ]
+    },
+    {
+      "__guid": "10b13ede-c5c0-4ec1-9b3b-c8b4b3cebef9",
+      "Name": "UI: Monologue",
+      "Position": "-1108.829,-870.8134,219.609",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "38091cf6-0d2b-4e37-8416-b9113d56ceca",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MonologUI",
+          "__guid": "2d64bf4e-7d48-4a09-8e82-9961c0d2110d",
+          "_currentOpacity": 0,
+          "_currentText": "NoText!",
+          "AnimationDurationSeconds": 0.1,
+          "HideOpacity": 0,
+          "ShowOpacity": 1,
+          "Side": "Up"
+        }
+      ]
+    },
+    {
+      "__guid": "132339e0-6f74-4302-9c4b-9fd15b5c9613",
+      "Name": "Monologue System",
+      "Position": "-1108.829,-933.1975,219.609",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologSystem",
+          "__guid": "dbd63143-7d60-4fcf-8255-764d3ec7c6cf",
+          "_monologUI": {
+            "_type": "component",
+            "component_id": "2d64bf4e-7d48-4a09-8e82-9961c0d2110d",
+            "go": "10b13ede-c5c0-4ec1-9b3b-c8b4b3cebef9",
+            "component_type": "MonologUI"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "ea87a0ec-e3e7-4adb-850b-2080276d4b53",
+      "Name": "\u2705 LEVEL \u2705",
+      "Position": "235.5777,345.3558,54.46339",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "86a90753-827a-453a-b558-d5af7d5f1b06",
+      "Name": "PlayerObject",
+      "Position": "192.576,3238.587,10.54801",
+      "Rotation": "-0.00000664802,0.000004023314,0.9999999,-0.00001975894",
+      "Tags": "trigger,player",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "__guid": "6635e53a-49b8-4765-bb32-4426f7371376",
+      "Name": "Cube",
+      "Position": "173.4002,3195.594,57.01962",
+      "Scale": "1.783543,3.483966,1.351194",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologTrigger",
+          "__guid": "ae6eb701-0f60-4565-89fe-e1aca4e9d813",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/ending_neutral_1_1.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "dbd63143-7d60-4fcf-8255-764d3ec7c6cf",
+            "go": "132339e0-6f74-4302-9c4b-9fd15b5c9613",
+            "component_type": "MonologSystem"
+          }
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "9a783e94-6cbe-404e-97f3-fb9f22e12265",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "c094bd97-62f8-43bc-9281-9d7585cd9e33"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              }
+            ],
+            "Links": []
+          },
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "08628a60-a322-4d3b-aa01-d01bed064643",
+      "Name": "Cube (1)",
+      "Position": "-600.4451,3848.124,186.4774",
+      "Scale": "1.783543,6.428095,2.150231",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologTrigger",
+          "__guid": "9b6b77aa-7ff7-4ce2-8827-b58140a13de4",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/ending_neutral_1_2.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "dbd63143-7d60-4fcf-8255-764d3ec7c6cf",
+            "go": "132339e0-6f74-4302-9c4b-9fd15b5c9613",
+            "component_type": "MonologSystem"
+          }
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "d2b269e9-ade3-4671-a0ff-aaf382c1e5fd",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "c094bd97-62f8-43bc-9281-9d7585cd9e33"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              }
+            ],
+            "Links": []
+          },
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "e11bf354-7d2d-4373-96ab-758442e42644",
+      "Name": "chair",
+      "Position": "-1937.42,4339.066,128.4729",
+      "Rotation": "0,0,1,0.0000001937151",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "53b59a5a-b053-4ede-b113-11b0a2a63e8c",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/lab/stul_lab.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "dc6e646a-30eb-44f2-8b16-2e915c00caf3",
+          "Color": "0,0.23333,1,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0.4",
+          "Width": 0.4
+        }
+      ]
+    },
+    {
+      "__guid": "8a7060fa-c164-4994-8150-d96fc85773f6",
+      "Name": "Cube (2)",
+      "Position": "-1533.035,4255.235,186.4774",
+      "Scale": "1.783543,17.21043,2.109534",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologTrigger",
+          "__guid": "9518da07-d361-4bee-b9d7-981be72cd3c8",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/ending_neutral_1_3.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "dbd63143-7d60-4fcf-8255-764d3ec7c6cf",
+            "go": "132339e0-6f74-4302-9c4b-9fd15b5c9613",
+            "component_type": "MonologSystem"
+          }
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "25f73e7c-531e-4c0a-bdee-b6979cfd0da6",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "c094bd97-62f8-43bc-9281-9d7585cd9e33"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              }
+            ],
+            "Links": []
+          },
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "9635c1ee-5b87-4a64-925c-b7faeb29a499",
+      "Name": "Cube (3)",
+      "Position": "-1933.816,4334.168,186.4774",
+      "Scale": "1.783543,2.809333,2.109534",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologTrigger",
+          "__guid": "2dc9c25f-46f9-4607-8571-668e299decda",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/ending_neutral_1_4.monolog",
+            "monologues/chapter 2/ending_neutral_1_5.monolog",
+            "monologues/chapter 2/ending_neutral_1_6.monolog",
+            "monologues/chapter 2/ending_neutral_1_7.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "dbd63143-7d60-4fcf-8255-764d3ec7c6cf",
+            "go": "132339e0-6f74-4302-9c4b-9fd15b5c9613",
+            "component_type": "MonologSystem"
+          },
+          "OnTriggerEntered": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Entered",
+              "id": "47811908-bb21-496f-99d0-08adadc3e537"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-80,16"
+                }
+              }
+            ],
+            "Links": []
+          }
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "2cb569c6-e001-4312-9c7c-c6bd043b1820",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "c094bd97-62f8-43bc-9281-9d7585cd9e33",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "time.delay",
+                "UserData": {
+                  "Position": "256,32"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "log.info",
+                "UserData": {
+                  "Position": "432,160"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "Value": 4,
+                "DstId": 1,
+                "DstName": "seconds"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "sad",
+                "DstId": 2,
+                "DstName": "args",
+                "DstIndex": 0
+              }
+            ]
+          },
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "TriggerAdvanceTeleport",
+          "__guid": "63b5522e-94d9-4f5f-89fc-8a8fa784c357",
+          "Game": {
+            "_type": "gameobject",
+            "go": "0d0eef83-189e-4f57-8298-8cf76a20a8d0"
+          },
+          "PosToSpawn": {
+            "_type": "gameobject",
+            "go": "d11d23ed-f7ee-41f6-863e-d5f24688c979"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "d11d23ed-f7ee-41f6-863e-d5f24688c979",
+      "Name": "Cube",
+      "Position": "-1694.973,5964.289,2781.301",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "216a4201-5be6-4c29-8dae-ad51732fbc59",
+          "__enabled": false,
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "4bd2d8e2-97af-410e-81de-2729085b8a2d",
+      "Name": "Cube (4)",
+      "Position": "-1714.15,5889.275,2669.539",
+      "Scale": "2.019699,2.388523,1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "b48fa50a-9e1f-466f-93fa-560e4787a7a1",
+          "__enabled": false,
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "86bbb034-1815-4ba3-9f22-ef6233d9b890",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "4a1c99db-2fc6-42bc-b919-759d43caee48",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/TriggerListObjects"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 3,
+                "Type": "time.delay",
+                "UserData": {
+                  "Position": "192,96"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/TriggerListObjects"
+                },
+                "UserData": {
+                  "Position": "-304,224"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "objs",
+                  "_type": "package.ambi.myog/TriggerListObjects"
+                },
+                "UserData": {
+                  "Position": "-16,240"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "list.get",
+                "UserData": {
+                  "Position": "288,320"
+                }
+              },
+              {
+                "Id": 7,
+                "Type": "property.set",
+                "Properties": {
+                  "_name": "Enabled",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "416,208"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "240,16"
+                }
+              },
+              {
+                "Id": 10,
+                "Type": "call",
+                "Properties": {
+                  "_name": "Get",
+                  "T": "package.ambi.myog/Player",
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.IComponentLister"
+                },
+                "UserData": {
+                  "Position": "480,64"
+                }
+              },
+              {
+                "Id": 12,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Movement",
+                  "_type": "package.ambi.myog/Player"
+                },
+                "UserData": {
+                  "Position": "672,64"
+                }
+              },
+              {
+                "Id": 13,
+                "Type": "property.set",
+                "Properties": {
+                  "_name": "Freeze",
+                  "_type": "package.ambi.myog/PlayerMovement"
+                },
+                "UserData": {
+                  "Position": "928,48"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "Value": 32,
+                "DstId": 3,
+                "DstName": "seconds"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 4,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "Value": 0,
+                "DstId": 6,
+                "DstName": "index"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "list"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_signal",
+                "DstId": 7,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 7,
+                "DstName": "_target"
+              },
+              {
+                "Value": true,
+                "DstId": 7,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "obj",
+                "DstId": 9,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "_result",
+                "DstId": 10,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 10,
+                "SrcName": "_result",
+                "DstId": 12,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 13,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 12,
+                "SrcName": "_result",
+                "DstId": 13,
+                "DstName": "_target"
+              },
+              {
+                "Value": true,
+                "DstId": 13,
+                "DstName": "_value"
+              }
+            ]
+          },
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "TriggerListObjects",
+          "__guid": "667f4345-09f7-466d-a370-82f255f02ff6",
+          "objs": [
+            {
+              "_type": "gameobject",
+              "go": "450f7d56-fccd-4b21-94ba-b17d7eae192a"
+            }
+          ],
+          "Game": {
+            "_type": "component",
+            "component_id": "4ff09a96-ac26-4d4f-8f4a-e213d753bd36",
+            "go": "0d0eef83-189e-4f57-8298-8cf76a20a8d0",
+            "component_type": "Game"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "450f7d56-fccd-4b21-94ba-b17d7eae192a",
+      "Name": "Black",
+      "Position": "-1757.395,5844.082,2697.232",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "dc7c121d-0620-4af0-8e8f-633b6640c288",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "BlackScreenHui",
+          "__guid": "ca82c419-43e1-4039-9bfd-881bd947db0d",
+          "MyStringValue": "Did you make the game?",
+          "OnComponentStart": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Component Start",
+              "id": "dd5caf36-c036-47cf-8efb-3f9749191ec0",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "property.set",
+                "Properties": {
+                  "_name": "Enabled",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "192,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "Value": false,
+                "DstId": 1,
+                "DstName": "_value"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "the_end_neutral1",
+  "Description": "",
+  "LastSaved": "2024-03-17T16:03:14.3119898\u002B05:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "ambi.stul_lab"
+  ]
 }

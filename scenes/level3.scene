@@ -1,9 +1,1874 @@
 {
-  "Id": "00000000-0000-0000-0000-000000000000",
-  "GameObjects": null,
-  "SceneProperties": null,
-  "Title": null,
-  "Description": null,
-  "LastSaved": "0001-01-01T00:00:00\u002B00:00",
-  "__references": []
+  "__guid": "db723bf3-0f31-42d2-a12b-0cb209feaae3",
+  "GameObjects": [
+    {
+      "__guid": "662033b5-2727-4386-bf70-78ac55268070",
+      "Name": "\uD83C\uDFDE ENV \uD83C\uDFDE",
+      "Position": "235.5777,345.3558,54.46339",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "b94a856e-cb83-4441-8b20-7abd3a1c6812",
+      "Name": "Map",
+      "Position": "-16.00771,61.8781,2112.087",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__guid": "68cdd1f4-bcdb-45a2-a473-c7b3fd358043",
+          "MapName": "lab",
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "592a83f3-3257-4fc7-8e88-421275a82ce7",
+      "Name": "\uD83D\uDCAB DATA \uD83D\uDCAB",
+      "Position": "278.0361,331.6518,76.7455",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "07e40704-e29a-4fb2-8adb-f3f66773063f",
+      "Name": "Monologue System",
+      "Position": "-1108.829,-933.1975,219.609",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MonologSystem",
+          "__guid": "42ef2b3f-13a3-48d9-b9b2-10433feeaa6d",
+          "_monologUI": {
+            "_type": "component",
+            "component_id": "c6d602ac-ee19-4bee-be6d-bbce03249d9e",
+            "go": "b32d0608-1100-48a6-ab48-581b3699df86",
+            "component_type": "MonologUI"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "3dccc1c1-7b32-4573-8e54-13ebc2001041",
+      "Name": "Game",
+      "Position": "183.8709,140.9425,99.10318",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Game",
+          "__guid": "a7da19ad-4784-4b9e-bb7f-b80f21ab5368",
+          "Ply": {
+            "_type": "component",
+            "component_id": "bb2cf3d0-86a7-4881-84ee-815a9c504ebe",
+            "go": "166925bd-fbee-4a66-8a2f-e025a3ab62e4",
+            "component_type": "Player"
+          },
+          "Settings": {
+            "LanguageKey": "en",
+            "FOV": 90,
+            "MouseSensitivity": 2,
+            "Volume": 50,
+            "EnableShadows": true
+          },
+          "Stats": {}
+        },
+        {
+          "__type": "Sigil3Complete",
+          "__guid": "0b1f554f-8c7f-4a92-85e2-4fd5458cb3b1",
+          "sigil1": false,
+          "sigil2": false,
+          "sys": {
+            "_type": "component",
+            "component_id": "42ef2b3f-13a3-48d9-b9b2-10433feeaa6d",
+            "go": "07e40704-e29a-4fb2-8adb-f3f66773063f",
+            "component_type": "MonologSystem"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "b32d0608-1100-48a6-ab48-581b3699df86",
+      "Name": "UI: Monologue",
+      "Position": "-1108.829,-870.8134,219.609",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "cc00481b-b408-44c1-ad52-0aa81078f105",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MonologUI",
+          "__guid": "c6d602ac-ee19-4bee-be6d-bbce03249d9e",
+          "_currentOpacity": 0,
+          "_currentText": "NoText!",
+          "AnimationDurationSeconds": 0.1,
+          "HideOpacity": 0,
+          "ShowOpacity": 1,
+          "Side": "Up"
+        }
+      ]
+    },
+    {
+      "__guid": "3c4521a3-c3bc-4d0b-b54a-4dd1bef2e798",
+      "Name": "UI: MainMenu",
+      "Position": "278.0361,331.6518,76.7455",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "611c8deb-e3fb-466b-b1ff-418c3ad43d07",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "MainMenuUI",
+          "__guid": "db5a4ecf-bc4b-404e-a696-c0ef8300a131",
+          "canHide": true,
+          "hasPseusoMainMenuScene": false
+        }
+      ]
+    },
+    {
+      "__guid": "84fdcb42-4cc3-46b6-a274-5cbf41660d50",
+      "Name": "\u2705 LEVEL \u2705",
+      "Position": "235.5777,345.3558,54.46339",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "166925bd-fbee-4a66-8a2f-e025a3ab62e4",
+      "Name": "PlayerObject",
+      "Position": "-791.1662,-2950.561,329.368",
+      "Rotation": "-0.000001855948,0.000007545773,0.7071208,0.7070927",
+      "Tags": "trigger,player",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "__guid": "44e6dce5-fe0d-4841-80c2-fa19dfe119ea",
+      "Name": "Cube",
+      "Position": "-1569.506,-2401.495,667.5259",
+      "Scale": "1.579308,0.1642979,1.984969",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "TriggerAdvanceTeleport",
+          "__guid": "399e980b-04ef-4ead-a252-2478f7721e02",
+          "Game": {
+            "_type": "gameobject",
+            "go": "3dccc1c1-7b32-4573-8e54-13ebc2001041"
+          },
+          "PosToSpawn": {
+            "_type": "gameobject",
+            "go": "19f30864-3b1b-432b-b837-587b7ceb1ed4"
+          }
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "ef61bd72-0714-464b-9e33-f1c1ca985c20",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "19f30864-3b1b-432b-b837-587b7ceb1ed4",
+      "Name": "Cube (1)",
+      "Position": "-714.9057,-1811.319,344.0744",
+      "Scale": "0.4286772,0.38046,0.3438354",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "84baacfd-c18d-4895-b19f-f25d04b43746",
+      "Name": "Sigil 1",
+      "Position": "173.8492,-1470.121,695.6011",
+      "Scale": "1.462612,1.462612,1.462612",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "41f90ecc-2e24-40bc-b17e-0a4785484590",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/sigils/medal.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "32e0d521-28a4-42f6-a18f-2b5726a10fa2",
+          "Color": "654.8803,665.98,0,1",
+          "InsideColor": "1,1,1,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "ee9bb5f6-7a8e-4c64-bbc4-1d34bfcb6bd5",
+          "Center": "0,0,3.5",
+          "IsTrigger": true,
+          "Scale": "4,16,12",
+          "Static": false
+        },
+        {
+          "__type": "TriggerObject",
+          "__guid": "a360f610-75d7-4856-a2c3-70044d574a2f",
+          "Game": {
+            "_type": "component",
+            "component_id": "a7da19ad-4784-4b9e-bb7f-b80f21ab5368",
+            "go": "3dccc1c1-7b32-4573-8e54-13ebc2001041",
+            "component_type": "Game"
+          },
+          "OnTriggerEntered": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Entered",
+              "id": "b3f42d1b-c356-472f-a951-e0abfca04e82",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/TriggerObject"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 17,
+                "Type": "input",
+                "UserData": {
+                  "Position": "160,16"
+                }
+              },
+              {
+                "Id": 18,
+                "Type": "call",
+                "Properties": {
+                  "_name": "Destroy",
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "416,-32"
+                }
+              },
+              {
+                "Id": 19,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/TriggerObject"
+                },
+                "UserData": {
+                  "Position": "-64,160"
+                }
+              },
+              {
+                "Id": 20,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Game",
+                  "_type": "package.ambi.myog/TriggerObject"
+                },
+                "UserData": {
+                  "Position": "176,144"
+                }
+              },
+              {
+                "Id": 21,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "400,192"
+                }
+              },
+              {
+                "Id": 22,
+                "Type": "call",
+                "Properties": {
+                  "_name": "Get",
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                  "T": "package.ambi.myog/Sigil3Complete"
+                },
+                "UserData": {
+                  "Position": "736,192"
+                }
+              },
+              {
+                "Id": 23,
+                "Type": "call",
+                "Properties": {
+                  "_name": "SpawnDoors",
+                  "_isStatic": false,
+                  "_type": "package.ambi.myog/Sigil3Complete"
+                },
+                "UserData": {
+                  "Position": "832,368"
+                }
+              },
+              {
+                "Id": 25,
+                "Type": "property.set",
+                "Properties": {
+                  "_name": "sigil1",
+                  "_type": "package.ambi.myog/Sigil3Complete"
+                },
+                "UserData": {
+                  "Position": "480,336"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 17,
+                "SrcName": "_signal",
+                "DstId": 18,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 17,
+                "SrcName": "_target",
+                "DstId": 18,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 17,
+                "SrcName": "_target",
+                "DstId": 19,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 19,
+                "SrcName": "_result",
+                "DstId": 20,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 20,
+                "SrcName": "_result",
+                "DstId": 21,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 21,
+                "SrcName": "_result",
+                "DstId": 22,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 25,
+                "SrcName": "_signal",
+                "DstId": 23,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 22,
+                "SrcName": "_result",
+                "DstId": 23,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 17,
+                "SrcName": "_signal",
+                "DstId": 25,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 22,
+                "SrcName": "_result",
+                "DstId": 25,
+                "DstName": "_target"
+              },
+              {
+                "Value": true,
+                "DstId": 25,
+                "DstName": "_value"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "093d03e6-aa9c-450d-be17-7049095ee029",
+      "Name": "Door Blue",
+      "Position": "6692.479,-1443.082,1170.531",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "7441baad-92d0-4880-827c-5bed7e2a6f7d",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/door_blue.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "0c9be2b9-228c-4294-90b0-f42b0b41dea4",
+          "IsTrigger": true,
+          "Model": "models/door_blue.vmdl",
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "fc4a9441-61d4-4419-82f7-66e720d3f40c",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/DoorNextLevel"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "160,112"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "-592,272"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_name": "NextLevel",
+                  "_isStatic": false,
+                  "_type": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "528,464"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Game",
+                  "_type": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "-272,304"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Ply",
+                  "_type": "package.ambi.myog/Game"
+                },
+                "UserData": {
+                  "Position": "0,320"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "128,224"
+                }
+              },
+              {
+                "Id": 7,
+                "Type": "op.equal",
+                "UserData": {
+                  "Position": "432,224"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "if",
+                "UserData": {
+                  "Position": "576,224"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "obj",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 2,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "true",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 7,
+                "DstName": "a"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 7,
+                "DstName": "b"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 9,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 7,
+                "SrcName": "_result",
+                "DstId": 9,
+                "DstName": "condition"
+              }
+            ]
+          },
+          "Static": false
+        },
+        {
+          "__type": "DoorNextLevel",
+          "__guid": "cafc39d8-bfd3-45e1-99ff-b4d016a934bd",
+          "canChangeLoyality": true,
+          "Game": {
+            "_type": "component",
+            "component_id": "a7da19ad-4784-4b9e-bb7f-b80f21ab5368",
+            "go": "3dccc1c1-7b32-4573-8e54-13ebc2001041",
+            "component_type": "Game"
+          },
+          "OnFinished": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Finished",
+              "id": "38b23d35-c27f-4f10-81f9-5b80e809fb8f",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/DoorNextLevel"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 2,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "-240,80"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Game",
+                  "_type": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "16,80"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Stats",
+                  "_type": "package.ambi.myog/Game"
+                },
+                "UserData": {
+                  "Position": "288,112"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property.set",
+                "Properties": {
+                  "_name": "Level1EnteredTheRedDoor",
+                  "_type": "package.ambi.myog/StatsData"
+                },
+                "UserData": {
+                  "Position": "448,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 5,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "Value": false,
+                "DstId": 5,
+                "DstName": "_value"
+              }
+            ]
+          },
+          "plusLoyality": true,
+          "scene": "scenes/level4.scene"
+        }
+      ]
+    },
+    {
+      "__guid": "92ad967c-26ac-48d9-a9f5-a67c1d4cc902",
+      "Name": "Door Red",
+      "Position": "6692.479,-1503.441,1168.621",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "1dd4b645-5116-4582-8196-a46d1b4a2b8f",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/door_blue.vmdl",
+          "RenderType": "On",
+          "Tint": "0.91163,0.11872,0.11872,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "d349686a-b9eb-4eb2-93d7-71deea5d99df",
+          "IsTrigger": true,
+          "Model": "models/door_blue.vmdl",
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "8ed87279-5f2e-412b-8ef3-00d95f6358c9",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/DoorNextLevel"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 1,
+                "Type": "input",
+                "UserData": {
+                  "Position": "32,-80"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "192,32"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "-560,192"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "call",
+                "Properties": {
+                  "_name": "NextLevel",
+                  "_isStatic": false,
+                  "_type": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "560,384"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Game",
+                  "_type": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "-240,224"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Ply",
+                  "_type": "package.ambi.myog/Game"
+                },
+                "UserData": {
+                  "Position": "32,240"
+                }
+              },
+              {
+                "Id": 7,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "160,144"
+                }
+              },
+              {
+                "Id": 8,
+                "Type": "op.equal",
+                "UserData": {
+                  "Position": "464,144"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "if",
+                "UserData": {
+                  "Position": "608,144"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 1,
+                "SrcName": "obj",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_target",
+                "DstId": 3,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "true",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 7,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 8,
+                "DstName": "a"
+              },
+              {
+                "SrcId": 7,
+                "SrcName": "_result",
+                "DstId": 8,
+                "DstName": "b"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 9,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 8,
+                "SrcName": "_result",
+                "DstId": 9,
+                "DstName": "condition"
+              }
+            ]
+          },
+          "Static": false
+        },
+        {
+          "__type": "DoorNextLevel",
+          "__guid": "1fff4180-451a-4cb3-9fe5-6774f7e09712",
+          "canChangeLoyality": true,
+          "Game": {
+            "_type": "component",
+            "component_id": "a7da19ad-4784-4b9e-bb7f-b80f21ab5368",
+            "go": "3dccc1c1-7b32-4573-8e54-13ebc2001041",
+            "component_type": "Game"
+          },
+          "OnFinished": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Finished",
+              "id": "9c19fb97-a408-43d0-afe5-8308ffaa7aa4",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/DoorNextLevel"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "-208,144"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Game",
+                  "_type": "package.ambi.myog/DoorNextLevel"
+                },
+                "UserData": {
+                  "Position": "48,144"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Stats",
+                  "_type": "package.ambi.myog/Game"
+                },
+                "UserData": {
+                  "Position": "320,176"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property.set",
+                "Properties": {
+                  "_name": "Level1EnteredTheRedDoor",
+                  "_type": "package.ambi.myog/StatsData"
+                },
+                "UserData": {
+                  "Position": "480,160"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 5,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "Value": true,
+                "DstId": 5,
+                "DstName": "_value"
+              }
+            ]
+          },
+          "plusLoyality": false,
+          "scene": "scenes/level4.scene"
+        }
+      ]
+    },
+    {
+      "__guid": "52006bd7-0d97-4bdb-a00d-8988bc187d8e",
+      "Name": "Cube",
+      "Position": "646.8143,-1563.79,665.2165",
+      "Scale": "25.32124,1,5.217906",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "cd34e9b9-ebcc-4dcc-bb02-d6160aef763c",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "58e8d636-d156-4ee2-afa6-708d9c8e7569",
+      "Name": "Cube (2)",
+      "Position": "646.8143,-1377.377,665.2165",
+      "Scale": "25.32124,1,5.217906",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "39527184-0cdb-41fd-83ed-4bd401348fe8",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "b0f14b28-17b0-4079-a090-779c71bc3ab4",
+      "Name": "Door",
+      "Position": "5543.671,-1458.275,1090.552",
+      "Scale": "0.1191454,22.23486,6.452343",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "bcf1e191-00b6-4a5e-a090-3add6e5a7669",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/color_low/white.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "Off",
+          "Tint": "0.92558,0,0,0.76"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "f3d05eed-db02-4181-9d6b-e295f7a9b1f3",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "920a6d15-e1b5-42a3-b652-d94b26bb0f25",
+      "Name": "Sigil 2",
+      "Position": "5668.883,-1470.121,1068.509",
+      "Scale": "1.462612,1.462612,1.462612",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "e7337de8-b6d6-41cd-9124-d58d8e212e49",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/game_room/cup.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "d70a4d45-115f-4245-92ff-ea75c87f438b",
+          "Color": "654.8803,665.98,0,1",
+          "InsideColor": "1,1,1,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0",
+          "Width": 0.25
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "35bc1286-9693-4a58-b8ff-aa9420be1992",
+          "Center": "0,0,3.5",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "id": "49471afa-506b-4afc-b49f-b94351a9d03b"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 2,
+                "Type": "call",
+                "Properties": {
+                  "_name": "Destroy",
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "272,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 2,
+                "DstName": "_target"
+              }
+            ]
+          },
+          "Scale": "4,16,12",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "b0205365-62f1-48ff-91fc-ffddde53a1e4",
+      "Name": "Cube (1)",
+      "Position": "5170.206,-1422,1019.915",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Scale": "18.27911,0.1669146,0.1832327",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "92486d0f-e9e1-4221-8f03-188638849aa5",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "0.46938,0,0.80465,1"
+        }
+      ]
+    },
+    {
+      "__guid": "b9aff11c-3385-4cb5-9650-bffed6071733",
+      "Name": "Wheel 1",
+      "Position": "5173.626,-1461.768,1030.031",
+      "Rotation": "-0.004013166,0.004396658,0.6741952,0.7385293",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "WheelPuzzleSystem",
+          "__guid": "adcdaa08-8771-466b-bacd-5832377ecace",
+          "isCompleted": false,
+          "OnCompeleted": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Compeleted",
+              "id": "b0fc8f8e-e40f-4eae-a169-cbec005b4e09",
+              "ReferencedComponentTypes": [
+                "package.ambi.myog/ListGameObjects"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 10,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.ambi.myog/ListGameObjects"
+                },
+                "UserData": {
+                  "Position": "-384,288"
+                }
+              },
+              {
+                "Id": 11,
+                "Type": "property.get",
+                "Properties": {
+                  "_name": "Objects",
+                  "_type": "package.ambi.myog/ListGameObjects"
+                },
+                "UserData": {
+                  "Position": "-176,288"
+                }
+              },
+              {
+                "Id": 12,
+                "Type": "list.get",
+                "UserData": {
+                  "Position": "64,288"
+                }
+              },
+              {
+                "Id": 15,
+                "Type": "call",
+                "Properties": {
+                  "_name": "Destroy",
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "272,192"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 10,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 10,
+                "SrcName": "_result",
+                "DstId": 11,
+                "DstName": "_target"
+              },
+              {
+                "Value": 0,
+                "DstId": 12,
+                "DstName": "index"
+              },
+              {
+                "SrcId": 11,
+                "SrcName": "_result",
+                "DstId": 12,
+                "DstName": "list"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 15,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 12,
+                "SrcName": "_result",
+                "DstId": 15,
+                "DstName": "_target"
+              }
+            ]
+          },
+          "wheelBig": {
+            "_type": "component",
+            "component_id": "d94305c3-928e-4dea-9671-16e2162e8174",
+            "go": "16d925c9-1f92-409c-a9bb-88fc8d4b3a4b",
+            "component_type": "WheelPuzzle"
+          },
+          "wheelMedium": {
+            "_type": "component",
+            "component_id": "bbdc247f-c32b-48d0-9f53-546cdaf8a754",
+            "go": "4eeff3e4-3535-465d-b794-e8ee62047bd4",
+            "component_type": "WheelPuzzle"
+          },
+          "wheelSmall": {
+            "_type": "component",
+            "component_id": "b7846d9a-0675-450f-af4f-7fb8b19d3c47",
+            "go": "87aba934-48b4-40ec-b8d7-ea03c850a905",
+            "component_type": "WheelPuzzle"
+          }
+        },
+        {
+          "__type": "ListGameObjects",
+          "__guid": "efd523bb-8424-4d46-bcba-04340f3847df",
+          "Objects": [
+            {
+              "_type": "gameobject",
+              "go": "b0f14b28-17b0-4079-a090-779c71bc3ab4"
+            }
+          ]
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "87aba934-48b4-40ec-b8d7-ea03c850a905",
+          "Name": "Wheel Small",
+          "Position": "-0.0001326203,-0.734673,4.798923",
+          "Rotation": "-0.7071067,-0.00000002980232,0.0000001331791,0.7071069",
+          "Scale": "1.245165,1,1.275283",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "ff7dfe4a-5ea5-497d-961f-6dc6dafe5322",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/circle.vmdl",
+              "RenderType": "On",
+              "Tint": "0.31163,0.31163,0.31163,1"
+            },
+            {
+              "__type": "WheelPuzzle",
+              "__guid": "b7846d9a-0675-450f-af4f-7fb8b19d3c47",
+              "canRotate": true,
+              "sideCorrect": 4
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "7f1cfa20-1e29-4778-ad51-10595ae68c61",
+              "IsTrigger": false,
+              "Model": "models/circle.vmdl",
+              "Static": true
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "c8f9306f-4f15-4669-9914-92ec2c3cae40",
+              "Name": "Cube",
+              "Position": "-0.5669283,-0.3690023,-0.1445896",
+              "Rotation": "0.4999999,-0.5,0.5000002,0.5000001",
+              "Scale": "0.4318773,0.07615279,0.03860123",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "b254435f-2474-493b-9308-deca6813b319",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.46938,0,0.80465,1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "4eeff3e4-3535-465d-b794-e8ee62047bd4",
+          "Name": "Wheel Medium",
+          "Position": "0,0,3.228672",
+          "Rotation": "-0.7071068,0.000000073757,0.000000073757,0.7071068",
+          "Scale": "2.486243,2.147556,2.491187",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "d626150c-cc88-40f7-a594-0720f5b865f1",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/circle.vmdl",
+              "RenderType": "On",
+              "Tint": "0.55686,0.55686,0.55686,1"
+            },
+            {
+              "__type": "WheelPuzzle",
+              "__guid": "bbdc247f-c32b-48d0-9f53-546cdaf8a754",
+              "canRotate": true,
+              "sideCorrect": 4
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "25093f32-0ee4-43da-b7c7-98cad0436dff",
+              "IsTrigger": false,
+              "Model": "models/circle.vmdl",
+              "Static": true
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "5e25d4d0-ddeb-4424-afb3-cb8c7bc78e3d",
+              "Name": "Cube",
+              "Position": "-0.6165568,-0.2826009,7.02144",
+              "Rotation": "0.4949254,-0.4993035,0.5006414,0.5050873",
+              "Scale": "0.1792955,0.04649494,0.01842049",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "b0cb6851-859f-456e-b1e4-d2ea15ca9a33",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.46938,0,0.80465,1"
+                }
+              ]
+            },
+            {
+              "__guid": "949c976c-76ed-468b-ba3f-065efbe4900f",
+              "Name": "Cube",
+              "Position": "0.1710283,-0.3310451,-7.510978",
+              "Rotation": "0.4940481,-0.4999654,0.4999659,0.505954",
+              "Scale": "0.1792955,0.05829409,0.01842049",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "672a9ef2-f50d-49a8-94da-b8e7c6a8133a",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.46938,0,0.80465,1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "16d925c9-1f92-409c-a9bb-88fc8d4b3a4b",
+          "Name": "Wheel Big",
+          "Position": "0,0,0",
+          "Rotation": "-0.7071068,0.00000007375699,0.00000007375699,0.7071068",
+          "Scale": "4.874965,4.161299,4.642739",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "__guid": "80f5468c-146a-49eb-bfa1-3cdf605289a0",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/circle.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "WheelPuzzle",
+              "__guid": "d94305c3-928e-4dea-9671-16e2162e8174",
+              "canRotate": true,
+              "sideCorrect": 4
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "060873e9-a79f-4c80-aeaa-dd4bcfe932ce",
+              "IsTrigger": false,
+              "Model": "models/circle.vmdl",
+              "Static": true
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "3b5d672b-f33e-4126-aa24-09c7765d0c11",
+              "Name": "Cube",
+              "Position": "-0.07753738,-0.4014142,-5.92865",
+              "Rotation": "0.4999999,-0.5,0.5,0.5000001",
+              "Scale": "0.2228712,0.0206647,0.01087404",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "f3a67721-920b-4c37-bea2-55a64bc6983b",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.46938,0,0.80465,1"
+                }
+              ]
+            },
+            {
+              "__guid": "675a9980-1fce-4022-ab60-0878e1ed8580",
+              "Name": "Cube",
+              "Position": "-0.4298754,-0.5155329,5.587981",
+              "Rotation": "0.5010793,-0.5018944,0.4981209,0.4988997",
+              "Scale": "0.2228712,0.0206647,0.01087404",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "ModelRenderer",
+                  "__guid": "18abe623-c718-49bd-9a33-bcf65a18f749",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "On",
+                  "Tint": "0.46938,0,0.80465,1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "b9803805-2a55-449e-9355-e95ef108af9d",
+      "Name": "MonologTrigger",
+      "Position": "-784.9563,-2901.872,360.3526",
+      "Scale": "2.969689,2.914322,1.811631",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "426daf3f-f415-4e45-8d45-af29fd31ee0e",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "MonologTrigger",
+          "__guid": "c0dad45b-3ea4-4fb6-a91d-16afd8056599",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/chapter3_1plus.monolog",
+            "monologues/chapter 2/chapter3_2.monolog",
+            "monologues/chapter 2/chapter3_3plus.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "42ef2b3f-13a3-48d9-b9b2-10433feeaa6d",
+            "go": "07e40704-e29a-4fb2-8adb-f3f66773063f",
+            "component_type": "MonologSystem"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "61dd8dcb-2e5a-44de-8019-14ee7549901b",
+      "Name": "MonologTrigger (1)",
+      "Position": "-734.4424,-1626.484,333.8185",
+      "Scale": "2.969689,2.914322,1.811631",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "5d905a94-74bd-4b99-9f1a-023c2a0c119e",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "MonologTrigger",
+          "__guid": "4d2af458-cfd9-4abc-a4ce-beefb8f92736",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/chapter3_4plus.monolog",
+            "monologues/chapter 2/chapter3_5.monolog",
+            "monologues/chapter 2/chapter3_6.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "42ef2b3f-13a3-48d9-b9b2-10433feeaa6d",
+            "go": "07e40704-e29a-4fb2-8adb-f3f66773063f",
+            "component_type": "MonologSystem"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "e2179f03-0d51-4ba0-9f59-3ccacc0097f6",
+      "Name": "MonologTrigger (2)",
+      "Position": "4568.218,-1470.914,1083.677",
+      "Scale": "2.969689,1.734111,1.811631",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "91965685-60dc-45e2-9f8e-610690dd5e56",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "MonologTrigger",
+          "__guid": "021a5892-97b0-4040-9bb3-91133d2acc0d",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/chapter3_9.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "42ef2b3f-13a3-48d9-b9b2-10433feeaa6d",
+            "go": "07e40704-e29a-4fb2-8adb-f3f66773063f",
+            "component_type": "MonologSystem"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "95ba511b-fa77-4f4e-81d9-0ef50776266a",
+      "Name": "MonologTrigger (3)",
+      "Position": "5841.363,-1487.967,1073.193",
+      "Scale": "2.969689,2.914322,1.811631",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "acdeddd6-2663-4b10-b62d-406c6f6f9b7b",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "MonologTrigger",
+          "__guid": "3f701ea7-10b7-4344-afd5-2b9a04df6a73",
+          "canRemove": true,
+          "Monologs": [
+            "monologues/chapter 2/chapter3_10.monolog",
+            "monologues/chapter 2/chapter3_11.monolog",
+            "monologues/chapter 2/chapter3_12.monolog"
+          ],
+          "MonologSystem": {
+            "_type": "component",
+            "component_id": "42ef2b3f-13a3-48d9-b9b2-10433feeaa6d",
+            "go": "07e40704-e29a-4fb2-8adb-f3f66773063f",
+            "component_type": "MonologSystem"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "4a04280d-473b-41fd-a51e-1412d9d9bb8d",
+      "Name": "Cube",
+      "Position": "4232.241,-1044.345,1024.375",
+      "Rotation": "0,0,-0.8660253,0.5",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "8a5e6f45-2b32-4850-a36c-3843c6f16085",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/theatr/maniken.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "ceb8a142-dadf-4c28-acdc-e06a458e1762",
+          "IsTrigger": false,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "ad766cd9-78c2-44fd-9141-e80a3435d430",
+      "Name": "Cube (3)",
+      "Position": "4382.413,-1598.744,1024.375",
+      "Rotation": "0,0,-0.9914448,-0.1305261",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "9c45e506-5669-4a84-8452-74e82cfd120e",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/theatr/maniken.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "3c0bf836-5a20-4100-b3b5-177515d0e9ab",
+          "IsTrigger": false,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "15fb78f5-d462-4e48-855a-10653bbf0fda",
+      "Name": "Cube (4)",
+      "Position": "4382.413,-1357.922,1024.375",
+      "Rotation": "0,0,-0.9659258,0.2588191",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "a397d441-e830-44ad-8268-dd66c99ba754",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/theatr/maniken.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "a40324cf-06f3-4241-8919-8b2d461cad1a",
+          "IsTrigger": false,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "79c22da2-b94a-41a7-a8da-d0db63f578f2",
+      "Name": "Cube (5)",
+      "Position": "4350.77,-1132.784,1024.375",
+      "Rotation": "0,0,-0.9659258,0.2588191",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "e8a12262-7399-4727-a575-0d4e4abb8aad",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/theatr/maniken.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "4d3850d9-e142-4e3e-8300-0ccdb43e5560",
+          "IsTrigger": false,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "99eb43ce-c02c-4dba-8269-6b52ee57bd01",
+      "Name": "Cube (6)",
+      "Position": "4088.052,-1132.784,1024.375",
+      "Rotation": "0,0,-0.6087615,0.7933533",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "3fefdb89-4c2a-4553-8b65-2b92faaa0420",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/theatr/maniken.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "39c73c2b-08d4-48ac-9a22-ae0488da50dc",
+          "IsTrigger": false,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "621b5714-12ea-404e-b93d-0fc111d5f634",
+      "Name": "Cube (7)",
+      "Position": "4177.071,-1709.473,1024.375",
+      "Rotation": "0,0,0.8660253,0.5000002",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "0930b6b9-c41c-4e2a-ae36-4abb7581ed99",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/theatr/maniken.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "f80fb6b7-b1ad-4c0b-aca5-df2443e5c5b0",
+          "IsTrigger": false,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "c9421c98-7304-4d5a-a638-f2c56ef3702a",
+      "Name": "Cube (8)",
+      "Position": "3968.304,-1709.473,1024.375",
+      "Rotation": "0,0,0.8660253,0.5000002",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "a6ddaebf-91d1-40aa-b364-f25e735733c2",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/theatr/maniken.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "9d6a76d7-5e73-4d09-875a-260fdafca833",
+          "IsTrigger": false,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "3a91de90-f75f-415e-8327-953efef6cf86",
+      "Name": "Cube (9)",
+      "Position": "3968.304,-1217.958,1024.375",
+      "Rotation": "0,0,0.7933534,-0.6087613",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "dd070c4a-27b7-482a-9438-a0a01e7da5f3",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/theatr/maniken.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "b803b12c-d7cd-47d9-8fc4-88fbd8c9e03e",
+          "IsTrigger": false,
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "0f66c37b-df5e-4ef2-a330-6a136a2a461c",
+      "Name": "Music",
+      "Position": "-1363.934,2514.673,740.0167",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Music",
+          "__guid": "2f644af7-c3aa-4e0a-9edb-26451c68744d",
+          "music": "sound/music_3.sound"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "level3",
+  "Description": "",
+  "LastSaved": "2024-03-17T16:05:39.2387311\u002B05:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "ambi.circle",
+    "ambi.cup",
+    "ambi.maniken",
+    "ambi.medal",
+    "ambi.music_3",
+    "ambi.tradis_red_door"
+  ]
 }

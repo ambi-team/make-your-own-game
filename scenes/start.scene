@@ -86,6 +86,7 @@
         {
           "__type": "MonologTrigger",
           "__guid": "ff27a0f0-0699-46cb-86b0-b2eae87e5990",
+          "canRemove": false,
           "Monologs": [
             "monologues/beginning/replica1.monolog",
             "monologues/beginning/replica2.monolog",
@@ -329,7 +330,7 @@
           "__guid": "fda7235b-4d00-4ee0-b127-989b3a967534",
           "Ply": {
             "_type": "component",
-            "component_id": "bfb61c76-d680-427a-b83f-8576cf6f494c",
+            "component_id": "d1fc981b-534e-4e7f-ab66-bd7742727ecf",
             "go": "67766837-4b50-4f0f-bf5e-2df457f434eb",
             "component_type": "Player"
           },
@@ -357,6 +358,7 @@
         {
           "__type": "MonologTrigger",
           "__guid": "e22fa374-6a90-46d7-a2d1-2da529d60ab4",
+          "canRemove": false,
           "Monologs": [
             "monologues/beginning/beggining5.monolog",
             "monologues/beginning/beggining6.monolog",
@@ -488,6 +490,56 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "c24e0129-ddac-4784-a646-f169c1164932",
+      "Name": "Cube",
+      "Position": "1225.826,3562.668,2047.495",
+      "Scale": "0.01399538,0.7815849,0.4517184",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "228a90d7-f4bd-4736-aaf5-64f5930133df",
+          "BodyGroups": 18446744073709551615,
+          "MaterialOverride": "materials/white_low/white_skybox.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "874.36,874.36,874.36,1"
+        },
+        {
+          "__type": "HighlightOutline",
+          "__guid": "c5ba15b2-3d25-419f-9948-2e9987a9b5db",
+          "Color": "0,0.11667,1,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "ObscuredColor": "0,0,0,0.4",
+          "Width": 0.25
+        }
+      ]
+    },
+    {
+      "__guid": "9d8af6c0-4fe9-4be0-ba2a-669bcd1c9178",
+      "Name": "Spot Light",
+      "Position": "1233.407,3560.921,2049.127",
+      "Tags": "light_spot,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SpotLight",
+          "__guid": "ab1b9d03-d180-4908-89e2-2a9ea3f784c5",
+          "Attenuation": 1,
+          "ConeInner": 15,
+          "ConeOuter": 45,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Radius": 500,
+          "Shadows": true
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -513,7 +565,7 @@
   },
   "Title": "start",
   "Description": "",
-  "LastSaved": "2024-03-17T04:51:03.8375529\u002B05:00",
+  "LastSaved": "2024-03-17T14:28:22.5105048\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

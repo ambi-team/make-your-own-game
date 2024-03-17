@@ -61,7 +61,11 @@
         "ambi.altar#50384",
         "ambi.computer_chair#49546",
         "ambi.desk#49613",
-        "ambi.computer_monitor#49612"
+        "ambi.computer_monitor#49612",
+        "ambi.stol_lab#51607",
+        "ambi.vendor#51604",
+        "ambi.closet_mini#49834",
+        "ambi.closet#49905"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/lab.vmap"
