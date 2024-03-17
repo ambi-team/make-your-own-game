@@ -17,7 +17,12 @@ public class MonologSystem: Component
 
     private SoundHandle _currentSoundHandle = null;
     private bool _isPlaying;
-    public TimeUntil delay { get; set; } = 2f;
+
+    private float _timer = 0;
+    private bool _timerStarted;
+    private bool _timerEnded;
+    
+    public float _delaySeconds = 0.5f;
 
 
     public int QueueLength => _queue.Count;
@@ -97,26 +102,50 @@ public class MonologSystem: Component
     {
         if (!_isPlaying)
             return;
+
+        if (_timer > 0)
+            _timer -= Time.Delta;
         
         if (_currentSoundHandle != null && !_currentSoundHandle.IsPlaying)
         {
-            if (QueueLength == 0)
+            if (!_timerStarted)
             {
+                _timer = _delaySeconds;
+                _timerStarted = true;
+                
                 _monologUI.Hide();
-                _isPlaying = false;
+                
+                return;
+            }
 
-                OnMonologEnded?.Invoke();
+            if (_timerStarted && _timer > 0)
+                return;
+
+            if (_timerStarted && _timer < 0)
+            {
+                if (QueueLength == 0)
+                {
+                    _monologUI.Hide();
+                    _isPlaying = false;
+
+                    OnMonologEnded?.Invoke();
 
 
-				return;
+                    return;
+                }
+            
+                OnReplicaEnded?.Invoke(_queue.Peek());
+
+                if (_timer < 0)
+                {
+                    var monolog = _queue.Dequeue();
+                    PlayMonolog(monolog);
+                }
+
+                _timerStarted = false;
             }
             
-            _monologUI.Hide();
-
-			OnReplicaEnded?.Invoke(_queue.Peek());
-
-            var monolog = _queue.Dequeue();
-            PlayMonolog(monolog);
+            
 		}
         else if (_currentSoundHandle == null && QueueLength > 0)
         {

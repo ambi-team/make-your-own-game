@@ -56,7 +56,7 @@
         		
         		<row class="slider">
         			<label class="label">@_mouseSensitivityName</label>
-        			<SliderControl Min="@(0.1f)" Max="@(5)" ShowValueTooltip="@false" Value:bind="@MouseSensitivityValue"/>
+        			<SliderControl Min="@(1f)" Max="@(5f)" ShowValueTooltip="@false" Value:bind="@MouseSensitivityValue"/>
         			<output class="output">
         				@MouseSensitivityValue.ToString( "0.00" )
         			</output>
