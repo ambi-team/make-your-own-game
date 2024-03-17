@@ -1,7 +1,5 @@
 ﻿using System;
 
-namespace Monologs;
-
 public class MonologSystem: Component
 {
     // ! Обычные C# ивенты блять не работают между компонентами, и не ясно почему.
