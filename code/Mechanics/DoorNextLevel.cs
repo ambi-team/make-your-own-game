@@ -13,7 +13,12 @@ public sealed class DoorNextLevel : Component, Component.ITriggerListener
 	{
 		OnFinished?.Invoke();
 
+		Sound.StopAll(0f);
+		Log.Info($"[DoorNextLevel] Stopped all music");
+
+		Log.Info($"[DoorNextLevel] Prepare to next {scene} scene");
 		Scene.Load(scene);
+		Log.Info($"[DoorNextLevel] Loaded next scene {scene}");
 	}
 
 	public void OnTriggerEntered(Collider other)

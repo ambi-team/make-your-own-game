@@ -147,7 +147,7 @@
           "__guid": "03058762-bb13-4d38-8523-5cb358351ee4",
           "Ply": {
             "_type": "component",
-            "component_id": "23eeae54-bddd-4262-95fc-84bc2a8f856f",
+            "component_id": "78a65f2b-1945-4615-902f-22ee7b70446a",
             "go": "e30bde70-75b3-4dbb-83a0-5b89add30603",
             "component_type": "Player"
           },
@@ -234,8 +234,8 @@
                 "Id": 2,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "GameObject",
-                  "_type": "Sandbox.Game/Sandbox.Component"
+                  "_type": "Sandbox.Game/Sandbox.Component",
+                  "_name": "GameObject"
                 },
                 "UserData": {
                   "Position": "-112,208"
@@ -245,8 +245,8 @@
                 "Id": 3,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "128,144"
@@ -256,8 +256,8 @@
                 "Id": 4,
                 "Type": "property.set",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "384,256"
@@ -327,9 +327,9 @@
                 "Id": 9,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "256,-48"
@@ -349,8 +349,8 @@
                 "Id": 12,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Game",
-                  "_type": "package.ambi.myog/TriggerObject"
+                  "_type": "package.ambi.myog/TriggerObject",
+                  "_name": "Game"
                 },
                 "UserData": {
                   "Position": "16,128"
@@ -360,8 +360,8 @@
                 "Id": 13,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "GameObject",
-                  "_type": "Sandbox.Game/Sandbox.Component"
+                  "_type": "Sandbox.Game/Sandbox.Component",
+                  "_name": "GameObject"
                 },
                 "UserData": {
                   "Position": "240,176"
@@ -371,10 +371,10 @@
                 "Id": 17,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Get",
-                  "_isStatic": false,
                   "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                  "T": "package.ambi.myog/Sigil2Complete"
+                  "T": "package.ambi.myog/Sigil2Complete",
+                  "_isStatic": false,
+                  "_name": "Get"
                 },
                 "UserData": {
                   "Position": "576,160"
@@ -384,8 +384,8 @@
                 "Id": 18,
                 "Type": "property.set",
                 "Properties": {
-                  "_name": "sigil2",
-                  "_type": "package.ambi.myog/Sigil2Complete"
+                  "_type": "package.ambi.myog/Sigil2Complete",
+                  "_name": "sigil2"
                 },
                 "UserData": {
                   "Position": "288,320"
@@ -395,9 +395,9 @@
                 "Id": 19,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnDoors",
+                  "_type": "package.ambi.myog/Sigil2Complete",
                   "_isStatic": false,
-                  "_type": "package.ambi.myog/Sigil2Complete"
+                  "_name": "SpawnDoors"
                 },
                 "UserData": {
                   "Position": "576,352"
@@ -479,7 +479,7 @@
       "__guid": "9da195f0-9c54-4a25-959c-68b54d292233",
       "Name": "Sigil 1",
       "Position": "9466.378,5575.77,9954.355",
-      "Rotation": "0,0,0.9914449,0.1305262",
+      "Rotation": "0,0,0.1305264,-0.9914449",
       "Scale": "5.762847,5.762847,5.762847",
       "Enabled": true,
       "NetworkMode": 2,
@@ -495,11 +495,11 @@
         {
           "__type": "HighlightOutline",
           "__guid": "d73232bf-60d6-466b-adcc-262641b9cce9",
-          "Color": "654.8803,665.98,0,1",
+          "Color": "739.52,0,73.95193,0.99",
           "InsideColor": "1,1,1,0",
           "InsideObscuredColor": "0,0,0,0",
           "ObscuredColor": "0,0,0,0",
-          "Width": 0.25
+          "Width": 0.3
         },
         {
           "__type": "BoxCollider",
@@ -525,8 +525,8 @@
                 "Id": 1,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "GameObject",
-                  "_type": "Sandbox.Game/Sandbox.Component"
+                  "_type": "Sandbox.Game/Sandbox.Component",
+                  "_name": "GameObject"
                 },
                 "UserData": {
                   "Position": "-112,176"
@@ -536,8 +536,8 @@
                 "Id": 2,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "128,112"
@@ -547,8 +547,8 @@
                 "Id": 3,
                 "Type": "property.set",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "384,224"
@@ -558,8 +558,8 @@
                 "Id": 6,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Objects",
-                  "_type": "package.ambi.myog/ListGameObjects"
+                  "_type": "package.ambi.myog/ListGameObjects",
+                  "_name": "Objects"
                 },
                 "UserData": {
                   "Position": "0,448"
@@ -576,8 +576,8 @@
                 "Id": 8,
                 "Type": "property.set",
                 "Properties": {
-                  "_name": "Enabled",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Enabled"
                 },
                 "UserData": {
                   "Position": "464,480"
@@ -697,9 +697,9 @@
                 "Id": 9,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "256,-48"
@@ -719,8 +719,8 @@
                 "Id": 12,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Game",
-                  "_type": "package.ambi.myog/TriggerObject"
+                  "_type": "package.ambi.myog/TriggerObject",
+                  "_name": "Game"
                 },
                 "UserData": {
                   "Position": "16,128"
@@ -730,8 +730,8 @@
                 "Id": 13,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "GameObject",
-                  "_type": "Sandbox.Game/Sandbox.Component"
+                  "_type": "Sandbox.Game/Sandbox.Component",
+                  "_name": "GameObject"
                 },
                 "UserData": {
                   "Position": "240,176"
@@ -741,10 +741,10 @@
                 "Id": 17,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Get",
-                  "_isStatic": false,
                   "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                  "T": "package.ambi.myog/Sigil2Complete"
+                  "T": "package.ambi.myog/Sigil2Complete",
+                  "_isStatic": false,
+                  "_name": "Get"
                 },
                 "UserData": {
                   "Position": "576,160"
@@ -754,9 +754,9 @@
                 "Id": 19,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnDoors",
+                  "_type": "package.ambi.myog/Sigil2Complete",
                   "_isStatic": false,
-                  "_type": "package.ambi.myog/Sigil2Complete"
+                  "_name": "SpawnDoors"
                 },
                 "UserData": {
                   "Position": "576,352"
@@ -766,8 +766,8 @@
                 "Id": 20,
                 "Type": "property.set",
                 "Properties": {
-                  "_name": "sigil1",
-                  "_type": "package.ambi.myog/Sigil2Complete"
+                  "_type": "package.ambi.myog/Sigil2Complete",
+                  "_name": "sigil1"
                 },
                 "UserData": {
                   "Position": "288,336"
@@ -910,9 +910,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
-                      "_name": "PlayMons",
+                      "_type": "package.ambi.myog/StartFuckingTheSecondWorld",
                       "_isStatic": false,
-                      "_type": "package.ambi.myog/StartFuckingTheSecondWorld"
+                      "_name": "PlayMons"
                     },
                     "UserData": {
                       "Position": "288,128"
@@ -922,9 +922,9 @@
                     "Id": 3,
                     "Type": "call",
                     "Properties": {
-                      "_name": "Destroy",
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
                       "_isStatic": false,
-                      "_type": "Sandbox.Game/Sandbox.GameObject"
+                      "_name": "Destroy"
                     },
                     "UserData": {
                       "Position": "320,-16"
@@ -1029,8 +1029,8 @@
                     "Id": 1,
                     "Type": "property.get",
                     "Properties": {
-                      "_name": "GameObject",
-                      "_type": "Sandbox.Game/Sandbox.Component"
+                      "_type": "Sandbox.Game/Sandbox.Component",
+                      "_name": "GameObject"
                     },
                     "UserData": {
                       "Position": "160,112"
@@ -1050,9 +1050,9 @@
                     "Id": 3,
                     "Type": "call",
                     "Properties": {
-                      "_name": "NextLevel",
+                      "_type": "package.ambi.myog/DoorNextLevel",
                       "_isStatic": false,
-                      "_type": "package.ambi.myog/DoorNextLevel"
+                      "_name": "NextLevel"
                     },
                     "UserData": {
                       "Position": "528,464"
@@ -1062,8 +1062,8 @@
                     "Id": 4,
                     "Type": "property.get",
                     "Properties": {
-                      "_name": "Game",
-                      "_type": "package.ambi.myog/DoorNextLevel"
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "Game"
                     },
                     "UserData": {
                       "Position": "-272,304"
@@ -1073,8 +1073,8 @@
                     "Id": 5,
                     "Type": "property.get",
                     "Properties": {
-                      "_name": "Ply",
-                      "_type": "package.ambi.myog/Game"
+                      "_type": "package.ambi.myog/Game",
+                      "_name": "Ply"
                     },
                     "UserData": {
                       "Position": "0,320"
@@ -1084,8 +1084,8 @@
                     "Id": 6,
                     "Type": "property.get",
                     "Properties": {
-                      "_name": "GameObject",
-                      "_type": "Sandbox.Game/Sandbox.Component"
+                      "_type": "Sandbox.Game/Sandbox.Component",
+                      "_name": "GameObject"
                     },
                     "UserData": {
                       "Position": "128,224"
@@ -1216,8 +1216,8 @@
                     "Id": 3,
                     "Type": "property.get",
                     "Properties": {
-                      "_name": "Game",
-                      "_type": "package.ambi.myog/DoorNextLevel"
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "Game"
                     },
                     "UserData": {
                       "Position": "16,80"
@@ -1227,8 +1227,8 @@
                     "Id": 4,
                     "Type": "property.get",
                     "Properties": {
-                      "_name": "Stats",
-                      "_type": "package.ambi.myog/Game"
+                      "_type": "package.ambi.myog/Game",
+                      "_name": "Stats"
                     },
                     "UserData": {
                       "Position": "288,112"
@@ -1238,8 +1238,8 @@
                     "Id": 5,
                     "Type": "property.set",
                     "Properties": {
-                      "_name": "Level1EnteredTheRedDoor",
-                      "_type": "package.ambi.myog/StatsData"
+                      "_type": "package.ambi.myog/StatsData",
+                      "_name": "Level1EnteredTheRedDoor"
                     },
                     "UserData": {
                       "Position": "448,96"
@@ -1300,8 +1300,8 @@
                     "Id": 2,
                     "Type": "property.set",
                     "Properties": {
-                      "_name": "Enabled",
-                      "_type": "Sandbox.Game/Sandbox.GameObject"
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
+                      "_name": "Enabled"
                     },
                     "UserData": {
                       "Position": "272,80"
@@ -1411,9 +1411,9 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "Destroy",
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
                       "_isStatic": false,
-                      "_type": "Sandbox.Game/Sandbox.GameObject"
+                      "_name": "Destroy"
                     },
                     "UserData": {
                       "Position": "192,128"
@@ -1481,9 +1481,9 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "Destroy",
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
                       "_isStatic": false,
-                      "_type": "Sandbox.Game/Sandbox.GameObject"
+                      "_name": "Destroy"
                     },
                     "UserData": {
                       "Position": "240,144"
@@ -1555,8 +1555,8 @@
                     "Id": 2,
                     "Type": "property.get",
                     "Properties": {
-                      "_name": "GameObject",
-                      "_type": "Sandbox.Game/Sandbox.Component"
+                      "_type": "Sandbox.Game/Sandbox.Component",
+                      "_name": "GameObject"
                     },
                     "UserData": {
                       "Position": "192,32"
@@ -1576,9 +1576,9 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_name": "NextLevel",
+                      "_type": "package.ambi.myog/DoorNextLevel",
                       "_isStatic": false,
-                      "_type": "package.ambi.myog/DoorNextLevel"
+                      "_name": "NextLevel"
                     },
                     "UserData": {
                       "Position": "560,384"
@@ -1588,8 +1588,8 @@
                     "Id": 5,
                     "Type": "property.get",
                     "Properties": {
-                      "_name": "Game",
-                      "_type": "package.ambi.myog/DoorNextLevel"
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "Game"
                     },
                     "UserData": {
                       "Position": "-240,224"
@@ -1599,8 +1599,8 @@
                     "Id": 6,
                     "Type": "property.get",
                     "Properties": {
-                      "_name": "Ply",
-                      "_type": "package.ambi.myog/Game"
+                      "_type": "package.ambi.myog/Game",
+                      "_name": "Ply"
                     },
                     "UserData": {
                       "Position": "32,240"
@@ -1610,8 +1610,8 @@
                     "Id": 7,
                     "Type": "property.get",
                     "Properties": {
-                      "_name": "GameObject",
-                      "_type": "Sandbox.Game/Sandbox.Component"
+                      "_type": "Sandbox.Game/Sandbox.Component",
+                      "_name": "GameObject"
                     },
                     "UserData": {
                       "Position": "160,144"
@@ -1742,8 +1742,8 @@
                     "Id": 2,
                     "Type": "property.get",
                     "Properties": {
-                      "_name": "Game",
-                      "_type": "package.ambi.myog/DoorNextLevel"
+                      "_type": "package.ambi.myog/DoorNextLevel",
+                      "_name": "Game"
                     },
                     "UserData": {
                       "Position": "48,144"
@@ -1753,8 +1753,8 @@
                     "Id": 4,
                     "Type": "property.get",
                     "Properties": {
-                      "_name": "Stats",
-                      "_type": "package.ambi.myog/Game"
+                      "_type": "package.ambi.myog/Game",
+                      "_name": "Stats"
                     },
                     "UserData": {
                       "Position": "320,176"
@@ -1764,8 +1764,8 @@
                     "Id": 5,
                     "Type": "property.set",
                     "Properties": {
-                      "_name": "Level1EnteredTheRedDoor",
-                      "_type": "package.ambi.myog/StatsData"
+                      "_type": "package.ambi.myog/StatsData",
+                      "_name": "Level1EnteredTheRedDoor"
                     },
                     "UserData": {
                       "Position": "480,160"
@@ -1828,8 +1828,8 @@
                     "Id": 1,
                     "Type": "property.set",
                     "Properties": {
-                      "_name": "Enabled",
-                      "_type": "Sandbox.Game/Sandbox.GameObject"
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
+                      "_name": "Enabled"
                     },
                     "UserData": {
                       "Position": "192,-0"
@@ -1983,8 +1983,8 @@
     {
       "__guid": "e69747c2-f491-4d89-a68e-8d89aac2625e",
       "Name": "Cube (2)",
-      "Position": "2022.974,2373.18,9353.546",
-      "Scale": "4.984263,7.221158,2.511929",
+      "Position": "2022.974,2373.18,9333.53",
+      "Scale": "7.493739,8.403641,1.906562",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -2041,8 +2041,8 @@
                 "Id": 2,
                 "Type": "property.get",
                 "Properties": {
-                  "_name": "Objects",
-                  "_type": "package.ambi.myog/ListGameObjects"
+                  "_type": "package.ambi.myog/ListGameObjects",
+                  "_name": "Objects"
                 },
                 "UserData": {
                   "Position": "-256,128"
@@ -2059,8 +2059,8 @@
                 "Id": 4,
                 "Type": "property.set",
                 "Properties": {
-                  "_name": "Enabled",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Enabled"
                 },
                 "UserData": {
                   "Position": "208,160"
@@ -2126,9 +2126,9 @@
     {
       "__guid": "0b364ffa-c5b7-43e2-bd87-1bf36058c84d",
       "Name": "Spawn Fly Islands",
-      "Position": "2022.974,2373.18,9537.825",
+      "Position": "1946.177,2373.18,9537.825",
       "Rotation": "0,0,0.258819,0.9659258",
-      "Scale": "0.5640128,1.604869,1.147384",
+      "Scale": "-0.5059389,1.604869,1.147384",
       "Enabled": true,
       "NetworkMode": 2
     },
@@ -2171,8 +2171,8 @@
                 "Id": 1,
                 "Type": "property.set",
                 "Properties": {
-                  "_name": "Enabled",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Enabled"
                 },
                 "UserData": {
                   "Position": "160,96"
@@ -2216,7 +2216,151 @@
         {
           "__type": "Music",
           "__guid": "589769d4-de8f-43ef-9706-b13e6841ce97",
-          "music": "sound/music_3.sound"
+          "music": "sound/music_2.sound"
+        }
+      ]
+    },
+    {
+      "__guid": "c4b25972-5767-41b4-b5a1-367feac7eb81",
+      "Name": "Screen",
+      "Position": "1927.559,2279.88,9468.027",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "6253f8fe-c070-45c2-82db-0e96b6354552",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "LevelPanel",
+          "__guid": "a3f01ba1-5231-4476-8143-40f4b2ad0209",
+          "MyStringValue": "Deadline",
+          "OnComponentStart": {
+            "Version": 5,
+            "UserData": {
+              "Title": "On Component Start",
+              "id": "8c372205-9749-4e69-8fd8-ef6aadd8db33",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "time.delay",
+                "UserData": {
+                  "Position": "240,64"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false,
+                  "_name": "Destroy"
+                },
+                "UserData": {
+                  "Position": "432,32"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "Value": 3.4,
+                "DstId": 1,
+                "DstName": "seconds"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 3,
+                "DstName": "_target"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "70cc209f-6da3-4cff-b460-9ac5bc1bf3de",
+      "Name": "TeleportToFlyEnd",
+      "Position": "2670.735,2731.308,9419.535",
+      "Rotation": "0,0,0.258819,0.9659258",
+      "Scale": "1,11.65869,8.80811",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "428813e1-90cb-446f-9707-38efce9506b9",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "TriggerAdvanceTeleport",
+          "__guid": "3cc915ab-e019-454d-88d4-c83f8af15787",
+          "Game": {
+            "_type": "gameobject",
+            "go": "1365e926-bdc2-4255-a744-047e5170dd1b"
+          },
+          "PosToSpawn": {
+            "_type": "gameobject",
+            "go": "fc327da2-9fed-465f-90b0-41ac85fdd48a"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "fc327da2-9fed-465f-90b0-41ac85fdd48a",
+      "Name": "ToTeleportToEndFly",
+      "Position": "9700.335,5577.313,10151.72",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "78c9ec63-c733-47da-89b7-bf2ab87c37e0",
+      "Name": "World",
+      "Position": "2224.916,2405.287,9356.436",
+      "Rotation": "-0.00000004371139,0.0000001947072,-0.9999999,0.00000002980232",
+      "Scale": "1,1,1.186546",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "WorldPanel",
+          "__guid": "087d4dcb-b8e0-4c0d-9faf-db7dea9171ce",
+          "HorizontalAlign": "Center",
+          "LookAtCamera": false,
+          "PanelSize": "1024,1024",
+          "RenderScale": 1,
+          "VerticalAlign": "Center"
+        },
+        {
+          "__type": "WorldText",
+          "__guid": "cc4e9d97-8b71-4446-8f56-12504ba8ba66",
+          "MyStringValue": "Ok, we didn\u0027t have time to do proper parkour due to deadlines (how ironic) and just teleport you at the end, trigger just ahead."
         }
       ]
     }
@@ -2244,14 +2388,13 @@
   },
   "Title": "level2",
   "Description": "",
-  "LastSaved": "2024-03-17T15:45:09.9694077\u002B05:00",
+  "LastSaved": "2024-03-18T14:50:03.1086834\u002B05:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "ambi.angel_statuette",
-    "ambi.music_3",
+    "ambi.music_2",
     "ambi.tradis_red_door",
-    "ambi.vape",
-    "ambi.white"
+    "ambi.vape"
   ]
 }

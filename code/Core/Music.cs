@@ -4,8 +4,8 @@
 
 	protected override void OnStart()
 	{
-		Sound.Play(music);
 		music.UI = true;
-		music.Volume = 0.25f;
+		music.Volume = 0.06f;
+		Sound.Play(music);
 	}
 }

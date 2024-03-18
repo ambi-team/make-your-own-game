@@ -15,7 +15,7 @@ public class SettingsData : ISaveData
 	public float FOV { get; set; } = 90;
 
 	/// <summary>
-	/// От 1 до 20
+	/// От 1 до 5
 	/// </summary>
 	public float MouseSensitivity { get; set; } = 2f;
 
@@ -44,7 +44,7 @@ public class SettingsData : ISaveData
 		}
 
 		ply.Camera.Camera.FieldOfView = FOV;
-		ply.Camera.Sensivity = MouseSensitivity;
+		ply.Camera.Sensivity = MouseSensitivity / 1.4f;
 
 		Log.Info($"[Settings] Apply");
 	}

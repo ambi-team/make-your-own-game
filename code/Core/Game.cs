@@ -30,6 +30,8 @@
 			Settings = new();
 		}
 
+		Settings.ply = Ply;
+
 		Load();
 	}
 	#endregion
